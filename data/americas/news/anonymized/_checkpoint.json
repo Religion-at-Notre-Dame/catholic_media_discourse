@@ -1,0 +1,12 @@
+{
+  "input_path": "data/americas/news/classified",
+  "processed_count": 128331,
+  "current_part_index": 3,
+  "current_part_bytes": 2143055,
+  "current_part_records": 3332,
+  "max_part_bytes": 41943040,
+  "save_interval": 500,
+  "source": "gdelt_news",
+  "fallback_language": "spanish",
+  "complete": true
+}

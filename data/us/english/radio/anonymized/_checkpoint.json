@@ -1,0 +1,12 @@
+{
+  "input_path": "data/us/english/radio/aapb_us_2015-01-01_to_2025-12-31.jsonl",
+  "processed_count": 1777,
+  "current_part_index": 1,
+  "current_part_bytes": 1762421,
+  "current_part_records": 1777,
+  "max_part_bytes": 1020054732,
+  "save_interval": 500,
+  "source": "aapb",
+  "fallback_language": "english",
+  "complete": true
+}

@@ -1,0 +1,368 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d9" for="edge" attr.name="lift_vs_us" attr.type="double"/>
+<key id="d8" for="edge" attr.name="observed" attr.type="boolean"/>
+<key id="d7" for="edge" attr.name="weight" attr.type="double"/>
+<key id="d6" for="edge" attr.name="type" attr.type="string"/>
+<key id="d5" for="node" attr.name="degree" attr.type="long"/>
+<key id="d4" for="node" attr.name="size" attr.type="double"/>
+<key id="d3" for="node" attr.name="color" attr.type="string"/>
+<key id="d2" for="node" attr.name="fips" attr.type="string"/>
+<key id="d1" for="node" attr.name="label" attr.type="string"/>
+<key id="d0" for="node" attr.name="item_type" attr.type="string"/>
+<graph edgedefault="undirected"><node id="country:AR">
+  <data key="d0">country</data>
+  <data key="d1">Argentina</data>
+  <data key="d2">AR</data>
+  <data key="d3">#2E86AB</data>
+  <data key="d4">17.66</data>
+  <data key="d5">4</data>
+</node>
+<node id="country:BL">
+  <data key="d0">country</data>
+  <data key="d1">Bolivia</data>
+  <data key="d2">BL</data>
+  <data key="d3">#2E86AB</data>
+  <data key="d4">18.75</data>
+  <data key="d5">5</data>
+</node>
+<node id="country:BR">
+  <data key="d0">country</data>
+  <data key="d1">Brazil</data>
+  <data key="d2">BR</data>
+  <data key="d3">#2E86AB</data>
+  <data key="d4">21.82</data>
+  <data key="d5">9</data>
+</node>
+<node id="country:CI">
+  <data key="d0">country</data>
+  <data key="d1">Chile</data>
+  <data key="d2">CI</data>
+  <data key="d3">#2E86AB</data>
+  <data key="d4">12.16</data>
+  <data key="d5">1</data>
+</node>
+<node id="country:CO">
+  <data key="d0">country</data>
+  <data key="d1">Colombia</data>
+  <data key="d2">CO</data>
+  <data key="d3">#2E86AB</data>
+  <data key="d4">17.66</data>
+  <data key="d5">4</data>
+</node>
+<node id="country:ES">
+  <data key="d0">country</data>
+  <data key="d1">El Salvador</data>
+  <data key="d2">ES</data>
+  <data key="d3">#2E86AB</data>
+  <data key="d4">17.66</data>
+  <data key="d5">4</data>
+</node>
+<node id="country:HO">
+  <data key="d0">country</data>
+  <data key="d1">Honduras</data>
+  <data key="d2">HO</data>
+  <data key="d3">#2E86AB</data>
+  <data key="d4">12.16</data>
+  <data key="d5">1</data>
+</node>
+<node id="country:MX">
+  <data key="d0">country</data>
+  <data key="d1">Mexico</data>
+  <data key="d2">MX</data>
+  <data key="d3">#2E86AB</data>
+  <data key="d4">16.32</data>
+  <data key="d5">3</data>
+</node>
+<node id="country:PA">
+  <data key="d0">country</data>
+  <data key="d1">Paraguay</data>
+  <data key="d2">PA</data>
+  <data key="d3">#2E86AB</data>
+  <data key="d4">14.59</data>
+  <data key="d5">2</data>
+</node>
+<node id="country:PE">
+  <data key="d0">country</data>
+  <data key="d1">Peru</data>
+  <data key="d2">PE</data>
+  <data key="d3">#2E86AB</data>
+  <data key="d4">16.32</data>
+  <data key="d5">3</data>
+</node>
+<node id="theme:aparecida_celam">
+  <data key="d0">theme</data>
+  <data key="d1">aparecida celam</data>
+  <data key="d3">#E94F37</data>
+  <data key="d4">14.59</data>
+  <data key="d5">2</data>
+</node>
+<node id="theme:evangelii_gaudium">
+  <data key="d0">theme</data>
+  <data key="d1">evangelii gaudium</data>
+  <data key="d3">#E94F37</data>
+  <data key="d4">17.66</data>
+  <data key="d5">4</data>
+</node>
+<node id="theme:gospel">
+  <data key="d0">theme</data>
+  <data key="d1">gospel</data>
+  <data key="d3">#E94F37</data>
+  <data key="d4">14.59</data>
+  <data key="d5">2</data>
+</node>
+<node id="theme:guadalupe">
+  <data key="d0">theme</data>
+  <data key="d1">guadalupe</data>
+  <data key="d3">#E94F37</data>
+  <data key="d4">12.16</data>
+  <data key="d5">1</data>
+</node>
+<node id="theme:inculturation">
+  <data key="d0">theme</data>
+  <data key="d1">inculturation</data>
+  <data key="d3">#E94F37</data>
+  <data key="d4">16.32</data>
+  <data key="d5">3</data>
+</node>
+<node id="theme:laudato_si">
+  <data key="d0">theme</data>
+  <data key="d1">laudato si</data>
+  <data key="d3">#E94F37</data>
+  <data key="d4">16.32</data>
+  <data key="d5">3</data>
+</node>
+<node id="theme:liberation_theology">
+  <data key="d0">theme</data>
+  <data key="d1">liberation theology</data>
+  <data key="d3">#E94F37</data>
+  <data key="d4">19.68</data>
+  <data key="d5">6</data>
+</node>
+<node id="theme:mision">
+  <data key="d0">theme</data>
+  <data key="d1">mision</data>
+  <data key="d3">#E94F37</data>
+  <data key="d4">20.48</data>
+  <data key="d5">7</data>
+</node>
+<node id="theme:oscar_romero">
+  <data key="d0">theme</data>
+  <data key="d1">oscar romero</data>
+  <data key="d3">#E94F37</data>
+  <data key="d4">12.16</data>
+  <data key="d5">1</data>
+</node>
+<node id="theme:preferential_option">
+  <data key="d0">theme</data>
+  <data key="d1">preferential option</data>
+  <data key="d3">#E94F37</data>
+  <data key="d4">14.59</data>
+  <data key="d5">2</data>
+</node>
+<node id="theme:querida_amazonia">
+  <data key="d0">theme</data>
+  <data key="d1">querida amazonia</data>
+  <data key="d3">#E94F37</data>
+  <data key="d4">12.16</data>
+  <data key="d5">1</data>
+</node>
+<node id="theme:indigenous">
+  <data key="d1">theme:indigenous</data>
+</node>
+<node id="theme:fratelli_tutti">
+  <data key="d1">theme:fratelli_tutti</data>
+</node>
+<edge source="country:AR" target="theme:mision">
+  <data key="d6">expected</data>
+  <data key="d7">23.24</data>
+  <data key="d8">True</data>
+  <data key="d9">23.24</data>
+</edge>
+<edge source="country:AR" target="theme:inculturation">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">10.08</data>
+  <data key="d9">10.08</data>
+</edge>
+<edge source="country:AR" target="theme:fratelli_tutti">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">8.58</data>
+  <data key="d9">8.58</data>
+</edge>
+<edge source="country:AR" target="theme:evangelii_gaudium">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">7.47</data>
+  <data key="d9">7.47</data>
+</edge>
+<edge source="country:BL" target="theme:mision">
+  <data key="d6">expected</data>
+  <data key="d7">25.6</data>
+  <data key="d8">True</data>
+  <data key="d9">25.6</data>
+</edge>
+<edge source="country:BL" target="theme:liberation_theology">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">15.25</data>
+  <data key="d9">15.25</data>
+</edge>
+<edge source="country:BL" target="theme:evangelii_gaudium">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">14.2</data>
+  <data key="d9">14.2</data>
+</edge>
+<edge source="country:BL" target="theme:indigenous">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">8.73</data>
+  <data key="d9">8.73</data>
+</edge>
+<edge source="country:BL" target="theme:laudato_si">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">4.39</data>
+  <data key="d9">4.39</data>
+</edge>
+<edge source="country:BR" target="theme:aparecida_celam">
+  <data key="d6">expected</data>
+  <data key="d7">57.91</data>
+  <data key="d8">True</data>
+  <data key="d9">57.91</data>
+</edge>
+<edge source="country:BR" target="theme:inculturation">
+  <data key="d6">expected</data>
+  <data key="d7">48.15</data>
+  <data key="d8">True</data>
+  <data key="d9">48.15</data>
+</edge>
+<edge source="country:BR" target="theme:querida_amazonia">
+  <data key="d6">expected</data>
+  <data key="d7">22.33</data>
+  <data key="d8">True</data>
+  <data key="d9">22.33</data>
+</edge>
+<edge source="country:BR" target="theme:preferential_option">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">15.68</data>
+  <data key="d9">15.68</data>
+</edge>
+<edge source="country:BR" target="theme:mision">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">11.27</data>
+  <data key="d9">11.27</data>
+</edge>
+<edge source="country:BR" target="theme:liberation_theology">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">9.26</data>
+  <data key="d9">9.26</data>
+</edge>
+<edge source="country:BR" target="theme:evangelii_gaudium">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">9.1</data>
+  <data key="d9">9.1</data>
+</edge>
+<edge source="country:BR" target="theme:indigenous">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">7.92</data>
+  <data key="d9">7.92</data>
+</edge>
+<edge source="country:BR" target="theme:laudato_si">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">7.18</data>
+  <data key="d9">7.18</data>
+</edge>
+<edge source="country:CI" target="theme:mision">
+  <data key="d6">expected</data>
+  <data key="d7">5.42</data>
+  <data key="d8">True</data>
+  <data key="d9">5.42</data>
+</edge>
+<edge source="country:CO" target="theme:aparecida_celam">
+  <data key="d6">expected</data>
+  <data key="d7">20.43</data>
+  <data key="d8">True</data>
+  <data key="d9">20.43</data>
+</edge>
+<edge source="country:CO" target="theme:mision">
+  <data key="d6">expected</data>
+  <data key="d7">12.71</data>
+  <data key="d8">True</data>
+  <data key="d9">12.71</data>
+</edge>
+<edge source="country:CO" target="theme:evangelii_gaudium">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">8.88</data>
+  <data key="d9">8.88</data>
+</edge>
+<edge source="country:CO" target="theme:liberation_theology">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">6.48</data>
+  <data key="d9">6.48</data>
+</edge>
+<edge source="country:ES" target="theme:oscar_romero">
+  <data key="d6">expected</data>
+  <data key="d7">104.59</data>
+  <data key="d8">True</data>
+  <data key="d9">104.59</data>
+</edge>
+<edge source="country:ES" target="theme:preferential_option">
+  <data key="d6">expected</data>
+  <data key="d7">44.37</data>
+  <data key="d8">True</data>
+  <data key="d9">44.37</data>
+</edge>
+<edge source="country:ES" target="theme:liberation_theology">
+  <data key="d6">expected</data>
+  <data key="d7">30.0</data>
+  <data key="d8">True</data>
+  <data key="d9">30.0</data>
+</edge>
+<edge source="country:ES" target="theme:gospel">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">5.29</data>
+  <data key="d9">5.29</data>
+</edge>
+<edge source="country:HO" target="theme:liberation_theology">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">10.7</data>
+  <data key="d9">10.7</data>
+</edge>
+<edge source="country:MX" target="theme:guadalupe">
+  <data key="d6">expected</data>
+  <data key="d7">17.13</data>
+  <data key="d8">True</data>
+  <data key="d9">17.13</data>
+</edge>
+<edge source="country:MX" target="theme:inculturation">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">8.54</data>
+  <data key="d9">8.54</data>
+</edge>
+<edge source="country:MX" target="theme:mision">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">4.64</data>
+  <data key="d9">4.64</data>
+</edge>
+<edge source="country:PA" target="theme:mision">
+  <data key="d6">expected</data>
+  <data key="d7">261.69</data>
+  <data key="d8">True</data>
+  <data key="d9">261.69</data>
+</edge>
+<edge source="country:PA" target="theme:gospel">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">5.07</data>
+  <data key="d9">5.07</data>
+</edge>
+<edge source="country:PE" target="theme:liberation_theology">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">13.51</data>
+  <data key="d9">13.51</data>
+</edge>
+<edge source="country:PE" target="theme:laudato_si">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">4.76</data>
+  <data key="d9">4.76</data>
+</edge>
+<edge source="country:PE" target="theme:indigenous">
+  <data key="d6">unexpected_distinctive</data>
+  <data key="d7">4.52</data>
+  <data key="d9">4.52</data>
+</edge>
+</graph></graphml>

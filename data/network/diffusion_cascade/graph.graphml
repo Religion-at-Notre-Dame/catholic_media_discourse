@@ -1,0 +1,1504 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d17" for="edge" attr.name="target_hits" attr.type="long"/>
+<key id="d16" for="edge" attr.name="origin_hits" attr.type="long"/>
+<key id="d15" for="edge" attr.name="target_date" attr.type="string"/>
+<key id="d14" for="edge" attr.name="source_date" attr.type="string"/>
+<key id="d13" for="edge" attr.name="lag_days" attr.type="long"/>
+<key id="d12" for="edge" attr.name="weight" attr.type="long"/>
+<key id="d11" for="edge" attr.name="topic" attr.type="string"/>
+<key id="d10" for="edge" attr.name="type" attr.type="string"/>
+<key id="d9" for="node" attr.name="degree" attr.type="long"/>
+<key id="d8" for="node" attr.name="size" attr.type="double"/>
+<key id="d7" for="node" attr.name="color" attr.type="string"/>
+<key id="d6" for="node" attr.name="topics" attr.type="string"/>
+<key id="d5" for="node" attr.name="n_topics" attr.type="long"/>
+<key id="d4" for="node" attr.name="un_wesp" attr.type="string"/>
+<key id="d3" for="node" attr.name="region" attr.type="string"/>
+<key id="d2" for="node" attr.name="fips" attr.type="string"/>
+<key id="d1" for="node" attr.name="label" attr.type="string"/>
+<key id="d0" for="node" attr.name="item_type" attr.type="string"/>
+<graph edgedefault="directed"><node id="country:US">
+  <data key="d0">country</data>
+  <data key="d1">United States</data>
+  <data key="d2">US</data>
+  <data key="d3">united_states</data>
+  <data key="d4">developed</data>
+  <data key="d5">8</data>
+  <data key="d6">aparecida_celam, catholic_social_teaching, evangelio, gospel, guadalupe, immigration, mision, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">27.31</data>
+  <data key="d9">24</data>
+</node>
+<node id="country:BR">
+  <data key="d0">country</data>
+  <data key="d1">Brazil</data>
+  <data key="d2">BR</data>
+  <data key="d3">brazil</data>
+  <data key="d4">developing</data>
+  <data key="d5">7</data>
+  <data key="d6">aparecida_celam, catholic_social_teaching, evangelio, gospel, immigration, mision, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">29.33</data>
+  <data key="d9">34</data>
+</node>
+<node id="country:CI">
+  <data key="d0">country</data>
+  <data key="d1">Chile</data>
+  <data key="d2">CI</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">6</data>
+  <data key="d6">aparecida_celam, catholic_social_teaching, gospel, guadalupe, immigration, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">23.83</data>
+  <data key="d9">13</data>
+</node>
+<node id="country:CA">
+  <data key="d0">country</data>
+  <data key="d1">Canada</data>
+  <data key="d2">CA</data>
+  <data key="d3">canada</data>
+  <data key="d4">developed</data>
+  <data key="d5">6</data>
+  <data key="d6">catholic_social_teaching, gospel, guadalupe, immigration, mision, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">25.0</data>
+  <data key="d9">16</data>
+</node>
+<node id="country:ES">
+  <data key="d0">country</data>
+  <data key="d1">El Salvador</data>
+  <data key="d2">ES</data>
+  <data key="d3">central_america</data>
+  <data key="d4">developing</data>
+  <data key="d5">6</data>
+  <data key="d6">catholic_social_teaching, gospel, guadalupe, immigration, mision, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">23.83</data>
+  <data key="d9">13</data>
+</node>
+<node id="country:AR">
+  <data key="d0">country</data>
+  <data key="d1">Argentina</data>
+  <data key="d2">AR</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">5</data>
+  <data key="d6">catholic_social_teaching, gospel, immigration, mision, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">25.0</data>
+  <data key="d9">16</data>
+</node>
+<node id="country:MX">
+  <data key="d0">country</data>
+  <data key="d1">Mexico</data>
+  <data key="d2">MX</data>
+  <data key="d3">mexico</data>
+  <data key="d4">developing</data>
+  <data key="d5">5</data>
+  <data key="d6">catholic_social_teaching, gospel, guadalupe, immigration, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">22.91</data>
+  <data key="d9">11</data>
+</node>
+<node id="country:PM">
+  <data key="d0">country</data>
+  <data key="d1">Panama</data>
+  <data key="d2">PM</data>
+  <data key="d3">central_america</data>
+  <data key="d4">developing</data>
+  <data key="d5">5</data>
+  <data key="d6">catholic_social_teaching, gospel, guadalupe, immigration, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">22.39</data>
+  <data key="d9">10</data>
+</node>
+<node id="country:HA">
+  <data key="d0">country</data>
+  <data key="d1">Haiti</data>
+  <data key="d2">HA</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">4</data>
+  <data key="d6">catholic_social_teaching, gospel, immigration, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">22.91</data>
+  <data key="d9">11</data>
+</node>
+<node id="country:PA">
+  <data key="d0">country</data>
+  <data key="d1">Paraguay</data>
+  <data key="d2">PA</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">4</data>
+  <data key="d6">catholic_social_teaching, gospel, mision, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">23.39</data>
+  <data key="d9">12</data>
+</node>
+<node id="country:CO">
+  <data key="d0">country</data>
+  <data key="d1">Colombia</data>
+  <data key="d2">CO</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">4</data>
+  <data key="d6">catholic_social_teaching, gospel, immigration, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">22.39</data>
+  <data key="d9">10</data>
+</node>
+<node id="country:GT">
+  <data key="d0">country</data>
+  <data key="d1">Guatemala</data>
+  <data key="d2">GT</data>
+  <data key="d3">central_america</data>
+  <data key="d4">developing</data>
+  <data key="d5">4</data>
+  <data key="d6">catholic_social_teaching, gospel, immigration, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">21.82</data>
+  <data key="d9">9</data>
+</node>
+<node id="country:VE">
+  <data key="d0">country</data>
+  <data key="d1">Venezuela</data>
+  <data key="d2">VE</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">4</data>
+  <data key="d6">catholic_social_teaching, immigration, mision, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">21.82</data>
+  <data key="d9">9</data>
+</node>
+<node id="country:PE">
+  <data key="d0">country</data>
+  <data key="d1">Peru</data>
+  <data key="d2">PE</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">4</data>
+  <data key="d6">catholic_social_teaching, gospel, immigration, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">20.48</data>
+  <data key="d9">7</data>
+</node>
+<node id="country:EC">
+  <data key="d0">country</data>
+  <data key="d1">Ecuador</data>
+  <data key="d2">EC</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">3</data>
+  <data key="d6">catholic_social_teaching, immigration, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">24.25</data>
+  <data key="d9">14</data>
+</node>
+<node id="country:BL">
+  <data key="d0">country</data>
+  <data key="d1">Bolivia</data>
+  <data key="d2">BL</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">3</data>
+  <data key="d6">catholic_social_teaching, immigration, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">21.18</data>
+  <data key="d9">8</data>
+</node>
+<node id="country:CU">
+  <data key="d0">country</data>
+  <data key="d1">Cuba</data>
+  <data key="d2">CU</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">3</data>
+  <data key="d6">catholic_social_teaching, immigration, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">21.82</data>
+  <data key="d9">9</data>
+</node>
+<node id="country:HO">
+  <data key="d0">country</data>
+  <data key="d1">Honduras</data>
+  <data key="d2">HO</data>
+  <data key="d3">central_america</data>
+  <data key="d4">developing</data>
+  <data key="d5">3</data>
+  <data key="d6">catholic_social_teaching, immigration, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">26.55</data>
+  <data key="d9">21</data>
+</node>
+<node id="country:NU">
+  <data key="d0">country</data>
+  <data key="d1">Nicaragua</data>
+  <data key="d2">NU</data>
+  <data key="d3">central_america</data>
+  <data key="d4">developing</data>
+  <data key="d5">3</data>
+  <data key="d6">catholic_social_teaching, immigration, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">17.66</data>
+  <data key="d9">4</data>
+</node>
+<node id="country:RQ">
+  <data key="d0">country</data>
+  <data key="d1">Puerto Rico</data>
+  <data key="d2">RQ</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">2</data>
+  <data key="d6">catholic_social_teaching, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">14.59</data>
+  <data key="d9">2</data>
+</node>
+<node id="country:DR">
+  <data key="d0">country</data>
+  <data key="d1">Dominican Republic</data>
+  <data key="d2">DR</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">2</data>
+  <data key="d6">immigration, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">19.68</data>
+  <data key="d9">6</data>
+</node>
+<node id="country:JM">
+  <data key="d0">country</data>
+  <data key="d1">Jamaica</data>
+  <data key="d2">JM</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">2</data>
+  <data key="d6">immigration, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">19.68</data>
+  <data key="d9">6</data>
+</node>
+<node id="country:CS">
+  <data key="d0">country</data>
+  <data key="d1">Costa Rica</data>
+  <data key="d2">CS</data>
+  <data key="d3">central_america</data>
+  <data key="d4">developing</data>
+  <data key="d5">2</data>
+  <data key="d6">immigration, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">19.68</data>
+  <data key="d9">6</data>
+</node>
+<node id="country:BH">
+  <data key="d0">country</data>
+  <data key="d1">Belize</data>
+  <data key="d2">BH</data>
+  <data key="d3">central_america</data>
+  <data key="d4">developing</data>
+  <data key="d5">2</data>
+  <data key="d6">immigration, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">16.32</data>
+  <data key="d9">3</data>
+</node>
+<node id="country:GJ">
+  <data key="d0">country</data>
+  <data key="d1">Grenada</data>
+  <data key="d2">GJ</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">2</data>
+  <data key="d6">mision, mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">17.66</data>
+  <data key="d9">4</data>
+</node>
+<node id="country:UY">
+  <data key="d0">country</data>
+  <data key="d1">Uruguay</data>
+  <data key="d2">UY</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">1</data>
+  <data key="d6">mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">16.32</data>
+  <data key="d9">3</data>
+</node>
+<node id="country:BF">
+  <data key="d0">country</data>
+  <data key="d1">Bahamas</data>
+  <data key="d2">BF</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">1</data>
+  <data key="d6">mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">16.32</data>
+  <data key="d9">3</data>
+</node>
+<node id="country:GY">
+  <data key="d0">country</data>
+  <data key="d1">Guyana</data>
+  <data key="d2">GY</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">1</data>
+  <data key="d6">mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">16.32</data>
+  <data key="d9">3</data>
+</node>
+<node id="country:AC">
+  <data key="d0">country</data>
+  <data key="d1">Antigua and Barbuda</data>
+  <data key="d2">AC</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">1</data>
+  <data key="d6">mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">14.59</data>
+  <data key="d9">2</data>
+</node>
+<node id="country:TD">
+  <data key="d0">country</data>
+  <data key="d1">Trinidad and Tobago</data>
+  <data key="d2">TD</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">1</data>
+  <data key="d6">mission</data>
+  <data key="d7">#2E86AB</data>
+  <data key="d8">12.16</data>
+  <data key="d9">1</data>
+</node>
+<edge source="country:US" target="country:CA">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">guadalupe</data>
+  <data key="d12">293</data>
+  <data key="d13">72</data>
+  <data key="d14">2015-01-27</data>
+  <data key="d15">2015-04-09</data>
+  <data key="d16">386</data>
+  <data key="d17">3</data>
+</edge>
+<edge source="country:US" target="country:CO">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">gospel</data>
+  <data key="d12">295</data>
+  <data key="d13">70</data>
+  <data key="d14">2015-01-12</data>
+  <data key="d15">2015-03-23</data>
+  <data key="d16">568</data>
+  <data key="d17">3</data>
+</edge>
+<edge source="country:US" target="country:ES">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">gospel</data>
+  <data key="d12">235</data>
+  <data key="d13">130</data>
+  <data key="d14">2015-01-12</data>
+  <data key="d15">2015-05-22</data>
+  <data key="d16">568</data>
+  <data key="d17">3</data>
+</edge>
+<edge source="country:US" target="country:AR">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">gospel</data>
+  <data key="d12">189</data>
+  <data key="d13">176</data>
+  <data key="d14">2015-01-12</data>
+  <data key="d15">2015-07-07</data>
+  <data key="d16">568</data>
+  <data key="d17">11</data>
+</edge>
+<edge source="country:US" target="country:PA">
+  <data key="d10">followed_by</data>
+  <data key="d11">mision</data>
+  <data key="d12">345</data>
+  <data key="d13">20</data>
+  <data key="d14">2015-02-25</data>
+  <data key="d15">2015-03-17</data>
+  <data key="d16">568</data>
+  <data key="d17">2</data>
+</edge>
+<edge source="country:US" target="country:MX">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">guadalupe</data>
+  <data key="d12">113</data>
+  <data key="d13">252</data>
+  <data key="d14">2015-01-27</data>
+  <data key="d15">2015-10-06</data>
+  <data key="d16">386</data>
+  <data key="d17">244</data>
+</edge>
+<edge source="country:US" target="country:CI">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">guadalupe</data>
+  <data key="d12">113</data>
+  <data key="d13">252</data>
+  <data key="d14">2015-01-27</data>
+  <data key="d15">2015-10-06</data>
+  <data key="d16">386</data>
+  <data key="d17">3</data>
+</edge>
+<edge source="country:US" target="country:HA">
+  <data key="d10">followed_by</data>
+  <data key="d11">immigration</data>
+  <data key="d12">359</data>
+  <data key="d13">6</data>
+  <data key="d14">2015-02-01</data>
+  <data key="d15">2015-02-07</data>
+</edge>
+<edge source="country:US" target="country:NU">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">348</data>
+  <data key="d13">17</data>
+  <data key="d14">2015-01-30</data>
+  <data key="d15">2015-02-16</data>
+</edge>
+<edge source="country:BR" target="country:PE">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">188</data>
+  <data key="d13">177</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-07-03</data>
+  <data key="d16">127</data>
+  <data key="d17">72</data>
+</edge>
+<edge source="country:BR" target="country:PM">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">322</data>
+  <data key="d13">43</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-02-19</data>
+  <data key="d16">127</data>
+  <data key="d17">11</data>
+</edge>
+<edge source="country:BR" target="country:EC">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">206</data>
+  <data key="d13">159</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-06-15</data>
+  <data key="d16">127</data>
+  <data key="d17">31</data>
+</edge>
+<edge source="country:BR" target="country:HA">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">361</data>
+  <data key="d13">4</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-01-11</data>
+  <data key="d16">127</data>
+  <data key="d17">373</data>
+</edge>
+<edge source="country:BR" target="country:GT">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">356</data>
+  <data key="d13">9</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-01-16</data>
+  <data key="d16">127</data>
+  <data key="d17">60</data>
+</edge>
+<edge source="country:BR" target="country:AR">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">352</data>
+  <data key="d13">13</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-01-20</data>
+  <data key="d16">127</data>
+  <data key="d17">50</data>
+</edge>
+<edge source="country:BR" target="country:DR">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">347</data>
+  <data key="d13">18</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-01-25</data>
+  <data key="d16">127</data>
+  <data key="d17">32</data>
+</edge>
+<edge source="country:BR" target="country:US">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">342</data>
+  <data key="d13">23</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-01-30</data>
+  <data key="d16">127</data>
+  <data key="d17">3612</data>
+</edge>
+<edge source="country:BR" target="country:NU">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">325</data>
+  <data key="d13">40</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-02-16</data>
+  <data key="d16">127</data>
+  <data key="d17">18</data>
+</edge>
+<edge source="country:BR" target="country:CA">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">323</data>
+  <data key="d13">42</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-02-18</data>
+  <data key="d16">127</data>
+  <data key="d17">223</data>
+</edge>
+<edge source="country:BR" target="country:MX">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">323</data>
+  <data key="d13">42</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-02-18</data>
+  <data key="d16">127</data>
+  <data key="d17">96</data>
+</edge>
+<edge source="country:BR" target="country:CO">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">322</data>
+  <data key="d13">43</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-02-19</data>
+  <data key="d16">127</data>
+  <data key="d17">50</data>
+</edge>
+<edge source="country:BR" target="country:CU">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">322</data>
+  <data key="d13">43</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-02-19</data>
+  <data key="d16">127</data>
+  <data key="d17">35</data>
+</edge>
+<edge source="country:BR" target="country:VE">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">314</data>
+  <data key="d13">51</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-02-27</data>
+  <data key="d16">127</data>
+  <data key="d17">34</data>
+</edge>
+<edge source="country:BR" target="country:JM">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">309</data>
+  <data key="d13">56</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-03-04</data>
+  <data key="d16">127</data>
+  <data key="d17">61</data>
+</edge>
+<edge source="country:BR" target="country:ES">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">290</data>
+  <data key="d13">75</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-03-23</data>
+  <data key="d16">127</data>
+  <data key="d17">18</data>
+</edge>
+<edge source="country:BR" target="country:CI">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">289</data>
+  <data key="d13">76</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-03-24</data>
+  <data key="d16">127</data>
+  <data key="d17">34</data>
+</edge>
+<edge source="country:BR" target="country:HO">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">278</data>
+  <data key="d13">87</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-04-04</data>
+  <data key="d16">127</data>
+  <data key="d17">24</data>
+</edge>
+<edge source="country:BR" target="country:BH">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">253</data>
+  <data key="d13">112</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-04-29</data>
+  <data key="d16">127</data>
+  <data key="d17">5</data>
+</edge>
+<edge source="country:BR" target="country:BL">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">252</data>
+  <data key="d13">113</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-04-30</data>
+  <data key="d16">127</data>
+  <data key="d17">12</data>
+</edge>
+<edge source="country:BR" target="country:UY">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">246</data>
+  <data key="d13">119</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-05-06</data>
+  <data key="d16">127</data>
+  <data key="d17">6</data>
+</edge>
+<edge source="country:BR" target="country:BF">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">210</data>
+  <data key="d13">155</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-06-11</data>
+  <data key="d16">127</data>
+  <data key="d17">9</data>
+</edge>
+<edge source="country:BR" target="country:PA">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">177</data>
+  <data key="d13">188</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-07-14</data>
+  <data key="d16">127</data>
+  <data key="d17">7</data>
+</edge>
+<edge source="country:BR" target="country:CS">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">89</data>
+  <data key="d13">276</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-10-10</data>
+  <data key="d16">127</data>
+  <data key="d17">4</data>
+</edge>
+<edge source="country:BR" target="country:GY">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mission</data>
+  <data key="d12">88</data>
+  <data key="d13">277</data>
+  <data key="d14">2015-01-07</data>
+  <data key="d15">2015-10-11</data>
+  <data key="d16">127</data>
+  <data key="d17">4</data>
+</edge>
+<edge source="country:CI" target="country:US">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">aparecida_celam</data>
+  <data key="d12">325</data>
+  <data key="d13">40</data>
+  <data key="d14">2015-04-08</data>
+  <data key="d15">2015-05-18</data>
+  <data key="d16">2</data>
+  <data key="d17">24</data>
+</edge>
+<edge source="country:CI" target="country:ES">
+  <data key="d10">followed_by</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">254</data>
+  <data key="d13">111</data>
+  <data key="d14">2018-09-10</data>
+  <data key="d15">2018-12-30</data>
+</edge>
+<edge source="country:CI" target="country:BR">
+  <data key="d10">followed_by</data>
+  <data key="d11">gospel</data>
+  <data key="d12">355</data>
+  <data key="d13">10</data>
+  <data key="d14">2018-09-11</data>
+  <data key="d15">2018-09-21</data>
+</edge>
+<edge source="country:CI" target="country:BL">
+  <data key="d10">followed_by</data>
+  <data key="d11">immigration</data>
+  <data key="d12">283</data>
+  <data key="d13">82</data>
+  <data key="d14">2018-01-19</data>
+  <data key="d15">2018-04-11</data>
+</edge>
+<edge source="country:CI" target="country:HO">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">354</data>
+  <data key="d13">11</data>
+  <data key="d14">2015-03-24</data>
+  <data key="d15">2015-04-04</data>
+</edge>
+<edge source="country:CA" target="country:HA">
+  <data key="d10">followed_by</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">309</data>
+  <data key="d13">56</data>
+  <data key="d14">2015-04-29</data>
+  <data key="d15">2015-06-24</data>
+</edge>
+<edge source="country:CA" target="country:MX">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">365</data>
+  <data key="d13">0</data>
+  <data key="d14">2015-02-18</data>
+  <data key="d15">2015-02-18</data>
+</edge>
+<edge source="country:CA" target="country:CU">
+  <data key="d10">followed_by</data>
+  <data key="d11">immigration</data>
+  <data key="d12">352</data>
+  <data key="d13">13</data>
+  <data key="d14">2015-06-17</data>
+  <data key="d15">2015-06-30</data>
+</edge>
+<edge source="country:ES" target="country:PM">
+  <data key="d10">followed_by</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">338</data>
+  <data key="d13">27</data>
+  <data key="d14">2018-12-30</data>
+  <data key="d15">2019-01-26</data>
+</edge>
+<edge source="country:ES" target="country:AR">
+  <data key="d10">followed_by</data>
+  <data key="d11">immigration</data>
+  <data key="d12">360</data>
+  <data key="d13">5</data>
+  <data key="d14">2015-03-18</data>
+  <data key="d15">2015-03-23</data>
+</edge>
+<edge source="country:ES" target="country:CA">
+  <data key="d10">followed_by</data>
+  <data key="d11">mision</data>
+  <data key="d12">47</data>
+  <data key="d13">318</data>
+  <data key="d14">2018-12-05</data>
+  <data key="d15">2019-10-19</data>
+</edge>
+<edge source="country:ES" target="country:CI">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">364</data>
+  <data key="d13">1</data>
+  <data key="d14">2015-03-23</data>
+  <data key="d15">2015-03-24</data>
+</edge>
+<edge source="country:AR" target="country:CU">
+  <data key="d10">followed_by</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">352</data>
+  <data key="d13">13</data>
+  <data key="d14">2015-09-06</data>
+  <data key="d15">2015-09-19</data>
+</edge>
+<edge source="country:AR" target="country:PA">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mision</data>
+  <data key="d12">291</data>
+  <data key="d13">74</data>
+  <data key="d14">2015-01-02</data>
+  <data key="d15">2015-03-17</data>
+  <data key="d16">12</data>
+  <data key="d17">3</data>
+</edge>
+<edge source="country:AR" target="country:PM">
+  <data key="d10">followed_by</data>
+  <data key="d11">immigration</data>
+  <data key="d12">345</data>
+  <data key="d13">20</data>
+  <data key="d14">2015-03-23</data>
+  <data key="d15">2015-04-12</data>
+</edge>
+<edge source="country:AR" target="country:US">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mision</data>
+  <data key="d12">311</data>
+  <data key="d13">54</data>
+  <data key="d14">2015-01-02</data>
+  <data key="d15">2015-02-25</data>
+  <data key="d16">12</data>
+  <data key="d17">43</data>
+</edge>
+<edge source="country:AR" target="country:VE">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">mision</data>
+  <data key="d12">212</data>
+  <data key="d13">153</data>
+  <data key="d14">2015-01-02</data>
+  <data key="d15">2015-06-04</data>
+  <data key="d16">12</data>
+  <data key="d17">3</data>
+</edge>
+<edge source="country:AR" target="country:DR">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">360</data>
+  <data key="d13">5</data>
+  <data key="d14">2015-01-20</data>
+  <data key="d15">2015-01-25</data>
+</edge>
+<edge source="country:MX" target="country:CI">
+  <data key="d10">followed_by</data>
+  <data key="d11">guadalupe</data>
+  <data key="d12">365</data>
+  <data key="d13">0</data>
+  <data key="d14">2015-10-06</data>
+  <data key="d15">2015-10-06</data>
+</edge>
+<edge source="country:MX" target="country:US">
+  <data key="d10">followed_by</data>
+  <data key="d11">immigration</data>
+  <data key="d12">359</data>
+  <data key="d13">6</data>
+  <data key="d14">2015-01-26</data>
+  <data key="d15">2015-02-01</data>
+</edge>
+<edge source="country:MX" target="country:CO">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">364</data>
+  <data key="d13">1</data>
+  <data key="d14">2015-02-18</data>
+  <data key="d15">2015-02-19</data>
+</edge>
+<edge source="country:PM" target="country:PE">
+  <data key="d10">followed_by</data>
+  <data key="d11">gospel</data>
+  <data key="d12">127</data>
+  <data key="d13">238</data>
+  <data key="d14">2019-01-29</data>
+  <data key="d15">2019-09-24</data>
+</edge>
+<edge source="country:PM" target="country:ES">
+  <data key="d10">followed_by</data>
+  <data key="d11">guadalupe</data>
+  <data key="d12">1</data>
+  <data key="d13">365</data>
+  <data key="d14">2018-12-12</data>
+  <data key="d15">2019-12-12</data>
+</edge>
+<edge source="country:PM" target="country:DR">
+  <data key="d10">followed_by</data>
+  <data key="d11">immigration</data>
+  <data key="d12">313</data>
+  <data key="d13">52</data>
+  <data key="d14">2015-04-12</data>
+  <data key="d15">2015-06-03</data>
+</edge>
+<edge source="country:PM" target="country:VE">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">357</data>
+  <data key="d13">8</data>
+  <data key="d14">2015-02-19</data>
+  <data key="d15">2015-02-27</data>
+</edge>
+<edge source="country:HA" target="country:BL">
+  <data key="d10">followed_by</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">356</data>
+  <data key="d13">9</data>
+  <data key="d14">2015-06-24</data>
+  <data key="d15">2015-07-03</data>
+</edge>
+<edge source="country:HA" target="country:CI">
+  <data key="d10">followed_by</data>
+  <data key="d11">gospel</data>
+  <data key="d12">42</data>
+  <data key="d13">323</data>
+  <data key="d14">2017-10-23</data>
+  <data key="d15">2018-09-11</data>
+</edge>
+<edge source="country:HA" target="country:GT">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">360</data>
+  <data key="d13">5</data>
+  <data key="d14">2015-01-11</data>
+  <data key="d15">2015-01-16</data>
+</edge>
+<edge source="country:PA" target="country:AR">
+  <data key="d10">followed_by</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">309</data>
+  <data key="d13">56</data>
+  <data key="d14">2015-07-12</data>
+  <data key="d15">2015-09-06</data>
+</edge>
+<edge source="country:PA" target="country:CA">
+  <data key="d10">followed_by</data>
+  <data key="d11">gospel</data>
+  <data key="d12">362</data>
+  <data key="d13">3</data>
+  <data key="d14">2015-07-12</data>
+  <data key="d15">2015-07-15</data>
+</edge>
+<edge source="country:PA" target="country:VE">
+  <data key="d10">followed_by</data>
+  <data key="d11">mision</data>
+  <data key="d12">286</data>
+  <data key="d13">79</data>
+  <data key="d14">2015-03-17</data>
+  <data key="d15">2015-06-04</data>
+</edge>
+<edge source="country:PA" target="country:CS">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">277</data>
+  <data key="d13">88</data>
+  <data key="d14">2015-07-14</data>
+  <data key="d15">2015-10-10</data>
+</edge>
+<edge source="country:CO" target="country:HO">
+  <data key="d10">followed_by</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">280</data>
+  <data key="d13">85</data>
+  <data key="d14">2017-04-24</data>
+  <data key="d15">2017-07-18</data>
+</edge>
+<edge source="country:CO" target="country:ES">
+  <data key="d10">followed_by</data>
+  <data key="d11">gospel</data>
+  <data key="d12">305</data>
+  <data key="d13">60</data>
+  <data key="d14">2015-03-23</data>
+  <data key="d15">2015-05-22</data>
+</edge>
+<edge source="country:CO" target="country:BR">
+  <data key="d10">followed_by</data>
+  <data key="d11">immigration</data>
+  <data key="d12">304</data>
+  <data key="d13">61</data>
+  <data key="d14">2015-07-04</data>
+  <data key="d15">2015-09-03</data>
+</edge>
+<edge source="country:CO" target="country:CU">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">365</data>
+  <data key="d13">0</data>
+  <data key="d14">2015-02-19</data>
+  <data key="d15">2015-02-19</data>
+</edge>
+<edge source="country:GT" target="country:RQ">
+  <data key="d10">followed_by</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">318</data>
+  <data key="d13">47</data>
+  <data key="d14">2017-09-15</data>
+  <data key="d15">2017-11-01</data>
+</edge>
+<edge source="country:GT" target="country:HA">
+  <data key="d10">followed_by</data>
+  <data key="d11">gospel</data>
+  <data key="d12">338</data>
+  <data key="d13">27</data>
+  <data key="d14">2017-09-26</data>
+  <data key="d15">2017-10-23</data>
+</edge>
+<edge source="country:GT" target="country:ES">
+  <data key="d10">followed_by</data>
+  <data key="d11">immigration</data>
+  <data key="d12">330</data>
+  <data key="d13">35</data>
+  <data key="d14">2015-02-11</data>
+  <data key="d15">2015-03-18</data>
+</edge>
+<edge source="country:GT" target="country:AR">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">361</data>
+  <data key="d13">4</data>
+  <data key="d14">2015-01-16</data>
+  <data key="d15">2015-01-20</data>
+</edge>
+<edge source="country:VE" target="country:BR">
+  <data key="d10">followed_by</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">274</data>
+  <data key="d13">91</data>
+  <data key="d14">2018-03-15</data>
+  <data key="d15">2018-06-14</data>
+</edge>
+<edge source="country:VE" target="country:CI">
+  <data key="d10">followed_by</data>
+  <data key="d11">immigration</data>
+  <data key="d12">235</data>
+  <data key="d13">130</data>
+  <data key="d14">2017-09-11</data>
+  <data key="d15">2018-01-19</data>
+</edge>
+<edge source="country:VE" target="country:GJ">
+  <data key="d10">followed_by</data>
+  <data key="d11">mision</data>
+  <data key="d12">128</data>
+  <data key="d13">237</data>
+  <data key="d14">2015-06-04</data>
+  <data key="d15">2016-01-27</data>
+</edge>
+<edge source="country:VE" target="country:JM">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">360</data>
+  <data key="d13">5</data>
+  <data key="d14">2015-02-27</data>
+  <data key="d15">2015-03-04</data>
+</edge>
+<edge source="country:PE" target="country:CI">
+  <data key="d10">followed_by</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">360</data>
+  <data key="d13">5</data>
+  <data key="d14">2018-09-05</data>
+  <data key="d15">2018-09-10</data>
+</edge>
+<edge source="country:PE" target="country:PA">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">354</data>
+  <data key="d13">11</data>
+  <data key="d14">2015-07-03</data>
+  <data key="d15">2015-07-14</data>
+</edge>
+<edge source="country:EC" target="country:US">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">363</data>
+  <data key="d13">2</data>
+  <data key="d14">2015-02-04</data>
+  <data key="d15">2015-02-06</data>
+  <data key="d16">3</data>
+  <data key="d17">895</data>
+</edge>
+<edge source="country:EC" target="country:CA">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">281</data>
+  <data key="d13">84</data>
+  <data key="d14">2015-02-04</data>
+  <data key="d15">2015-04-29</data>
+  <data key="d16">3</data>
+  <data key="d17">13</data>
+</edge>
+<edge source="country:EC" target="country:HA">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">225</data>
+  <data key="d13">140</data>
+  <data key="d14">2015-02-04</data>
+  <data key="d15">2015-06-24</data>
+  <data key="d16">3</data>
+  <data key="d17">4</data>
+</edge>
+<edge source="country:EC" target="country:BL">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">216</data>
+  <data key="d13">149</data>
+  <data key="d14">2015-02-04</data>
+  <data key="d15">2015-07-03</data>
+  <data key="d16">3</data>
+  <data key="d17">4</data>
+</edge>
+<edge source="country:EC" target="country:PA">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">207</data>
+  <data key="d13">158</data>
+  <data key="d14">2015-02-04</data>
+  <data key="d15">2015-07-12</data>
+  <data key="d16">3</data>
+  <data key="d17">4</data>
+</edge>
+<edge source="country:EC" target="country:AR">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">151</data>
+  <data key="d13">214</data>
+  <data key="d14">2015-02-04</data>
+  <data key="d15">2015-09-06</data>
+  <data key="d16">3</data>
+  <data key="d17">6</data>
+</edge>
+<edge source="country:EC" target="country:CU">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">138</data>
+  <data key="d13">227</data>
+  <data key="d14">2015-02-04</data>
+  <data key="d15">2015-09-19</data>
+  <data key="d16">3</data>
+  <data key="d17">7</data>
+</edge>
+<edge source="country:EC" target="country:JM">
+  <data key="d10">followed_by</data>
+  <data key="d11">immigration</data>
+  <data key="d12">348</data>
+  <data key="d13">17</data>
+  <data key="d14">2015-09-27</data>
+  <data key="d15">2015-10-14</data>
+</edge>
+<edge source="country:EC" target="country:PE">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">347</data>
+  <data key="d13">18</data>
+  <data key="d14">2015-06-15</data>
+  <data key="d15">2015-07-03</data>
+</edge>
+<edge source="country:BL" target="country:PA">
+  <data key="d10">followed_by</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">356</data>
+  <data key="d13">9</data>
+  <data key="d14">2015-07-03</data>
+  <data key="d15">2015-07-12</data>
+</edge>
+<edge source="country:BL" target="country:NU">
+  <data key="d10">followed_by</data>
+  <data key="d11">immigration</data>
+  <data key="d12">345</data>
+  <data key="d13">20</data>
+  <data key="d14">2018-04-11</data>
+  <data key="d15">2018-05-01</data>
+</edge>
+<edge source="country:BL" target="country:UY">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">359</data>
+  <data key="d13">6</data>
+  <data key="d14">2015-04-30</data>
+  <data key="d15">2015-05-06</data>
+</edge>
+<edge source="country:CU" target="country:MX">
+  <data key="d10">followed_by</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">156</data>
+  <data key="d13">209</data>
+  <data key="d14">2015-09-19</data>
+  <data key="d15">2016-04-15</data>
+</edge>
+<edge source="country:CU" target="country:CO">
+  <data key="d10">followed_by</data>
+  <data key="d11">immigration</data>
+  <data key="d12">361</data>
+  <data key="d13">4</data>
+  <data key="d14">2015-06-30</data>
+  <data key="d15">2015-07-04</data>
+</edge>
+<edge source="country:CU" target="country:PM">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">365</data>
+  <data key="d13">0</data>
+  <data key="d14">2015-02-19</data>
+  <data key="d15">2015-02-19</data>
+</edge>
+<edge source="country:HO" target="country:GT">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">immigration</data>
+  <data key="d12">331</data>
+  <data key="d13">34</data>
+  <data key="d14">2015-01-08</data>
+  <data key="d15">2015-02-11</data>
+  <data key="d16">46</data>
+  <data key="d17">76</data>
+</edge>
+<edge source="country:HO" target="country:MX">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">immigration</data>
+  <data key="d12">347</data>
+  <data key="d13">18</data>
+  <data key="d14">2015-01-08</data>
+  <data key="d15">2015-01-26</data>
+  <data key="d16">46</data>
+  <data key="d17">481</data>
+</edge>
+<edge source="country:HO" target="country:US">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">immigration</data>
+  <data key="d12">341</data>
+  <data key="d13">24</data>
+  <data key="d14">2015-01-08</data>
+  <data key="d15">2015-02-01</data>
+  <data key="d16">46</data>
+  <data key="d17">4158</data>
+</edge>
+<edge source="country:HO" target="country:HA">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">immigration</data>
+  <data key="d12">335</data>
+  <data key="d13">30</data>
+  <data key="d14">2015-01-08</data>
+  <data key="d15">2015-02-07</data>
+  <data key="d16">46</data>
+  <data key="d17">44</data>
+</edge>
+<edge source="country:HO" target="country:ES">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">immigration</data>
+  <data key="d12">296</data>
+  <data key="d13">69</data>
+  <data key="d14">2015-01-08</data>
+  <data key="d15">2015-03-18</data>
+  <data key="d16">46</data>
+  <data key="d17">48</data>
+</edge>
+<edge source="country:HO" target="country:AR">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">immigration</data>
+  <data key="d12">291</data>
+  <data key="d13">74</data>
+  <data key="d14">2015-01-08</data>
+  <data key="d15">2015-03-23</data>
+  <data key="d16">46</data>
+  <data key="d17">35</data>
+</edge>
+<edge source="country:HO" target="country:PM">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">immigration</data>
+  <data key="d12">271</data>
+  <data key="d13">94</data>
+  <data key="d14">2015-01-08</data>
+  <data key="d15">2015-04-12</data>
+  <data key="d16">46</data>
+  <data key="d17">12</data>
+</edge>
+<edge source="country:HO" target="country:DR">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">immigration</data>
+  <data key="d12">219</data>
+  <data key="d13">146</data>
+  <data key="d14">2015-01-08</data>
+  <data key="d15">2015-06-03</data>
+  <data key="d16">46</data>
+  <data key="d17">8</data>
+</edge>
+<edge source="country:HO" target="country:CA">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">immigration</data>
+  <data key="d12">205</data>
+  <data key="d13">160</data>
+  <data key="d14">2015-01-08</data>
+  <data key="d15">2015-06-17</data>
+  <data key="d16">46</data>
+  <data key="d17">81</data>
+</edge>
+<edge source="country:HO" target="country:CU">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">immigration</data>
+  <data key="d12">192</data>
+  <data key="d13">173</data>
+  <data key="d14">2015-01-08</data>
+  <data key="d15">2015-06-30</data>
+  <data key="d16">46</data>
+  <data key="d17">50</data>
+</edge>
+<edge source="country:HO" target="country:CO">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">immigration</data>
+  <data key="d12">188</data>
+  <data key="d13">177</data>
+  <data key="d14">2015-01-08</data>
+  <data key="d15">2015-07-04</data>
+  <data key="d16">46</data>
+  <data key="d17">11</data>
+</edge>
+<edge source="country:HO" target="country:BR">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">immigration</data>
+  <data key="d12">127</data>
+  <data key="d13">238</data>
+  <data key="d14">2015-01-08</data>
+  <data key="d15">2015-09-03</data>
+  <data key="d16">46</data>
+  <data key="d17">10</data>
+</edge>
+<edge source="country:HO" target="country:EC">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">immigration</data>
+  <data key="d12">103</data>
+  <data key="d13">262</data>
+  <data key="d14">2015-01-08</data>
+  <data key="d15">2015-09-27</data>
+  <data key="d16">46</data>
+  <data key="d17">4</data>
+</edge>
+<edge source="country:HO" target="country:JM">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">immigration</data>
+  <data key="d12">86</data>
+  <data key="d13">279</data>
+  <data key="d14">2015-01-08</data>
+  <data key="d15">2015-10-14</data>
+  <data key="d16">46</data>
+  <data key="d17">2</data>
+</edge>
+<edge source="country:HO" target="country:CS">
+  <data key="d10">diffuses_from</data>
+  <data key="d11">immigration</data>
+  <data key="d12">11</data>
+  <data key="d13">354</data>
+  <data key="d14">2015-01-08</data>
+  <data key="d15">2015-12-28</data>
+  <data key="d16">46</data>
+  <data key="d17">2</data>
+</edge>
+<edge source="country:HO" target="country:BH">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">340</data>
+  <data key="d13">25</data>
+  <data key="d14">2015-04-04</data>
+  <data key="d15">2015-04-29</data>
+</edge>
+<edge source="country:NU" target="country:CA">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">363</data>
+  <data key="d13">2</data>
+  <data key="d14">2015-02-16</data>
+  <data key="d15">2015-02-18</data>
+</edge>
+<edge source="country:RQ" target="country:VE">
+  <data key="d10">followed_by</data>
+  <data key="d11">catholic_social_teaching</data>
+  <data key="d12">231</data>
+  <data key="d13">134</data>
+  <data key="d14">2017-11-01</data>
+  <data key="d15">2018-03-15</data>
+</edge>
+<edge source="country:DR" target="country:CA">
+  <data key="d10">followed_by</data>
+  <data key="d11">immigration</data>
+  <data key="d12">351</data>
+  <data key="d13">14</data>
+  <data key="d14">2015-06-03</data>
+  <data key="d15">2015-06-17</data>
+</edge>
+<edge source="country:DR" target="country:US">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">360</data>
+  <data key="d13">5</data>
+  <data key="d14">2015-01-25</data>
+  <data key="d15">2015-01-30</data>
+</edge>
+<edge source="country:JM" target="country:CS">
+  <data key="d10">followed_by</data>
+  <data key="d11">immigration</data>
+  <data key="d12">290</data>
+  <data key="d13">75</data>
+  <data key="d14">2015-10-14</data>
+  <data key="d15">2015-12-28</data>
+</edge>
+<edge source="country:JM" target="country:ES">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">346</data>
+  <data key="d13">19</data>
+  <data key="d14">2015-03-04</data>
+  <data key="d15">2015-03-23</data>
+</edge>
+<edge source="country:CS" target="country:PE">
+  <data key="d10">followed_by</data>
+  <data key="d11">immigration</data>
+  <data key="d12">349</data>
+  <data key="d13">16</data>
+  <data key="d14">2015-12-28</data>
+  <data key="d15">2016-01-13</data>
+</edge>
+<edge source="country:CS" target="country:GY">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">364</data>
+  <data key="d13">1</data>
+  <data key="d14">2015-10-10</data>
+  <data key="d15">2015-10-11</data>
+</edge>
+<edge source="country:BH" target="country:BL">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">364</data>
+  <data key="d13">1</data>
+  <data key="d14">2015-04-29</data>
+  <data key="d15">2015-04-30</data>
+</edge>
+<edge source="country:GJ" target="country:BR">
+  <data key="d10">followed_by</data>
+  <data key="d11">mision</data>
+  <data key="d12">297</data>
+  <data key="d13">68</data>
+  <data key="d14">2016-01-27</data>
+  <data key="d15">2016-04-04</data>
+</edge>
+<edge source="country:GJ" target="country:AC">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">233</data>
+  <data key="d13">132</data>
+  <data key="d14">2016-01-27</data>
+  <data key="d15">2016-06-07</data>
+</edge>
+<edge source="country:UY" target="country:BF">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">329</data>
+  <data key="d13">36</data>
+  <data key="d14">2015-05-06</data>
+  <data key="d15">2015-06-11</data>
+</edge>
+<edge source="country:BF" target="country:EC">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">361</data>
+  <data key="d13">4</data>
+  <data key="d14">2015-06-11</data>
+  <data key="d15">2015-06-15</data>
+</edge>
+<edge source="country:GY" target="country:GJ">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">257</data>
+  <data key="d13">108</data>
+  <data key="d14">2015-10-11</data>
+  <data key="d15">2016-01-27</data>
+</edge>
+<edge source="country:AC" target="country:TD">
+  <data key="d10">followed_by</data>
+  <data key="d11">mission</data>
+  <data key="d12">301</data>
+  <data key="d13">64</data>
+  <data key="d14">2016-06-07</data>
+  <data key="d15">2016-08-10</data>
+</edge>
+</graph></graphml>

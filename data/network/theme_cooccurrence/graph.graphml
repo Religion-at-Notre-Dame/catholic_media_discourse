@@ -1,0 +1,772 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d14" for="edge" attr.name="n_pt" attr.type="long"/>
+<key id="d13" for="edge" attr.name="n_es" attr.type="long"/>
+<key id="d12" for="edge" attr.name="n_en" attr.type="long"/>
+<key id="d11" for="edge" attr.name="lift" attr.type="double"/>
+<key id="d10" for="edge" attr.name="weight" attr.type="long"/>
+<key id="d9" for="edge" attr.name="type" attr.type="string"/>
+<key id="d8" for="node" attr.name="degree" attr.type="long"/>
+<key id="d7" for="node" attr.name="size" attr.type="double"/>
+<key id="d6" for="node" attr.name="color" attr.type="string"/>
+<key id="d5" for="node" attr.name="n" attr.type="long"/>
+<key id="d4" for="node" attr.name="accents" attr.type="string"/>
+<key id="d3" for="node" attr.name="papal" attr.type="boolean"/>
+<key id="d2" for="node" attr.name="group" attr.type="string"/>
+<key id="d1" for="node" attr.name="label" attr.type="string"/>
+<key id="d0" for="node" attr.name="item_type" attr.type="string"/>
+<graph edgedefault="undirected"><node id="theme:amoris_laetitia">
+  <data key="d0">theme</data>
+  <data key="d1">amoris laetitia</data>
+  <data key="d2">theology</data>
+  <data key="d3">True</data>
+  <data key="d4">magisterial</data>
+  <data key="d5">177</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">39.09</data>
+  <data key="d8">2</data>
+</node>
+<node id="theme:aparecida_celam">
+  <data key="d0">theme</data>
+  <data key="d1">aparecida celam</data>
+  <data key="d2">theology</data>
+  <data key="d3">True</data>
+  <data key="d4">inculturation, magisterial</data>
+  <data key="d5">72</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">33.74</data>
+  <data key="d8">2</data>
+</node>
+<node id="theme:catechesis">
+  <data key="d0">theme</data>
+  <data key="d1">catechesis</data>
+  <data key="d2">formation</data>
+  <data key="d3">False</data>
+  <data key="d4"></data>
+  <data key="d5">168</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">38.78</data>
+  <data key="d8">3</data>
+</node>
+<node id="theme:catholic_social_teaching">
+  <data key="d0">theme</data>
+  <data key="d1">catholic social teaching</data>
+  <data key="d2">theology</data>
+  <data key="d3">True</data>
+  <data key="d4">liberation, magisterial</data>
+  <data key="d5">1502</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">51.89</data>
+  <data key="d8">10</data>
+</node>
+<node id="theme:centesimus_annus">
+  <data key="d0">theme</data>
+  <data key="d1">centesimus annus</data>
+  <data key="d2">theology</data>
+  <data key="d3">True</data>
+  <data key="d4">liberation, magisterial</data>
+  <data key="d5">26</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">27.78</data>
+  <data key="d8">3</data>
+</node>
+<node id="theme:conversion_discipleship">
+  <data key="d0">theme</data>
+  <data key="d1">conversion discipleship</data>
+  <data key="d2">theology</data>
+  <data key="d3">False</data>
+  <data key="d4">sacramental</data>
+  <data key="d5">699</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">47.31</data>
+  <data key="d8">1</data>
+</node>
+<node id="theme:eucharist">
+  <data key="d0">theme</data>
+  <data key="d1">eucharist</data>
+  <data key="d2">theology</data>
+  <data key="d3">False</data>
+  <data key="d4">sacramental</data>
+  <data key="d5">2492</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">54.93</data>
+  <data key="d8">2</data>
+</node>
+<node id="theme:evangelii_gaudium">
+  <data key="d0">theme</data>
+  <data key="d1">evangelii gaudium</data>
+  <data key="d2">theology</data>
+  <data key="d3">True</data>
+  <data key="d4">magisterial</data>
+  <data key="d5">81</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">34.44</data>
+  <data key="d8">2</data>
+</node>
+<node id="theme:evangelio">
+  <data key="d0">theme</data>
+  <data key="d1">evangelio</data>
+  <data key="d2">core_mission</data>
+  <data key="d3">False</data>
+  <data key="d4"></data>
+  <data key="d5">166</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">38.71</data>
+  <data key="d8">2</data>
+</node>
+<node id="theme:evangelium_vitae">
+  <data key="d0">theme</data>
+  <data key="d1">evangelium vitae</data>
+  <data key="d2">theology</data>
+  <data key="d3">True</data>
+  <data key="d4">magisterial</data>
+  <data key="d5">34</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">29.33</data>
+  <data key="d8">1</data>
+</node>
+<node id="theme:evangelization">
+  <data key="d0">theme</data>
+  <data key="d1">evangelization</data>
+  <data key="d2">core_mission</data>
+  <data key="d3">False</data>
+  <data key="d4"></data>
+  <data key="d5">812</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">48.2</data>
+  <data key="d8">7</data>
+</node>
+<node id="theme:fratelli_tutti">
+  <data key="d0">theme</data>
+  <data key="d1">fratelli tutti</data>
+  <data key="d2">theology</data>
+  <data key="d3">True</data>
+  <data key="d4">magisterial</data>
+  <data key="d5">74</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">33.9</data>
+  <data key="d8">3</data>
+</node>
+<node id="theme:gospel">
+  <data key="d0">theme</data>
+  <data key="d1">gospel</data>
+  <data key="d2">core_mission</data>
+  <data key="d3">False</data>
+  <data key="d4"></data>
+  <data key="d5">1103</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">50.04</data>
+  <data key="d8">4</data>
+</node>
+<node id="theme:guadalupe">
+  <data key="d0">theme</data>
+  <data key="d1">guadalupe</data>
+  <data key="d2">theology</data>
+  <data key="d3">False</data>
+  <data key="d4">inculturation, popular_piety</data>
+  <data key="d5">1120</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">50.13</data>
+  <data key="d8">1</data>
+</node>
+<node id="theme:laborem_exercens">
+  <data key="d0">theme</data>
+  <data key="d1">laborem exercens</data>
+  <data key="d2">theology</data>
+  <data key="d3">True</data>
+  <data key="d4">liberation, magisterial</data>
+  <data key="d5">12</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">23.39</data>
+  <data key="d8">4</data>
+</node>
+<node id="theme:laudato_si">
+  <data key="d0">theme</data>
+  <data key="d1">laudato si</data>
+  <data key="d2">theology</data>
+  <data key="d3">True</data>
+  <data key="d4">magisterial</data>
+  <data key="d5">228</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">40.6</data>
+  <data key="d8">1</data>
+</node>
+<node id="theme:liberation_theology">
+  <data key="d0">theme</data>
+  <data key="d1">liberation theology</data>
+  <data key="d2">theology</data>
+  <data key="d3">False</data>
+  <data key="d4">liberation</data>
+  <data key="d5">180</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">39.19</data>
+  <data key="d8">1</data>
+</node>
+<node id="theme:marian_devotion">
+  <data key="d0">theme</data>
+  <data key="d1">marian devotion</data>
+  <data key="d2">theology</data>
+  <data key="d3">False</data>
+  <data key="d4">popular_piety</data>
+  <data key="d5">1940</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">53.43</data>
+  <data key="d8">2</data>
+</node>
+<node id="theme:mater_et_magistra">
+  <data key="d0">theme</data>
+  <data key="d1">mater et magistra</data>
+  <data key="d2">theology</data>
+  <data key="d3">True</data>
+  <data key="d4">liberation, magisterial</data>
+  <data key="d5">294</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">42.12</data>
+  <data key="d8">4</data>
+</node>
+<node id="theme:mision">
+  <data key="d0">theme</data>
+  <data key="d1">mision</data>
+  <data key="d2">core_mission</data>
+  <data key="d3">False</data>
+  <data key="d4"></data>
+  <data key="d5">425</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">44.33</data>
+  <data key="d8">5</data>
+</node>
+<node id="theme:new_evangelization">
+  <data key="d0">theme</data>
+  <data key="d1">new evangelization</data>
+  <data key="d2">core_mission</data>
+  <data key="d3">False</data>
+  <data key="d4">magisterial</data>
+  <data key="d5">69</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">33.49</data>
+  <data key="d8">1</data>
+</node>
+<node id="theme:oscar_romero">
+  <data key="d0">theme</data>
+  <data key="d1">oscar romero</data>
+  <data key="d2">theology</data>
+  <data key="d3">False</data>
+  <data key="d4">liberation, popular_piety</data>
+  <data key="d5">203</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">39.91</data>
+  <data key="d8">1</data>
+</node>
+<node id="theme:pacem_in_terris">
+  <data key="d0">theme</data>
+  <data key="d1">pacem in terris</data>
+  <data key="d2">theology</data>
+  <data key="d3">True</data>
+  <data key="d4">magisterial</data>
+  <data key="d5">103</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">35.87</data>
+  <data key="d8">4</data>
+</node>
+<node id="theme:pastoral">
+  <data key="d0">theme</data>
+  <data key="d1">pastoral</data>
+  <data key="d2">formation</data>
+  <data key="d3">False</data>
+  <data key="d4"></data>
+  <data key="d5">2021</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">53.67</data>
+  <data key="d8">1</data>
+</node>
+<node id="theme:populorum_progressio">
+  <data key="d0">theme</data>
+  <data key="d1">populorum progressio</data>
+  <data key="d2">theology</data>
+  <data key="d3">True</data>
+  <data key="d4">liberation, magisterial</data>
+  <data key="d5">16</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">25.0</data>
+  <data key="d8">4</data>
+</node>
+<node id="theme:quadragesimo_anno">
+  <data key="d0">theme</data>
+  <data key="d1">quadragesimo anno</data>
+  <data key="d2">theology</data>
+  <data key="d3">True</data>
+  <data key="d4">liberation, magisterial</data>
+  <data key="d5">130</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">37.25</data>
+  <data key="d8">8</data>
+</node>
+<node id="theme:querida_amazonia">
+  <data key="d0">theme</data>
+  <data key="d1">querida amazonia</data>
+  <data key="d2">theology</data>
+  <data key="d3">True</data>
+  <data key="d4">inculturation, magisterial</data>
+  <data key="d5">18</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">25.67</data>
+  <data key="d8">1</data>
+</node>
+<node id="theme:rerum_novarum">
+  <data key="d0">theme</data>
+  <data key="d1">rerum novarum</data>
+  <data key="d2">theology</data>
+  <data key="d3">True</data>
+  <data key="d4">liberation, magisterial</data>
+  <data key="d5">277</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">41.77</data>
+  <data key="d8">8</data>
+</node>
+<node id="theme:sacrament">
+  <data key="d0">theme</data>
+  <data key="d1">sacrament</data>
+  <data key="d2">theology</data>
+  <data key="d3">False</data>
+  <data key="d4">sacramental</data>
+  <data key="d5">1243</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">50.76</data>
+  <data key="d8">2</data>
+</node>
+<node id="theme:synod">
+  <data key="d0">theme</data>
+  <data key="d1">synod</data>
+  <data key="d2">formation</data>
+  <data key="d3">False</data>
+  <data key="d4">synodal</data>
+  <data key="d5">1407</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">51.5</data>
+  <data key="d8">4</data>
+</node>
+<node id="theme:synodality">
+  <data key="d0">theme</data>
+  <data key="d1">synodality</data>
+  <data key="d2">theology</data>
+  <data key="d3">False</data>
+  <data key="d4">synodal</data>
+  <data key="d5">215</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">40.25</data>
+  <data key="d8">1</data>
+</node>
+<node id="theme:witness">
+  <data key="d0">theme</data>
+  <data key="d1">witness</data>
+  <data key="d2">formation</data>
+  <data key="d3">False</data>
+  <data key="d4"></data>
+  <data key="d5">1252</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">50.8</data>
+  <data key="d8">2</data>
+</node>
+<node id="theme:youth">
+  <data key="d0">theme</data>
+  <data key="d1">youth</data>
+  <data key="d2">formation</data>
+  <data key="d3">False</data>
+  <data key="d4"></data>
+  <data key="d5">2699</data>
+  <data key="d6">#E94F37</data>
+  <data key="d7">55.41</data>
+  <data key="d8">1</data>
+</node>
+<edge source="theme:amoris_laetitia" target="theme:synod">
+  <data key="d9">cooccurs</data>
+  <data key="d10">16</data>
+  <data key="d11">2.098</data>
+  <data key="d12">16</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:amoris_laetitia" target="theme:pastoral">
+  <data key="d9">cooccurs</data>
+  <data key="d10">19</data>
+  <data key="d11">1.735</data>
+  <data key="d12">19</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:aparecida_celam" target="theme:marian_devotion">
+  <data key="d9">cooccurs</data>
+  <data key="d10">25</data>
+  <data key="d11">5.846</data>
+  <data key="d12">24</data>
+  <data key="d13">1</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:aparecida_celam" target="theme:synod">
+  <data key="d9">cooccurs</data>
+  <data key="d10">9</data>
+  <data key="d11">2.902</data>
+  <data key="d12">9</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:catechesis" target="theme:evangelization">
+  <data key="d9">cooccurs</data>
+  <data key="d10">20</data>
+  <data key="d11">4.788</data>
+  <data key="d12">20</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:catechesis" target="theme:sacrament">
+  <data key="d9">cooccurs</data>
+  <data key="d10">16</data>
+  <data key="d11">2.502</data>
+  <data key="d12">15</data>
+  <data key="d13">1</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:catechesis" target="theme:eucharist">
+  <data key="d9">cooccurs</data>
+  <data key="d10">19</data>
+  <data key="d11">1.482</data>
+  <data key="d12">19</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:catholic_social_teaching" target="theme:laborem_exercens">
+  <data key="d9">cooccurs</data>
+  <data key="d10">10</data>
+  <data key="d11">18.121</data>
+  <data key="d12">10</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:catholic_social_teaching" target="theme:populorum_progressio">
+  <data key="d9">cooccurs</data>
+  <data key="d10">11</data>
+  <data key="d11">14.95</data>
+  <data key="d12">11</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:catholic_social_teaching" target="theme:centesimus_annus">
+  <data key="d9">cooccurs</data>
+  <data key="d10">13</data>
+  <data key="d11">10.873</data>
+  <data key="d12">13</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:catholic_social_teaching" target="theme:rerum_novarum">
+  <data key="d9">cooccurs</data>
+  <data key="d10">105</data>
+  <data key="d11">8.243</data>
+  <data key="d12">105</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:catholic_social_teaching" target="theme:quadragesimo_anno">
+  <data key="d9">cooccurs</data>
+  <data key="d10">41</data>
+  <data key="d11">6.858</data>
+  <data key="d12">41</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:catholic_social_teaching" target="theme:fratelli_tutti">
+  <data key="d9">cooccurs</data>
+  <data key="d10">10</data>
+  <data key="d11">2.939</data>
+  <data key="d12">10</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:catholic_social_teaching" target="theme:pacem_in_terris">
+  <data key="d9">cooccurs</data>
+  <data key="d10">13</data>
+  <data key="d11">2.745</data>
+  <data key="d12">13</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:catholic_social_teaching" target="theme:mision">
+  <data key="d9">cooccurs</data>
+  <data key="d10">37</data>
+  <data key="d11">1.893</data>
+  <data key="d12">31</data>
+  <data key="d13">6</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:catholic_social_teaching" target="theme:mater_et_magistra">
+  <data key="d9">cooccurs</data>
+  <data key="d10">23</data>
+  <data key="d11">1.701</data>
+  <data key="d12">23</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:catholic_social_teaching" target="theme:laudato_si">
+  <data key="d9">cooccurs</data>
+  <data key="d10">14</data>
+  <data key="d11">1.335</data>
+  <data key="d12">14</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:centesimus_annus" target="theme:quadragesimo_anno">
+  <data key="d9">cooccurs</data>
+  <data key="d10">11</data>
+  <data key="d11">106.293</data>
+  <data key="d12">11</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:centesimus_annus" target="theme:rerum_novarum">
+  <data key="d9">cooccurs</data>
+  <data key="d10">11</data>
+  <data key="d11">49.885</data>
+  <data key="d12">11</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:conversion_discipleship" target="theme:evangelization">
+  <data key="d9">cooccurs</data>
+  <data key="d10">29</data>
+  <data key="d11">1.669</data>
+  <data key="d12">25</data>
+  <data key="d13">4</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:eucharist" target="theme:sacrament">
+  <data key="d9">cooccurs</data>
+  <data key="d10">275</data>
+  <data key="d11">2.9</data>
+  <data key="d12">271</data>
+  <data key="d13">4</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:evangelii_gaudium" target="theme:gospel">
+  <data key="d9">cooccurs</data>
+  <data key="d10">69</data>
+  <data key="d11">25.224</data>
+  <data key="d12">69</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:evangelii_gaudium" target="theme:evangelization">
+  <data key="d9">cooccurs</data>
+  <data key="d10">16</data>
+  <data key="d11">7.945</data>
+  <data key="d12">16</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:evangelio" target="theme:mision">
+  <data key="d9">cooccurs</data>
+  <data key="d10">14</data>
+  <data key="d11">6.481</data>
+  <data key="d12">1</data>
+  <data key="d13">13</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:evangelio" target="theme:evangelization">
+  <data key="d9">cooccurs</data>
+  <data key="d10">9</data>
+  <data key="d11">2.181</data>
+  <data key="d12">0</data>
+  <data key="d13">9</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:evangelium_vitae" target="theme:gospel">
+  <data key="d9">cooccurs</data>
+  <data key="d10">19</data>
+  <data key="d11">16.547</data>
+  <data key="d12">19</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:evangelization" target="theme:new_evangelization">
+  <data key="d9">cooccurs</data>
+  <data key="d10">69</data>
+  <data key="d11">40.223</data>
+  <data key="d12">68</data>
+  <data key="d13">1</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:evangelization" target="theme:gospel">
+  <data key="d9">cooccurs</data>
+  <data key="d10">55</data>
+  <data key="d11">2.006</data>
+  <data key="d12">54</data>
+  <data key="d13">1</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:evangelization" target="theme:mision">
+  <data key="d9">cooccurs</data>
+  <data key="d10">18</data>
+  <data key="d11">1.704</data>
+  <data key="d12">3</data>
+  <data key="d13">15</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:fratelli_tutti" target="theme:quadragesimo_anno">
+  <data key="d9">cooccurs</data>
+  <data key="d10">9</data>
+  <data key="d11">30.556</data>
+  <data key="d12">9</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:fratelli_tutti" target="theme:rerum_novarum">
+  <data key="d9">cooccurs</data>
+  <data key="d10">9</data>
+  <data key="d11">14.34</data>
+  <data key="d12">9</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:gospel" target="theme:witness">
+  <data key="d9">cooccurs</data>
+  <data key="d10">60</data>
+  <data key="d11">1.419</data>
+  <data key="d12">58</data>
+  <data key="d13">2</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:guadalupe" target="theme:marian_devotion">
+  <data key="d9">cooccurs</data>
+  <data key="d10">681</data>
+  <data key="d11">10.237</data>
+  <data key="d12">466</data>
+  <data key="d13">215</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:laborem_exercens" target="theme:populorum_progressio">
+  <data key="d9">cooccurs</data>
+  <data key="d10">8</data>
+  <data key="d11">1360.875</data>
+  <data key="d12">8</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:laborem_exercens" target="theme:quadragesimo_anno">
+  <data key="d9">cooccurs</data>
+  <data key="d10">10</data>
+  <data key="d11">209.365</data>
+  <data key="d12">10</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:laborem_exercens" target="theme:rerum_novarum">
+  <data key="d9">cooccurs</data>
+  <data key="d10">10</data>
+  <data key="d11">98.258</data>
+  <data key="d12">10</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:liberation_theology" target="theme:oscar_romero">
+  <data key="d9">cooccurs</data>
+  <data key="d10">9</data>
+  <data key="d11">8.045</data>
+  <data key="d12">9</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:mater_et_magistra" target="theme:pacem_in_terris">
+  <data key="d9">cooccurs</data>
+  <data key="d10">12</data>
+  <data key="d11">12.943</data>
+  <data key="d12">12</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:mater_et_magistra" target="theme:quadragesimo_anno">
+  <data key="d9">cooccurs</data>
+  <data key="d10">9</data>
+  <data key="d11">7.691</data>
+  <data key="d12">9</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:mater_et_magistra" target="theme:rerum_novarum">
+  <data key="d9">cooccurs</data>
+  <data key="d10">12</data>
+  <data key="d11">4.813</data>
+  <data key="d12">12</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:mision" target="theme:witness">
+  <data key="d9">cooccurs</data>
+  <data key="d10">35</data>
+  <data key="d11">2.148</data>
+  <data key="d12">26</data>
+  <data key="d13">9</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:mision" target="theme:youth">
+  <data key="d9">cooccurs</data>
+  <data key="d10">45</data>
+  <data key="d11">1.281</data>
+  <data key="d12">33</data>
+  <data key="d13">12</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:pacem_in_terris" target="theme:quadragesimo_anno">
+  <data key="d9">cooccurs</data>
+  <data key="d10">10</data>
+  <data key="d11">24.392</data>
+  <data key="d12">10</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:pacem_in_terris" target="theme:rerum_novarum">
+  <data key="d9">cooccurs</data>
+  <data key="d10">10</data>
+  <data key="d11">11.448</data>
+  <data key="d12">10</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:populorum_progressio" target="theme:quadragesimo_anno">
+  <data key="d9">cooccurs</data>
+  <data key="d10">8</data>
+  <data key="d11">125.619</data>
+  <data key="d12">8</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:populorum_progressio" target="theme:rerum_novarum">
+  <data key="d9">cooccurs</data>
+  <data key="d10">8</data>
+  <data key="d11">58.955</data>
+  <data key="d12">8</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:quadragesimo_anno" target="theme:rerum_novarum">
+  <data key="d9">cooccurs</data>
+  <data key="d10">50</data>
+  <data key="d11">45.35</data>
+  <data key="d12">50</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:querida_amazonia" target="theme:synod">
+  <data key="d9">cooccurs</data>
+  <data key="d10">10</data>
+  <data key="d11">12.896</data>
+  <data key="d12">10</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+<edge source="theme:synod" target="theme:synodality">
+  <data key="d9">cooccurs</data>
+  <data key="d10">132</data>
+  <data key="d11">14.252</data>
+  <data key="d12">132</data>
+  <data key="d13">0</data>
+  <data key="d14">0</data>
+</edge>
+</graph></graphml>

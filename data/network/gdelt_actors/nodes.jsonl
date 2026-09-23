@@ -1,0 +1,565 @@
+{"id":"actor:catholic","item_type":"actor","label":"Catholic","gdelt_name":"CATHOLIC","n":49163,"country":"","code":"CHRCTH","generic":true,"color":"#6B7280","size":72.82,"degree":539}
+{"id":"actor:vatican","item_type":"actor","label":"Vatican","gdelt_name":"VATICAN","n":16771,"country":"VAT","code":"VAT","generic":false,"color":"#6B7280","size":66.36,"degree":306}
+{"id":"actor:united_states","item_type":"actor","label":"United States","gdelt_name":"UNITED STATES","n":12090,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":64.4,"degree":180}
+{"id":"actor:canada","item_type":"actor","label":"Canada","gdelt_name":"CANADA","n":4588,"country":"CAN","code":"CAN","generic":false,"color":"#6B7280","size":58.59,"degree":81}
+{"id":"actor:pope","item_type":"actor","label":"Pope","gdelt_name":"POPE","n":3730,"country":"","code":"CHRCTH","generic":false,"color":"#6B7280","size":57.35,"degree":78}
+{"id":"actor:bishop","item_type":"actor","label":"Bishop","gdelt_name":"BISHOP","n":3647,"country":"","code":"REL","generic":false,"color":"#6B7280","size":57.21,"degree":59}
+{"id":"actor:school","item_type":"actor","label":"School","gdelt_name":"SCHOOL","n":3275,"country":"","code":"EDU","generic":true,"color":"#6B7280","size":56.57,"degree":41}
+{"id":"actor:archdiocese","item_type":"actor","label":"Archdiocese","gdelt_name":"ARCHDIOCESE","n":2831,"country":"","code":"CHR","generic":false,"color":"#6B7280","size":55.69,"degree":50}
+{"id":"actor:argentina","item_type":"actor","label":"Argentina","gdelt_name":"ARGENTINA","n":2208,"country":"ARG","code":"ARG","generic":false,"color":"#6B7280","size":54.2,"degree":49}
+{"id":"actor:president","item_type":"actor","label":"President","gdelt_name":"PRESIDENT","n":2095,"country":"","code":"GOV","generic":true,"color":"#6B7280","size":53.89,"degree":49}
+{"id":"actor:priest","item_type":"actor","label":"Priest","gdelt_name":"PRIEST","n":2072,"country":"","code":"REL","generic":false,"color":"#6B7280","size":53.82,"degree":37}
+{"id":"actor:mexico","item_type":"actor","label":"Mexico","gdelt_name":"MEXICO","n":2061,"country":"MEX","code":"MEX","generic":false,"color":"#6B7280","size":53.79,"degree":42}
+{"id":"actor:catholic_bishop","item_type":"actor","label":"Catholic Bishop","gdelt_name":"CATHOLIC BISHOP","n":2010,"country":"","code":"CHRCTH","generic":false,"color":"#6B7280","size":53.64,"degree":49}
+{"id":"actor:christian","item_type":"actor","label":"Christian","gdelt_name":"CHRISTIAN","n":1956,"country":"","code":"CHR","generic":true,"color":"#6B7280","size":53.48,"degree":36}
+{"id":"actor:diocese","item_type":"actor","label":"Diocese","gdelt_name":"DIOCESE","n":1892,"country":"","code":"CHR","generic":false,"color":"#6B7280","size":53.28,"degree":39}
+{"id":"actor:student","item_type":"actor","label":"Student","gdelt_name":"STUDENT","n":1622,"country":"","code":"EDU","generic":true,"color":"#6B7280","size":52.35,"degree":22}
+{"id":"actor:italy","item_type":"actor","label":"Italy","gdelt_name":"ITALY","n":1533,"country":"ITA","code":"ITA","generic":false,"color":"#6B7280","size":52.01,"degree":34}
+{"id":"actor:chile","item_type":"actor","label":"Chile","gdelt_name":"CHILE","n":1368,"country":"CHL","code":"CHL","generic":false,"color":"#6B7280","size":51.33,"degree":25}
+{"id":"actor:rome","item_type":"actor","label":"Rome","gdelt_name":"ROME","n":1302,"country":"ITA","code":"ITA","generic":false,"color":"#6B7280","size":51.03,"degree":31}
+{"id":"actor:archbishop","item_type":"actor","label":"Archbishop","gdelt_name":"ARCHBISHOP","n":1284,"country":"","code":"REL","generic":false,"color":"#6B7280","size":50.95,"degree":33}
+{"id":"actor:community","item_type":"actor","label":"Community","gdelt_name":"COMMUNITY","n":1217,"country":"","code":"CVL","generic":true,"color":"#6B7280","size":50.63,"degree":23}
+{"id":"actor:cuba","item_type":"actor","label":"Cuba","gdelt_name":"CUBA","n":1201,"country":"CUB","code":"CUB","generic":false,"color":"#6B7280","size":50.55,"degree":26}
+{"id":"actor:government","item_type":"actor","label":"Government","gdelt_name":"GOVERNMENT","n":1060,"country":"","code":"GOV","generic":true,"color":"#6B7280","size":49.8,"degree":24}
+{"id":"actor:american","item_type":"actor","label":"American","gdelt_name":"AMERICAN","n":1050,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":49.74,"degree":21}
+{"id":"actor:brazil","item_type":"actor","label":"Brazil","gdelt_name":"BRAZIL","n":1005,"country":"BRA","code":"BRA","generic":false,"color":"#6B7280","size":49.48,"degree":23}
+{"id":"actor:canadian","item_type":"actor","label":"Canadian","gdelt_name":"CANADIAN","n":902,"country":"CAN","code":"CAN","generic":false,"color":"#6B7280","size":48.83,"degree":21}
+{"id":"actor:congress","item_type":"actor","label":"Congress","gdelt_name":"CONGRESS","n":884,"country":"","code":"LEG","generic":false,"color":"#6B7280","size":48.71,"degree":15}
+{"id":"actor:migrant","item_type":"actor","label":"Migrant","gdelt_name":"MIGRANT","n":851,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":48.49,"degree":21}
+{"id":"actor:saint","item_type":"actor","label":"Saint","gdelt_name":"SAINT","n":844,"country":"","code":"REL","generic":false,"color":"#6B7280","size":48.44,"degree":21}
+{"id":"actor:catholic_priest","item_type":"actor","label":"Catholic Priest","gdelt_name":"CATHOLIC PRIEST","n":829,"country":"","code":"CHRCTH","generic":false,"color":"#6B7280","size":48.33,"degree":26}
+{"id":"actor:peru","item_type":"actor","label":"Peru","gdelt_name":"PERU","n":742,"country":"PER","code":"PER","generic":false,"color":"#6B7280","size":47.66,"degree":18}
+{"id":"actor:colombia","item_type":"actor","label":"Colombia","gdelt_name":"COLOMBIA","n":711,"country":"COL","code":"COL","generic":false,"color":"#6B7280","size":47.41,"degree":20}
+{"id":"actor:washington","item_type":"actor","label":"Washington","gdelt_name":"WASHINGTON","n":628,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":46.66,"degree":17}
+{"id":"actor:new_york","item_type":"actor","label":"New York","gdelt_name":"NEW YORK","n":621,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":46.6,"degree":15}
+{"id":"actor:administration","item_type":"actor","label":"Administration","gdelt_name":"ADMINISTRATION","n":566,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":46.04,"degree":10}
+{"id":"actor:university","item_type":"actor","label":"University","gdelt_name":"UNIVERSITY","n":541,"country":"","code":"EDU","generic":false,"color":"#6B7280","size":45.77,"degree":10}
+{"id":"actor:immigrant","item_type":"actor","label":"Immigrant","gdelt_name":"IMMIGRANT","n":540,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":45.76,"degree":14}
+{"id":"actor:haiti","item_type":"actor","label":"Haiti","gdelt_name":"HAITI","n":540,"country":"HTI","code":"HTI","generic":false,"color":"#6B7280","size":45.76,"degree":15}
+{"id":"actor:media","item_type":"actor","label":"Media","gdelt_name":"MEDIA","n":529,"country":"","code":"MED","generic":true,"color":"#6B7280","size":45.64,"degree":14}
+{"id":"actor:hospital","item_type":"actor","label":"Hospital","gdelt_name":"HOSPITAL","n":511,"country":"","code":"HLH","generic":true,"color":"#6B7280","size":45.43,"degree":9}
+{"id":"actor:argentine","item_type":"actor","label":"Argentine","gdelt_name":"ARGENTINE","n":508,"country":"ARG","code":"ARG","generic":false,"color":"#6B7280","size":45.39,"degree":15}
+{"id":"actor:ministry","item_type":"actor","label":"Ministry","gdelt_name":"MINISTRY","n":499,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":45.29,"degree":11}
+{"id":"actor:college","item_type":"actor","label":"College","gdelt_name":"COLLEGE","n":489,"country":"","code":"EDU","generic":false,"color":"#6B7280","size":45.17,"degree":13}
+{"id":"actor:police","item_type":"actor","label":"Police","gdelt_name":"POLICE","n":487,"country":"","code":"COP","generic":true,"color":"#6B7280","size":45.14,"degree":10}
+{"id":"actor:africa","item_type":"actor","label":"Africa","gdelt_name":"AFRICA","n":482,"country":"AFR","code":"AFR","generic":false,"color":"#6B7280","size":45.08,"degree":14}
+{"id":"actor:supreme_court","item_type":"actor","label":"Supreme Court","gdelt_name":"SUPREME COURT","n":443,"country":"","code":"JUD","generic":false,"color":"#6B7280","size":44.57,"degree":14}
+{"id":"actor:france","item_type":"actor","label":"France","gdelt_name":"FRANCE","n":427,"country":"FRA","code":"FRA","generic":false,"color":"#6B7280","size":44.35,"degree":10}
+{"id":"actor:toronto","item_type":"actor","label":"Toronto","gdelt_name":"TORONTO","n":426,"country":"CAN","code":"CAN","generic":false,"color":"#6B7280","size":44.34,"degree":8}
+{"id":"actor:pilgrim","item_type":"actor","label":"Pilgrim","gdelt_name":"PILGRIM","n":420,"country":"","code":"REL","generic":false,"color":"#6B7280","size":44.26,"degree":10}
+{"id":"actor:indigenous","item_type":"actor","label":"Indigenous","gdelt_name":"INDIGENOUS","n":409,"country":"","code":"idgGOV","generic":false,"color":"#6B7280","size":44.1,"degree":7}
+{"id":"actor:israel","item_type":"actor","label":"Israel","gdelt_name":"ISRAEL","n":404,"country":"ISR","code":"ISR","generic":false,"color":"#6B7280","size":44.02,"degree":13}
+{"id":"actor:mexican","item_type":"actor","label":"Mexican","gdelt_name":"MEXICAN","n":392,"country":"MEX","code":"MEX","generic":false,"color":"#6B7280","size":43.84,"degree":8}
+{"id":"actor:refugee","item_type":"actor","label":"Refugee","gdelt_name":"REFUGEE","n":384,"country":"","code":"REFEDU","generic":false,"color":"#6B7280","size":43.72,"degree":10}
+{"id":"actor:religion","item_type":"actor","label":"Religion","gdelt_name":"RELIGION","n":372,"country":"","code":"REL","generic":false,"color":"#6B7280","size":43.53,"degree":9}
+{"id":"actor:bolivia","item_type":"actor","label":"Bolivia","gdelt_name":"BOLIVIA","n":365,"country":"BOL","code":"BOL","generic":false,"color":"#6B7280","size":43.42,"degree":13}
+{"id":"actor:spanish","item_type":"actor","label":"Spanish","gdelt_name":"SPANISH","n":362,"country":"ESP","code":"ESP","generic":false,"color":"#6B7280","size":43.37,"degree":12}
+{"id":"actor:venezuela","item_type":"actor","label":"Venezuela","gdelt_name":"VENEZUELA","n":358,"country":"VEN","code":"VENREL","generic":false,"color":"#6B7280","size":43.3,"degree":8}
+{"id":"actor:the_poor","item_type":"actor","label":"The Poor","gdelt_name":"THE POOR","n":352,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":43.2,"degree":8}
+{"id":"actor:spain","item_type":"actor","label":"Spain","gdelt_name":"SPAIN","n":348,"country":"ESP","code":"ESP","generic":false,"color":"#6B7280","size":43.13,"degree":11}
+{"id":"actor:settlement","item_type":"actor","label":"Settlement","gdelt_name":"SETTLEMENT","n":339,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":42.97,"degree":9}
+{"id":"actor:clergy","item_type":"actor","label":"Clergy","gdelt_name":"CLERGY","n":336,"country":"","code":"REL","generic":false,"color":"#6B7280","size":42.92,"degree":8}
+{"id":"actor:minist","item_type":"actor","label":"Minist","gdelt_name":"MINIST","n":335,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":42.9,"degree":12}
+{"id":"actor:chilean","item_type":"actor","label":"Chilean","gdelt_name":"CHILEAN","n":334,"country":"CHL","code":"CHLMED","generic":false,"color":"#6B7280","size":42.88,"degree":8}
+{"id":"actor:cuban","item_type":"actor","label":"Cuban","gdelt_name":"CUBAN","n":333,"country":"CUB","code":"CUB","generic":false,"color":"#6B7280","size":42.87,"degree":6}
+{"id":"actor:el_salvador","item_type":"actor","label":"El Salvador","gdelt_name":"EL SALVADOR","n":330,"country":"SLV","code":"SLV","generic":false,"color":"#6B7280","size":42.81,"degree":9}
+{"id":"actor:nicaragua","item_type":"actor","label":"Nicaragua","gdelt_name":"NICARAGUA","n":321,"country":"NIC","code":"NIC","generic":false,"color":"#6B7280","size":42.65,"degree":8}
+{"id":"actor:protestant","item_type":"actor","label":"Protestant","gdelt_name":"PROTESTANT","n":316,"country":"","code":"CHRPRO","generic":false,"color":"#6B7280","size":42.55,"degree":4}
+{"id":"actor:prison","item_type":"actor","label":"Prison","gdelt_name":"PRISON","n":315,"country":"","code":"COP","generic":false,"color":"#6B7280","size":42.53,"degree":9}
+{"id":"actor:chicago","item_type":"actor","label":"Chicago","gdelt_name":"CHICAGO","n":310,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":42.44,"degree":8}
+{"id":"actor:judge","item_type":"actor","label":"Judge","gdelt_name":"JUDGE","n":308,"country":"","code":"JUD","generic":false,"color":"#6B7280","size":42.4,"degree":10}
+{"id":"actor:benedict_xvi","item_type":"actor","label":"Benedict Xvi","gdelt_name":"BENEDICT XVI","n":305,"country":"","code":"CHRCTH","generic":false,"color":"#6B7280","size":42.34,"degree":13}
+{"id":"actor:doctor","item_type":"actor","label":"Doctor","gdelt_name":"DOCTOR","n":304,"country":"","code":"HLH","generic":false,"color":"#6B7280","size":42.32,"degree":8}
+{"id":"actor:minneapolis","item_type":"actor","label":"Minneapolis","gdelt_name":"MINNEAPOLIS","n":294,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":42.12,"degree":5}
+{"id":"actor:business","item_type":"actor","label":"Business","gdelt_name":"BUSINESS","n":293,"country":"","code":"BUS","generic":false,"color":"#6B7280","size":42.1,"degree":11}
+{"id":"actor:voter","item_type":"actor","label":"Voter","gdelt_name":"VOTER","n":290,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":42.04,"degree":7}
+{"id":"actor:china","item_type":"actor","label":"China","gdelt_name":"CHINA","n":281,"country":"CHN","code":"CHN","generic":false,"color":"#6B7280","size":41.85,"degree":10}
+{"id":"actor:guatemala","item_type":"actor","label":"Guatemala","gdelt_name":"GUATEMALA","n":280,"country":"GTM","code":"GTM","generic":false,"color":"#6B7280","size":41.83,"degree":7}
+{"id":"actor:worker","item_type":"actor","label":"Worker","gdelt_name":"WORKER","n":278,"country":"","code":"LAB","generic":true,"color":"#6B7280","size":41.79,"degree":8}
+{"id":"actor:indianapolis","item_type":"actor","label":"Indianapolis","gdelt_name":"INDIANAPOLIS","n":266,"country":"USA","code":"USALEG","generic":false,"color":"#6B7280","size":41.52,"degree":5}
+{"id":"actor:united_kingdom","item_type":"actor","label":"United Kingdom","gdelt_name":"UNITED KINGDOM","n":262,"country":"GBR","code":"GBR","generic":false,"color":"#6B7280","size":41.43,"degree":7}
+{"id":"actor:ontario","item_type":"actor","label":"Ontario","gdelt_name":"ONTARIO","n":256,"country":"CAN","code":"CAN","generic":false,"color":"#6B7280","size":41.29,"degree":4}
+{"id":"actor:military","item_type":"actor","label":"Military","gdelt_name":"MILITARY","n":246,"country":"","code":"MIL","generic":false,"color":"#6B7280","size":41.06,"degree":9}
+{"id":"actor:christianity","item_type":"actor","label":"Christianity","gdelt_name":"CHRISTIANITY","n":245,"country":"","code":"CHR","generic":false,"color":"#6B7280","size":41.03,"degree":7}
+{"id":"actor:liberation_theology","item_type":"actor","label":"Liberation Theology","gdelt_name":"LIBERATION THEOLOGY","n":244,"country":"","code":"CHRCTH001","generic":false,"color":"#6B7280","size":41.01,"degree":9}
+{"id":"actor:journalist","item_type":"actor","label":"Journalist","gdelt_name":"JOURNALIST","n":243,"country":"","code":"MED","generic":false,"color":"#6B7280","size":40.98,"degree":8}
+{"id":"actor:company","item_type":"actor","label":"Company","gdelt_name":"COMPANY","n":242,"country":"","code":"BUS","generic":true,"color":"#6B7280","size":40.96,"degree":5}
+{"id":"actor:ukraine","item_type":"actor","label":"Ukraine","gdelt_name":"UKRAINE","n":239,"country":"UKR","code":"UKR","generic":false,"color":"#6B7280","size":40.88,"degree":8}
+{"id":"actor:authorities","item_type":"actor","label":"Authorities","gdelt_name":"AUTHORITIES","n":237,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":40.83,"degree":6}
+{"id":"actor:the_us","item_type":"actor","label":"The Us","gdelt_name":"THE US","n":236,"country":"USA","code":"USAGOV","generic":false,"color":"#6B7280","size":40.81,"degree":6}
+{"id":"actor:professor","item_type":"actor","label":"Professor","gdelt_name":"PROFESSOR","n":232,"country":"","code":"EDU","generic":false,"color":"#6B7280","size":40.71,"degree":9}
+{"id":"actor:king","item_type":"actor","label":"King","gdelt_name":"KING","n":229,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":40.63,"degree":5}
+{"id":"actor:panama","item_type":"actor","label":"Panama","gdelt_name":"PANAMA","n":227,"country":"PAN","code":"PAN","generic":false,"color":"#6B7280","size":40.58,"degree":5}
+{"id":"actor:texas","item_type":"actor","label":"Texas","gdelt_name":"TEXAS","n":226,"country":"USA","code":"USAEDU","generic":false,"color":"#6B7280","size":40.55,"degree":9}
+{"id":"actor:lawyer","item_type":"actor","label":"Lawyer","gdelt_name":"LAWYER","n":226,"country":"","code":"JUD","generic":false,"color":"#6B7280","size":40.55,"degree":4}
+{"id":"actor:website","item_type":"actor","label":"Website","gdelt_name":"WEBSITE","n":226,"country":"","code":"MED","generic":false,"color":"#6B7280","size":40.55,"degree":6}
+{"id":"actor:italian","item_type":"actor","label":"Italian","gdelt_name":"ITALIAN","n":225,"country":"ITA","code":"ITAREL","generic":false,"color":"#6B7280","size":40.52,"degree":7}
+{"id":"actor:honduras","item_type":"actor","label":"Honduras","gdelt_name":"HONDURAS","n":220,"country":"HND","code":"HND","generic":false,"color":"#6B7280","size":40.39,"degree":8}
+{"id":"actor:criminal","item_type":"actor","label":"Criminal","gdelt_name":"CRIMINAL","n":220,"country":"","code":"CRM","generic":false,"color":"#6B7280","size":40.39,"degree":8}
+{"id":"actor:ottawa","item_type":"actor","label":"Ottawa","gdelt_name":"OTTAWA","n":219,"country":"CAN","code":"CAN","generic":false,"color":"#6B7280","size":40.36,"degree":6}
+{"id":"actor:ecuador","item_type":"actor","label":"Ecuador","gdelt_name":"ECUADOR","n":218,"country":"ECU","code":"ECU","generic":false,"color":"#6B7280","size":40.33,"degree":5}
+{"id":"actor:dominican_republic","item_type":"actor","label":"Dominican Republic","gdelt_name":"DOMINICAN REPUBLIC","n":216,"country":"DOM","code":"DOM","generic":false,"color":"#6B7280","size":40.28,"degree":5}
+{"id":"actor:philadelphia","item_type":"actor","label":"Philadelphia","gdelt_name":"PHILADELPHIA","n":214,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":40.22,"degree":7}
+{"id":"actor:los_angeles","item_type":"actor","label":"Los Angeles","gdelt_name":"LOS ANGELES","n":213,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":40.2,"degree":9}
+{"id":"actor:russia","item_type":"actor","label":"Russia","gdelt_name":"RUSSIA","n":209,"country":"RUS","code":"RUS","generic":false,"color":"#6B7280","size":40.08,"degree":11}
+{"id":"actor:prelate","item_type":"actor","label":"Prelate","gdelt_name":"PRELATE","n":207,"country":"","code":"CHRCTH","generic":false,"color":"#6B7280","size":40.03,"degree":6}
+{"id":"actor:jewish","item_type":"actor","label":"Jewish","gdelt_name":"JEWISH","n":206,"country":"","code":"JEWREF","generic":false,"color":"#6B7280","size":40.0,"degree":5}
+{"id":"actor:ireland","item_type":"actor","label":"Ireland","gdelt_name":"IRELAND","n":203,"country":"IRL","code":"IRLPTY","generic":false,"color":"#6B7280","size":39.91,"degree":6}
+{"id":"actor:the_associated_press","item_type":"actor","label":"The Associated Press","gdelt_name":"THE ASSOCIATED PRESS","n":196,"country":"USA","code":"USAMED","generic":false,"color":"#6B7280","size":39.7,"degree":8}
+{"id":"actor:indigenous_people","item_type":"actor","label":"Indigenous People","gdelt_name":"INDIGENOUS PEOPLE","n":195,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":39.67,"degree":8}
+{"id":"actor:buenos_aires","item_type":"actor","label":"Buenos Aires","gdelt_name":"BUENOS AIRES","n":194,"country":"ARG","code":"ARG","generic":false,"color":"#6B7280","size":39.64,"degree":7}
+{"id":"actor:havana","item_type":"actor","label":"Havana","gdelt_name":"HAVANA","n":192,"country":"CUB","code":"CUB","generic":false,"color":"#6B7280","size":39.58,"degree":6}
+{"id":"actor:santiago","item_type":"actor","label":"Santiago","gdelt_name":"SANTIAGO","n":191,"country":"CHL","code":"CHL","generic":false,"color":"#6B7280","size":39.54,"degree":6}
+{"id":"actor:catholic_relief_services","item_type":"actor","label":"Catholic Relief Services","gdelt_name":"CATHOLIC RELIEF SERVICES","n":190,"country":"USA","code":"NGOUSACHRCTH","generic":false,"color":"#6B7280","size":39.51,"degree":4}
+{"id":"actor:paraguay","item_type":"actor","label":"Paraguay","gdelt_name":"PARAGUAY","n":190,"country":"PRY","code":"PRY","generic":false,"color":"#6B7280","size":39.51,"degree":5}
+{"id":"actor:joe_biden","item_type":"actor","label":"Joe Biden","gdelt_name":"JOE BIDEN","n":188,"country":"USA","code":"USAGOV","generic":false,"color":"#6B7280","size":39.45,"degree":6}
+{"id":"actor:brazilian","item_type":"actor","label":"Brazilian","gdelt_name":"BRAZILIAN","n":188,"country":"BRA","code":"BRA","generic":false,"color":"#6B7280","size":39.45,"degree":5}
+{"id":"actor:lima","item_type":"actor","label":"Lima","gdelt_name":"LIMA","n":186,"country":"PER","code":"PER","generic":false,"color":"#6B7280","size":39.39,"degree":3}
+{"id":"actor:advocate","item_type":"actor","label":"Advocate","gdelt_name":"ADVOCATE","n":185,"country":"","code":"JUD","generic":false,"color":"#6B7280","size":39.35,"degree":4}
+{"id":"actor:attorney","item_type":"actor","label":"Attorney","gdelt_name":"ATTORNEY","n":185,"country":"","code":"JUD","generic":false,"color":"#6B7280","size":39.35,"degree":6}
+{"id":"actor:australia","item_type":"actor","label":"Australia","gdelt_name":"AUSTRALIA","n":181,"country":"AUS","code":"AUS","generic":false,"color":"#6B7280","size":39.22,"degree":7}
+{"id":"actor:mexico_city","item_type":"actor","label":"Mexico City","gdelt_name":"MEXICO CITY","n":181,"country":"MEX","code":"MEX","generic":false,"color":"#6B7280","size":39.22,"degree":3}
+{"id":"actor:governor","item_type":"actor","label":"Governor","gdelt_name":"GOVERNOR","n":180,"country":"","code":"GOV","generic":true,"color":"#6B7280","size":39.19,"degree":5}
+{"id":"actor:santa_cruz","item_type":"actor","label":"Santa Cruz","gdelt_name":"SANTA CRUZ","n":179,"country":"BOL","code":"BOL","generic":false,"color":"#6B7280","size":39.16,"degree":2}
+{"id":"actor:french","item_type":"actor","label":"French","gdelt_name":"FRENCH","n":173,"country":"FRA","code":"FRA","generic":false,"color":"#6B7280","size":38.95,"degree":5}
+{"id":"actor:ohio","item_type":"actor","label":"Ohio","gdelt_name":"OHIO","n":173,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":38.95,"degree":5}
+{"id":"actor:delegate","item_type":"actor","label":"Delegate","gdelt_name":"DELEGATE","n":170,"country":"","code":"LEG","generic":false,"color":"#6B7280","size":38.85,"degree":5}
+{"id":"actor:germany","item_type":"actor","label":"Germany","gdelt_name":"GERMANY","n":170,"country":"DEU","code":"DEU","generic":false,"color":"#6B7280","size":38.85,"degree":5}
+{"id":"actor:colombian","item_type":"actor","label":"Colombian","gdelt_name":"COLOMBIAN","n":169,"country":"COL","code":"COL","generic":false,"color":"#6B7280","size":38.81,"degree":4}
+{"id":"actor:residents","item_type":"actor","label":"Residents","gdelt_name":"RESIDENTS","n":168,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":38.78,"degree":1}
+{"id":"actor:europe","item_type":"actor","label":"Europe","gdelt_name":"EUROPE","n":167,"country":"EUR","code":"EUR","generic":false,"color":"#6B7280","size":38.74,"degree":4}
+{"id":"actor:haitian","item_type":"actor","label":"Haitian","gdelt_name":"HAITIAN","n":163,"country":"HTI","code":"HTI","generic":false,"color":"#6B7280","size":38.6,"degree":4}
+{"id":"actor:wisconsin","item_type":"actor","label":"Wisconsin","gdelt_name":"WISCONSIN","n":159,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":38.45,"degree":6}
+{"id":"actor:columbus","item_type":"actor","label":"Columbus","gdelt_name":"COLUMBUS","n":158,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":38.41,"degree":3}
+{"id":"actor:philippine","item_type":"actor","label":"Philippine","gdelt_name":"PHILIPPINE","n":156,"country":"PHL","code":"PHL","generic":false,"color":"#6B7280","size":38.34,"degree":5}
+{"id":"actor:neighborhood","item_type":"actor","label":"Neighborhood","gdelt_name":"NEIGHBORHOOD","n":155,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":38.3,"degree":4}
+{"id":"actor:california","item_type":"actor","label":"California","gdelt_name":"CALIFORNIA","n":154,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":38.26,"degree":2}
+{"id":"actor:employee","item_type":"actor","label":"Employee","gdelt_name":"EMPLOYEE","n":154,"country":"","code":"LAB","generic":false,"color":"#6B7280","size":38.26,"degree":4}
+{"id":"actor:venezuelan","item_type":"actor","label":"Venezuelan","gdelt_name":"VENEZUELAN","n":152,"country":"VEN","code":"VEN","generic":false,"color":"#6B7280","size":38.18,"degree":4}
+{"id":"actor:russian","item_type":"actor","label":"Russian","gdelt_name":"RUSSIAN","n":150,"country":"RUS","code":"RUS","generic":false,"color":"#6B7280","size":38.1,"degree":7}
+{"id":"actor:florida","item_type":"actor","label":"Florida","gdelt_name":"FLORIDA","n":148,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":38.02,"degree":3}
+{"id":"actor:iran","item_type":"actor","label":"Iran","gdelt_name":"IRAN","n":146,"country":"IRN","code":"IRN","generic":false,"color":"#6B7280","size":37.94,"degree":5}
+{"id":"actor:muslim","item_type":"actor","label":"Muslim","gdelt_name":"MUSLIM","n":145,"country":"","code":"MOSLEG","generic":false,"color":"#6B7280","size":37.9,"degree":4}
+{"id":"actor:tourist","item_type":"actor","label":"Tourist","gdelt_name":"TOURIST","n":144,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":37.86,"degree":2}
+{"id":"actor:reuters","item_type":"actor","label":"Reuters","gdelt_name":"REUTERS","n":143,"country":"USA","code":"USAMED","generic":false,"color":"#6B7280","size":37.82,"degree":5}
+{"id":"actor:minnesota","item_type":"actor","label":"Minnesota","gdelt_name":"MINNESOTA","n":143,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":37.82,"degree":2}
+{"id":"actor:dominican","item_type":"actor","label":"Dominican","gdelt_name":"DOMINICAN","n":141,"country":"DOM","code":"DOM","generic":false,"color":"#6B7280","size":37.73,"degree":3}
+{"id":"actor:representatives","item_type":"actor","label":"Representatives","gdelt_name":"REPRESENTATIVES","n":141,"country":"","code":"LEG","generic":false,"color":"#6B7280","size":37.73,"degree":5}
+{"id":"actor:citizen","item_type":"actor","label":"Citizen","gdelt_name":"CITIZEN","n":141,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":37.73,"degree":3}
+{"id":"actor:population","item_type":"actor","label":"Population","gdelt_name":"POPULATION","n":140,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":37.69,"degree":1}
+{"id":"actor:montreal","item_type":"actor","label":"Montreal","gdelt_name":"MONTREAL","n":138,"country":"CAN","code":"CANREL","generic":false,"color":"#6B7280","size":37.61,"degree":4}
+{"id":"actor:michigan","item_type":"actor","label":"Michigan","gdelt_name":"MICHIGAN","n":137,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":37.56,"degree":6}
+{"id":"actor:boston","item_type":"actor","label":"Boston","gdelt_name":"BOSTON","n":137,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":37.56,"degree":7}
+{"id":"actor:monastery","item_type":"actor","label":"Monastery","gdelt_name":"MONASTERY","n":134,"country":"","code":"REL","generic":false,"color":"#6B7280","size":37.43,"degree":5}
+{"id":"actor:gang","item_type":"actor","label":"Gang","gdelt_name":"GANG","n":130,"country":"","code":"CRM","generic":false,"color":"#6B7280","size":37.25,"degree":6}
+{"id":"actor:companies","item_type":"actor","label":"Companies","gdelt_name":"COMPANIES","n":130,"country":"","code":"BUS","generic":false,"color":"#6B7280","size":37.25,"degree":3}
+{"id":"actor:oklahoma","item_type":"actor","label":"Oklahoma","gdelt_name":"OKLAHOMA","n":128,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":37.16,"degree":5}
+{"id":"actor:lawmaker","item_type":"actor","label":"Lawmaker","gdelt_name":"LAWMAKER","n":127,"country":"","code":"LEG","generic":false,"color":"#6B7280","size":37.11,"degree":5}
+{"id":"actor:jamaica","item_type":"actor","label":"Jamaica","gdelt_name":"JAMAICA","n":126,"country":"JAM","code":"JAMREL","generic":false,"color":"#6B7280","size":37.07,"degree":1}
+{"id":"actor:vancouver","item_type":"actor","label":"Vancouver","gdelt_name":"VANCOUVER","n":126,"country":"CAN","code":"CANCHR","generic":false,"color":"#6B7280","size":37.07,"degree":4}
+{"id":"actor:believer","item_type":"actor","label":"Believer","gdelt_name":"BELIEVER","n":123,"country":"","code":"REL","generic":false,"color":"#6B7280","size":36.92,"degree":3}
+{"id":"actor:newspaper","item_type":"actor","label":"Newspaper","gdelt_name":"NEWSPAPER","n":123,"country":"","code":"MED","generic":false,"color":"#6B7280","size":36.92,"degree":5}
+{"id":"actor:presidential_candidate","item_type":"actor","label":"Presidential Candidate","gdelt_name":"PRESIDENTIAL CANDIDATE","n":119,"country":"","code":"PTY","generic":false,"color":"#6B7280","size":36.72,"degree":3}
+{"id":"actor:bank","item_type":"actor","label":"Bank","gdelt_name":"BANK","n":118,"country":"","code":"BUS","generic":false,"color":"#6B7280","size":36.67,"degree":3}
+{"id":"actor:scholar","item_type":"actor","label":"Scholar","gdelt_name":"SCHOLAR","n":117,"country":"","code":"EDU","generic":false,"color":"#6B7280","size":36.62,"degree":1}
+{"id":"actor:spokesman","item_type":"actor","label":"Spokesman","gdelt_name":"SPOKESMAN","n":116,"country":"","code":"MED","generic":false,"color":"#6B7280","size":36.57,"degree":6}
+{"id":"actor:united_nations","item_type":"actor","label":"United Nations","gdelt_name":"UNITED NATIONS","n":116,"country":"","code":"IGOUNO","generic":false,"color":"#6B7280","size":36.57,"degree":4}
+{"id":"actor:retired","item_type":"actor","label":"Retired","gdelt_name":"RETIRED","n":115,"country":"","code":"ELI","generic":false,"color":"#6B7280","size":36.52,"degree":4}
+{"id":"actor:episcopal","item_type":"actor","label":"Episcopal","gdelt_name":"EPISCOPAL","n":115,"country":"","code":"CHRPRO","generic":false,"color":"#6B7280","size":36.52,"degree":4}
+{"id":"actor:jesuits","item_type":"actor","label":"Jesuits","gdelt_name":"JESUITS","n":115,"country":"","code":"CHRCTH454","generic":false,"color":"#6B7280","size":36.52,"degree":2}
+{"id":"actor:physician","item_type":"actor","label":"Physician","gdelt_name":"PHYSICIAN","n":114,"country":"","code":"HLH","generic":false,"color":"#6B7280","size":36.47,"degree":3}
+{"id":"actor:arkansas","item_type":"actor","label":"Arkansas","gdelt_name":"ARKANSAS","n":111,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":36.31,"degree":3}
+{"id":"actor:senator","item_type":"actor","label":"Senator","gdelt_name":"SENATOR","n":109,"country":"","code":"LEG","generic":false,"color":"#6B7280","size":36.2,"degree":1}
+{"id":"actor:prosecutor","item_type":"actor","label":"Prosecutor","gdelt_name":"PROSECUTOR","n":108,"country":"","code":"JUD","generic":false,"color":"#6B7280","size":36.15,"degree":2}
+{"id":"actor:nigeria","item_type":"actor","label":"Nigeria","gdelt_name":"NIGERIA","n":107,"country":"NGA","code":"NGA","generic":false,"color":"#6B7280","size":36.09,"degree":4}
+{"id":"actor:anglican","item_type":"actor","label":"Anglican","gdelt_name":"ANGLICAN","n":105,"country":"","code":"CHRANG001","generic":false,"color":"#6B7280","size":35.98,"degree":5}
+{"id":"actor:mayor","item_type":"actor","label":"Mayor","gdelt_name":"MAYOR","n":105,"country":"","code":"GOV","generic":true,"color":"#6B7280","size":35.98,"degree":3}
+{"id":"actor:poland","item_type":"actor","label":"Poland","gdelt_name":"POLAND","n":103,"country":"POL","code":"POLREL","generic":false,"color":"#6B7280","size":35.87,"degree":3}
+{"id":"actor:regime","item_type":"actor","label":"Regime","gdelt_name":"REGIME","n":102,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":35.81,"degree":2}
+{"id":"actor:senate","item_type":"actor","label":"Senate","gdelt_name":"SENATE","n":102,"country":"","code":"LEG","generic":false,"color":"#6B7280","size":35.81,"degree":3}
+{"id":"actor:activist","item_type":"actor","label":"Activist","gdelt_name":"ACTIVIST","n":101,"country":"","code":"OPP","generic":false,"color":"#6B7280","size":35.75,"degree":2}
+{"id":"actor:associated_press","item_type":"actor","label":"Associated Press","gdelt_name":"ASSOCIATED PRESS","n":100,"country":"USA","code":"USAMED","generic":false,"color":"#6B7280","size":35.69,"degree":3}
+{"id":"actor:intelligence","item_type":"actor","label":"Intelligence","gdelt_name":"INTELLIGENCE","n":99,"country":"","code":"SPY","generic":false,"color":"#6B7280","size":35.63,"degree":2}
+{"id":"actor:village","item_type":"actor","label":"Village","gdelt_name":"VILLAGE","n":99,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":35.63,"degree":2}
+{"id":"actor:georgetown","item_type":"actor","label":"Georgetown","gdelt_name":"GEORGETOWN","n":98,"country":"GUY","code":"GUYEDU","generic":false,"color":"#6B7280","size":35.57,"degree":1}
+{"id":"actor:attorney_general","item_type":"actor","label":"Attorney General","gdelt_name":"ATTORNEY GENERAL","n":98,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":35.57,"degree":4}
+{"id":"actor:peruvian","item_type":"actor","label":"Peruvian","gdelt_name":"PERUVIAN","n":98,"country":"PER","code":"PER","generic":false,"color":"#6B7280","size":35.57,"degree":2}
+{"id":"actor:actor","item_type":"actor","label":"Actor","gdelt_name":"ACTOR","n":96,"country":"","code":"ELI","generic":false,"color":"#6B7280","size":35.45,"degree":4}
+{"id":"actor:lutheran","item_type":"actor","label":"Lutheran","gdelt_name":"LUTHERAN","n":95,"country":"","code":"CHRPRO210","generic":false,"color":"#6B7280","size":35.39,"degree":2}
+{"id":"actor:cincinnati","item_type":"actor","label":"Cincinnati","gdelt_name":"CINCINNATI","n":94,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":35.32,"degree":3}
+{"id":"actor:unions","item_type":"actor","label":"Unions","gdelt_name":"UNIONS","n":93,"country":"","code":"LAB","generic":false,"color":"#6B7280","size":35.26,"degree":3}
+{"id":"actor:ukrainian","item_type":"actor","label":"Ukrainian","gdelt_name":"UKRAINIAN","n":93,"country":"UKR","code":"UKR","generic":false,"color":"#6B7280","size":35.26,"degree":6}
+{"id":"actor:the_white_house","item_type":"actor","label":"The White House","gdelt_name":"THE WHITE HOUSE","n":92,"country":"USA","code":"USAGOV","generic":false,"color":"#6B7280","size":35.2,"degree":6}
+{"id":"actor:counsel","item_type":"actor","label":"Counsel","gdelt_name":"COUNSEL","n":91,"country":"","code":"JUD","generic":false,"color":"#6B7280","size":35.13,"degree":4}
+{"id":"actor:japan","item_type":"actor","label":"Japan","gdelt_name":"JAPAN","n":91,"country":"JPN","code":"JPN","generic":false,"color":"#6B7280","size":35.13,"degree":4}
+{"id":"actor:television","item_type":"actor","label":"Television","gdelt_name":"TELEVISION","n":89,"country":"","code":"MED","generic":false,"color":"#6B7280","size":35.0,"degree":5}
+{"id":"actor:prisoner","item_type":"actor","label":"Prisoner","gdelt_name":"PRISONER","n":89,"country":"","code":"OPP","generic":false,"color":"#6B7280","size":35.0,"degree":2}
+{"id":"actor:israeli","item_type":"actor","label":"Israeli","gdelt_name":"ISRAELI","n":89,"country":"ISR","code":"ISR","generic":false,"color":"#6B7280","size":35.0,"degree":3}
+{"id":"actor:publication","item_type":"actor","label":"Publication","gdelt_name":"PUBLICATION","n":88,"country":"","code":"MED","generic":false,"color":"#6B7280","size":34.93,"degree":4}
+{"id":"actor:illinois","item_type":"actor","label":"Illinois","gdelt_name":"ILLINOIS","n":87,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":34.86,"degree":2}
+{"id":"actor:belgium","item_type":"actor","label":"Belgium","gdelt_name":"BELGIUM","n":87,"country":"BEL","code":"BEL","generic":false,"color":"#6B7280","size":34.86,"degree":5}
+{"id":"actor:politician","item_type":"actor","label":"Politician","gdelt_name":"POLITICIAN","n":87,"country":"","code":"PTY","generic":false,"color":"#6B7280","size":34.86,"degree":2}
+{"id":"actor:miami","item_type":"actor","label":"Miami","gdelt_name":"MIAMI","n":87,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":34.86,"degree":2}
+{"id":"actor:industry","item_type":"actor","label":"Industry","gdelt_name":"INDUSTRY","n":86,"country":"","code":"BUS","generic":false,"color":"#6B7280","size":34.8,"degree":1}
+{"id":"actor:missouri","item_type":"actor","label":"Missouri","gdelt_name":"MISSOURI","n":85,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":34.73,"degree":4}
+{"id":"actor:atheist","item_type":"actor","label":"Atheist","gdelt_name":"ATHEIST","n":85,"country":"","code":"ATH","generic":false,"color":"#6B7280","size":34.73,"degree":1}
+{"id":"actor:farmer","item_type":"actor","label":"Farmer","gdelt_name":"FARMER","n":84,"country":"","code":"AGR","generic":false,"color":"#6B7280","size":34.66,"degree":3}
+{"id":"actor:irish","item_type":"actor","label":"Irish","gdelt_name":"IRISH","n":84,"country":"IRL","code":"IRL","generic":false,"color":"#6B7280","size":34.66,"degree":3}
+{"id":"actor:north_america","item_type":"actor","label":"North America","gdelt_name":"NORTH AMERICA","n":83,"country":"NMR","code":"NMRCVL","generic":false,"color":"#6B7280","size":34.58,"degree":5}
+{"id":"actor:hartford","item_type":"actor","label":"Hartford","gdelt_name":"HARTFORD","n":82,"country":"USA","code":"USAEDU","generic":false,"color":"#6B7280","size":34.51,"degree":2}
+{"id":"actor:european","item_type":"actor","label":"European","gdelt_name":"EUROPEAN","n":81,"country":"EUR","code":"EUR","generic":false,"color":"#6B7280","size":34.44,"degree":2}
+{"id":"actor:cleric","item_type":"actor","label":"Cleric","gdelt_name":"CLERIC","n":81,"country":"","code":"REL","generic":false,"color":"#6B7280","size":34.44,"degree":1}
+{"id":"actor:puerto_rico","item_type":"actor","label":"Puerto Rico","gdelt_name":"PUERTO RICO","n":80,"country":"USA","code":"USAPRI","generic":false,"color":"#6B7280","size":34.37,"degree":2}
+{"id":"actor:bahama","item_type":"actor","label":"Bahama","gdelt_name":"BAHAMA","n":80,"country":"BHS","code":"BHS","generic":false,"color":"#6B7280","size":34.37,"degree":2}
+{"id":"actor:east_timor","item_type":"actor","label":"East Timor","gdelt_name":"EAST TIMOR","n":80,"country":"TMP","code":"TMP","generic":false,"color":"#6B7280","size":34.37,"degree":1}
+{"id":"actor:employer","item_type":"actor","label":"Employer","gdelt_name":"EMPLOYER","n":80,"country":"","code":"BUS","generic":false,"color":"#6B7280","size":34.37,"degree":4}
+{"id":"actor:costa_rica","item_type":"actor","label":"Costa Rica","gdelt_name":"COSTA RICA","n":79,"country":"CRI","code":"CRI","generic":false,"color":"#6B7280","size":34.29,"degree":4}
+{"id":"actor:new_orleans","item_type":"actor","label":"New Orleans","gdelt_name":"NEW ORLEANS","n":79,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":34.29,"degree":2}
+{"id":"actor:british","item_type":"actor","label":"British","gdelt_name":"BRITISH","n":79,"country":"GBR","code":"GBR","generic":false,"color":"#6B7280","size":34.29,"degree":3}
+{"id":"actor:phoenix","item_type":"actor","label":"Phoenix","gdelt_name":"PHOENIX","n":79,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":34.29,"degree":3}
+{"id":"actor:male","item_type":"actor","label":"Male","gdelt_name":"MALE","n":79,"country":"MDV","code":"MDV","generic":false,"color":"#6B7280","size":34.29,"degree":1}
+{"id":"actor:edmonton","item_type":"actor","label":"Edmonton","gdelt_name":"EDMONTON","n":78,"country":"CAN","code":"CAN","generic":false,"color":"#6B7280","size":34.22,"degree":3}
+{"id":"actor:rio_de_janeiro","item_type":"actor","label":"Rio De Janeiro","gdelt_name":"RIO DE JANEIRO","n":78,"country":"BRA","code":"BRA","generic":false,"color":"#6B7280","size":34.22,"degree":2}
+{"id":"actor:turkey","item_type":"actor","label":"Turkey","gdelt_name":"TURKEY","n":78,"country":"TUR","code":"TUR","generic":false,"color":"#6B7280","size":34.22,"degree":3}
+{"id":"actor:ambassador","item_type":"actor","label":"Ambassador","gdelt_name":"AMBASSADOR","n":77,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":34.14,"degree":2}
+{"id":"actor:belize","item_type":"actor","label":"Belize","gdelt_name":"BELIZE","n":76,"country":"BLZ","code":"BLZ","generic":false,"color":"#6B7280","size":34.06,"degree":3}
+{"id":"actor:writer","item_type":"actor","label":"Writer","gdelt_name":"WRITER","n":76,"country":"","code":"MED","generic":false,"color":"#6B7280","size":34.06,"degree":2}
+{"id":"actor:alberta","item_type":"actor","label":"Alberta","gdelt_name":"ALBERTA","n":73,"country":"CAN","code":"CANGOV","generic":false,"color":"#6B7280","size":33.82,"degree":2}
+{"id":"actor:murray","item_type":"actor","label":"Murray","gdelt_name":"MURRAY","n":73,"country":"AUS","code":"AUS","generic":false,"color":"#6B7280","size":33.82,"degree":2}
+{"id":"actor:protester","item_type":"actor","label":"Protester","gdelt_name":"PROTESTER","n":73,"country":"","code":"OPP","generic":false,"color":"#6B7280","size":33.82,"degree":2}
+{"id":"actor:obama","item_type":"actor","label":"Obama","gdelt_name":"OBAMA","n":73,"country":"USA","code":"USAGOV","generic":false,"color":"#6B7280","size":33.82,"degree":4}
+{"id":"actor:diplomat","item_type":"actor","label":"Diplomat","gdelt_name":"DIPLOMAT","n":73,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":33.82,"degree":3}
+{"id":"actor:nicaraguan","item_type":"actor","label":"Nicaraguan","gdelt_name":"NICARAGUAN","n":72,"country":"NIC","code":"NIC","generic":false,"color":"#6B7280","size":33.74,"degree":3}
+{"id":"actor:scientist","item_type":"actor","label":"Scientist","gdelt_name":"SCIENTIST","n":71,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":33.66,"degree":3}
+{"id":"actor:maryland","item_type":"actor","label":"Maryland","gdelt_name":"MARYLAND","n":70,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":33.58,"degree":2}
+{"id":"actor:deputy","item_type":"actor","label":"Deputy","gdelt_name":"DEPUTY","n":70,"country":"","code":"COP","generic":false,"color":"#6B7280","size":33.58,"degree":3}
+{"id":"actor:calgary","item_type":"actor","label":"Calgary","gdelt_name":"CALGARY","n":69,"country":"CAN","code":"CANREL","generic":false,"color":"#6B7280","size":33.49,"degree":1}
+{"id":"actor:german","item_type":"actor","label":"German","gdelt_name":"GERMAN","n":68,"country":"DEU","code":"DEU","generic":false,"color":"#6B7280","size":33.4,"degree":3}
+{"id":"actor:worshipper","item_type":"actor","label":"Worshipper","gdelt_name":"WORSHIPPER","n":68,"country":"","code":"REL","generic":false,"color":"#6B7280","size":33.4,"degree":2}
+{"id":"actor:switzerland","item_type":"actor","label":"Switzerland","gdelt_name":"SWITZERLAND","n":68,"country":"CHE","code":"CHE","generic":false,"color":"#6B7280","size":33.4,"degree":3}
+{"id":"actor:detroit","item_type":"actor","label":"Detroit","gdelt_name":"DETROIT","n":67,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":33.32,"degree":3}
+{"id":"actor:paris","item_type":"actor","label":"Paris","gdelt_name":"PARIS","n":67,"country":"FRA","code":"FRA","generic":false,"color":"#6B7280","size":33.32,"degree":1}
+{"id":"actor:new_mexico","item_type":"actor","label":"New Mexico","gdelt_name":"NEW MEXICO","n":67,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":33.32,"degree":2}
+{"id":"actor:virginia","item_type":"actor","label":"Virginia","gdelt_name":"VIRGINIA","n":66,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":33.23,"degree":2}
+{"id":"actor:argentinian","item_type":"actor","label":"Argentinian","gdelt_name":"ARGENTINIAN","n":66,"country":"ARG","code":"ARG","generic":false,"color":"#6B7280","size":33.23,"degree":4}
+{"id":"actor:the_un","item_type":"actor","label":"The Un","gdelt_name":"THE UN","n":65,"country":"","code":"IGOUNOLEG","generic":false,"color":"#6B7280","size":33.14,"degree":2}
+{"id":"actor:prime_minister","item_type":"actor","label":"Prime Minister","gdelt_name":"PRIME MINISTER","n":65,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":33.14,"degree":2}
+{"id":"actor:denver","item_type":"actor","label":"Denver","gdelt_name":"DENVER","n":63,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":32.95,"degree":1}
+{"id":"actor:secretary_of_state","item_type":"actor","label":"Secretary Of State","gdelt_name":"SECRETARY OF STATE","n":62,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":32.86,"degree":3}
+{"id":"actor:roman_catholicism","item_type":"actor","label":"Roman Catholicism","gdelt_name":"ROMAN CATHOLICISM","n":62,"country":"","code":"CHRCTH","generic":false,"color":"#6B7280","size":32.86,"degree":2}
+{"id":"actor:gunman","item_type":"actor","label":"Gunman","gdelt_name":"GUNMAN","n":62,"country":"","code":"UAF","generic":false,"color":"#6B7280","size":32.86,"degree":2}
+{"id":"actor:san_francisco","item_type":"actor","label":"San Francisco","gdelt_name":"SAN FRANCISCO","n":60,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":32.67,"degree":2}
+{"id":"actor:salvadoran","item_type":"actor","label":"Salvadoran","gdelt_name":"SALVADORAN","n":59,"country":"SLV","code":"SLV","generic":false,"color":"#6B7280","size":32.57,"degree":3}
+{"id":"actor:democratic_party","item_type":"actor","label":"Democratic Party","gdelt_name":"DEMOCRATIC PARTY","n":59,"country":"","code":"PTY","generic":false,"color":"#6B7280","size":32.57,"degree":3}
+{"id":"actor:general_assembly","item_type":"actor","label":"General Assembly","gdelt_name":"GENERAL ASSEMBLY","n":59,"country":"","code":"LEG","generic":false,"color":"#6B7280","size":32.57,"degree":4}
+{"id":"actor:honduran","item_type":"actor","label":"Honduran","gdelt_name":"HONDURAN","n":58,"country":"HND","code":"HND","generic":false,"color":"#6B7280","size":32.47,"degree":3}
+{"id":"actor:london","item_type":"actor","label":"London","gdelt_name":"LONDON","n":57,"country":"GBR","code":"GBR","generic":false,"color":"#6B7280","size":32.36,"degree":1}
+{"id":"actor:syria","item_type":"actor","label":"Syria","gdelt_name":"SYRIA","n":57,"country":"SYR","code":"SYR","generic":false,"color":"#6B7280","size":32.36,"degree":1}
+{"id":"actor:bolivian","item_type":"actor","label":"Bolivian","gdelt_name":"BOLIVIAN","n":56,"country":"BOL","code":"BOL","generic":false,"color":"#6B7280","size":32.26,"degree":2}
+{"id":"actor:new_york_city","item_type":"actor","label":"New York City","gdelt_name":"NEW YORK CITY","n":56,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":32.26,"degree":3}
+{"id":"actor:grenada","item_type":"actor","label":"Grenada","gdelt_name":"GRENADA","n":56,"country":"GRD","code":"GRD","generic":false,"color":"#6B7280","size":32.26,"degree":2}
+{"id":"actor:elector","item_type":"actor","label":"Elector","gdelt_name":"ELECTOR","n":55,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":32.15,"degree":2}
+{"id":"actor:louisiana","item_type":"actor","label":"Louisiana","gdelt_name":"LOUISIANA","n":54,"country":"USA","code":"USALEG","generic":false,"color":"#6B7280","size":32.04,"degree":2}
+{"id":"actor:kentucky","item_type":"actor","label":"Kentucky","gdelt_name":"KENTUCKY","n":54,"country":"USA","code":"USAEDU","generic":false,"color":"#6B7280","size":32.04,"degree":2}
+{"id":"actor:providence","item_type":"actor","label":"Providence","gdelt_name":"PROVIDENCE","n":54,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":32.04,"degree":1}
+{"id":"actor:colorado","item_type":"actor","label":"Colorado","gdelt_name":"COLORADO","n":54,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":32.04,"degree":2}
+{"id":"actor:lebanon","item_type":"actor","label":"Lebanon","gdelt_name":"LEBANON","n":54,"country":"LBN","code":"LBN","generic":false,"color":"#6B7280","size":32.04,"degree":2}
+{"id":"actor:envoy","item_type":"actor","label":"Envoy","gdelt_name":"ENVOY","n":53,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":31.93,"degree":3}
+{"id":"actor:nurse","item_type":"actor","label":"Nurse","gdelt_name":"NURSE","n":53,"country":"","code":"HLH","generic":false,"color":"#6B7280","size":31.93,"degree":1}
+{"id":"actor:saskatchewan","item_type":"actor","label":"Saskatchewan","gdelt_name":"SASKATCHEWAN","n":52,"country":"CAN","code":"CANCHRCTH","generic":false,"color":"#6B7280","size":31.82,"degree":2}
+{"id":"actor:malta","item_type":"actor","label":"Malta","gdelt_name":"MALTA","n":52,"country":"MLT","code":"MLT","generic":false,"color":"#6B7280","size":31.82,"degree":2}
+{"id":"actor:uruguay","item_type":"actor","label":"Uruguay","gdelt_name":"URUGUAY","n":52,"country":"URY","code":"URY","generic":false,"color":"#6B7280","size":31.82,"degree":4}
+{"id":"actor:pennsylvania","item_type":"actor","label":"Pennsylvania","gdelt_name":"PENNSYLVANIA","n":52,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":31.82,"degree":3}
+{"id":"actor:government_official","item_type":"actor","label":"Government Official","gdelt_name":"GOVERNMENT OFFICIAL","n":51,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":31.71,"degree":1}
+{"id":"actor:kansas","item_type":"actor","label":"Kansas","gdelt_name":"KANSAS","n":51,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":31.71,"degree":2}
+{"id":"actor:christian_missionary","item_type":"actor","label":"Christian Missionary","gdelt_name":"CHRISTIAN MISSIONARY","n":51,"country":"","code":"CHR","generic":false,"color":"#6B7280","size":31.71,"degree":1}
+{"id":"actor:buffalo","item_type":"actor","label":"Buffalo","gdelt_name":"BUFFALO","n":50,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":31.59,"degree":2}
+{"id":"actor:army","item_type":"actor","label":"Army","gdelt_name":"ARMY","n":50,"country":"","code":"MIL","generic":false,"color":"#6B7280","size":31.59,"degree":1}
+{"id":"actor:houston","item_type":"actor","label":"Houston","gdelt_name":"HOUSTON","n":50,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":31.59,"degree":2}
+{"id":"actor:albert","item_type":"actor","label":"Albert","gdelt_name":"ALBERT","n":50,"country":"MCO","code":"MCOELI","generic":false,"color":"#6B7280","size":31.59,"degree":1}
+{"id":"actor:political_parties","item_type":"actor","label":"Political Parties","gdelt_name":"POLITICAL PARTIES","n":49,"country":"","code":"PTY","generic":false,"color":"#6B7280","size":31.47,"degree":2}
+{"id":"actor:tribunal","item_type":"actor","label":"Tribunal","gdelt_name":"TRIBUNAL","n":49,"country":"","code":"JUD","generic":false,"color":"#6B7280","size":31.47,"degree":1}
+{"id":"actor:naples","item_type":"actor","label":"Naples","gdelt_name":"NAPLES","n":49,"country":"ITA","code":"ITA","generic":false,"color":"#6B7280","size":31.47,"degree":3}
+{"id":"actor:presbyterian","item_type":"actor","label":"Presbyterian","gdelt_name":"PRESBYTERIAN","n":49,"country":"","code":"CHRPRO300","generic":false,"color":"#6B7280","size":31.47,"degree":1}
+{"id":"actor:first_lady","item_type":"actor","label":"First Lady","gdelt_name":"FIRST LADY","n":49,"country":"","code":"ELI","generic":false,"color":"#6B7280","size":31.47,"degree":4}
+{"id":"actor:australian","item_type":"actor","label":"Australian","gdelt_name":"AUSTRALIAN","n":49,"country":"AUS","code":"AUS","generic":false,"color":"#6B7280","size":31.47,"degree":1}
+{"id":"actor:palestine","item_type":"actor","label":"Palestine","gdelt_name":"PALESTINE","n":49,"country":"PSE","code":"PSE","generic":false,"color":"#6B7280","size":31.47,"degree":2}
+{"id":"actor:secretariat","item_type":"actor","label":"Secretariat","gdelt_name":"SECRETARIAT","n":48,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":31.35,"degree":1}
+{"id":"actor:consistory","item_type":"actor","label":"Consistory","gdelt_name":"CONSISTORY","n":48,"country":"","code":"JUD","generic":false,"color":"#6B7280","size":31.35,"degree":2}
+{"id":"actor:gaza","item_type":"actor","label":"Gaza","gdelt_name":"GAZA","n":48,"country":"PSE","code":"PSE","generic":false,"color":"#6B7280","size":31.35,"degree":3}
+{"id":"actor:iowa","item_type":"actor","label":"Iowa","gdelt_name":"IOWA","n":47,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":31.23,"degree":2}
+{"id":"actor:border_patrol","item_type":"actor","label":"Border Patrol","gdelt_name":"BORDER PATROL","n":47,"country":"","code":"COP","generic":false,"color":"#6B7280","size":31.23,"degree":1}
+{"id":"actor:asylum_seeker","item_type":"actor","label":"Asylum Seeker","gdelt_name":"ASYLUM SEEKER","n":47,"country":"","code":"REF","generic":false,"color":"#6B7280","size":31.23,"degree":3}
+{"id":"actor:egypt","item_type":"actor","label":"Egypt","gdelt_name":"EGYPT","n":47,"country":"EGY","code":"EGY","generic":false,"color":"#6B7280","size":31.23,"degree":1}
+{"id":"actor:indonesia","item_type":"actor","label":"Indonesia","gdelt_name":"INDONESIA","n":47,"country":"IDN","code":"IDN","generic":false,"color":"#6B7280","size":31.23,"degree":1}
+{"id":"actor:louisville","item_type":"actor","label":"Louisville","gdelt_name":"LOUISVILLE","n":46,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":31.1,"degree":4}
+{"id":"actor:utah","item_type":"actor","label":"Utah","gdelt_name":"UTAH","n":46,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":31.1,"degree":1}
+{"id":"actor:prince","item_type":"actor","label":"Prince","gdelt_name":"PRINCE","n":45,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":30.97,"degree":1}
+{"id":"actor:islam","item_type":"actor","label":"Islam","gdelt_name":"ISLAM","n":44,"country":"","code":"MOS","generic":false,"color":"#6B7280","size":30.84,"degree":1}
+{"id":"actor:raul_castro","item_type":"actor","label":"Raul Castro","gdelt_name":"RAUL CASTRO","n":44,"country":"CUB","code":"CUBGOV","generic":false,"color":"#6B7280","size":30.84,"degree":2}
+{"id":"actor:militia","item_type":"actor","label":"Militia","gdelt_name":"MILITIA","n":44,"country":"","code":"UAF","generic":false,"color":"#6B7280","size":30.84,"degree":2}
+{"id":"actor:hawaii","item_type":"actor","label":"Hawaii","gdelt_name":"HAWAII","n":43,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":30.71,"degree":1}
+{"id":"actor:caritas","item_type":"actor","label":"Caritas","gdelt_name":"CARITAS","n":43,"country":"","code":"NGOCHRCTH","generic":false,"color":"#6B7280","size":30.71,"degree":1}
+{"id":"actor:google","item_type":"actor","label":"Google","gdelt_name":"GOOGLE","n":43,"country":"USA","code":"MNCUSAMED","generic":false,"color":"#6B7280","size":30.71,"degree":2}
+{"id":"actor:san_diego","item_type":"actor","label":"San Diego","gdelt_name":"SAN DIEGO","n":43,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":30.71,"degree":2}
+{"id":"actor:new_jersey","item_type":"actor","label":"New Jersey","gdelt_name":"NEW JERSEY","n":43,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":30.71,"degree":1}
+{"id":"actor:magazine","item_type":"actor","label":"Magazine","gdelt_name":"MAGAZINE","n":43,"country":"","code":"MED","generic":false,"color":"#6B7280","size":30.71,"degree":1}
+{"id":"actor:polish","item_type":"actor","label":"Polish","gdelt_name":"POLISH","n":42,"country":"POL","code":"POL","generic":false,"color":"#6B7280","size":30.57,"degree":2}
+{"id":"actor:greece","item_type":"actor","label":"Greece","gdelt_name":"GREECE","n":42,"country":"GRC","code":"GRC","generic":false,"color":"#6B7280","size":30.57,"degree":2}
+{"id":"actor:afghanistan","item_type":"actor","label":"Afghanistan","gdelt_name":"AFGHANISTAN","n":42,"country":"AFG","code":"AFG","generic":false,"color":"#6B7280","size":30.57,"degree":1}
+{"id":"actor:religious_organization","item_type":"actor","label":"Religious Organization","gdelt_name":"RELIGIOUS ORGANIZATION","n":42,"country":"","code":"REL","generic":false,"color":"#6B7280","size":30.57,"degree":3}
+{"id":"actor:parliament","item_type":"actor","label":"Parliament","gdelt_name":"PARLIAMENT","n":42,"country":"","code":"LEG","generic":false,"color":"#6B7280","size":30.57,"degree":2}
+{"id":"actor:fidel_castro","item_type":"actor","label":"Fidel Castro","gdelt_name":"FIDEL CASTRO","n":42,"country":"CUB","code":"CUBELI","generic":false,"color":"#6B7280","size":30.57,"degree":3}
+{"id":"actor:demonstrator","item_type":"actor","label":"Demonstrator","gdelt_name":"DEMONSTRATOR","n":41,"country":"","code":"OPP","generic":false,"color":"#6B7280","size":30.43,"degree":1}
+{"id":"actor:chinese","item_type":"actor","label":"Chinese","gdelt_name":"CHINESE","n":41,"country":"CHN","code":"CHN","generic":false,"color":"#6B7280","size":30.43,"degree":2}
+{"id":"actor:police_officer","item_type":"actor","label":"Police Officer","gdelt_name":"POLICE OFFICER","n":41,"country":"","code":"COP","generic":false,"color":"#6B7280","size":30.43,"degree":1}
+{"id":"actor:orlando","item_type":"actor","label":"Orlando","gdelt_name":"ORLANDO","n":40,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":30.28,"degree":1}
+{"id":"actor:atlanta","item_type":"actor","label":"Atlanta","gdelt_name":"ATLANTA","n":40,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":30.28,"degree":1}
+{"id":"actor:arizona","item_type":"actor","label":"Arizona","gdelt_name":"ARIZONA","n":40,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":30.28,"degree":1}
+{"id":"actor:angola","item_type":"actor","label":"Angola","gdelt_name":"ANGOLA","n":40,"country":"AGO","code":"AGO","generic":false,"color":"#6B7280","size":30.28,"degree":2}
+{"id":"actor:san_salvador","item_type":"actor","label":"San Salvador","gdelt_name":"SAN SALVADOR","n":40,"country":"SLV","code":"SLVREL","generic":false,"color":"#6B7280","size":30.28,"degree":1}
+{"id":"actor:political_prisoner","item_type":"actor","label":"Political Prisoner","gdelt_name":"POLITICAL PRISONER","n":40,"country":"","code":"OPP","generic":false,"color":"#6B7280","size":30.28,"degree":2}
+{"id":"actor:north_carolina","item_type":"actor","label":"North Carolina","gdelt_name":"NORTH CAROLINA","n":39,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":30.13,"degree":2}
+{"id":"actor:barbados","item_type":"actor","label":"Barbados","gdelt_name":"BARBADOS","n":39,"country":"BRB","code":"BRB","generic":false,"color":"#6B7280","size":30.13,"degree":1}
+{"id":"actor:syrian","item_type":"actor","label":"Syrian","gdelt_name":"SYRIAN","n":39,"country":"SYR","code":"SYR","generic":false,"color":"#6B7280","size":30.13,"degree":1}
+{"id":"actor:vietnam","item_type":"actor","label":"Vietnam","gdelt_name":"VIETNAM","n":39,"country":"VNM","code":"VNM","generic":false,"color":"#6B7280","size":30.13,"degree":1}
+{"id":"actor:san_antonio","item_type":"actor","label":"San Antonio","gdelt_name":"SAN ANTONIO","n":39,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":30.13,"degree":1}
+{"id":"actor:daniel_ortega","item_type":"actor","label":"Daniel Ortega","gdelt_name":"DANIEL ORTEGA","n":38,"country":"NIC","code":"NICGOV","generic":false,"color":"#6B7280","size":29.98,"degree":1}
+{"id":"actor:waterloo","item_type":"actor","label":"Waterloo","gdelt_name":"WATERLOO","n":38,"country":"BEL","code":"BEL","generic":false,"color":"#6B7280","size":29.98,"degree":3}
+{"id":"actor:nevada","item_type":"actor","label":"Nevada","gdelt_name":"NEVADA","n":38,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":29.98,"degree":1}
+{"id":"actor:terrorist","item_type":"actor","label":"Terrorist","gdelt_name":"TERRORIST","n":38,"country":"","code":"UAF","generic":false,"color":"#6B7280","size":29.98,"degree":2}
+{"id":"actor:monk","item_type":"actor","label":"Monk","gdelt_name":"MONK","n":38,"country":"","code":"REL","generic":false,"color":"#6B7280","size":29.98,"degree":1}
+{"id":"actor:dallas","item_type":"actor","label":"Dallas","gdelt_name":"DALLAS","n":38,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":29.98,"degree":2}
+{"id":"actor:trinidad_and_tobago","item_type":"actor","label":"Trinidad And Tobago","gdelt_name":"TRINIDAD AND TOBAGO","n":37,"country":"TTO","code":"TTO","generic":false,"color":"#6B7280","size":29.83,"degree":1}
+{"id":"actor:panama_city","item_type":"actor","label":"Panama City","gdelt_name":"PANAMA CITY","n":37,"country":"PAN","code":"PAN","generic":false,"color":"#6B7280","size":29.83,"degree":2}
+{"id":"actor:legislature","item_type":"actor","label":"Legislature","gdelt_name":"LEGISLATURE","n":37,"country":"","code":"LEG","generic":false,"color":"#6B7280","size":29.83,"degree":1}
+{"id":"actor:nagasaki","item_type":"actor","label":"Nagasaki","gdelt_name":"NAGASAKI","n":37,"country":"JPN","code":"JPN","generic":false,"color":"#6B7280","size":29.83,"degree":1}
+{"id":"actor:britain","item_type":"actor","label":"Britain","gdelt_name":"BRITAIN","n":37,"country":"GBR","code":"GBRGOV","generic":false,"color":"#6B7280","size":29.83,"degree":1}
+{"id":"actor:the_opposition","item_type":"actor","label":"The Opposition","gdelt_name":"THE OPPOSITION","n":36,"country":"","code":"OPP","generic":false,"color":"#6B7280","size":29.67,"degree":1}
+{"id":"actor:barack_obama","item_type":"actor","label":"Barack Obama","gdelt_name":"BARACK OBAMA","n":36,"country":"USA","code":"USAGOV","generic":false,"color":"#6B7280","size":29.67,"degree":1}
+{"id":"actor:lawrence","item_type":"actor","label":"Lawrence","gdelt_name":"LAWRENCE","n":35,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":29.5,"degree":1}
+{"id":"actor:quito","item_type":"actor","label":"Quito","gdelt_name":"QUITO","n":35,"country":"ECU","code":"ECU","generic":false,"color":"#6B7280","size":29.5,"degree":3}
+{"id":"actor:valencia","item_type":"actor","label":"Valencia","gdelt_name":"VALENCIA","n":35,"country":"ESP","code":"ESP","generic":false,"color":"#6B7280","size":29.5,"degree":2}
+{"id":"actor:massachusetts","item_type":"actor","label":"Massachusetts","gdelt_name":"MASSACHUSETTS","n":35,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":29.5,"degree":1}
+{"id":"actor:moscow","item_type":"actor","label":"Moscow","gdelt_name":"MOSCOW","n":35,"country":"RUS","code":"RUS","generic":false,"color":"#6B7280","size":29.5,"degree":2}
+{"id":"actor:indiana","item_type":"actor","label":"Indiana","gdelt_name":"INDIANA","n":35,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":29.5,"degree":3}
+{"id":"actor:milwaukee","item_type":"actor","label":"Milwaukee","gdelt_name":"MILWAUKEE","n":35,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":29.5,"degree":1}
+{"id":"actor:nebraska","item_type":"actor","label":"Nebraska","gdelt_name":"NEBRASKA","n":34,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":29.33,"degree":1}
+{"id":"actor:civilian","item_type":"actor","label":"Civilian","gdelt_name":"CIVILIAN","n":34,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":29.33,"degree":1}
+{"id":"actor:chief_executive","item_type":"actor","label":"Chief Executive","gdelt_name":"CHIEF EXECUTIVE","n":34,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":29.33,"degree":2}
+{"id":"actor:salt_lake_city","item_type":"actor","label":"Salt Lake City","gdelt_name":"SALT LAKE CITY","n":33,"country":"USA","code":"USACHR","generic":false,"color":"#6B7280","size":29.16,"degree":1}
+{"id":"actor:freemasonry","item_type":"actor","label":"Freemasonry","gdelt_name":"FREEMASONRY","n":33,"country":"","code":"ABR010","generic":false,"color":"#6B7280","size":29.16,"degree":1}
+{"id":"actor:rebellion","item_type":"actor","label":"Rebellion","gdelt_name":"REBELLION","n":33,"country":"","code":"REB","generic":false,"color":"#6B7280","size":29.16,"degree":2}
+{"id":"actor:islamic","item_type":"actor","label":"Islamic","gdelt_name":"ISLAMIC","n":33,"country":"","code":"MOSCVL","generic":false,"color":"#6B7280","size":29.16,"degree":1}
+{"id":"actor:hunter","item_type":"actor","label":"Hunter","gdelt_name":"HUNTER","n":33,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":29.16,"degree":2}
+{"id":"actor:west_virginia","item_type":"actor","label":"West Virginia","gdelt_name":"WEST VIRGINIA","n":33,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":29.16,"degree":1}
+{"id":"actor:managua","item_type":"actor","label":"Managua","gdelt_name":"MANAGUA","n":33,"country":"NIC","code":"NICREL","generic":false,"color":"#6B7280","size":29.16,"degree":1}
+{"id":"actor:kingdom","item_type":"actor","label":"Kingdom","gdelt_name":"KINGDOM","n":33,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":29.16,"degree":1}
+{"id":"actor:guinea","item_type":"actor","label":"Guinea","gdelt_name":"GUINEA","n":33,"country":"GIN","code":"GIN","generic":false,"color":"#6B7280","size":29.16,"degree":2}
+{"id":"actor:alabama","item_type":"actor","label":"Alabama","gdelt_name":"ALABAMA","n":33,"country":"USA","code":"USALAB","generic":false,"color":"#6B7280","size":29.16,"degree":1}
+{"id":"actor:catholic_missionary","item_type":"actor","label":"Catholic Missionary","gdelt_name":"CATHOLIC MISSIONARY","n":33,"country":"","code":"CHRCTH","generic":false,"color":"#6B7280","size":29.16,"degree":1}
+{"id":"actor:felon","item_type":"actor","label":"Felon","gdelt_name":"FELON","n":32,"country":"","code":"CRM","generic":false,"color":"#6B7280","size":28.98,"degree":1}
+{"id":"actor:illegal_immigrant","item_type":"actor","label":"Illegal Immigrant","gdelt_name":"ILLEGAL IMMIGRANT","n":32,"country":"","code":"CRM","generic":false,"color":"#6B7280","size":28.98,"degree":1}
+{"id":"actor:tennessee","item_type":"actor","label":"Tennessee","gdelt_name":"TENNESSEE","n":32,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":28.98,"degree":1}
+{"id":"actor:blog","item_type":"actor","label":"Blog","gdelt_name":"BLOG","n":32,"country":"","code":"MED","generic":false,"color":"#6B7280","size":28.98,"degree":1}
+{"id":"actor:extremist","item_type":"actor","label":"Extremist","gdelt_name":"EXTREMIST","n":32,"country":"","code":"RAD","generic":false,"color":"#6B7280","size":28.98,"degree":1}
+{"id":"actor:dili","item_type":"actor","label":"Dili","gdelt_name":"DILI","n":32,"country":"TMP","code":"TMP","generic":false,"color":"#6B7280","size":28.98,"degree":1}
+{"id":"actor:ecuadorian","item_type":"actor","label":"Ecuadorian","gdelt_name":"ECUADORIAN","n":32,"country":"ECU","code":"ECUREL","generic":false,"color":"#6B7280","size":28.98,"degree":1}
+{"id":"actor:victoria","item_type":"actor","label":"Victoria","gdelt_name":"VICTORIA","n":31,"country":"AUS","code":"AUS","generic":false,"color":"#6B7280","size":28.79,"degree":1}
+{"id":"actor:kenya","item_type":"actor","label":"Kenya","gdelt_name":"KENYA","n":31,"country":"KEN","code":"KEN","generic":false,"color":"#6B7280","size":28.79,"degree":1}
+{"id":"actor:pittsburgh","item_type":"actor","label":"Pittsburgh","gdelt_name":"PITTSBURGH","n":31,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":28.79,"degree":1}
+{"id":"actor:charlotte","item_type":"actor","label":"Charlotte","gdelt_name":"CHARLOTTE","n":31,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":28.79,"degree":1}
+{"id":"actor:maine","item_type":"actor","label":"Maine","gdelt_name":"MAINE","n":31,"country":"USA","code":"USAJUD","generic":false,"color":"#6B7280","size":28.79,"degree":1}
+{"id":"actor:turin","item_type":"actor","label":"Turin","gdelt_name":"TURIN","n":31,"country":"ITA","code":"ITA","generic":false,"color":"#6B7280","size":28.79,"degree":1}
+{"id":"actor:pentecostalism","item_type":"actor","label":"Pentecostalism","gdelt_name":"PENTECOSTALISM","n":31,"country":"","code":"CHRPRO250","generic":false,"color":"#6B7280","size":28.79,"degree":1}
+{"id":"actor:rosario","item_type":"actor","label":"Rosario","gdelt_name":"ROSARIO","n":30,"country":"ARG","code":"ARG","generic":false,"color":"#6B7280","size":28.6,"degree":2}
+{"id":"actor:clergymen","item_type":"actor","label":"Clergymen","gdelt_name":"CLERGYMEN","n":30,"country":"","code":"REL","generic":false,"color":"#6B7280","size":28.6,"degree":1}
+{"id":"actor:indonesian","item_type":"actor","label":"Indonesian","gdelt_name":"INDONESIAN","n":30,"country":"IDN","code":"IDN","generic":false,"color":"#6B7280","size":28.6,"degree":2}
+{"id":"actor:district_court","item_type":"actor","label":"District Court","gdelt_name":"DISTRICT COURT","n":30,"country":"","code":"JUDJUD","generic":false,"color":"#6B7280","size":28.6,"degree":1}
+{"id":"actor:intellectual","item_type":"actor","label":"Intellectual","gdelt_name":"INTELLECTUAL","n":30,"country":"","code":"EDU","generic":false,"color":"#6B7280","size":28.6,"degree":1}
+{"id":"actor:paraguayan","item_type":"actor","label":"Paraguayan","gdelt_name":"PARAGUAYAN","n":30,"country":"PRY","code":"PRY","generic":false,"color":"#6B7280","size":28.6,"degree":1}
+{"id":"actor:oklahoma_city","item_type":"actor","label":"Oklahoma City","gdelt_name":"OKLAHOMA CITY","n":30,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":28.6,"degree":3}
+{"id":"actor:st_vincent","item_type":"actor","label":"St Vincent","gdelt_name":"ST VINCENT","n":30,"country":"VCT","code":"VCT","generic":false,"color":"#6B7280","size":28.6,"degree":1}
+{"id":"actor:jerusalem","item_type":"actor","label":"Jerusalem","gdelt_name":"JERUSALEM","n":30,"country":"ISR","code":"ISR","generic":false,"color":"#6B7280","size":28.6,"degree":1}
+{"id":"actor:idaho","item_type":"actor","label":"Idaho","gdelt_name":"IDAHO","n":29,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":28.41,"degree":2}
+{"id":"actor:farc","item_type":"actor","label":"Farc","gdelt_name":"FARC","n":29,"country":"COL","code":"COLREB","generic":false,"color":"#6B7280","size":28.41,"degree":1}
+{"id":"actor:juarez","item_type":"actor","label":"Juarez","gdelt_name":"JUAREZ","n":29,"country":"MEX","code":"MEX","generic":false,"color":"#6B7280","size":28.41,"degree":1}
+{"id":"actor:south_korea","item_type":"actor","label":"South Korea","gdelt_name":"SOUTH KOREA","n":29,"country":"KOR","code":"KOR","generic":false,"color":"#6B7280","size":28.41,"degree":1}
+{"id":"actor:preacher","item_type":"actor","label":"Preacher","gdelt_name":"PREACHER","n":29,"country":"","code":"REL","generic":false,"color":"#6B7280","size":28.41,"degree":1}
+{"id":"actor:filipino","item_type":"actor","label":"Filipino","gdelt_name":"FILIPINO","n":28,"country":"PHL","code":"PHLREL","generic":false,"color":"#6B7280","size":28.2,"degree":1}
+{"id":"actor:wales","item_type":"actor","label":"Wales","gdelt_name":"WALES","n":28,"country":"GBR","code":"GBR","generic":false,"color":"#6B7280","size":28.2,"degree":1}
+{"id":"actor:manila","item_type":"actor","label":"Manila","gdelt_name":"MANILA","n":28,"country":"PHL","code":"PHL","generic":false,"color":"#6B7280","size":28.2,"degree":1}
+{"id":"actor:usaid","item_type":"actor","label":"Usaid","gdelt_name":"USAID","n":28,"country":"USA","code":"USAGOVDEV","generic":false,"color":"#6B7280","size":28.2,"degree":1}
+{"id":"actor:richmond","item_type":"actor","label":"Richmond","gdelt_name":"RICHMOND","n":28,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":28.2,"degree":1}
+{"id":"actor:high_court","item_type":"actor","label":"High Court","gdelt_name":"HIGH COURT","n":28,"country":"","code":"JUD","generic":false,"color":"#6B7280","size":28.2,"degree":1}
+{"id":"actor:beijing","item_type":"actor","label":"Beijing","gdelt_name":"BEIJING","n":28,"country":"CHN","code":"CHN","generic":false,"color":"#6B7280","size":28.2,"degree":3}
+{"id":"actor:portland","item_type":"actor","label":"Portland","gdelt_name":"PORTLAND","n":28,"country":"USA","code":"USACHR","generic":false,"color":"#6B7280","size":28.2,"degree":1}
+{"id":"actor:health_minist","item_type":"actor","label":"Health Minist","gdelt_name":"HEALTH MINIST","n":28,"country":"","code":"GOVHLH","generic":false,"color":"#6B7280","size":28.2,"degree":1}
+{"id":"actor:hindu","item_type":"actor","label":"Hindu","gdelt_name":"HINDU","n":28,"country":"","code":"HIN","generic":false,"color":"#6B7280","size":28.2,"degree":1}
+{"id":"actor:civil_society","item_type":"actor","label":"Civil Society","gdelt_name":"CIVIL SOCIETY","n":27,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":27.99,"degree":1}
+{"id":"actor:gunmen","item_type":"actor","label":"Gunmen","gdelt_name":"GUNMEN","n":27,"country":"","code":"UAF","generic":false,"color":"#6B7280","size":27.99,"degree":1}
+{"id":"actor:oregon","item_type":"actor","label":"Oregon","gdelt_name":"OREGON","n":27,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":27.99,"degree":1}
+{"id":"actor:rebel","item_type":"actor","label":"Rebel","gdelt_name":"REBEL","n":27,"country":"","code":"REB","generic":false,"color":"#6B7280","size":27.99,"degree":1}
+{"id":"actor:state_supreme_court","item_type":"actor","label":"State Supreme Court","gdelt_name":"STATE SUPREME COURT","n":27,"country":"","code":"JUD","generic":false,"color":"#6B7280","size":27.99,"degree":1}
+{"id":"actor:manchester","item_type":"actor","label":"Manchester","gdelt_name":"MANCHESTER","n":27,"country":"GBR","code":"GBR","generic":false,"color":"#6B7280","size":27.99,"degree":1}
+{"id":"actor:luxembourg","item_type":"actor","label":"Luxembourg","gdelt_name":"LUXEMBOURG","n":27,"country":"LUX","code":"LUX","generic":false,"color":"#6B7280","size":27.99,"degree":1}
+{"id":"actor:legislator","item_type":"actor","label":"Legislator","gdelt_name":"LEGISLATOR","n":27,"country":"","code":"LEG","generic":false,"color":"#6B7280","size":27.99,"degree":1}
+{"id":"actor:commentator","item_type":"actor","label":"Commentator","gdelt_name":"COMMENTATOR","n":27,"country":"","code":"MED","generic":false,"color":"#6B7280","size":27.99,"degree":1}
+{"id":"actor:news_outlet","item_type":"actor","label":"News Outlet","gdelt_name":"NEWS OUTLET","n":26,"country":"","code":"MED","generic":false,"color":"#6B7280","size":27.78,"degree":1}
+{"id":"actor:the_international_community","item_type":"actor","label":"The International Community","gdelt_name":"THE INTERNATIONAL COMMUNITY","n":26,"country":"","code":"UIS","generic":false,"color":"#6B7280","size":27.78,"degree":1}
+{"id":"actor:santo_domingo","item_type":"actor","label":"Santo Domingo","gdelt_name":"SANTO DOMINGO","n":26,"country":"DOM","code":"DOM","generic":false,"color":"#6B7280","size":27.78,"degree":1}
+{"id":"actor:seville","item_type":"actor","label":"Seville","gdelt_name":"SEVILLE","n":26,"country":"ESP","code":"ESP","generic":false,"color":"#6B7280","size":27.78,"degree":1}
+{"id":"actor:latinos","item_type":"actor","label":"Latinos","gdelt_name":"LATINOS","n":26,"country":"","code":"ltn","generic":false,"color":"#6B7280","size":27.78,"degree":2}
+{"id":"actor:mount_carmel","item_type":"actor","label":"Mount Carmel","gdelt_name":"MOUNT CARMEL","n":26,"country":"ISR","code":"ISR","generic":false,"color":"#6B7280","size":27.78,"degree":1}
+{"id":"actor:methodist_church","item_type":"actor","label":"Methodist Church","gdelt_name":"METHODIST CHURCH","n":26,"country":"","code":"CHRPRO","generic":false,"color":"#6B7280","size":27.78,"degree":1}
+{"id":"actor:krakow","item_type":"actor","label":"Krakow","gdelt_name":"KRAKOW","n":26,"country":"POL","code":"POL","generic":false,"color":"#6B7280","size":27.78,"degree":1}
+{"id":"actor:guatemalan","item_type":"actor","label":"Guatemalan","gdelt_name":"GUATEMALAN","n":26,"country":"GTM","code":"GTM","generic":false,"color":"#6B7280","size":27.78,"degree":1}
+{"id":"actor:correctional_institution","item_type":"actor","label":"Correctional Institution","gdelt_name":"CORRECTIONAL INSTITUTION","n":25,"country":"","code":"COP","generic":false,"color":"#6B7280","size":27.55,"degree":1}
+{"id":"actor:christian_church","item_type":"actor","label":"Christian Church","gdelt_name":"CHRISTIAN CHURCH","n":25,"country":"","code":"CHRPRO332","generic":false,"color":"#6B7280","size":27.55,"degree":1}
+{"id":"actor:eastern_catholic_church","item_type":"actor","label":"Eastern Catholic Church","gdelt_name":"EASTERN CATHOLIC CHURCH","n":25,"country":"","code":"CHRCTH800","generic":false,"color":"#6B7280","size":27.55,"degree":1}
+{"id":"actor:cameroon","item_type":"actor","label":"Cameroon","gdelt_name":"CAMEROON","n":24,"country":"CMR","code":"CMR","generic":false,"color":"#6B7280","size":27.31,"degree":2}
+{"id":"actor:greek","item_type":"actor","label":"Greek","gdelt_name":"GREEK","n":24,"country":"GRC","code":"GRC","generic":false,"color":"#6B7280","size":27.31,"degree":1}
+{"id":"actor:air_force","item_type":"actor","label":"Air Force","gdelt_name":"AIR FORCE","n":24,"country":"","code":"MIL","generic":false,"color":"#6B7280","size":27.31,"degree":1}
+{"id":"actor:mississippi","item_type":"actor","label":"Mississippi","gdelt_name":"MISSISSIPPI","n":24,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":27.31,"degree":1}
+{"id":"actor:separatist","item_type":"actor","label":"Separatist","gdelt_name":"SEPARATIST","n":24,"country":"","code":"SEP","generic":false,"color":"#6B7280","size":27.31,"degree":1}
+{"id":"actor:kansas_city","item_type":"actor","label":"Kansas City","gdelt_name":"KANSAS CITY","n":24,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":27.31,"degree":1}
+{"id":"actor:protestantism","item_type":"actor","label":"Protestantism","gdelt_name":"PROTESTANTISM","n":24,"country":"","code":"CHRPRO","generic":false,"color":"#6B7280","size":27.31,"degree":1}
+{"id":"actor:bangladesh","item_type":"actor","label":"Bangladesh","gdelt_name":"BANGLADESH","n":24,"country":"BGD","code":"BGD","generic":false,"color":"#6B7280","size":27.31,"degree":1}
+{"id":"actor:armenian","item_type":"actor","label":"Armenian","gdelt_name":"ARMENIAN","n":24,"country":"ARM","code":"ARM","generic":false,"color":"#6B7280","size":27.31,"degree":1}
+{"id":"actor:fisher","item_type":"actor","label":"Fisher","gdelt_name":"FISHER","n":23,"country":"","code":"AGR","generic":false,"color":"#6B7280","size":27.07,"degree":1}
+{"id":"actor:austria","item_type":"actor","label":"Austria","gdelt_name":"AUSTRIA","n":23,"country":"AUT","code":"AUT","generic":false,"color":"#6B7280","size":27.07,"degree":1}
+{"id":"actor:law_enforcement_officer","item_type":"actor","label":"Law Enforcement Officer","gdelt_name":"LAW ENFORCEMENT OFFICER","n":23,"country":"","code":"COP","generic":false,"color":"#6B7280","size":27.07,"degree":1}
+{"id":"actor:dissident","item_type":"actor","label":"Dissident","gdelt_name":"DISSIDENT","n":23,"country":"","code":"OPP","generic":false,"color":"#6B7280","size":27.07,"degree":1}
+{"id":"actor:rhode_island","item_type":"actor","label":"Rhode Island","gdelt_name":"RHODE ISLAND","n":23,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":27.07,"degree":1}
+{"id":"actor:guyana","item_type":"actor","label":"Guyana","gdelt_name":"GUYANA","n":22,"country":"GUY","code":"GUY","generic":false,"color":"#6B7280","size":26.81,"degree":1}
+{"id":"actor:guadalajara","item_type":"actor","label":"Guadalajara","gdelt_name":"GUADALAJARA","n":22,"country":"MEX","code":"MEX","generic":false,"color":"#6B7280","size":26.81,"degree":1}
+{"id":"actor:jacksonville","item_type":"actor","label":"Jacksonville","gdelt_name":"JACKSONVILLE","n":22,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":26.81,"degree":2}
+{"id":"actor:caracas","item_type":"actor","label":"Caracas","gdelt_name":"CARACAS","n":22,"country":"VEN","code":"VEN","generic":false,"color":"#6B7280","size":26.81,"degree":1}
+{"id":"actor:madrid","item_type":"actor","label":"Madrid","gdelt_name":"MADRID","n":21,"country":"ESP","code":"ESP","generic":false,"color":"#6B7280","size":26.55,"degree":1}
+{"id":"actor:connecticut","item_type":"actor","label":"Connecticut","gdelt_name":"CONNECTICUT","n":21,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":26.55,"degree":1}
+{"id":"actor:democratic_republic_of_the_congo","item_type":"actor","label":"Democratic Republic Of The Congo","gdelt_name":"DEMOCRATIC REPUBLIC OF THE CONGO","n":21,"country":"COD","code":"COD","generic":false,"color":"#6B7280","size":26.55,"degree":1}
+{"id":"actor:sovereign","item_type":"actor","label":"Sovereign","gdelt_name":"SOVEREIGN","n":21,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":26.55,"degree":1}
+{"id":"actor:toledo","item_type":"actor","label":"Toledo","gdelt_name":"TOLEDO","n":21,"country":"ESP","code":"ESP","generic":false,"color":"#6B7280","size":26.55,"degree":1}
+{"id":"actor:embassy","item_type":"actor","label":"Embassy","gdelt_name":"EMBASSY","n":21,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":26.55,"degree":1}
+{"id":"actor:congressman","item_type":"actor","label":"Congressman","gdelt_name":"CONGRESSMAN","n":21,"country":"","code":"LEG","generic":false,"color":"#6B7280","size":26.55,"degree":1}
+{"id":"actor:vermont","item_type":"actor","label":"Vermont","gdelt_name":"VERMONT","n":21,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":26.55,"degree":1}
+{"id":"actor:kingston","item_type":"actor","label":"Kingston","gdelt_name":"KINGSTON","n":21,"country":"JAM","code":"JAMREL","generic":false,"color":"#6B7280","size":26.55,"degree":1}
+{"id":"actor:magistrate","item_type":"actor","label":"Magistrate","gdelt_name":"MAGISTRATE","n":21,"country":"","code":"JUD","generic":false,"color":"#6B7280","size":26.55,"degree":1}
+{"id":"actor:appeals_court","item_type":"actor","label":"Appeals Court","gdelt_name":"APPEALS COURT","n":20,"country":"","code":"JUD","generic":false,"color":"#6B7280","size":26.27,"degree":1}
+{"id":"actor:orleans","item_type":"actor","label":"Orleans","gdelt_name":"ORLEANS","n":20,"country":"FRA","code":"FRA","generic":false,"color":"#6B7280","size":26.27,"degree":1}
+{"id":"actor:federal_court","item_type":"actor","label":"Federal Court","gdelt_name":"FEDERAL COURT","n":20,"country":"","code":"JUD","generic":false,"color":"#6B7280","size":26.27,"degree":1}
+{"id":"actor:inuit","item_type":"actor","label":"Inuit","gdelt_name":"INUIT","n":20,"country":"","code":"iku","generic":false,"color":"#6B7280","size":26.27,"degree":1}
+{"id":"actor:episcopalian","item_type":"actor","label":"Episcopalian","gdelt_name":"EPISCOPALIAN","n":19,"country":"","code":"CHRANG002","generic":false,"color":"#6B7280","size":25.97,"degree":1}
+{"id":"actor:judiciary","item_type":"actor","label":"Judiciary","gdelt_name":"JUDICIARY","n":19,"country":"","code":"JUD","generic":false,"color":"#6B7280","size":25.97,"degree":1}
+{"id":"actor:discalced_carmelites","item_type":"actor","label":"Discalced Carmelites","gdelt_name":"DISCALCED CARMELITES","n":19,"country":"","code":"CHRCTH436","generic":false,"color":"#6B7280","size":25.97,"degree":2}
+{"id":"actor:iranian","item_type":"actor","label":"Iranian","gdelt_name":"IRANIAN","n":19,"country":"IRN","code":"IRN","generic":false,"color":"#6B7280","size":25.97,"degree":1}
+{"id":"actor:antioch","item_type":"actor","label":"Antioch","gdelt_name":"ANTIOCH","n":19,"country":"TUR","code":"TUR","generic":false,"color":"#6B7280","size":25.97,"degree":1}
+{"id":"actor:mormon","item_type":"actor","label":"Mormon","gdelt_name":"MORMON","n":19,"country":"","code":"CHRLDS","generic":false,"color":"#6B7280","size":25.97,"degree":1}
+{"id":"actor:caregiver","item_type":"actor","label":"Caregiver","gdelt_name":"CAREGIVER","n":19,"country":"","code":"HLH","generic":false,"color":"#6B7280","size":25.97,"degree":1}
+{"id":"actor:society_of_saint_pius_x","item_type":"actor","label":"Society Of Saint Pius X","gdelt_name":"SOCIETY OF SAINT PIUS X","n":19,"country":"","code":"CHRCTH910","generic":false,"color":"#6B7280","size":25.97,"degree":2}
+{"id":"actor:editor_in_chief","item_type":"actor","label":"Editor In Chief","gdelt_name":"EDITOR IN CHIEF","n":18,"country":"","code":"MED","generic":false,"color":"#6B7280","size":25.67,"degree":1}
+{"id":"actor:trinidad","item_type":"actor","label":"Trinidad","gdelt_name":"TRINIDAD","n":18,"country":"TTO","code":"TTO","generic":false,"color":"#6B7280","size":25.67,"degree":1}
+{"id":"actor:minorities","item_type":"actor","label":"Minorities","gdelt_name":"MINORITIES","n":18,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":25.67,"degree":1}
+{"id":"actor:montana","item_type":"actor","label":"Montana","gdelt_name":"MONTANA","n":18,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":25.67,"degree":1}
+{"id":"actor:national_council","item_type":"actor","label":"National Council","gdelt_name":"NATIONAL COUNCIL","n":18,"country":"","code":"LEG","generic":false,"color":"#6B7280","size":25.67,"degree":1}
+{"id":"actor:little_sisters_of_the_poor","item_type":"actor","label":"Little Sisters Of The Poor","gdelt_name":"LITTLE SISTERS OF THE POOR","n":18,"country":"","code":"CHRCTH459","generic":false,"color":"#6B7280","size":25.67,"degree":1}
+{"id":"actor:premier","item_type":"actor","label":"Premier","gdelt_name":"PREMIER","n":18,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":25.67,"degree":1}
+{"id":"actor:hillary_clinton","item_type":"actor","label":"Hillary Clinton","gdelt_name":"HILLARY CLINTON","n":18,"country":"USA","code":"USAGOV","generic":false,"color":"#6B7280","size":25.67,"degree":1}
+{"id":"actor:foreign_minist","item_type":"actor","label":"Foreign Minist","gdelt_name":"FOREIGN MINIST","n":18,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":25.67,"degree":1}
+{"id":"actor:new_york_state","item_type":"actor","label":"New York State","gdelt_name":"NEW YORK STATE","n":18,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":25.67,"degree":1}
+{"id":"actor:seattle","item_type":"actor","label":"Seattle","gdelt_name":"SEATTLE","n":18,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":25.67,"degree":1}
+{"id":"actor:presentation_sisters","item_type":"actor","label":"Presentation Sisters","gdelt_name":"PRESENTATION SISTERS","n":18,"country":"","code":"CHRCTH484","generic":false,"color":"#6B7280","size":25.67,"degree":1}
+{"id":"actor:suriname","item_type":"actor","label":"Suriname","gdelt_name":"SURINAME","n":18,"country":"SUR","code":"SUR","generic":false,"color":"#6B7280","size":25.67,"degree":1}
+{"id":"actor:red_cross","item_type":"actor","label":"Red Cross","gdelt_name":"RED CROSS","n":18,"country":"","code":"NGOHLHIRC","generic":false,"color":"#6B7280","size":25.67,"degree":1}
+{"id":"actor:orthodox_christian","item_type":"actor","label":"Orthodox Christian","gdelt_name":"ORTHODOX CHRISTIAN","n":17,"country":"","code":"CHRDOX","generic":false,"color":"#6B7280","size":25.34,"degree":1}
+{"id":"actor:delaware","item_type":"actor","label":"Delaware","gdelt_name":"DELAWARE","n":17,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":25.34,"degree":1}
+{"id":"actor:natives","item_type":"actor","label":"Natives","gdelt_name":"NATIVES","n":17,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":25.34,"degree":1}
+{"id":"actor:south_carolina","item_type":"actor","label":"South Carolina","gdelt_name":"SOUTH CAROLINA","n":17,"country":"USA","code":"USAJUD","generic":false,"color":"#6B7280","size":25.34,"degree":1}
+{"id":"actor:police_chief","item_type":"actor","label":"Police Chief","gdelt_name":"POLICE CHIEF","n":17,"country":"","code":"COP","generic":false,"color":"#6B7280","size":25.34,"degree":1}
+{"id":"actor:chancery","item_type":"actor","label":"Chancery","gdelt_name":"CHANCERY","n":17,"country":"","code":"JUD","generic":false,"color":"#6B7280","size":25.34,"degree":1}
+{"id":"actor:maltese","item_type":"actor","label":"Maltese","gdelt_name":"MALTESE","n":17,"country":"MLT","code":"MLT","generic":false,"color":"#6B7280","size":25.34,"degree":1}
+{"id":"actor:minist_of_foreign_affairs","item_type":"actor","label":"Minist Of Foreign Affairs","gdelt_name":"MINIST OF FOREIGN AFFAIRS","n":17,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":25.34,"degree":1}
+{"id":"actor:panamanian","item_type":"actor","label":"Panamanian","gdelt_name":"PANAMANIAN","n":17,"country":"PAN","code":"PAN","generic":false,"color":"#6B7280","size":25.34,"degree":1}
+{"id":"actor:judaism","item_type":"actor","label":"Judaism","gdelt_name":"JUDAISM","n":17,"country":"","code":"JEW","generic":false,"color":"#6B7280","size":25.34,"degree":2}
+{"id":"actor:nato","item_type":"actor","label":"Nato","gdelt_name":"NATO","n":17,"country":"WST","code":"IGOWSTNAT","generic":false,"color":"#6B7280","size":25.34,"degree":1}
+{"id":"actor:sri_lanka","item_type":"actor","label":"Sri Lanka","gdelt_name":"SRI LANKA","n":16,"country":"LKA","code":"LKA","generic":false,"color":"#6B7280","size":25.0,"degree":1}
+{"id":"actor:columnist","item_type":"actor","label":"Columnist","gdelt_name":"COLUMNIST","n":16,"country":"","code":"MED","generic":false,"color":"#6B7280","size":25.0,"degree":1}
+{"id":"actor:jimmy_carter","item_type":"actor","label":"Jimmy Carter","gdelt_name":"JIMMY CARTER","n":16,"country":"USA","code":"USAELIGOV","generic":false,"color":"#6B7280","size":25.0,"degree":2}
+{"id":"actor:native_people","item_type":"actor","label":"Native People","gdelt_name":"NATIVE PEOPLE","n":16,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":25.0,"degree":1}
+{"id":"actor:students_and_teacher","item_type":"actor","label":"Students And Teacher","gdelt_name":"STUDENTS AND TEACHER","n":16,"country":"","code":"EDU","generic":false,"color":"#6B7280","size":25.0,"degree":1}
+{"id":"actor:house_speaker","item_type":"actor","label":"House Speaker","gdelt_name":"HOUSE SPEAKER","n":16,"country":"","code":"LEG","generic":false,"color":"#6B7280","size":25.0,"degree":1}
+{"id":"actor:alexandria","item_type":"actor","label":"Alexandria","gdelt_name":"ALEXANDRIA","n":16,"country":"EGY","code":"EGY","generic":false,"color":"#6B7280","size":25.0,"degree":2}
+{"id":"actor:palestinian","item_type":"actor","label":"Palestinian","gdelt_name":"PALESTINIAN","n":16,"country":"PSE","code":"PSECHR","generic":false,"color":"#6B7280","size":25.0,"degree":1}
+{"id":"actor:saigon","item_type":"actor","label":"Saigon","gdelt_name":"SAIGON","n":16,"country":"VNM","code":"VNM","generic":false,"color":"#6B7280","size":25.0,"degree":1}
+{"id":"actor:worshiper","item_type":"actor","label":"Worshiper","gdelt_name":"WORSHIPER","n":15,"country":"","code":"REL","generic":false,"color":"#6B7280","size":24.64,"degree":1}
+{"id":"actor:bill_clinton","item_type":"actor","label":"Bill Clinton","gdelt_name":"BILL CLINTON","n":15,"country":"USA","code":"USAELIGOV","generic":false,"color":"#6B7280","size":24.64,"degree":1}
+{"id":"actor:north_dakota","item_type":"actor","label":"North Dakota","gdelt_name":"NORTH DAKOTA","n":15,"country":"USA","code":"USACHR","generic":false,"color":"#6B7280","size":24.64,"degree":1}
+{"id":"actor:cleveland","item_type":"actor","label":"Cleveland","gdelt_name":"CLEVELAND","n":15,"country":"USA","code":"USACOP","generic":false,"color":"#6B7280","size":24.64,"degree":1}
+{"id":"actor:canary_islands","item_type":"actor","label":"Canary Islands","gdelt_name":"CANARY ISLANDS","n":15,"country":"ESP","code":"ESP","generic":false,"color":"#6B7280","size":24.64,"degree":1}
+{"id":"actor:polish_national_catholic_church","item_type":"actor","label":"Polish National Catholic Church","gdelt_name":"POLISH NATIONAL CATHOLIC CHURCH","n":14,"country":"","code":"CHRCTH909","generic":false,"color":"#6B7280","size":24.25,"degree":1}
+{"id":"actor:africans","item_type":"actor","label":"Africans","gdelt_name":"AFRICANS","n":14,"country":"","code":"afa","generic":false,"color":"#6B7280","size":24.25,"degree":1}
+{"id":"actor:vietnamese","item_type":"actor","label":"Vietnamese","gdelt_name":"VIETNAMESE","n":13,"country":"VNM","code":"VNM","generic":false,"color":"#6B7280","size":23.83,"degree":1}
+{"id":"actor:settler","item_type":"actor","label":"Settler","gdelt_name":"SETTLER","n":13,"country":"","code":"SET","generic":false,"color":"#6B7280","size":23.83,"degree":1}
+{"id":"actor:nassau","item_type":"actor","label":"Nassau","gdelt_name":"NASSAU","n":13,"country":"BHS","code":"BHSCHR","generic":false,"color":"#6B7280","size":23.83,"degree":1}
+{"id":"actor:legionaries_of_christ","item_type":"actor","label":"Legionaries Of Christ","gdelt_name":"LEGIONARIES OF CHRIST","n":13,"country":"","code":"CHRCTH458","generic":false,"color":"#6B7280","size":23.83,"degree":1}
+{"id":"actor:sisters_of_mercy","item_type":"actor","label":"Sisters Of Mercy","gdelt_name":"SISTERS OF MERCY","n":13,"country":"","code":"CHRCTH501","generic":false,"color":"#6B7280","size":23.83,"degree":1}
+{"id":"actor:scotland","item_type":"actor","label":"Scotland","gdelt_name":"SCOTLAND","n":13,"country":"GBR","code":"GBR","generic":false,"color":"#6B7280","size":23.83,"degree":1}
+{"id":"actor:calif","item_type":"actor","label":"Calif","gdelt_name":"CALIF","n":13,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":23.83,"degree":1}
+{"id":"actor:czech_republic","item_type":"actor","label":"Czech Republic","gdelt_name":"CZECH REPUBLIC","n":13,"country":"CZE","code":"CZE","generic":false,"color":"#6B7280","size":23.83,"degree":1}
+{"id":"actor:pedophile","item_type":"actor","label":"Pedophile","gdelt_name":"PEDOPHILE","n":13,"country":"","code":"CRMREL","generic":false,"color":"#6B7280","size":23.83,"degree":1}
+{"id":"actor:colonist","item_type":"actor","label":"Colonist","gdelt_name":"COLONIST","n":12,"country":"","code":"CVL","generic":false,"color":"#6B7280","size":23.39,"degree":1}
+{"id":"actor:veracruz","item_type":"actor","label":"Veracruz","gdelt_name":"VERACRUZ","n":12,"country":"MEX","code":"MEX","generic":false,"color":"#6B7280","size":23.39,"degree":1}
+{"id":"actor:trooper","item_type":"actor","label":"Trooper","gdelt_name":"TROOPER","n":12,"country":"","code":"COP","generic":false,"color":"#6B7280","size":23.39,"degree":1}
+{"id":"actor:wyoming","item_type":"actor","label":"Wyoming","gdelt_name":"WYOMING","n":12,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":23.39,"degree":1}
+{"id":"actor:bruges","item_type":"actor","label":"Bruges","gdelt_name":"BRUGES","n":12,"country":"BEL","code":"BELREL","generic":false,"color":"#6B7280","size":23.39,"degree":1}
+{"id":"actor:rafael_correa","item_type":"actor","label":"Rafael Correa","gdelt_name":"RAFAEL CORREA","n":12,"country":"ECU","code":"ECUGOV","generic":false,"color":"#6B7280","size":23.39,"degree":1}
+{"id":"actor:group_of_seven","item_type":"actor","label":"Group Of Seven","gdelt_name":"GROUP OF SEVEN","n":12,"country":"","code":"IGOBUSGOS","generic":false,"color":"#6B7280","size":23.39,"degree":1}
+{"id":"actor:kyiv","item_type":"actor","label":"Kyiv","gdelt_name":"KYIV","n":12,"country":"UKR","code":"UKR","generic":false,"color":"#6B7280","size":23.39,"degree":1}
+{"id":"actor:advisory_board","item_type":"actor","label":"Advisory Board","gdelt_name":"ADVISORY BOARD","n":12,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":23.39,"degree":1}
+{"id":"actor:new_hampshire","item_type":"actor","label":"New Hampshire","gdelt_name":"NEW HAMPSHIRE","n":12,"country":"USA","code":"USACVL","generic":false,"color":"#6B7280","size":23.39,"degree":1}
+{"id":"actor:port_of_spain","item_type":"actor","label":"Port Of Spain","gdelt_name":"PORT OF SPAIN","n":12,"country":"TTO","code":"TTOCHR","generic":false,"color":"#6B7280","size":23.39,"degree":1}
+{"id":"actor:head_of_state","item_type":"actor","label":"Head Of State","gdelt_name":"HEAD OF STATE","n":12,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":23.39,"degree":1}
+{"id":"actor:monarch","item_type":"actor","label":"Monarch","gdelt_name":"MONARCH","n":12,"country":"","code":"GOV","generic":false,"color":"#6B7280","size":23.39,"degree":1}
+{"id":"actor:displaced_people","item_type":"actor","label":"Displaced People","gdelt_name":"DISPLACED PEOPLE","n":11,"country":"","code":"REF","generic":false,"color":"#6B7280","size":22.91,"degree":1}
+{"id":"actor:bandit","item_type":"actor","label":"Bandit","gdelt_name":"BANDIT","n":11,"country":"","code":"CRM","generic":false,"color":"#6B7280","size":22.91,"degree":1}
+{"id":"actor:thieves","item_type":"actor","label":"Thieves","gdelt_name":"THIEVES","n":11,"country":"","code":"CRM","generic":false,"color":"#6B7280","size":22.91,"degree":1}
+{"id":"actor:old_catholic_church","item_type":"actor","label":"Old Catholic Church","gdelt_name":"OLD CATHOLIC CHURCH","n":11,"country":"","code":"CHRANG902","generic":false,"color":"#6B7280","size":22.91,"degree":1}
+{"id":"actor:czestochowa","item_type":"actor","label":"Czestochowa","gdelt_name":"CZESTOCHOWA","n":11,"country":"POL","code":"POL","generic":false,"color":"#6B7280","size":22.91,"degree":1}
+{"id":"actor:drug_trafficker","item_type":"actor","label":"Drug Trafficker","gdelt_name":"DRUG TRAFFICKER","n":11,"country":"","code":"CRM","generic":false,"color":"#6B7280","size":22.91,"degree":1}
+{"id":"actor:south_korean","item_type":"actor","label":"South Korean","gdelt_name":"SOUTH KOREAN","n":11,"country":"KOR","code":"KOR","generic":false,"color":"#6B7280","size":22.91,"degree":1}
+{"id":"actor:glasgow","item_type":"actor","label":"Glasgow","gdelt_name":"GLASGOW","n":10,"country":"GBR","code":"GBR","generic":false,"color":"#6B7280","size":22.39,"degree":1}
+{"id":"actor:austrian","item_type":"actor","label":"Austrian","gdelt_name":"AUSTRIAN","n":10,"country":"AUT","code":"AUT","generic":false,"color":"#6B7280","size":22.39,"degree":1}
+{"id":"actor:manuel_noriega","item_type":"actor","label":"Manuel Noriega","gdelt_name":"MANUEL NORIEGA","n":10,"country":"PAN","code":"PANELIGOV","generic":false,"color":"#6B7280","size":22.39,"degree":1}
+{"id":"actor:death_squad","item_type":"actor","label":"Death Squad","gdelt_name":"DEATH SQUAD","n":10,"country":"","code":"UAF","generic":false,"color":"#6B7280","size":22.39,"degree":1}
+{"id":"actor:microsoft","item_type":"actor","label":"Microsoft","gdelt_name":"MICROSOFT","n":10,"country":"USA","code":"MNCUSA","generic":false,"color":"#6B7280","size":22.39,"degree":1}
+{"id":"actor:center_for_migration_studies","item_type":"actor","label":"Center For Migration Studies","gdelt_name":"CENTER FOR MIGRATION STUDIES","n":10,"country":"USA","code":"USAEDUREF","generic":false,"color":"#6B7280","size":22.39,"degree":1}
+{"id":"actor:kazakhstan","item_type":"actor","label":"Kazakhstan","gdelt_name":"KAZAKHSTAN","n":10,"country":"KAZ","code":"KAZREL","generic":false,"color":"#6B7280","size":22.39,"degree":1}
+{"id":"actor:acapulco","item_type":"actor","label":"Acapulco","gdelt_name":"ACAPULCO","n":10,"country":"MEX","code":"MEX","generic":false,"color":"#6B7280","size":22.39,"degree":1}
+{"id":"actor:environmentalist","item_type":"actor","label":"Environmentalist","gdelt_name":"ENVIRONMENTALIST","n":10,"country":"","code":"ENVREL","generic":false,"color":"#6B7280","size":22.39,"degree":1}
+{"id":"actor:south_dakota","item_type":"actor","label":"South Dakota","gdelt_name":"SOUTH DAKOTA","n":10,"country":"USA","code":"USA","generic":false,"color":"#6B7280","size":22.39,"degree":1}
+{"id":"actor:brasilia","item_type":"actor","label":"Brasilia","gdelt_name":"BRASILIA","n":10,"country":"BRA","code":"BRA","generic":false,"color":"#6B7280","size":22.39,"degree":1}
+{"id":"actor:lamar_advertising_company","item_type":"actor","label":"Lamar Advertising Company","gdelt_name":"LAMAR ADVERTISING COMPANY","n":9,"country":"USA","code":"MNCUSA","generic":false,"color":"#6B7280","size":21.82,"degree":1}
+{"id":"actor:non_governmental_organization","item_type":"actor","label":"Non Governmental Organization","gdelt_name":"NON GOVERNMENTAL ORGANIZATION","n":9,"country":"","code":"NGO","generic":false,"color":"#6B7280","size":21.82,"degree":1}
+{"id":"actor:istanbul","item_type":"actor","label":"Istanbul","gdelt_name":"ISTANBUL","n":9,"country":"TUR","code":"TUR","generic":false,"color":"#6B7280","size":21.82,"degree":1}
+{"id":"actor:freedom_from_religion_foundation","item_type":"actor","label":"Freedom From Religion Foundation","gdelt_name":"FREEDOM FROM RELIGION FOUNDATION","n":9,"country":"USA","code":"USAATH","generic":false,"color":"#6B7280","size":21.82,"degree":1}
+{"id":"actor:minist_of_education","item_type":"actor","label":"Minist Of Education","gdelt_name":"MINIST OF EDUCATION","n":9,"country":"","code":"GOVEDU","generic":false,"color":"#6B7280","size":21.82,"degree":1}
+{"id":"actor:health_department","item_type":"actor","label":"Health Department","gdelt_name":"HEALTH DEPARTMENT","n":9,"country":"","code":"GOVHLH","generic":false,"color":"#6B7280","size":21.82,"degree":1}
+{"id":"actor:unitarian","item_type":"actor","label":"Unitarian","gdelt_name":"UNITARIAN","n":9,"country":"","code":"CHROFF032","generic":false,"color":"#6B7280","size":21.82,"degree":1}
+{"id":"actor:sioux","item_type":"actor","label":"Sioux","gdelt_name":"SIOUX","n":8,"country":"","code":"dakCHR","generic":false,"color":"#6B7280","size":21.18,"degree":1}
+{"id":"actor:galway","item_type":"actor","label":"Galway","gdelt_name":"GALWAY","n":8,"country":"IRL","code":"IRLREL","generic":false,"color":"#6B7280","size":21.18,"degree":1}
+{"id":"actor:greenville","item_type":"actor","label":"Greenville","gdelt_name":"GREENVILLE","n":8,"country":"USA","code":"USAEDU","generic":false,"color":"#6B7280","size":21.18,"degree":1}
+{"id":"actor:disciples_of_christ","item_type":"actor","label":"Disciples Of Christ","gdelt_name":"DISCIPLES OF CHRIST","n":8,"country":"","code":"CHRPRO332","generic":false,"color":"#6B7280","size":21.18,"degree":1}
+{"id":"actor:assyrian","item_type":"actor","label":"Assyrian","gdelt_name":"ASSYRIAN","n":8,"country":"","code":"asy","generic":false,"color":"#6B7280","size":21.18,"degree":1}
+{"id":"actor:santeria","item_type":"actor","label":"Santeria","gdelt_name":"SANTERIA","n":8,"country":"","code":"ADRSYN030","generic":false,"color":"#6B7280","size":21.18,"degree":1}
+{"id":"actor:matamoros","item_type":"actor","label":"Matamoros","gdelt_name":"MATAMOROS","n":8,"country":"MEX","code":"MEX","generic":false,"color":"#6B7280","size":21.18,"degree":1}
+{"id":"actor:constantine","item_type":"actor","label":"Constantine","gdelt_name":"CONSTANTINE","n":8,"country":"DZA","code":"DZA","generic":false,"color":"#6B7280","size":21.18,"degree":1}
+{"id":"actor:port_moresby","item_type":"actor","label":"Port Moresby","gdelt_name":"PORT MORESBY","n":7,"country":"PNG","code":"PNG","generic":false,"color":"#6B7280","size":20.48,"degree":1}
+{"id":"actor:st_helena","item_type":"actor","label":"St Helena","gdelt_name":"ST HELENA","n":7,"country":"GBR","code":"GBRSHN","generic":false,"color":"#6B7280","size":20.48,"degree":1}
+{"id":"actor:guttmacher_institute","item_type":"actor","label":"Guttmacher Institute","gdelt_name":"GUTTMACHER INSTITUTE","n":7,"country":"USA","code":"NGOUSAHLH","generic":false,"color":"#6B7280","size":20.48,"degree":1}
+{"id":"actor:economist","item_type":"actor","label":"Economist","gdelt_name":"ECONOMIST","n":7,"country":"","code":"EDU","generic":false,"color":"#6B7280","size":20.48,"degree":1}
+{"id":"actor:shia","item_type":"actor","label":"Shia","gdelt_name":"SHIA","n":7,"country":"","code":"MOSSHI","generic":false,"color":"#6B7280","size":20.48,"degree":1}
+{"id":"actor:netflix","item_type":"actor","label":"Netflix","gdelt_name":"NETFLIX","n":6,"country":"USA","code":"MNCUSA","generic":false,"color":"#6B7280","size":19.68,"degree":1}
+{"id":"actor:reformer","item_type":"actor","label":"Reformer","gdelt_name":"REFORMER","n":6,"country":"","code":"OPP","generic":false,"color":"#6B7280","size":19.68,"degree":1}
+{"id":"actor:toyota","item_type":"actor","label":"Toyota","gdelt_name":"TOYOTA","n":6,"country":"JPN","code":"MNCJPN","generic":false,"color":"#6B7280","size":19.68,"degree":1}
+{"id":"actor:protesting_student","item_type":"actor","label":"Protesting Student","gdelt_name":"PROTESTING STUDENT","n":5,"country":"","code":"OPPEDU","generic":false,"color":"#6B7280","size":18.75,"degree":1}
+{"id":"actor:michael_smith","item_type":"actor","label":"Michael Smith","gdelt_name":"MICHAEL SMITH","n":5,"country":"IRL","code":"IRLGOVMIL","generic":false,"color":"#6B7280","size":18.75,"degree":1}

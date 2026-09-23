@@ -1,0 +1,72 @@
+{"id":"concept:catechesis","item_type":"concept","label":"catechesis","n":171,"color":"#7C3AED","size":38.88,"degree":3}
+{"id":"concept:cst","item_type":"concept","label":"cst","n":347,"color":"#7C3AED","size":43.11,"degree":3}
+{"id":"concept:eucharist","item_type":"concept","label":"eucharist","n":2492,"color":"#7C3AED","size":54.93,"degree":2}
+{"id":"concept:evangelii_gaudium","item_type":"concept","label":"evangelii gaudium","n":89,"color":"#7C3AED","size":35.0,"degree":2}
+{"id":"concept:fratelli_tutti","item_type":"concept","label":"fratelli tutti","n":76,"color":"#7C3AED","size":34.06,"degree":2}
+{"id":"concept:gospel","item_type":"concept","label":"gospel","n":1269,"color":"#7C3AED","size":50.88,"degree":3}
+{"id":"concept:guadalupe","item_type":"concept","label":"guadalupe","n":692,"color":"#7C3AED","size":47.25,"degree":3}
+{"id":"concept:laudato_si","item_type":"concept","label":"laudato si","n":270,"color":"#7C3AED","size":41.61,"degree":2}
+{"id":"concept:liberation_theology","item_type":"concept","label":"liberation theology","n":169,"color":"#7C3AED","size":38.81,"degree":3}
+{"id":"concept:mission","item_type":"concept","label":"mission","n":7746,"color":"#7C3AED","size":61.73,"degree":3}
+{"id":"concept:new_evangelization","item_type":"concept","label":"new evangelization","n":73,"color":"#7C3AED","size":33.82,"degree":2}
+{"id":"concept:preferential_option","item_type":"concept","label":"preferential option","n":26,"color":"#7C3AED","size":27.78,"degree":2}
+{"id":"term:brothers_and_sisters_all","item_type":"term","label":"brothers and sisters all","concept":"fratelli_tutti","language":"english","n":44,"top_countries":"United States","color":"#D97706","size":30.84,"degree":2}
+{"id":"term:care_for_common_home","item_type":"term","label":"care for common home","concept":"laudato_si","language":"english","n":60,"top_countries":"United States","color":"#D97706","size":32.67,"degree":5}
+{"id":"term:catechesis","item_type":"term","label":"catechesis","concept":"catechesis","language":"english","n":154,"top_countries":"United States, Argentina, Brazil","color":"#D97706","size":38.26,"degree":8}
+{"id":"term:catequese","item_type":"term","label":"catequese","concept":"catechesis","language":"portuguese","n":2,"top_countries":"","color":"#D97706","size":14.59,"degree":1}
+{"id":"term:catequesis","item_type":"term","label":"catequesis","concept":"catechesis","language":"spanish","n":15,"top_countries":"United States","color":"#D97706","size":24.64,"degree":3}
+{"id":"term:catholic_social_teaching","item_type":"term","label":"catholic social teaching","concept":"cst","language":"english","n":307,"top_countries":"United States","color":"#D97706","size":42.38,"degree":12}
+{"id":"term:doctrina_social","item_type":"term","label":"doctrina social","concept":"cst","language":"spanish","n":24,"top_countries":"","color":"#D97706","size":27.31,"degree":2}
+{"id":"term:doutrina_social","item_type":"term","label":"doutrina social","concept":"cst","language":"portuguese","n":16,"top_countries":"","color":"#D97706","size":25.0,"degree":1}
+{"id":"term:eucaristia","item_type":"term","label":"eucaristia","concept":"eucharist","language":"spanish","n":17,"top_countries":"","color":"#D97706","size":25.34,"degree":2}
+{"id":"term:eucharist","item_type":"term","label":"eucharist","concept":"eucharist","language":"english","n":2475,"top_countries":"United States, Mexico, Argentina","color":"#D97706","size":54.89,"degree":30}
+{"id":"term:evangelho","item_type":"term","label":"evangelho","concept":"gospel","language":"portuguese","n":6,"top_countries":"Brazil, United States","color":"#D97706","size":19.68,"degree":2}
+{"id":"term:evangelii_gaudium_latin","item_type":"term","label":"evangelii gaudium latin","concept":"evangelii_gaudium","language":"latin","n":22,"top_countries":"United States","color":"#D97706","size":26.81,"degree":9}
+{"id":"term:evangelio","item_type":"term","label":"evangelio","concept":"gospel","language":"spanish","n":160,"top_countries":"United States","color":"#D97706","size":38.49,"degree":5}
+{"id":"term:fratelli_tutti_latin","item_type":"term","label":"fratelli tutti latin","concept":"fratelli_tutti","language":"latin","n":32,"top_countries":"United States","color":"#D97706","size":28.98,"degree":8}
+{"id":"term:gospel","item_type":"term","label":"gospel","concept":"gospel","language":"english","n":1103,"top_countries":"United States, Canada, Argentina","color":"#D97706","size":50.04,"degree":35}
+{"id":"term:joy_of_the_gospel","item_type":"term","label":"joy of the gospel","concept":"evangelii_gaudium","language":"english","n":67,"top_countries":"United States","color":"#D97706","size":33.32,"degree":7}
+{"id":"term:laudato_si_latin","item_type":"term","label":"laudato si latin","concept":"laudato_si","language":"latin","n":210,"top_countries":"United States","color":"#D97706","size":40.11,"degree":10}
+{"id":"term:liberation_theology","item_type":"term","label":"liberation theology","concept":"liberation_theology","language":"english","n":164,"top_countries":"United States","color":"#D97706","size":38.64,"degree":7}
+{"id":"term:mision","item_type":"term","label":"mision","concept":"mission","language":"spanish","n":405,"top_countries":"United States, Argentina, Canada","color":"#D97706","size":44.04,"degree":15}
+{"id":"term:missao","item_type":"term","label":"missao","concept":"mission","language":"portuguese","n":15,"top_countries":"Brazil, Chile, El Salvador","color":"#D97706","size":24.64,"degree":2}
+{"id":"term:mission","item_type":"term","label":"mission","concept":"mission","language":"english","n":7326,"top_countries":"United States, Haiti, Canada","color":"#D97706","size":61.4,"degree":72}
+{"id":"term:new_evangelization","item_type":"term","label":"new evangelization","concept":"new_evangelization","language":"english","n":69,"top_countries":"United States","color":"#D97706","size":33.49,"degree":6}
+{"id":"term:nossa_senhora_de_guadalupe","item_type":"term","label":"nossa senhora de guadalupe","concept":"guadalupe","language":"portuguese","n":2,"top_countries":"","color":"#D97706","size":14.59,"degree":1}
+{"id":"term:nueva_evangelizacion","item_type":"term","label":"nueva evangelizacion","concept":"new_evangelization","language":"spanish","n":4,"top_countries":"","color":"#D97706","size":17.66,"degree":2}
+{"id":"term:opcion_preferencial","item_type":"term","label":"opcion preferencial","concept":"preferential_option","language":"spanish","n":2,"top_countries":"","color":"#D97706","size":14.59,"degree":1}
+{"id":"term:our_lady_of_guadalupe","item_type":"term","label":"our lady of guadalupe","concept":"guadalupe","language":"english","n":620,"top_countries":"United States","color":"#D97706","size":46.59,"degree":7}
+{"id":"term:preferential_option","item_type":"term","label":"preferential option","concept":"preferential_option","language":"english","n":24,"top_countries":"United States","color":"#D97706","size":27.31,"degree":6}
+{"id":"term:teologia_liberacion","item_type":"term","label":"teologia liberacion","concept":"liberation_theology","language":"spanish","n":2,"top_countries":"","color":"#D97706","size":14.59,"degree":1}
+{"id":"term:teologia_libertacao","item_type":"term","label":"teologia libertacao","concept":"liberation_theology","language":"portuguese","n":3,"top_countries":"","color":"#D97706","size":16.32,"degree":1}
+{"id":"term:virgen_de_guadalupe","item_type":"term","label":"virgen de guadalupe","concept":"guadalupe","language":"spanish","n":70,"top_countries":"United States","color":"#D97706","size":33.58,"degree":8}
+{"id":"country:US","item_type":"country","label":"United States","fips":"US","n":6913,"region":"united_states","un_wesp":"developed","color":"#2E86AB","size":61.05,"degree":34}
+{"id":"country:HA","item_type":"country","label":"Haiti","fips":"HA","n":375,"region":"caribbean","un_wesp":"developing","color":"#2E86AB","size":43.58,"degree":3}
+{"id":"country:CA","item_type":"country","label":"Canada","fips":"CA","n":255,"region":"canada","un_wesp":"developed","color":"#2E86AB","size":41.27,"degree":7}
+{"id":"country:BR","item_type":"country","label":"Brazil","fips":"BR","n":150,"region":"brazil","un_wesp":"developing","color":"#2E86AB","size":38.1,"degree":8}
+{"id":"country:MX","item_type":"country","label":"Mexico","fips":"MX","n":129,"region":"mexico","un_wesp":"developing","color":"#2E86AB","size":37.21,"degree":6}
+{"id":"country:AR","item_type":"country","label":"Argentina","fips":"AR","n":93,"region":"andes_south_cone","un_wesp":"developing","color":"#2E86AB","size":35.26,"degree":8}
+{"id":"country:PE","item_type":"country","label":"Peru","fips":"PE","n":85,"region":"andes_south_cone","un_wesp":"developing","color":"#2E86AB","size":34.73,"degree":6}
+{"id":"country:GT","item_type":"country","label":"Guatemala","fips":"GT","n":63,"region":"central_america","un_wesp":"developing","color":"#2E86AB","size":32.95,"degree":3}
+{"id":"country:CO","item_type":"country","label":"Colombia","fips":"CO","n":61,"region":"andes_south_cone","un_wesp":"developing","color":"#2E86AB","size":32.76,"degree":5}
+{"id":"country:JM","item_type":"country","label":"Jamaica","fips":"JM","n":61,"region":"caribbean","un_wesp":"developing","color":"#2E86AB","size":32.76,"degree":2}
+{"id":"country:CI","item_type":"country","label":"Chile","fips":"CI","n":43,"region":"andes_south_cone","un_wesp":"developing","color":"#2E86AB","size":30.71,"degree":5}
+{"id":"country:EC","item_type":"country","label":"Ecuador","fips":"EC","n":42,"region":"andes_south_cone","un_wesp":"developing","color":"#2E86AB","size":30.57,"degree":4}
+{"id":"country:VE","item_type":"country","label":"Venezuela","fips":"VE","n":40,"region":"andes_south_cone","un_wesp":"developing","color":"#2E86AB","size":30.28,"degree":4}
+{"id":"country:CU","item_type":"country","label":"Cuba","fips":"CU","n":36,"region":"caribbean","un_wesp":"developing","color":"#2E86AB","size":29.67,"degree":2}
+{"id":"country:DR","item_type":"country","label":"Dominican Republic","fips":"DR","n":33,"region":"caribbean","un_wesp":"developing","color":"#2E86AB","size":29.16,"degree":2}
+{"id":"country:HO","item_type":"country","label":"Honduras","fips":"HO","n":25,"region":"central_america","un_wesp":"developing","color":"#2E86AB","size":27.55,"degree":2}
+{"id":"country:ES","item_type":"country","label":"El Salvador","fips":"ES","n":25,"region":"central_america","un_wesp":"developing","color":"#2E86AB","size":27.55,"degree":4}
+{"id":"country:NU","item_type":"country","label":"Nicaragua","fips":"NU","n":19,"region":"central_america","un_wesp":"developing","color":"#2E86AB","size":25.97,"degree":2}
+{"id":"country:PM","item_type":"country","label":"Panama","fips":"PM","n":18,"region":"central_america","un_wesp":"developing","color":"#2E86AB","size":25.67,"degree":4}
+{"id":"country:BL","item_type":"country","label":"Bolivia","fips":"BL","n":14,"region":"andes_south_cone","un_wesp":"developing","color":"#2E86AB","size":24.25,"degree":3}
+{"id":"country:PA","item_type":"country","label":"Paraguay","fips":"PA","n":13,"region":"andes_south_cone","un_wesp":"developing","color":"#2E86AB","size":23.83,"degree":4}
+{"id":"country:RQ","item_type":"country","label":"Puerto Rico","fips":"RQ","n":10,"region":"caribbean","un_wesp":"developing","color":"#2E86AB","size":22.39,"degree":2}
+{"id":"country:GJ","item_type":"country","label":"Grenada","fips":"GJ","n":9,"region":"caribbean","un_wesp":"developing","color":"#2E86AB","size":21.82,"degree":3}
+{"id":"country:BF","item_type":"country","label":"Bahamas","fips":"BF","n":9,"region":"caribbean","un_wesp":"developing","color":"#2E86AB","size":21.82,"degree":2}
+{"id":"country:TD","item_type":"country","label":"Trinidad and Tobago","fips":"TD","n":8,"region":"caribbean","un_wesp":"developing","color":"#2E86AB","size":21.18,"degree":2}
+{"id":"country:UY","item_type":"country","label":"Uruguay","fips":"UY","n":7,"region":"andes_south_cone","un_wesp":"developing","color":"#2E86AB","size":20.48,"degree":2}
+{"id":"country:BH","item_type":"country","label":"Belize","fips":"BH","n":5,"region":"central_america","un_wesp":"developing","color":"#2E86AB","size":18.75,"degree":2}
+{"id":"country:CS","item_type":"country","label":"Costa Rica","fips":"CS","n":5,"region":"central_america","un_wesp":"developing","color":"#2E86AB","size":18.75,"degree":1}
+{"id":"country:AC","item_type":"country","label":"Antigua and Barbuda","fips":"AC","n":5,"region":"caribbean","un_wesp":"developing","color":"#2E86AB","size":18.75,"degree":2}
+{"id":"country:GY","item_type":"country","label":"Guyana","fips":"GY","n":4,"region":"andes_south_cone","un_wesp":"developing","color":"#2E86AB","size":17.66,"degree":1}

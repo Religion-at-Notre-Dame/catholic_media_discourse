@@ -1,0 +1,640 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d16" for="edge" attr.name="language" attr.type="string"/>
+<key id="d15" for="edge" attr.name="concept" attr.type="string"/>
+<key id="d14" for="edge" attr.name="share" attr.type="double"/>
+<key id="d13" for="edge" attr.name="weight" attr.type="long"/>
+<key id="d12" for="edge" attr.name="type" attr.type="string"/>
+<key id="d11" for="node" attr.name="un_wesp" attr.type="string"/>
+<key id="d10" for="node" attr.name="region" attr.type="string"/>
+<key id="d9" for="node" attr.name="fips" attr.type="string"/>
+<key id="d8" for="node" attr.name="degree" attr.type="long"/>
+<key id="d7" for="node" attr.name="size" attr.type="double"/>
+<key id="d6" for="node" attr.name="color" attr.type="string"/>
+<key id="d5" for="node" attr.name="top_countries" attr.type="string"/>
+<key id="d4" for="node" attr.name="n" attr.type="long"/>
+<key id="d3" for="node" attr.name="language" attr.type="string"/>
+<key id="d2" for="node" attr.name="concept" attr.type="string"/>
+<key id="d1" for="node" attr.name="label" attr.type="string"/>
+<key id="d0" for="node" attr.name="item_type" attr.type="string"/>
+<graph edgedefault="undirected"><node id="term:catholic_social_teaching">
+  <data key="d0">term</data>
+  <data key="d1">catholic social teaching</data>
+  <data key="d2">cst</data>
+  <data key="d3">english</data>
+  <data key="d4">307</data>
+  <data key="d5">United States</data>
+  <data key="d6">#D97706</data>
+  <data key="d7">42.38</data>
+  <data key="d8">1</data>
+</node>
+<node id="term:eucharist">
+  <data key="d0">term</data>
+  <data key="d1">eucharist</data>
+  <data key="d2">eucharist</data>
+  <data key="d3">english</data>
+  <data key="d4">2475</data>
+  <data key="d5">United States, Mexico, Argentina</data>
+  <data key="d6">#D97706</data>
+  <data key="d7">54.89</data>
+  <data key="d8">12</data>
+</node>
+<node id="term:gospel">
+  <data key="d0">term</data>
+  <data key="d1">gospel</data>
+  <data key="d2">gospel</data>
+  <data key="d3">english</data>
+  <data key="d4">1103</data>
+  <data key="d5">United States, Canada, Argentina</data>
+  <data key="d6">#D97706</data>
+  <data key="d7">50.04</data>
+  <data key="d8">11</data>
+</node>
+<node id="term:liberation_theology">
+  <data key="d0">term</data>
+  <data key="d1">liberation theology</data>
+  <data key="d2">liberation_theology</data>
+  <data key="d3">english</data>
+  <data key="d4">164</data>
+  <data key="d5">United States</data>
+  <data key="d6">#D97706</data>
+  <data key="d7">38.64</data>
+  <data key="d8">1</data>
+</node>
+<node id="term:mission">
+  <data key="d0">term</data>
+  <data key="d1">mission</data>
+  <data key="d2">mission</data>
+  <data key="d3">english</data>
+  <data key="d4">7326</data>
+  <data key="d5">United States, Haiti, Canada</data>
+  <data key="d6">#D97706</data>
+  <data key="d7">61.4</data>
+  <data key="d8">13</data>
+</node>
+<node id="term:new_evangelization">
+  <data key="d0">term</data>
+  <data key="d1">new evangelization</data>
+  <data key="d2">new_evangelization</data>
+  <data key="d3">english</data>
+  <data key="d4">69</data>
+  <data key="d5">United States</data>
+  <data key="d6">#D97706</data>
+  <data key="d7">33.49</data>
+  <data key="d8">1</data>
+</node>
+<node id="term:preferential_option">
+  <data key="d0">term</data>
+  <data key="d1">preferential option</data>
+  <data key="d2">preferential_option</data>
+  <data key="d3">english</data>
+  <data key="d4">24</data>
+  <data key="d5">United States</data>
+  <data key="d6">#D97706</data>
+  <data key="d7">27.31</data>
+  <data key="d8">1</data>
+</node>
+<node id="country:US">
+  <data key="d0">country</data>
+  <data key="d1">United States</data>
+  <data key="d9">US</data>
+  <data key="d4">6913</data>
+  <data key="d10">united_states</data>
+  <data key="d11">developed</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">61.05</data>
+  <data key="d8">5</data>
+</node>
+<node id="country:HA">
+  <data key="d0">country</data>
+  <data key="d1">Haiti</data>
+  <data key="d9">HA</data>
+  <data key="d4">375</data>
+  <data key="d10">caribbean</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">43.58</data>
+  <data key="d8">2</data>
+</node>
+<node id="country:CA">
+  <data key="d0">country</data>
+  <data key="d1">Canada</data>
+  <data key="d9">CA</data>
+  <data key="d4">255</data>
+  <data key="d10">canada</data>
+  <data key="d11">developed</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">41.27</data>
+  <data key="d8">2</data>
+</node>
+<node id="country:BR">
+  <data key="d0">country</data>
+  <data key="d1">Brazil</data>
+  <data key="d9">BR</data>
+  <data key="d4">150</data>
+  <data key="d10">brazil</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">38.1</data>
+  <data key="d8">1</data>
+</node>
+<node id="country:MX">
+  <data key="d0">country</data>
+  <data key="d1">Mexico</data>
+  <data key="d9">MX</data>
+  <data key="d4">129</data>
+  <data key="d10">mexico</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">37.21</data>
+  <data key="d8">2</data>
+</node>
+<node id="country:AR">
+  <data key="d0">country</data>
+  <data key="d1">Argentina</data>
+  <data key="d9">AR</data>
+  <data key="d4">93</data>
+  <data key="d10">andes_south_cone</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">35.26</data>
+  <data key="d8">2</data>
+</node>
+<node id="country:PE">
+  <data key="d0">country</data>
+  <data key="d1">Peru</data>
+  <data key="d9">PE</data>
+  <data key="d4">85</data>
+  <data key="d10">andes_south_cone</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">34.73</data>
+  <data key="d8">2</data>
+</node>
+<node id="country:GT">
+  <data key="d0">country</data>
+  <data key="d1">Guatemala</data>
+  <data key="d9">GT</data>
+  <data key="d4">63</data>
+  <data key="d10">central_america</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">32.95</data>
+  <data key="d8">2</data>
+</node>
+<node id="country:CO">
+  <data key="d0">country</data>
+  <data key="d1">Colombia</data>
+  <data key="d9">CO</data>
+  <data key="d4">61</data>
+  <data key="d10">andes_south_cone</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">32.76</data>
+  <data key="d8">2</data>
+</node>
+<node id="country:JM">
+  <data key="d0">country</data>
+  <data key="d1">Jamaica</data>
+  <data key="d9">JM</data>
+  <data key="d4">61</data>
+  <data key="d10">caribbean</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">32.76</data>
+  <data key="d8">1</data>
+</node>
+<node id="country:CI">
+  <data key="d0">country</data>
+  <data key="d1">Chile</data>
+  <data key="d9">CI</data>
+  <data key="d4">43</data>
+  <data key="d10">andes_south_cone</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">30.71</data>
+  <data key="d8">2</data>
+</node>
+<node id="country:EC">
+  <data key="d0">country</data>
+  <data key="d1">Ecuador</data>
+  <data key="d9">EC</data>
+  <data key="d4">42</data>
+  <data key="d10">andes_south_cone</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">30.57</data>
+  <data key="d8">2</data>
+</node>
+<node id="country:VE">
+  <data key="d0">country</data>
+  <data key="d1">Venezuela</data>
+  <data key="d9">VE</data>
+  <data key="d4">40</data>
+  <data key="d10">andes_south_cone</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">30.28</data>
+  <data key="d8">1</data>
+</node>
+<node id="country:CU">
+  <data key="d0">country</data>
+  <data key="d1">Cuba</data>
+  <data key="d9">CU</data>
+  <data key="d4">36</data>
+  <data key="d10">caribbean</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">29.67</data>
+  <data key="d8">1</data>
+</node>
+<node id="country:DR">
+  <data key="d0">country</data>
+  <data key="d1">Dominican Republic</data>
+  <data key="d9">DR</data>
+  <data key="d4">33</data>
+  <data key="d10">caribbean</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">29.16</data>
+  <data key="d8">1</data>
+</node>
+<node id="country:HO">
+  <data key="d0">country</data>
+  <data key="d1">Honduras</data>
+  <data key="d9">HO</data>
+  <data key="d4">25</data>
+  <data key="d10">central_america</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">27.55</data>
+  <data key="d8">1</data>
+</node>
+<node id="country:ES">
+  <data key="d0">country</data>
+  <data key="d1">El Salvador</data>
+  <data key="d9">ES</data>
+  <data key="d4">25</data>
+  <data key="d10">central_america</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">27.55</data>
+  <data key="d8">2</data>
+</node>
+<node id="country:NU">
+  <data key="d0">country</data>
+  <data key="d1">Nicaragua</data>
+  <data key="d9">NU</data>
+  <data key="d4">19</data>
+  <data key="d10">central_america</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">25.97</data>
+  <data key="d8">1</data>
+</node>
+<node id="country:PM">
+  <data key="d0">country</data>
+  <data key="d1">Panama</data>
+  <data key="d9">PM</data>
+  <data key="d4">18</data>
+  <data key="d10">central_america</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">25.67</data>
+  <data key="d8">2</data>
+</node>
+<node id="country:BL">
+  <data key="d0">country</data>
+  <data key="d1">Bolivia</data>
+  <data key="d9">BL</data>
+  <data key="d4">14</data>
+  <data key="d10">andes_south_cone</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">24.25</data>
+  <data key="d8">2</data>
+</node>
+<node id="country:PA">
+  <data key="d0">country</data>
+  <data key="d1">Paraguay</data>
+  <data key="d9">PA</data>
+  <data key="d4">13</data>
+  <data key="d10">andes_south_cone</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">23.83</data>
+  <data key="d8">1</data>
+</node>
+<node id="country:RQ">
+  <data key="d0">country</data>
+  <data key="d1">Puerto Rico</data>
+  <data key="d9">RQ</data>
+  <data key="d4">10</data>
+  <data key="d10">caribbean</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">22.39</data>
+  <data key="d8">1</data>
+</node>
+<node id="country:BF">
+  <data key="d0">country</data>
+  <data key="d1">Bahamas</data>
+  <data key="d9">BF</data>
+  <data key="d4">9</data>
+  <data key="d10">caribbean</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">21.82</data>
+  <data key="d8">1</data>
+</node>
+<node id="country:TD">
+  <data key="d0">country</data>
+  <data key="d1">Trinidad and Tobago</data>
+  <data key="d9">TD</data>
+  <data key="d4">8</data>
+  <data key="d10">caribbean</data>
+  <data key="d11">developing</data>
+  <data key="d6">#2E86AB</data>
+  <data key="d7">21.18</data>
+  <data key="d8">1</data>
+</node>
+<edge source="term:catholic_social_teaching" target="country:US">
+  <data key="d12">prefers</data>
+  <data key="d13">176</data>
+  <data key="d14">1.0</data>
+  <data key="d15">cst</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:eucharist" target="country:US">
+  <data key="d12">prefers</data>
+  <data key="d13">1688</data>
+  <data key="d14">1.0</data>
+  <data key="d15">eucharist</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:eucharist" target="country:CA">
+  <data key="d12">prefers</data>
+  <data key="d13">13</data>
+  <data key="d14">1.0</data>
+  <data key="d15">eucharist</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:eucharist" target="country:BR">
+  <data key="d12">prefers</data>
+  <data key="d13">10</data>
+  <data key="d14">1.0</data>
+  <data key="d15">eucharist</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:eucharist" target="country:MX">
+  <data key="d12">prefers</data>
+  <data key="d13">26</data>
+  <data key="d14">1.0</data>
+  <data key="d15">eucharist</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:eucharist" target="country:AR">
+  <data key="d12">prefers</data>
+  <data key="d13">19</data>
+  <data key="d14">1.0</data>
+  <data key="d15">eucharist</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:eucharist" target="country:PE">
+  <data key="d12">prefers</data>
+  <data key="d13">6</data>
+  <data key="d14">1.0</data>
+  <data key="d15">eucharist</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:eucharist" target="country:CO">
+  <data key="d12">prefers</data>
+  <data key="d13">7</data>
+  <data key="d14">1.0</data>
+  <data key="d15">eucharist</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:eucharist" target="country:CI">
+  <data key="d12">prefers</data>
+  <data key="d13">3</data>
+  <data key="d14">1.0</data>
+  <data key="d15">eucharist</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:eucharist" target="country:EC">
+  <data key="d12">prefers</data>
+  <data key="d13">10</data>
+  <data key="d14">1.0</data>
+  <data key="d15">eucharist</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:eucharist" target="country:VE">
+  <data key="d12">prefers</data>
+  <data key="d13">2</data>
+  <data key="d14">1.0</data>
+  <data key="d15">eucharist</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:eucharist" target="country:ES">
+  <data key="d12">prefers</data>
+  <data key="d13">2</data>
+  <data key="d14">1.0</data>
+  <data key="d15">eucharist</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:eucharist" target="country:BL">
+  <data key="d12">prefers</data>
+  <data key="d13">2</data>
+  <data key="d14">1.0</data>
+  <data key="d15">eucharist</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:gospel" target="country:HA">
+  <data key="d12">prefers</data>
+  <data key="d13">2</data>
+  <data key="d14">1.0</data>
+  <data key="d15">gospel</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:gospel" target="country:CA">
+  <data key="d12">prefers</data>
+  <data key="d13">15</data>
+  <data key="d14">1.0</data>
+  <data key="d15">gospel</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:gospel" target="country:MX">
+  <data key="d12">prefers</data>
+  <data key="d13">5</data>
+  <data key="d14">1.0</data>
+  <data key="d15">gospel</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:gospel" target="country:AR">
+  <data key="d12">prefers</data>
+  <data key="d13">11</data>
+  <data key="d14">1.0</data>
+  <data key="d15">gospel</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:gospel" target="country:PE">
+  <data key="d12">prefers</data>
+  <data key="d13">6</data>
+  <data key="d14">1.0</data>
+  <data key="d15">gospel</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:gospel" target="country:GT">
+  <data key="d12">prefers</data>
+  <data key="d13">2</data>
+  <data key="d14">1.0</data>
+  <data key="d15">gospel</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:gospel" target="country:CO">
+  <data key="d12">prefers</data>
+  <data key="d13">3</data>
+  <data key="d14">1.0</data>
+  <data key="d15">gospel</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:gospel" target="country:CI">
+  <data key="d12">prefers</data>
+  <data key="d13">5</data>
+  <data key="d14">1.0</data>
+  <data key="d15">gospel</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:gospel" target="country:ES">
+  <data key="d12">prefers</data>
+  <data key="d13">3</data>
+  <data key="d14">1.0</data>
+  <data key="d15">gospel</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:gospel" target="country:PM">
+  <data key="d12">prefers</data>
+  <data key="d13">6</data>
+  <data key="d14">1.0</data>
+  <data key="d15">gospel</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:gospel" target="country:PA">
+  <data key="d12">prefers</data>
+  <data key="d13">2</data>
+  <data key="d14">1.0</data>
+  <data key="d15">gospel</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:liberation_theology" target="country:US">
+  <data key="d12">prefers</data>
+  <data key="d13">82</data>
+  <data key="d14">1.0</data>
+  <data key="d15">liberation_theology</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:mission" target="country:HA">
+  <data key="d12">prefers</data>
+  <data key="d13">373</data>
+  <data key="d14">1.0</data>
+  <data key="d15">mission</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:mission" target="country:GT">
+  <data key="d12">prefers</data>
+  <data key="d13">60</data>
+  <data key="d14">1.0</data>
+  <data key="d15">mission</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:mission" target="country:JM">
+  <data key="d12">prefers</data>
+  <data key="d13">61</data>
+  <data key="d14">1.0</data>
+  <data key="d15">mission</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:mission" target="country:EC">
+  <data key="d12">prefers</data>
+  <data key="d13">31</data>
+  <data key="d14">1.0</data>
+  <data key="d15">mission</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:mission" target="country:CU">
+  <data key="d12">prefers</data>
+  <data key="d13">35</data>
+  <data key="d14">1.0</data>
+  <data key="d15">mission</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:mission" target="country:DR">
+  <data key="d12">prefers</data>
+  <data key="d13">32</data>
+  <data key="d14">1.0</data>
+  <data key="d15">mission</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:mission" target="country:HO">
+  <data key="d12">prefers</data>
+  <data key="d13">24</data>
+  <data key="d14">1.0</data>
+  <data key="d15">mission</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:mission" target="country:NU">
+  <data key="d12">prefers</data>
+  <data key="d13">18</data>
+  <data key="d14">1.0</data>
+  <data key="d15">mission</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:mission" target="country:PM">
+  <data key="d12">prefers</data>
+  <data key="d13">11</data>
+  <data key="d14">1.0</data>
+  <data key="d15">mission</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:mission" target="country:BL">
+  <data key="d12">prefers</data>
+  <data key="d13">12</data>
+  <data key="d14">1.0</data>
+  <data key="d15">mission</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:mission" target="country:RQ">
+  <data key="d12">prefers</data>
+  <data key="d13">10</data>
+  <data key="d14">1.0</data>
+  <data key="d15">mission</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:mission" target="country:BF">
+  <data key="d12">prefers</data>
+  <data key="d13">9</data>
+  <data key="d14">1.0</data>
+  <data key="d15">mission</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:mission" target="country:TD">
+  <data key="d12">prefers</data>
+  <data key="d13">7</data>
+  <data key="d14">1.0</data>
+  <data key="d15">mission</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:new_evangelization" target="country:US">
+  <data key="d12">prefers</data>
+  <data key="d13">49</data>
+  <data key="d14">1.0</data>
+  <data key="d15">new_evangelization</data>
+  <data key="d16">english</data>
+</edge>
+<edge source="term:preferential_option" target="country:US">
+  <data key="d12">prefers</data>
+  <data key="d13">15</data>
+  <data key="d14">1.0</data>
+  <data key="d15">preferential_option</data>
+  <data key="d16">english</data>
+</edge>
+</graph></graphml>

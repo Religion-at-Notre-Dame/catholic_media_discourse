@@ -1,0 +1,2 @@
+# Anonymized JSONL shards are kept under ~40 MiB and stored as regular git blobs
+# (no Git LFS). Regenerate with scripts/anonymize/* using --max-part-gb 0.04.

@@ -1,0 +1,33 @@
+{"id":"theme:amoris_laetitia","item_type":"theme","label":"amoris laetitia","group":"theology","papal":true,"accents":"magisterial","n":177,"color":"#E94F37","size":39.09,"degree":2}
+{"id":"theme:aparecida_celam","item_type":"theme","label":"aparecida celam","group":"theology","papal":true,"accents":"inculturation, magisterial","n":72,"color":"#E94F37","size":33.74,"degree":2}
+{"id":"theme:catechesis","item_type":"theme","label":"catechesis","group":"formation","papal":false,"accents":"","n":168,"color":"#E94F37","size":38.78,"degree":3}
+{"id":"theme:catholic_social_teaching","item_type":"theme","label":"catholic social teaching","group":"theology","papal":true,"accents":"liberation, magisterial","n":1502,"color":"#E94F37","size":51.89,"degree":10}
+{"id":"theme:centesimus_annus","item_type":"theme","label":"centesimus annus","group":"theology","papal":true,"accents":"liberation, magisterial","n":26,"color":"#E94F37","size":27.78,"degree":3}
+{"id":"theme:conversion_discipleship","item_type":"theme","label":"conversion discipleship","group":"theology","papal":false,"accents":"sacramental","n":699,"color":"#E94F37","size":47.31,"degree":1}
+{"id":"theme:eucharist","item_type":"theme","label":"eucharist","group":"theology","papal":false,"accents":"sacramental","n":2492,"color":"#E94F37","size":54.93,"degree":2}
+{"id":"theme:evangelii_gaudium","item_type":"theme","label":"evangelii gaudium","group":"theology","papal":true,"accents":"magisterial","n":81,"color":"#E94F37","size":34.44,"degree":2}
+{"id":"theme:evangelio","item_type":"theme","label":"evangelio","group":"core_mission","papal":false,"accents":"","n":166,"color":"#E94F37","size":38.71,"degree":2}
+{"id":"theme:evangelium_vitae","item_type":"theme","label":"evangelium vitae","group":"theology","papal":true,"accents":"magisterial","n":34,"color":"#E94F37","size":29.33,"degree":1}
+{"id":"theme:evangelization","item_type":"theme","label":"evangelization","group":"core_mission","papal":false,"accents":"","n":812,"color":"#E94F37","size":48.2,"degree":7}
+{"id":"theme:fratelli_tutti","item_type":"theme","label":"fratelli tutti","group":"theology","papal":true,"accents":"magisterial","n":74,"color":"#E94F37","size":33.9,"degree":3}
+{"id":"theme:gospel","item_type":"theme","label":"gospel","group":"core_mission","papal":false,"accents":"","n":1103,"color":"#E94F37","size":50.04,"degree":4}
+{"id":"theme:guadalupe","item_type":"theme","label":"guadalupe","group":"theology","papal":false,"accents":"inculturation, popular_piety","n":1120,"color":"#E94F37","size":50.13,"degree":1}
+{"id":"theme:laborem_exercens","item_type":"theme","label":"laborem exercens","group":"theology","papal":true,"accents":"liberation, magisterial","n":12,"color":"#E94F37","size":23.39,"degree":4}
+{"id":"theme:laudato_si","item_type":"theme","label":"laudato si","group":"theology","papal":true,"accents":"magisterial","n":228,"color":"#E94F37","size":40.6,"degree":1}
+{"id":"theme:liberation_theology","item_type":"theme","label":"liberation theology","group":"theology","papal":false,"accents":"liberation","n":180,"color":"#E94F37","size":39.19,"degree":1}
+{"id":"theme:marian_devotion","item_type":"theme","label":"marian devotion","group":"theology","papal":false,"accents":"popular_piety","n":1940,"color":"#E94F37","size":53.43,"degree":2}
+{"id":"theme:mater_et_magistra","item_type":"theme","label":"mater et magistra","group":"theology","papal":true,"accents":"liberation, magisterial","n":294,"color":"#E94F37","size":42.12,"degree":4}
+{"id":"theme:mision","item_type":"theme","label":"mision","group":"core_mission","papal":false,"accents":"","n":425,"color":"#E94F37","size":44.33,"degree":5}
+{"id":"theme:new_evangelization","item_type":"theme","label":"new evangelization","group":"core_mission","papal":false,"accents":"magisterial","n":69,"color":"#E94F37","size":33.49,"degree":1}
+{"id":"theme:oscar_romero","item_type":"theme","label":"oscar romero","group":"theology","papal":false,"accents":"liberation, popular_piety","n":203,"color":"#E94F37","size":39.91,"degree":1}
+{"id":"theme:pacem_in_terris","item_type":"theme","label":"pacem in terris","group":"theology","papal":true,"accents":"magisterial","n":103,"color":"#E94F37","size":35.87,"degree":4}
+{"id":"theme:pastoral","item_type":"theme","label":"pastoral","group":"formation","papal":false,"accents":"","n":2021,"color":"#E94F37","size":53.67,"degree":1}
+{"id":"theme:populorum_progressio","item_type":"theme","label":"populorum progressio","group":"theology","papal":true,"accents":"liberation, magisterial","n":16,"color":"#E94F37","size":25.0,"degree":4}
+{"id":"theme:quadragesimo_anno","item_type":"theme","label":"quadragesimo anno","group":"theology","papal":true,"accents":"liberation, magisterial","n":130,"color":"#E94F37","size":37.25,"degree":8}
+{"id":"theme:querida_amazonia","item_type":"theme","label":"querida amazonia","group":"theology","papal":true,"accents":"inculturation, magisterial","n":18,"color":"#E94F37","size":25.67,"degree":1}
+{"id":"theme:rerum_novarum","item_type":"theme","label":"rerum novarum","group":"theology","papal":true,"accents":"liberation, magisterial","n":277,"color":"#E94F37","size":41.77,"degree":8}
+{"id":"theme:sacrament","item_type":"theme","label":"sacrament","group":"theology","papal":false,"accents":"sacramental","n":1243,"color":"#E94F37","size":50.76,"degree":2}
+{"id":"theme:synod","item_type":"theme","label":"synod","group":"formation","papal":false,"accents":"synodal","n":1407,"color":"#E94F37","size":51.5,"degree":4}
+{"id":"theme:synodality","item_type":"theme","label":"synodality","group":"theology","papal":false,"accents":"synodal","n":215,"color":"#E94F37","size":40.25,"degree":1}
+{"id":"theme:witness","item_type":"theme","label":"witness","group":"formation","papal":false,"accents":"","n":1252,"color":"#E94F37","size":50.8,"degree":2}
+{"id":"theme:youth","item_type":"theme","label":"youth","group":"formation","papal":false,"accents":"","n":2699,"color":"#E94F37","size":55.41,"degree":1}

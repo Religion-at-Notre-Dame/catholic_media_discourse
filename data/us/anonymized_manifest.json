@@ -1,0 +1,202 @@
+{
+  "generated_at": "2026-09-23T18:56:58.993100+00:00",
+  "note": "Anonymized JSONL shards are plain git blobs, kept under ~40 MiB each (see --max-part-gb on anonymize scripts). Checkpoints and this manifest are plain git. Raw/classified GDELT web files are gitignored; regenerate with the scripts listed per dataset.",
+  "git_lfs": false,
+  "datasets": [
+    {
+      "name": "gdelt_web_news",
+      "output_dir": "data/us/news/anonymized",
+      "regenerate_script": "scripts/refresh_derived.py  # classify unified corpus → anonymize",
+      "checkpoint": {
+        "input_path": "data/us/news/classified",
+        "processed_count": 446171,
+        "current_part_index": 8,
+        "current_part_bytes": 14996547,
+        "current_part_records": 13137,
+        "max_part_bytes": 41943040,
+        "save_interval": 500,
+        "source": "gdelt_news",
+        "fallback_language": "english",
+        "complete": true
+      },
+      "complete": true,
+      "processed_count": 446171,
+      "parts": [
+        {
+          "path": "data/us/news/anonymized/anonymized_part_00001.jsonl",
+          "rows": 61060,
+          "bytes": 41942526
+        },
+        {
+          "path": "data/us/news/anonymized/anonymized_part_00002.jsonl",
+          "rows": 62176,
+          "bytes": 41942822
+        },
+        {
+          "path": "data/us/news/anonymized/anonymized_part_00003.jsonl",
+          "rows": 62929,
+          "bytes": 41936344
+        },
+        {
+          "path": "data/us/news/anonymized/anonymized_part_00004.jsonl",
+          "rows": 61413,
+          "bytes": 41942565
+        },
+        {
+          "path": "data/us/news/anonymized/anonymized_part_00005.jsonl",
+          "rows": 63446,
+          "bytes": 41942563
+        },
+        {
+          "path": "data/us/news/anonymized/anonymized_part_00006.jsonl",
+          "rows": 60731,
+          "bytes": 41942719
+        },
+        {
+          "path": "data/us/news/anonymized/anonymized_part_00007.jsonl",
+          "rows": 61279,
+          "bytes": 41942767
+        },
+        {
+          "path": "data/us/news/anonymized/anonymized_part_00008.jsonl",
+          "rows": 13137,
+          "bytes": 14996547
+        }
+      ],
+      "total_rows": 446171,
+      "total_bytes": 308588853
+    },
+    {
+      "name": "gdelt_tv",
+      "output_dir": "data/us/tv/anonymized",
+      "regenerate_script": "scripts/anonymize/gdelt_tv.py",
+      "checkpoint": {
+        "input_path": "data/us/tv/gdelt_tv_us_2015-01-01_to_2025-12-31.jsonl",
+        "processed_count": 8557,
+        "current_part_index": 1,
+        "current_part_bytes": 10525651,
+        "current_part_records": 8557,
+        "max_part_bytes": 1020054732,
+        "save_interval": 500,
+        "source": "gdelt_tv",
+        "complete": true
+      },
+      "complete": true,
+      "processed_count": 8557,
+      "parts": [
+        {
+          "path": "data/us/tv/anonymized/anonymized_part_00001.jsonl",
+          "rows": 8557,
+          "bytes": 10525651
+        }
+      ],
+      "total_rows": 8557,
+      "total_bytes": 10525651
+    },
+    {
+      "name": "aapb_radio_english",
+      "output_dir": "data/us/english/radio/anonymized",
+      "regenerate_script": "scripts/anonymize/aapb_radio.py --language english",
+      "checkpoint": {
+        "input_path": "data/us/english/radio/aapb_us_2015-01-01_to_2025-12-31.jsonl",
+        "processed_count": 1777,
+        "current_part_index": 1,
+        "current_part_bytes": 1762421,
+        "current_part_records": 1777,
+        "max_part_bytes": 1020054732,
+        "save_interval": 500,
+        "source": "aapb",
+        "fallback_language": "english",
+        "complete": true
+      },
+      "complete": true,
+      "processed_count": 1777,
+      "parts": [
+        {
+          "path": "data/us/english/radio/anonymized/anonymized_part_00001.jsonl",
+          "rows": 1777,
+          "bytes": 1762421
+        }
+      ],
+      "total_rows": 1777,
+      "total_bytes": 1762421
+    },
+    {
+      "name": "aapb_radio_spanish",
+      "output_dir": "data/us/spanish/radio/anonymized",
+      "regenerate_script": "scripts/anonymize/aapb_radio.py --language spanish",
+      "checkpoint": {
+        "input_path": "data/us/spanish/radio/aapb_us_2015-01-01_to_2025-12-31.jsonl",
+        "processed_count": 217,
+        "current_part_index": 1,
+        "current_part_bytes": 266980,
+        "current_part_records": 217,
+        "max_part_bytes": 1020054732,
+        "save_interval": 500,
+        "source": "aapb",
+        "fallback_language": "spanish",
+        "complete": true
+      },
+      "complete": true,
+      "processed_count": 217,
+      "parts": [
+        {
+          "path": "data/us/spanish/radio/anonymized/anonymized_part_00001.jsonl",
+          "rows": 217,
+          "bytes": 266980
+        }
+      ],
+      "total_rows": 217,
+      "total_bytes": 266980
+    },
+    {
+      "name": "spotify_podcasts",
+      "output_dir": "data/us/spotify/anonymized",
+      "regenerate_script": "scripts/anonymize/spotify.py",
+      "checkpoint": null,
+      "complete": false,
+      "processed_count": 0,
+      "parts": [],
+      "total_rows": 0,
+      "total_bytes": 0
+    },
+    {
+      "name": "youtube",
+      "output_dir": "data/us/youtube/anonymized",
+      "regenerate_script": "scripts/anonymize/youtube.py",
+      "checkpoint": {
+        "input_path": "data/us/youtube/youtube_us_2015-01-01_to_2025-12-31.jsonl",
+        "processed_count": 9658,
+        "current_part_index": 1,
+        "current_part_bytes": 4592928,
+        "current_part_records": 9658,
+        "max_part_bytes": 1020054732,
+        "save_interval": 500,
+        "source": "youtube",
+        "complete": true
+      },
+      "complete": true,
+      "processed_count": 9658,
+      "parts": [
+        {
+          "path": "data/us/youtube/anonymized/anonymized_part_00001.jsonl",
+          "rows": 9658,
+          "bytes": 4592928
+        }
+      ],
+      "total_rows": 9658,
+      "total_bytes": 4592928
+    },
+    {
+      "name": "google_search",
+      "output_dir": "data/us/google_search/anonymized",
+      "regenerate_script": "scripts/anonymize/google_search.py",
+      "checkpoint": null,
+      "complete": false,
+      "processed_count": 0,
+      "parts": [],
+      "total_rows": 0,
+      "total_bytes": 0
+    }
+  ]
+}

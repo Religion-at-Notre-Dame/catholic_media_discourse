@@ -1,0 +1,11 @@
+{
+  "input_path": "data/americas/youtube/youtube_americas_2015-01-01_to_2025-12-31.jsonl",
+  "processed_count": 117,
+  "current_part_index": 1,
+  "current_part_bytes": 58806,
+  "current_part_records": 117,
+  "max_part_bytes": 1020054732,
+  "save_interval": 500,
+  "source": "youtube",
+  "complete": true
+}

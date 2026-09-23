@@ -1,0 +1,11 @@
+{
+  "input_path": "data/americas/radio/archive_radio_americas_2015_2025.jsonl",
+  "processed_count": 3406,
+  "current_part_index": 1,
+  "current_part_bytes": 8498256,
+  "current_part_records": 3406,
+  "max_part_bytes": 1020054732,
+  "save_interval": 500,
+  "source": "youtube",
+  "complete": true
+}

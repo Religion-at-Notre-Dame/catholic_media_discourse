@@ -1,0 +1,2190 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d23" for="edge" attr.name="distinctive" attr.type="boolean"/>
+<key id="d22" for="edge" attr.name="lift_vs_us" attr.type="double"/>
+<key id="d21" for="edge" attr.name="us_rate_per_1k" attr.type="double"/>
+<key id="d20" for="edge" attr.name="smoothed_per_1k" attr.type="double"/>
+<key id="d19" for="edge" attr.name="rate_per_1k" attr.type="double"/>
+<key id="d18" for="edge" attr.name="weight" attr.type="long"/>
+<key id="d17" for="edge" attr.name="type" attr.type="string"/>
+<key id="d16" for="node" attr.name="us_rate_per_1k" attr.type="double"/>
+<key id="d15" for="node" attr.name="accents" attr.type="string"/>
+<key id="d14" for="node" attr.name="generic" attr.type="boolean"/>
+<key id="d13" for="node" attr.name="papal" attr.type="boolean"/>
+<key id="d12" for="node" attr.name="group" attr.type="string"/>
+<key id="d11" for="node" attr.name="degree" attr.type="long"/>
+<key id="d10" for="node" attr.name="size" attr.type="double"/>
+<key id="d9" for="node" attr.name="color" attr.type="string"/>
+<key id="d8" for="node" attr.name="lang_pt" attr.type="long"/>
+<key id="d7" for="node" attr.name="lang_es" attr.type="long"/>
+<key id="d6" for="node" attr.name="lang_en" attr.type="long"/>
+<key id="d5" for="node" attr.name="n" attr.type="long"/>
+<key id="d4" for="node" attr.name="un_wesp" attr.type="string"/>
+<key id="d3" for="node" attr.name="region" attr.type="string"/>
+<key id="d2" for="node" attr.name="fips" attr.type="string"/>
+<key id="d1" for="node" attr.name="label" attr.type="string"/>
+<key id="d0" for="node" attr.name="item_type" attr.type="string"/>
+<graph edgedefault="undirected"><node id="country:US">
+  <data key="d0">country</data>
+  <data key="d1">United States</data>
+  <data key="d2">US</data>
+  <data key="d3">united_states</data>
+  <data key="d4">developed</data>
+  <data key="d5">120134</data>
+  <data key="d6">120134</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">78.18</data>
+  <data key="d11">21</data>
+</node>
+<node id="country:CA">
+  <data key="d0">country</data>
+  <data key="d1">Canada</data>
+  <data key="d2">CA</data>
+  <data key="d3">canada</data>
+  <data key="d4">developed</data>
+  <data key="d5">13305</data>
+  <data key="d6">13305</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">64.98</data>
+  <data key="d11">10</data>
+</node>
+<node id="country:MX">
+  <data key="d0">country</data>
+  <data key="d1">Mexico</data>
+  <data key="d2">MX</data>
+  <data key="d3">mexico</data>
+  <data key="d4">developing</data>
+  <data key="d5">6605</data>
+  <data key="d6">6605</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">60.77</data>
+  <data key="d11">9</data>
+</node>
+<node id="country:AR">
+  <data key="d0">country</data>
+  <data key="d1">Argentina</data>
+  <data key="d2">AR</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">5812</data>
+  <data key="d6">5812</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">60.01</data>
+  <data key="d11">9</data>
+</node>
+<node id="country:CI">
+  <data key="d0">country</data>
+  <data key="d1">Chile</data>
+  <data key="d2">CI</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">3379</data>
+  <data key="d6">3379</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">56.75</data>
+  <data key="d11">9</data>
+</node>
+<node id="country:CU">
+  <data key="d0">country</data>
+  <data key="d1">Cuba</data>
+  <data key="d2">CU</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">3196</data>
+  <data key="d6">3196</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">56.42</data>
+  <data key="d11">5</data>
+</node>
+<node id="country:BR">
+  <data key="d0">country</data>
+  <data key="d1">Brazil</data>
+  <data key="d2">BR</data>
+  <data key="d3">brazil</data>
+  <data key="d4">developing</data>
+  <data key="d5">2553</data>
+  <data key="d6">2553</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">55.07</data>
+  <data key="d11">12</data>
+</node>
+<node id="country:PE">
+  <data key="d0">country</data>
+  <data key="d1">Peru</data>
+  <data key="d2">PE</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">1983</data>
+  <data key="d6">1983</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">53.56</data>
+  <data key="d11">8</data>
+</node>
+<node id="country:CO">
+  <data key="d0">country</data>
+  <data key="d1">Colombia</data>
+  <data key="d2">CO</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">1623</data>
+  <data key="d6">1623</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">52.36</data>
+  <data key="d11">8</data>
+</node>
+<node id="country:VE">
+  <data key="d0">country</data>
+  <data key="d1">Venezuela</data>
+  <data key="d2">VE</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">1377</data>
+  <data key="d6">1377</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">51.37</data>
+  <data key="d11">7</data>
+</node>
+<node id="country:HA">
+  <data key="d0">country</data>
+  <data key="d1">Haiti</data>
+  <data key="d2">HA</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">1251</data>
+  <data key="d6">1251</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">50.79</data>
+  <data key="d11">5</data>
+</node>
+<node id="country:ES">
+  <data key="d0">country</data>
+  <data key="d1">El Salvador</data>
+  <data key="d2">ES</data>
+  <data key="d3">central_america</data>
+  <data key="d4">developing</data>
+  <data key="d5">1087</data>
+  <data key="d6">1087</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">49.95</data>
+  <data key="d11">7</data>
+</node>
+<node id="country:NU">
+  <data key="d0">country</data>
+  <data key="d1">Nicaragua</data>
+  <data key="d2">NU</data>
+  <data key="d3">central_america</data>
+  <data key="d4">developing</data>
+  <data key="d5">891</data>
+  <data key="d6">891</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">48.76</data>
+  <data key="d11">3</data>
+</node>
+<node id="country:BL">
+  <data key="d0">country</data>
+  <data key="d1">Bolivia</data>
+  <data key="d2">BL</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">761</data>
+  <data key="d6">761</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">47.82</data>
+  <data key="d11">6</data>
+</node>
+<node id="country:PM">
+  <data key="d0">country</data>
+  <data key="d1">Panama</data>
+  <data key="d2">PM</data>
+  <data key="d3">central_america</data>
+  <data key="d4">developing</data>
+  <data key="d5">667</data>
+  <data key="d6">667</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">47.03</data>
+  <data key="d11">7</data>
+</node>
+<node id="country:EC">
+  <data key="d0">country</data>
+  <data key="d1">Ecuador</data>
+  <data key="d2">EC</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">662</data>
+  <data key="d6">662</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">46.98</data>
+  <data key="d11">6</data>
+</node>
+<node id="country:GT">
+  <data key="d0">country</data>
+  <data key="d1">Guatemala</data>
+  <data key="d2">GT</data>
+  <data key="d3">central_america</data>
+  <data key="d4">developing</data>
+  <data key="d5">622</data>
+  <data key="d6">622</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">46.61</data>
+  <data key="d11">6</data>
+</node>
+<node id="country:DR">
+  <data key="d0">country</data>
+  <data key="d1">Dominican Republic</data>
+  <data key="d2">DR</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">613</data>
+  <data key="d6">613</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">46.52</data>
+  <data key="d11">3</data>
+</node>
+<node id="country:HO">
+  <data key="d0">country</data>
+  <data key="d1">Honduras</data>
+  <data key="d2">HO</data>
+  <data key="d3">central_america</data>
+  <data key="d4">developing</data>
+  <data key="d5">595</data>
+  <data key="d6">595</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">46.34</data>
+  <data key="d11">4</data>
+</node>
+<node id="country:PA">
+  <data key="d0">country</data>
+  <data key="d1">Paraguay</data>
+  <data key="d2">PA</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">391</data>
+  <data key="d6">391</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">43.83</data>
+  <data key="d11">5</data>
+</node>
+<node id="country:RQ">
+  <data key="d0">country</data>
+  <data key="d1">Puerto Rico</data>
+  <data key="d2">RQ</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">385</data>
+  <data key="d6">385</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">43.74</data>
+  <data key="d11">2</data>
+</node>
+<node id="country:JM">
+  <data key="d0">country</data>
+  <data key="d1">Jamaica</data>
+  <data key="d2">JM</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">351</data>
+  <data key="d6">351</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">43.18</data>
+  <data key="d11">2</data>
+</node>
+<node id="country:TD">
+  <data key="d0">country</data>
+  <data key="d1">Trinidad and Tobago</data>
+  <data key="d2">TD</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">254</data>
+  <data key="d6">254</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">41.25</data>
+  <data key="d11">1</data>
+</node>
+<node id="country:BF">
+  <data key="d0">country</data>
+  <data key="d1">Bahamas</data>
+  <data key="d2">BF</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">208</data>
+  <data key="d6">208</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">40.05</data>
+  <data key="d11">1</data>
+</node>
+<node id="country:CS">
+  <data key="d0">country</data>
+  <data key="d1">Costa Rica</data>
+  <data key="d2">CS</data>
+  <data key="d3">central_america</data>
+  <data key="d4">developing</data>
+  <data key="d5">163</data>
+  <data key="d6">163</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">38.6</data>
+  <data key="d11">3</data>
+</node>
+<node id="country:UY">
+  <data key="d0">country</data>
+  <data key="d1">Uruguay</data>
+  <data key="d2">UY</data>
+  <data key="d3">andes_south_cone</data>
+  <data key="d4">developing</data>
+  <data key="d5">145</data>
+  <data key="d6">145</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">37.9</data>
+  <data key="d11">2</data>
+</node>
+<node id="country:GJ">
+  <data key="d0">country</data>
+  <data key="d1">Grenada</data>
+  <data key="d2">GJ</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">139</data>
+  <data key="d6">139</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">37.65</data>
+  <data key="d11">2</data>
+</node>
+<node id="country:BH">
+  <data key="d0">country</data>
+  <data key="d1">Belize</data>
+  <data key="d2">BH</data>
+  <data key="d3">central_america</data>
+  <data key="d4">developing</data>
+  <data key="d5">126</data>
+  <data key="d6">126</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">37.07</data>
+  <data key="d11">2</data>
+</node>
+<node id="country:BB">
+  <data key="d0">country</data>
+  <data key="d1">Barbados</data>
+  <data key="d2">BB</data>
+  <data key="d3">caribbean</data>
+  <data key="d4">developing</data>
+  <data key="d5">101</data>
+  <data key="d6">101</data>
+  <data key="d7">0</data>
+  <data key="d8">0</data>
+  <data key="d9">#2E86AB</data>
+  <data key="d10">35.75</data>
+  <data key="d11">0</data>
+</node>
+<node id="theme:immigration">
+  <data key="d0">theme</data>
+  <data key="d1">immigration</data>
+  <data key="d12">cultural_context</data>
+  <data key="d13">False</data>
+  <data key="d14">False</data>
+  <data key="d15">liberation</data>
+  <data key="d5">5141</data>
+  <data key="d16">34.61</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">59.27</data>
+  <data key="d11">22</data>
+</node>
+<node id="theme:mission">
+  <data key="d0">theme</data>
+  <data key="d1">mission</data>
+  <data key="d12">core_mission</data>
+  <data key="d13">False</data>
+  <data key="d14">True</data>
+  <data key="d15"></data>
+  <data key="d5">5028</data>
+  <data key="d16">30.07</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">59.14</data>
+  <data key="d11">28</data>
+</node>
+<node id="theme:eucharist">
+  <data key="d0">theme</data>
+  <data key="d1">eucharist</data>
+  <data key="d12">theology</data>
+  <data key="d13">False</data>
+  <data key="d14">False</data>
+  <data key="d15">sacramental</data>
+  <data key="d5">1793</data>
+  <data key="d16">14.05</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">52.95</data>
+  <data key="d11">12</data>
+</node>
+<node id="theme:indigenous">
+  <data key="d0">theme</data>
+  <data key="d1">indigenous</data>
+  <data key="d12">cultural_context</data>
+  <data key="d13">False</data>
+  <data key="d14">False</data>
+  <data key="d15">inculturation, liberation</data>
+  <data key="d5">1778</data>
+  <data key="d16">7.67</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">52.9</data>
+  <data key="d11">13</data>
+</node>
+<node id="theme:marian_devotion">
+  <data key="d0">theme</data>
+  <data key="d1">marian devotion</data>
+  <data key="d12">theology</data>
+  <data key="d13">False</data>
+  <data key="d14">False</data>
+  <data key="d15">popular_piety</data>
+  <data key="d5">1167</data>
+  <data key="d16">9.14</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">50.38</data>
+  <data key="d11">12</data>
+</node>
+<node id="theme:synod">
+  <data key="d0">theme</data>
+  <data key="d1">synod</data>
+  <data key="d12">formation</data>
+  <data key="d13">False</data>
+  <data key="d14">True</data>
+  <data key="d15">synodal</data>
+  <data key="d5">1110</data>
+  <data key="d16">6.1</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">50.08</data>
+  <data key="d11">16</data>
+</node>
+<node id="theme:catholic_social_teaching">
+  <data key="d0">theme</data>
+  <data key="d1">catholic social teaching</data>
+  <data key="d12">theology</data>
+  <data key="d13">True</data>
+  <data key="d14">False</data>
+  <data key="d15">liberation, magisterial</data>
+  <data key="d5">983</data>
+  <data key="d16">7.45</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">49.35</data>
+  <data key="d11">20</data>
+</node>
+<node id="theme:guadalupe">
+  <data key="d0">theme</data>
+  <data key="d1">guadalupe</data>
+  <data key="d12">theology</data>
+  <data key="d13">False</data>
+  <data key="d14">False</data>
+  <data key="d15">inculturation, popular_piety</data>
+  <data key="d5">643</data>
+  <data key="d16">3.21</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">46.81</data>
+  <data key="d11">6</data>
+</node>
+<node id="theme:gospel">
+  <data key="d0">theme</data>
+  <data key="d1">gospel</data>
+  <data key="d12">core_mission</data>
+  <data key="d13">False</data>
+  <data key="d14">False</data>
+  <data key="d15"></data>
+  <data key="d5">641</data>
+  <data key="d16">4.73</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">46.79</data>
+  <data key="d11">13</data>
+</node>
+<node id="theme:laudato_si">
+  <data key="d0">theme</data>
+  <data key="d1">laudato si</data>
+  <data key="d12">theology</data>
+  <data key="d13">True</data>
+  <data key="d14">False</data>
+  <data key="d15">magisterial</data>
+  <data key="d5">169</data>
+  <data key="d16">1.41</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">38.81</data>
+  <data key="d11">1</data>
+</node>
+<node id="theme:liberation_theology">
+  <data key="d0">theme</data>
+  <data key="d1">liberation theology</data>
+  <data key="d12">theology</data>
+  <data key="d13">False</data>
+  <data key="d14">False</data>
+  <data key="d15">liberation</data>
+  <data key="d5">88</data>
+  <data key="d16">0.73</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">34.93</data>
+  <data key="d11">1</data>
+</node>
+<node id="theme:oscar_romero">
+  <data key="d0">theme</data>
+  <data key="d1">oscar romero</data>
+  <data key="d12">theology</data>
+  <data key="d13">False</data>
+  <data key="d14">False</data>
+  <data key="d15">liberation, popular_piety</data>
+  <data key="d5">82</data>
+  <data key="d16">0.68</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">34.51</data>
+  <data key="d11">1</data>
+</node>
+<node id="theme:mision">
+  <data key="d0">theme</data>
+  <data key="d1">mision</data>
+  <data key="d12">core_mission</data>
+  <data key="d13">False</data>
+  <data key="d14">False</data>
+  <data key="d15"></data>
+  <data key="d5">77</data>
+  <data key="d16">0.36</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">34.14</data>
+  <data key="d11">8</data>
+</node>
+<node id="theme:evangelii_gaudium">
+  <data key="d0">theme</data>
+  <data key="d1">evangelii gaudium</data>
+  <data key="d12">theology</data>
+  <data key="d13">True</data>
+  <data key="d14">False</data>
+  <data key="d15">magisterial</data>
+  <data key="d5">52</data>
+  <data key="d16">0.43</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">31.82</data>
+  <data key="d11">1</data>
+</node>
+<node id="theme:aparecida_celam">
+  <data key="d0">theme</data>
+  <data key="d1">aparecida celam</data>
+  <data key="d12">theology</data>
+  <data key="d13">True</data>
+  <data key="d14">False</data>
+  <data key="d15">inculturation, magisterial</data>
+  <data key="d5">32</data>
+  <data key="d16">0.2</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">28.98</data>
+  <data key="d11">3</data>
+</node>
+<node id="theme:fratelli_tutti">
+  <data key="d0">theme</data>
+  <data key="d1">fratelli tutti</data>
+  <data key="d12">theology</data>
+  <data key="d13">True</data>
+  <data key="d14">False</data>
+  <data key="d15">magisterial</data>
+  <data key="d5">17</data>
+  <data key="d16">0.14</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">25.34</data>
+  <data key="d11">1</data>
+</node>
+<node id="theme:preferential_option">
+  <data key="d0">theme</data>
+  <data key="d1">preferential option</data>
+  <data key="d12">theology</data>
+  <data key="d13">False</data>
+  <data key="d14">False</data>
+  <data key="d15">liberation</data>
+  <data key="d5">15</data>
+  <data key="d16">0.12</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">24.64</data>
+  <data key="d11">1</data>
+</node>
+<node id="theme:inculturation">
+  <data key="d0">theme</data>
+  <data key="d1">inculturation</data>
+  <data key="d12">theology</data>
+  <data key="d13">False</data>
+  <data key="d14">False</data>
+  <data key="d15">inculturation</data>
+  <data key="d5">12</data>
+  <data key="d16">0.07</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">23.39</data>
+  <data key="d11">2</data>
+</node>
+<node id="theme:querida_amazonia">
+  <data key="d0">theme</data>
+  <data key="d1">querida amazonia</data>
+  <data key="d12">theology</data>
+  <data key="d13">True</data>
+  <data key="d14">False</data>
+  <data key="d15">inculturation, magisterial</data>
+  <data key="d5">10</data>
+  <data key="d16">0.08</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">22.39</data>
+  <data key="d11">1</data>
+</node>
+<node id="theme:kerygma">
+  <data key="d0">theme</data>
+  <data key="d1">kerygma</data>
+  <data key="d12">theology</data>
+  <data key="d13">False</data>
+  <data key="d14">False</data>
+  <data key="d15">magisterial, sacramental</data>
+  <data key="d5">5</data>
+  <data key="d16">0.03</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">18.75</data>
+  <data key="d11">1</data>
+</node>
+<node id="theme:evangelio">
+  <data key="d0">theme</data>
+  <data key="d1">evangelio</data>
+  <data key="d12">core_mission</data>
+  <data key="d13">False</data>
+  <data key="d14">False</data>
+  <data key="d15"></data>
+  <data key="d5">4</data>
+  <data key="d16">0.02</data>
+  <data key="d9">#E94F37</data>
+  <data key="d10">17.66</data>
+  <data key="d11">2</data>
+</node>
+<edge source="country:US" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">4158</data>
+  <data key="d19">34.61</data>
+  <data key="d20">34.59</data>
+  <data key="d21">34.61</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">3612</data>
+  <data key="d19">30.07</data>
+  <data key="d20">30.05</data>
+  <data key="d21">30.07</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:eucharist">
+  <data key="d17">teaches</data>
+  <data key="d18">1688</data>
+  <data key="d19">14.05</data>
+  <data key="d20">14.05</data>
+  <data key="d21">14.05</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:marian_devotion">
+  <data key="d17">teaches</data>
+  <data key="d18">1098</data>
+  <data key="d19">9.14</data>
+  <data key="d20">9.14</data>
+  <data key="d21">9.14</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:indigenous">
+  <data key="d17">teaches</data>
+  <data key="d18">922</data>
+  <data key="d19">7.67</data>
+  <data key="d20">7.67</data>
+  <data key="d21">7.67</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">895</data>
+  <data key="d19">7.45</data>
+  <data key="d20">7.45</data>
+  <data key="d21">7.45</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:synod">
+  <data key="d17">teaches</data>
+  <data key="d18">733</data>
+  <data key="d19">6.1</data>
+  <data key="d20">6.1</data>
+  <data key="d21">6.1</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:gospel">
+  <data key="d17">teaches</data>
+  <data key="d18">568</data>
+  <data key="d19">4.73</data>
+  <data key="d20">4.73</data>
+  <data key="d21">4.73</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:guadalupe">
+  <data key="d17">teaches</data>
+  <data key="d18">386</data>
+  <data key="d19">3.21</data>
+  <data key="d20">3.22</data>
+  <data key="d21">3.21</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:laudato_si">
+  <data key="d17">teaches</data>
+  <data key="d18">169</data>
+  <data key="d19">1.41</data>
+  <data key="d20">1.41</data>
+  <data key="d21">1.41</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:liberation_theology">
+  <data key="d17">teaches</data>
+  <data key="d18">88</data>
+  <data key="d19">0.73</data>
+  <data key="d20">0.74</data>
+  <data key="d21">0.73</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:oscar_romero">
+  <data key="d17">teaches</data>
+  <data key="d18">82</data>
+  <data key="d19">0.68</data>
+  <data key="d20">0.69</data>
+  <data key="d21">0.68</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:evangelii_gaudium">
+  <data key="d17">teaches</data>
+  <data key="d18">52</data>
+  <data key="d19">0.43</data>
+  <data key="d20">0.44</data>
+  <data key="d21">0.43</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:mision">
+  <data key="d17">teaches</data>
+  <data key="d18">43</data>
+  <data key="d19">0.36</data>
+  <data key="d20">0.36</data>
+  <data key="d21">0.36</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:aparecida_celam">
+  <data key="d17">teaches</data>
+  <data key="d18">24</data>
+  <data key="d19">0.2</data>
+  <data key="d20">0.2</data>
+  <data key="d21">0.2</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:fratelli_tutti">
+  <data key="d17">teaches</data>
+  <data key="d18">17</data>
+  <data key="d19">0.14</data>
+  <data key="d20">0.15</data>
+  <data key="d21">0.14</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:preferential_option">
+  <data key="d17">teaches</data>
+  <data key="d18">15</data>
+  <data key="d19">0.12</data>
+  <data key="d20">0.13</data>
+  <data key="d21">0.12</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:querida_amazonia">
+  <data key="d17">teaches</data>
+  <data key="d18">10</data>
+  <data key="d19">0.08</data>
+  <data key="d20">0.09</data>
+  <data key="d21">0.08</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:inculturation">
+  <data key="d17">teaches</data>
+  <data key="d18">8</data>
+  <data key="d19">0.07</data>
+  <data key="d20">0.07</data>
+  <data key="d21">0.07</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:kerygma">
+  <data key="d17">teaches</data>
+  <data key="d18">4</data>
+  <data key="d19">0.03</data>
+  <data key="d20">0.04</data>
+  <data key="d21">0.03</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:US" target="theme:evangelio">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">0.02</data>
+  <data key="d20">0.02</data>
+  <data key="d21">0.02</data>
+  <data key="d22">1.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CA" target="theme:indigenous">
+  <data key="d17">teaches</data>
+  <data key="d18">587</data>
+  <data key="d19">44.12</data>
+  <data key="d20">43.89</data>
+  <data key="d21">7.67</data>
+  <data key="d22">5.75</data>
+  <data key="d23">True</data>
+</edge>
+<edge source="country:CA" target="theme:synod">
+  <data key="d17">teaches</data>
+  <data key="d18">80</data>
+  <data key="d19">6.01</data>
+  <data key="d20">6.01</data>
+  <data key="d21">6.1</data>
+  <data key="d22">0.99</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CA" target="theme:mision">
+  <data key="d17">teaches</data>
+  <data key="d18">4</data>
+  <data key="d19">0.3</data>
+  <data key="d20">0.34</data>
+  <data key="d21">0.36</data>
+  <data key="d22">0.83</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CA" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">223</data>
+  <data key="d19">16.76</data>
+  <data key="d20">16.7</data>
+  <data key="d21">30.07</data>
+  <data key="d22">0.56</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CA" target="theme:gospel">
+  <data key="d17">teaches</data>
+  <data key="d18">15</data>
+  <data key="d19">1.13</data>
+  <data key="d20">1.16</data>
+  <data key="d21">4.73</data>
+  <data key="d22">0.24</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CA" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">81</data>
+  <data key="d19">6.09</data>
+  <data key="d20">6.09</data>
+  <data key="d21">34.61</data>
+  <data key="d22">0.18</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CA" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">13</data>
+  <data key="d19">0.98</data>
+  <data key="d20">1.01</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.13</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CA" target="theme:eucharist">
+  <data key="d17">teaches</data>
+  <data key="d18">13</data>
+  <data key="d19">0.98</data>
+  <data key="d20">1.01</data>
+  <data key="d21">14.05</data>
+  <data key="d22">0.07</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CA" target="theme:marian_devotion">
+  <data key="d17">teaches</data>
+  <data key="d18">9</data>
+  <data key="d19">0.68</data>
+  <data key="d20">0.71</data>
+  <data key="d21">9.14</data>
+  <data key="d22">0.07</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CA" target="theme:guadalupe">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">0.23</data>
+  <data key="d20">0.26</data>
+  <data key="d21">3.21</data>
+  <data key="d22">0.07</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:MX" target="theme:guadalupe">
+  <data key="d17">teaches</data>
+  <data key="d18">244</data>
+  <data key="d19">36.94</data>
+  <data key="d20">36.57</data>
+  <data key="d21">3.21</data>
+  <data key="d22">11.51</data>
+  <data key="d23">True</data>
+</edge>
+<edge source="country:MX" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">481</data>
+  <data key="d19">72.82</data>
+  <data key="d20">72.03</data>
+  <data key="d21">34.61</data>
+  <data key="d22">2.1</data>
+  <data key="d23">True</data>
+</edge>
+<edge source="country:MX" target="theme:indigenous">
+  <data key="d17">teaches</data>
+  <data key="d18">84</data>
+  <data key="d19">12.72</data>
+  <data key="d20">12.64</data>
+  <data key="d21">7.67</data>
+  <data key="d22">1.66</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:MX" target="theme:synod">
+  <data key="d17">teaches</data>
+  <data key="d18">22</data>
+  <data key="d19">3.33</data>
+  <data key="d20">3.37</data>
+  <data key="d21">6.1</data>
+  <data key="d22">0.55</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:MX" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">96</data>
+  <data key="d19">14.53</data>
+  <data key="d20">14.44</data>
+  <data key="d21">30.07</data>
+  <data key="d22">0.48</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:MX" target="theme:eucharist">
+  <data key="d17">teaches</data>
+  <data key="d18">26</data>
+  <data key="d19">3.94</data>
+  <data key="d20">3.96</data>
+  <data key="d21">14.05</data>
+  <data key="d22">0.28</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:MX" target="theme:marian_devotion">
+  <data key="d17">teaches</data>
+  <data key="d18">16</data>
+  <data key="d19">2.42</data>
+  <data key="d20">2.47</data>
+  <data key="d21">9.14</data>
+  <data key="d22">0.26</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:MX" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">13</data>
+  <data key="d19">1.97</data>
+  <data key="d20">2.02</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.26</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:MX" target="theme:gospel">
+  <data key="d17">teaches</data>
+  <data key="d18">5</data>
+  <data key="d19">0.76</data>
+  <data key="d20">0.82</data>
+  <data key="d21">4.73</data>
+  <data key="d22">0.16</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:AR" target="theme:mision">
+  <data key="d17">teaches</data>
+  <data key="d18">12</data>
+  <data key="d19">2.06</data>
+  <data key="d20">2.12</data>
+  <data key="d21">0.36</data>
+  <data key="d22">5.72</data>
+  <data key="d23">True</data>
+</edge>
+<edge source="country:AR" target="theme:synod">
+  <data key="d17">teaches</data>
+  <data key="d18">25</data>
+  <data key="d19">4.3</data>
+  <data key="d20">4.33</data>
+  <data key="d21">6.1</data>
+  <data key="d22">0.7</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:AR" target="theme:gospel">
+  <data key="d17">teaches</data>
+  <data key="d18">11</data>
+  <data key="d19">1.89</data>
+  <data key="d20">1.95</data>
+  <data key="d21">4.73</data>
+  <data key="d22">0.4</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:AR" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">50</data>
+  <data key="d19">8.6</data>
+  <data key="d20">8.57</data>
+  <data key="d21">30.07</data>
+  <data key="d22">0.29</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:AR" target="theme:eucharist">
+  <data key="d17">teaches</data>
+  <data key="d18">19</data>
+  <data key="d19">3.27</data>
+  <data key="d20">3.31</data>
+  <data key="d21">14.05</data>
+  <data key="d22">0.23</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:AR" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">35</data>
+  <data key="d19">6.02</data>
+  <data key="d20">6.03</data>
+  <data key="d21">34.61</data>
+  <data key="d22">0.17</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:AR" target="theme:indigenous">
+  <data key="d17">teaches</data>
+  <data key="d18">7</data>
+  <data key="d19">1.2</data>
+  <data key="d20">1.27</data>
+  <data key="d21">7.67</data>
+  <data key="d22">0.16</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:AR" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">6</data>
+  <data key="d19">1.03</data>
+  <data key="d20">1.1</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.14</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:AR" target="theme:marian_devotion">
+  <data key="d17">teaches</data>
+  <data key="d18">7</data>
+  <data key="d19">1.2</data>
+  <data key="d20">1.27</data>
+  <data key="d21">9.14</data>
+  <data key="d22">0.13</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CI" target="theme:aparecida_celam">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">0.59</data>
+  <data key="d20">0.72</data>
+  <data key="d21">0.2</data>
+  <data key="d22">2.95</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CI" target="theme:synod">
+  <data key="d17">teaches</data>
+  <data key="d18">23</data>
+  <data key="d19">6.81</data>
+  <data key="d20">6.79</data>
+  <data key="d21">6.1</data>
+  <data key="d22">1.12</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CI" target="theme:indigenous">
+  <data key="d17">teaches</data>
+  <data key="d18">15</data>
+  <data key="d19">4.44</data>
+  <data key="d20">4.48</data>
+  <data key="d21">7.67</data>
+  <data key="d22">0.58</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CI" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">34</data>
+  <data key="d19">10.06</data>
+  <data key="d20">9.97</data>
+  <data key="d21">30.07</data>
+  <data key="d22">0.33</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CI" target="theme:gospel">
+  <data key="d17">teaches</data>
+  <data key="d18">5</data>
+  <data key="d19">1.48</data>
+  <data key="d20">1.59</data>
+  <data key="d21">4.73</data>
+  <data key="d22">0.31</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CI" target="theme:guadalupe">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">0.89</data>
+  <data key="d20">1.01</data>
+  <data key="d21">3.21</data>
+  <data key="d22">0.28</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CI" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">19</data>
+  <data key="d19">5.62</data>
+  <data key="d20">5.64</data>
+  <data key="d21">34.61</data>
+  <data key="d22">0.16</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CI" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">0.59</data>
+  <data key="d20">0.72</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.08</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CI" target="theme:eucharist">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">0.89</data>
+  <data key="d20">1.01</data>
+  <data key="d21">14.05</data>
+  <data key="d22">0.06</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CU" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">50</data>
+  <data key="d19">15.64</data>
+  <data key="d20">15.42</data>
+  <data key="d21">34.61</data>
+  <data key="d22">0.45</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CU" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">35</data>
+  <data key="d19">10.95</data>
+  <data key="d20">10.84</data>
+  <data key="d21">30.07</data>
+  <data key="d22">0.36</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CU" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">7</data>
+  <data key="d19">2.19</data>
+  <data key="d20">2.29</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.29</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CU" target="theme:synod">
+  <data key="d17">teaches</data>
+  <data key="d18">4</data>
+  <data key="d19">1.25</data>
+  <data key="d20">1.37</data>
+  <data key="d21">6.1</data>
+  <data key="d22">0.2</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CU" target="theme:marian_devotion">
+  <data key="d17">teaches</data>
+  <data key="d18">5</data>
+  <data key="d19">1.56</data>
+  <data key="d20">1.68</data>
+  <data key="d21">9.14</data>
+  <data key="d22">0.17</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BR" target="theme:indigenous">
+  <data key="d17">teaches</data>
+  <data key="d18">77</data>
+  <data key="d19">30.16</data>
+  <data key="d20">29.43</data>
+  <data key="d21">7.67</data>
+  <data key="d22">3.93</data>
+  <data key="d23">True</data>
+</edge>
+<edge source="country:BR" target="theme:evangelio">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">0.78</data>
+  <data key="d20">0.95</data>
+  <data key="d21">0.02</data>
+  <data key="d22">39.0</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BR" target="theme:inculturation">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">1.18</data>
+  <data key="d20">1.33</data>
+  <data key="d21">0.07</data>
+  <data key="d22">16.86</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BR" target="theme:aparecida_celam">
+  <data key="d17">teaches</data>
+  <data key="d18">6</data>
+  <data key="d19">2.35</data>
+  <data key="d20">2.47</data>
+  <data key="d21">0.2</data>
+  <data key="d22">11.75</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BR" target="theme:synod">
+  <data key="d17">teaches</data>
+  <data key="d18">124</data>
+  <data key="d19">48.57</data>
+  <data key="d20">47.28</data>
+  <data key="d21">6.1</data>
+  <data key="d22">7.96</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BR" target="theme:mision">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">1.18</data>
+  <data key="d20">1.33</data>
+  <data key="d21">0.36</data>
+  <data key="d22">3.28</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BR" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">127</data>
+  <data key="d19">49.75</data>
+  <data key="d20">48.42</data>
+  <data key="d21">30.07</data>
+  <data key="d22">1.65</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BR" target="theme:marian_devotion">
+  <data key="d17">teaches</data>
+  <data key="d18">15</data>
+  <data key="d19">5.88</data>
+  <data key="d20">5.89</data>
+  <data key="d21">9.14</data>
+  <data key="d22">0.64</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BR" target="theme:gospel">
+  <data key="d17">teaches</data>
+  <data key="d18">7</data>
+  <data key="d19">2.74</data>
+  <data key="d20">2.85</data>
+  <data key="d21">4.73</data>
+  <data key="d22">0.58</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BR" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">6</data>
+  <data key="d19">2.35</data>
+  <data key="d20">2.47</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.32</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BR" target="theme:eucharist">
+  <data key="d17">teaches</data>
+  <data key="d18">10</data>
+  <data key="d19">3.92</data>
+  <data key="d20">3.99</data>
+  <data key="d21">14.05</data>
+  <data key="d22">0.28</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BR" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">10</data>
+  <data key="d19">3.92</data>
+  <data key="d20">3.99</data>
+  <data key="d21">34.61</data>
+  <data key="d22">0.11</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PE" target="theme:synod">
+  <data key="d17">teaches</data>
+  <data key="d18">30</data>
+  <data key="d19">15.13</data>
+  <data key="d20">14.78</data>
+  <data key="d21">6.1</data>
+  <data key="d22">2.48</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PE" target="theme:indigenous">
+  <data key="d17">teaches</data>
+  <data key="d18">24</data>
+  <data key="d19">12.1</data>
+  <data key="d20">11.88</data>
+  <data key="d21">7.67</data>
+  <data key="d22">1.58</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PE" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">72</data>
+  <data key="d19">36.31</data>
+  <data key="d20">35.14</data>
+  <data key="d21">30.07</data>
+  <data key="d22">1.21</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PE" target="theme:gospel">
+  <data key="d17">teaches</data>
+  <data key="d18">6</data>
+  <data key="d19">3.03</data>
+  <data key="d20">3.15</data>
+  <data key="d21">4.73</data>
+  <data key="d22">0.64</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PE" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">21</data>
+  <data key="d19">10.59</data>
+  <data key="d20">10.42</data>
+  <data key="d21">34.61</data>
+  <data key="d22">0.31</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PE" target="theme:eucharist">
+  <data key="d17">teaches</data>
+  <data key="d18">6</data>
+  <data key="d19">3.03</data>
+  <data key="d20">3.15</data>
+  <data key="d21">14.05</data>
+  <data key="d22">0.22</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PE" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">1.51</data>
+  <data key="d20">1.7</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.2</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PE" target="theme:marian_devotion">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">1.01</data>
+  <data key="d20">1.21</data>
+  <data key="d21">9.14</data>
+  <data key="d22">0.11</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CO" target="theme:synod">
+  <data key="d17">teaches</data>
+  <data key="d18">16</data>
+  <data key="d19">9.86</data>
+  <data key="d20">9.69</data>
+  <data key="d21">6.1</data>
+  <data key="d22">1.62</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CO" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">50</data>
+  <data key="d19">30.81</data>
+  <data key="d20">29.65</data>
+  <data key="d21">30.07</data>
+  <data key="d22">1.02</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CO" target="theme:indigenous">
+  <data key="d17">teaches</data>
+  <data key="d18">8</data>
+  <data key="d19">4.93</data>
+  <data key="d20">4.99</data>
+  <data key="d21">7.67</data>
+  <data key="d22">0.64</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CO" target="theme:gospel">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">1.85</data>
+  <data key="d20">2.06</data>
+  <data key="d21">4.73</data>
+  <data key="d22">0.39</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CO" target="theme:eucharist">
+  <data key="d17">teaches</data>
+  <data key="d18">7</data>
+  <data key="d19">4.31</data>
+  <data key="d20">4.4</data>
+  <data key="d21">14.05</data>
+  <data key="d22">0.31</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CO" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">1.85</data>
+  <data key="d20">2.06</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.25</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CO" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">11</data>
+  <data key="d19">6.78</data>
+  <data key="d20">6.75</data>
+  <data key="d21">34.61</data>
+  <data key="d22">0.2</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CO" target="theme:marian_devotion">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">1.23</data>
+  <data key="d20">1.47</data>
+  <data key="d21">9.14</data>
+  <data key="d22">0.13</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:VE" target="theme:mision">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">2.18</data>
+  <data key="d20">2.4</data>
+  <data key="d21">0.36</data>
+  <data key="d22">6.06</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:VE" target="theme:synod">
+  <data key="d17">teaches</data>
+  <data key="d18">15</data>
+  <data key="d19">10.89</data>
+  <data key="d20">10.64</data>
+  <data key="d21">6.1</data>
+  <data key="d22">1.79</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:VE" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">34</data>
+  <data key="d19">24.69</data>
+  <data key="d20">23.68</data>
+  <data key="d21">30.07</data>
+  <data key="d22">0.82</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:VE" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">20</data>
+  <data key="d19">14.52</data>
+  <data key="d20">14.07</data>
+  <data key="d21">34.61</data>
+  <data key="d22">0.42</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:VE" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">4</data>
+  <data key="d19">2.9</data>
+  <data key="d20">3.09</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.39</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:VE" target="theme:marian_devotion">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">1.45</data>
+  <data key="d20">1.72</data>
+  <data key="d21">9.14</data>
+  <data key="d22">0.16</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:VE" target="theme:eucharist">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">1.45</data>
+  <data key="d20">1.72</data>
+  <data key="d21">14.05</data>
+  <data key="d22">0.1</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:HA" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">373</data>
+  <data key="d19">298.16</data>
+  <data key="d20">280.62</data>
+  <data key="d21">30.07</data>
+  <data key="d22">9.92</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:HA" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">44</data>
+  <data key="d19">35.17</data>
+  <data key="d20">33.43</data>
+  <data key="d21">34.61</data>
+  <data key="d22">1.02</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:HA" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">4</data>
+  <data key="d19">3.2</data>
+  <data key="d20">3.38</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.43</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:HA" target="theme:gospel">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">1.6</data>
+  <data key="d20">1.88</data>
+  <data key="d21">4.73</data>
+  <data key="d22">0.34</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:HA" target="theme:marian_devotion">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">2.4</data>
+  <data key="d20">2.63</data>
+  <data key="d21">9.14</data>
+  <data key="d22">0.26</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:ES" target="theme:mision">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">1.84</data>
+  <data key="d20">2.14</data>
+  <data key="d21">0.36</data>
+  <data key="d22">5.11</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:ES" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">48</data>
+  <data key="d19">44.16</data>
+  <data key="d20">41.56</data>
+  <data key="d21">34.61</data>
+  <data key="d22">1.28</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:ES" target="theme:gospel">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">2.76</data>
+  <data key="d20">3.0</data>
+  <data key="d21">4.73</data>
+  <data key="d22">0.58</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:ES" target="theme:guadalupe">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">1.84</data>
+  <data key="d20">2.14</data>
+  <data key="d21">3.21</data>
+  <data key="d22">0.57</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:ES" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">18</data>
+  <data key="d19">16.56</data>
+  <data key="d20">15.85</data>
+  <data key="d21">30.07</data>
+  <data key="d22">0.55</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:ES" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">1.84</data>
+  <data key="d20">2.14</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.25</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:ES" target="theme:eucharist">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">1.84</data>
+  <data key="d20">2.14</data>
+  <data key="d21">14.05</data>
+  <data key="d22">0.13</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:NU" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">18</data>
+  <data key="d19">20.2</data>
+  <data key="d20">19.05</data>
+  <data key="d21">30.07</data>
+  <data key="d22">0.67</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:NU" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">3.37</data>
+  <data key="d20">3.6</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.45</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:NU" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">7</data>
+  <data key="d19">7.86</data>
+  <data key="d20">7.72</data>
+  <data key="d21">34.61</data>
+  <data key="d22">0.23</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BL" target="theme:indigenous">
+  <data key="d17">teaches</data>
+  <data key="d18">31</data>
+  <data key="d19">40.74</data>
+  <data key="d20">37.46</data>
+  <data key="d21">7.67</data>
+  <data key="d22">5.31</data>
+  <data key="d23">True</data>
+</edge>
+<edge source="country:BL" target="theme:synod">
+  <data key="d17">teaches</data>
+  <data key="d18">7</data>
+  <data key="d19">9.2</data>
+  <data key="d20">8.92</data>
+  <data key="d21">6.1</data>
+  <data key="d22">1.51</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BL" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">4</data>
+  <data key="d19">5.26</data>
+  <data key="d20">5.35</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.71</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BL" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">12</data>
+  <data key="d19">15.77</data>
+  <data key="d20">14.86</data>
+  <data key="d21">30.07</data>
+  <data key="d22">0.52</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BL" target="theme:eucharist">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">2.63</data>
+  <data key="d20">2.97</data>
+  <data key="d21">14.05</data>
+  <data key="d22">0.19</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BL" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">2.63</data>
+  <data key="d20">2.97</data>
+  <data key="d21">34.61</data>
+  <data key="d22">0.08</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PM" target="theme:gospel">
+  <data key="d17">teaches</data>
+  <data key="d18">6</data>
+  <data key="d19">9.0</data>
+  <data key="d20">8.7</data>
+  <data key="d21">4.73</data>
+  <data key="d22">1.9</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PM" target="theme:synod">
+  <data key="d17">teaches</data>
+  <data key="d18">6</data>
+  <data key="d19">9.0</data>
+  <data key="d20">8.7</data>
+  <data key="d21">6.1</data>
+  <data key="d22">1.48</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PM" target="theme:guadalupe">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">3.0</data>
+  <data key="d20">3.35</data>
+  <data key="d21">3.21</data>
+  <data key="d22">0.93</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PM" target="theme:indigenous">
+  <data key="d17">teaches</data>
+  <data key="d18">4</data>
+  <data key="d19">6.0</data>
+  <data key="d20">6.02</data>
+  <data key="d21">7.67</data>
+  <data key="d22">0.78</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PM" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">11</data>
+  <data key="d19">16.49</data>
+  <data key="d20">15.39</data>
+  <data key="d21">30.07</data>
+  <data key="d22">0.55</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PM" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">12</data>
+  <data key="d19">17.99</data>
+  <data key="d20">16.73</data>
+  <data key="d21">34.61</data>
+  <data key="d22">0.52</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PM" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">3.0</data>
+  <data key="d20">3.35</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.4</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:EC" target="theme:synod">
+  <data key="d17">teaches</data>
+  <data key="d18">11</data>
+  <data key="d19">16.62</data>
+  <data key="d20">15.5</data>
+  <data key="d21">6.1</data>
+  <data key="d22">2.72</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:EC" target="theme:indigenous">
+  <data key="d17">teaches</data>
+  <data key="d18">10</data>
+  <data key="d19">15.11</data>
+  <data key="d20">14.15</data>
+  <data key="d21">7.67</data>
+  <data key="d22">1.97</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:EC" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">31</data>
+  <data key="d19">46.83</data>
+  <data key="d20">42.45</data>
+  <data key="d21">30.07</data>
+  <data key="d22">1.56</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:EC" target="theme:eucharist">
+  <data key="d17">teaches</data>
+  <data key="d18">10</data>
+  <data key="d19">15.11</data>
+  <data key="d20">14.15</data>
+  <data key="d21">14.05</data>
+  <data key="d22">1.08</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:EC" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">4.53</data>
+  <data key="d20">4.72</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.61</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:EC" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">4</data>
+  <data key="d19">6.04</data>
+  <data key="d20">6.06</data>
+  <data key="d21">34.61</data>
+  <data key="d22">0.17</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:GT" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">76</data>
+  <data key="d19">122.19</data>
+  <data key="d20">108.97</data>
+  <data key="d21">34.61</data>
+  <data key="d22">3.53</data>
+  <data key="d23">True</data>
+</edge>
+<edge source="country:GT" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">60</data>
+  <data key="d19">96.46</data>
+  <data key="d20">86.18</data>
+  <data key="d21">30.07</data>
+  <data key="d22">3.21</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:GT" target="theme:gospel">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">3.22</data>
+  <data key="d20">3.56</data>
+  <data key="d21">4.73</data>
+  <data key="d22">0.68</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:GT" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">4.82</data>
+  <data key="d20">4.99</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.65</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:GT" target="theme:indigenous">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">4.82</data>
+  <data key="d20">4.99</data>
+  <data key="d21">7.67</data>
+  <data key="d22">0.63</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:GT" target="theme:marian_devotion">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">4.82</data>
+  <data key="d20">4.99</data>
+  <data key="d21">9.14</data>
+  <data key="d22">0.53</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:DR" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">32</data>
+  <data key="d19">52.2</data>
+  <data key="d20">46.9</data>
+  <data key="d21">30.07</data>
+  <data key="d22">1.74</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:DR" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">8</data>
+  <data key="d19">13.05</data>
+  <data key="d20">12.27</data>
+  <data key="d21">34.61</data>
+  <data key="d22">0.38</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:DR" target="theme:marian_devotion">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">3.26</data>
+  <data key="d20">3.61</data>
+  <data key="d21">9.14</data>
+  <data key="d22">0.36</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:HO" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">46</data>
+  <data key="d19">77.31</data>
+  <data key="d20">68.89</data>
+  <data key="d21">34.61</data>
+  <data key="d22">2.23</data>
+  <data key="d23">True</data>
+</edge>
+<edge source="country:HO" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">24</data>
+  <data key="d19">40.34</data>
+  <data key="d20">36.3</data>
+  <data key="d21">30.07</data>
+  <data key="d22">1.34</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:HO" target="theme:synod">
+  <data key="d17">teaches</data>
+  <data key="d18">4</data>
+  <data key="d19">6.72</data>
+  <data key="d20">6.67</data>
+  <data key="d21">6.1</data>
+  <data key="d22">1.1</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:HO" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">5.04</data>
+  <data key="d20">5.19</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.68</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PA" target="theme:mision">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">7.67</data>
+  <data key="d20">7.43</data>
+  <data key="d21">0.36</data>
+  <data key="d22">21.31</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PA" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">4</data>
+  <data key="d19">10.23</data>
+  <data key="d20">9.55</data>
+  <data key="d21">7.45</data>
+  <data key="d22">1.37</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PA" target="theme:indigenous">
+  <data key="d17">teaches</data>
+  <data key="d18">4</data>
+  <data key="d19">10.23</data>
+  <data key="d20">9.55</data>
+  <data key="d21">7.67</data>
+  <data key="d22">1.33</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PA" target="theme:gospel">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">5.12</data>
+  <data key="d20">5.31</data>
+  <data key="d21">4.73</data>
+  <data key="d22">1.08</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:PA" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">7</data>
+  <data key="d19">17.9</data>
+  <data key="d20">15.92</data>
+  <data key="d21">30.07</data>
+  <data key="d22">0.6</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:RQ" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">10</data>
+  <data key="d19">25.97</data>
+  <data key="d20">22.58</data>
+  <data key="d21">30.07</data>
+  <data key="d22">0.86</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:RQ" target="theme:catholic_social_teaching">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">5.19</data>
+  <data key="d20">5.38</data>
+  <data key="d21">7.45</data>
+  <data key="d22">0.7</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:JM" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">61</data>
+  <data key="d19">173.79</data>
+  <data key="d20">142.69</data>
+  <data key="d21">30.07</data>
+  <data key="d22">5.78</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:JM" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">5.7</data>
+  <data key="d20">5.8</data>
+  <data key="d21">34.61</data>
+  <data key="d22">0.16</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:TD" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">7</data>
+  <data key="d19">27.56</data>
+  <data key="d20">22.46</data>
+  <data key="d21">30.07</data>
+  <data key="d22">0.92</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BF" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">9</data>
+  <data key="d19">43.27</data>
+  <data key="d20">32.99</data>
+  <data key="d21">30.07</data>
+  <data key="d22">1.44</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CS" target="theme:synod">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">18.4</data>
+  <data key="d20">14.4</data>
+  <data key="d21">6.1</data>
+  <data key="d22">3.02</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CS" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">4</data>
+  <data key="d19">24.54</data>
+  <data key="d20">18.52</data>
+  <data key="d21">30.07</data>
+  <data key="d22">0.82</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:CS" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">12.27</data>
+  <data key="d20">10.29</data>
+  <data key="d21">34.61</data>
+  <data key="d22">0.35</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:UY" target="theme:synod">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">20.69</data>
+  <data key="d20">15.56</data>
+  <data key="d21">6.1</data>
+  <data key="d22">3.39</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:UY" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">6</data>
+  <data key="d19">41.38</data>
+  <data key="d20">28.89</data>
+  <data key="d21">30.07</data>
+  <data key="d22">1.38</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:GJ" target="theme:mision">
+  <data key="d17">teaches</data>
+  <data key="d18">3</data>
+  <data key="d19">21.58</data>
+  <data key="d20">15.98</data>
+  <data key="d21">0.36</data>
+  <data key="d22">59.94</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:GJ" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">6</data>
+  <data key="d19">43.17</data>
+  <data key="d20">29.68</data>
+  <data key="d21">30.07</data>
+  <data key="d22">1.44</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BH" target="theme:mission">
+  <data key="d17">teaches</data>
+  <data key="d18">5</data>
+  <data key="d19">39.68</data>
+  <data key="d20">26.7</data>
+  <data key="d21">30.07</data>
+  <data key="d22">1.32</data>
+  <data key="d23">False</data>
+</edge>
+<edge source="country:BH" target="theme:immigration">
+  <data key="d17">teaches</data>
+  <data key="d18">2</data>
+  <data key="d19">15.87</data>
+  <data key="d20">12.14</data>
+  <data key="d21">34.61</data>
+  <data key="d22">0.46</data>
+  <data key="d23">False</data>
+</edge>
+</graph></graphml>

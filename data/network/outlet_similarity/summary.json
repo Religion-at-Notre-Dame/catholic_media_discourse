@@ -1,0 +1,127 @@
+{
+  "description": "TF-IDF cosine of theme-rate vectors (ubiquitous 'mission' is downweighted). Outlets need ≥4 distinct themes; cross-modality pairs are penalized.",
+  "min_articles": 20,
+  "min_themes": 4,
+  "min_sim": 0.32,
+  "max_neighbors": 8,
+  "n_outlets": 176,
+  "top_edges": [
+    {
+      "source": "cbc.ca",
+      "target": "castanet.net",
+      "weight": 0.9932,
+      "shared_themes": "indigenous, mission, immigration",
+      "same_family": true
+    },
+    {
+      "source": "ctvnews.ca",
+      "target": "castanet.net",
+      "weight": 0.9886,
+      "shared_themes": "indigenous, mission",
+      "same_family": true
+    },
+    {
+      "source": "cbc.ca",
+      "target": "ctvnews.ca",
+      "weight": 0.9815,
+      "shared_themes": "indigenous, mission",
+      "same_family": true
+    },
+    {
+      "source": "winnipegfreepress.com",
+      "target": "cincinnati.com",
+      "weight": 0.9791,
+      "shared_themes": "indigenous, immigration, mission",
+      "same_family": true
+    },
+    {
+      "source": "cbc.ca",
+      "target": "winnipegfreepress.com",
+      "weight": 0.9762,
+      "shared_themes": "indigenous, immigration, mission",
+      "same_family": true
+    },
+    {
+      "source": "yahoo.com",
+      "target": "dailymail.co.uk",
+      "weight": 0.9744,
+      "shared_themes": "mission, immigration, indigenous",
+      "same_family": true
+    },
+    {
+      "source": "ksl.com",
+      "target": "chattanoogan.com",
+      "weight": 0.9744,
+      "shared_themes": "mission, youth, immigration",
+      "same_family": true
+    },
+    {
+      "source": "panow.com",
+      "target": "castanet.net",
+      "weight": 0.9744,
+      "shared_themes": "indigenous, catholic_social_teaching, youth",
+      "same_family": true
+    },
+    {
+      "source": "FOX News",
+      "target": "irishcentral.com",
+      "weight": 0.9742,
+      "shared_themes": "immigration, mission, eucharist",
+      "same_family": false
+    },
+    {
+      "source": "independent.co.uk",
+      "target": "cnn.com",
+      "weight": 0.973,
+      "shared_themes": "immigration, mission, indigenous",
+      "same_family": true
+    },
+    {
+      "source": "catholicworldreport.com",
+      "target": "catholicnewsagency.com",
+      "weight": 0.9712,
+      "shared_themes": "immigration, eucharist, youth",
+      "same_family": true
+    },
+    {
+      "source": "cbc.ca",
+      "target": "panow.com",
+      "weight": 0.9707,
+      "shared_themes": "indigenous, immigration, mission",
+      "same_family": true
+    },
+    {
+      "source": "winnipegfreepress.com",
+      "target": "theglobeandmail.com",
+      "weight": 0.9706,
+      "shared_themes": "indigenous, immigration, mission",
+      "same_family": true
+    },
+    {
+      "source": "christianpost.com",
+      "target": "chattanoogan.com",
+      "weight": 0.9701,
+      "shared_themes": "mission, pastoral, immigration",
+      "same_family": true
+    },
+    {
+      "source": "yahoo.com",
+      "target": "foxnews.com",
+      "weight": 0.9674,
+      "shared_themes": "mission, immigration, indigenous",
+      "same_family": true
+    }
+  ],
+  "node_count": 176,
+  "edge_count": 1054,
+  "directed": false,
+  "focus_node_count": 41,
+  "focus_edge_count": 40,
+  "files": {
+    "nodes": "/Users/jonathankarr/Documents/catholic_media/data/network/outlet_similarity/nodes.jsonl",
+    "edges": "/Users/jonathankarr/Documents/catholic_media/data/network/outlet_similarity/edges.jsonl",
+    "graphml": "/Users/jonathankarr/Documents/catholic_media/data/network/outlet_similarity/graph.graphml",
+    "focus": "/Users/jonathankarr/Documents/catholic_media/data/network/outlet_similarity/focus.graphml",
+    "preview": "/Users/jonathankarr/Documents/catholic_media/data/network/outlet_similarity/preview.png"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "input_path": "data/us/tv/gdelt_tv_us_2015-01-01_to_2025-12-31.jsonl",
+  "processed_count": 8557,
+  "current_part_index": 1,
+  "current_part_bytes": 10525651,
+  "current_part_records": 8557,
+  "max_part_bytes": 1020054732,
+  "save_interval": 500,
+  "source": "gdelt_tv",
+  "complete": true
+}

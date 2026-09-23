@@ -1,0 +1,26 @@
+{"id":"country:AR","item_type":"country","label":"Argentina","fips":"AR","color":"#2E86AB","size":21.82,"degree":9}
+{"id":"country:BL","item_type":"country","label":"Bolivia","fips":"BL","color":"#2E86AB","size":20.48,"degree":7}
+{"id":"country:BR","item_type":"country","label":"Brazil","fips":"BR","color":"#2E86AB","size":22.91,"degree":11}
+{"id":"country:CI","item_type":"country","label":"Chile","fips":"CI","color":"#2E86AB","size":14.59,"degree":2}
+{"id":"country:CO","item_type":"country","label":"Colombia","fips":"CO","color":"#2E86AB","size":20.48,"degree":7}
+{"id":"country:ES","item_type":"country","label":"El Salvador","fips":"ES","color":"#2E86AB","size":18.75,"degree":5}
+{"id":"country:GT","item_type":"country","label":"Guatemala","fips":"GT","color":"#2E86AB","size":18.75,"degree":5}
+{"id":"country:HO","item_type":"country","label":"Honduras","fips":"HO","color":"#2E86AB","size":17.66,"degree":4}
+{"id":"country:MX","item_type":"country","label":"Mexico","fips":"MX","color":"#2E86AB","size":20.48,"degree":7}
+{"id":"country:PA","item_type":"country","label":"Paraguay","fips":"PA","color":"#2E86AB","size":17.66,"degree":4}
+{"id":"country:PE","item_type":"country","label":"Peru","fips":"PE","color":"#2E86AB","size":19.68,"degree":6}
+{"id":"country:US","item_type":"country","label":"United States","fips":"US","color":"#2E86AB","size":17.66,"degree":4}
+{"id":"theme:aparecida_celam","item_type":"theme","label":"aparecida celam","color":"#E94F37","size":16.32,"degree":3}
+{"id":"theme:eucharist","item_type":"theme","label":"eucharist","color":"#E94F37","size":12.16,"degree":1}
+{"id":"theme:evangelii_gaudium","item_type":"theme","label":"evangelii gaudium","color":"#E94F37","size":18.75,"degree":5}
+{"id":"theme:evangelio","item_type":"theme","label":"evangelio","color":"#E94F37","size":16.32,"degree":3}
+{"id":"theme:gospel","item_type":"theme","label":"gospel","color":"#E94F37","size":22.39,"degree":10}
+{"id":"theme:guadalupe","item_type":"theme","label":"guadalupe","color":"#E94F37","size":12.16,"degree":1}
+{"id":"theme:immigration","item_type":"theme","label":"immigration","color":"#E94F37","size":16.32,"degree":3}
+{"id":"theme:inculturation","item_type":"theme","label":"inculturation","color":"#E94F37","size":16.32,"degree":3}
+{"id":"theme:laudato_si","item_type":"theme","label":"laudato si","color":"#E94F37","size":19.68,"degree":6}
+{"id":"theme:liberation_theology","item_type":"theme","label":"liberation theology","color":"#E94F37","size":21.18,"degree":8}
+{"id":"theme:mision","item_type":"theme","label":"mision","color":"#E94F37","size":21.18,"degree":8}
+{"id":"theme:oscar_romero","item_type":"theme","label":"oscar romero","color":"#E94F37","size":16.32,"degree":3}
+{"id":"theme:preferential_option","item_type":"theme","label":"preferential option","color":"#E94F37","size":14.59,"degree":2}
+{"id":"theme:querida_amazonia","item_type":"theme","label":"querida amazonia","color":"#E94F37","size":12.16,"degree":1}

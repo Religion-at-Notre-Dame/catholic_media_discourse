@@ -1,0 +1,82 @@
+{
+  "description": "Directed first-mention cascade after each document's promulgation (pre-promulgation lexicon hits are dropped). Chain (followed_by) plus star from the earliest country (diffuses_from). Weight = max_lag − lag_days.",
+  "min_hits": 2,
+  "max_lag_days": 365,
+  "n_topics": 7,
+  "examples": [
+    {
+      "topic": "aparecida_celam",
+      "origin": "Chile",
+      "origin_date": "2015-04-08",
+      "promulgation": null,
+      "days_after_promulgation": null,
+      "left_censored": false,
+      "followers": [
+        {
+          "country": "United States",
+          "date": "2015-05-18",
+          "lag_days": 40,
+          "hits": 24
+        },
+        {
+          "country": "Brazil",
+          "date": "2017-07-09",
+          "lag_days": 823,
+          "hits": 6
+        }
+      ]
+    },
+    {
+      "topic": "guadalupe",
+      "origin": "United States",
+      "origin_date": "2015-01-27",
+      "promulgation": null,
+      "days_after_promulgation": null,
+      "left_censored": false,
+      "followers": [
+        {
+          "country": "Canada",
+          "date": "2015-04-09",
+          "lag_days": 72,
+          "hits": 3
+        },
+        {
+          "country": "Mexico",
+          "date": "2015-10-06",
+          "lag_days": 252,
+          "hits": 244
+        },
+        {
+          "country": "Chile",
+          "date": "2015-10-06",
+          "lag_days": 252,
+          "hits": 3
+        },
+        {
+          "country": "Panama",
+          "date": "2018-12-12",
+          "lag_days": 1415,
+          "hits": 2
+        },
+        {
+          "country": "El Salvador",
+          "date": "2019-12-12",
+          "lag_days": 1780,
+          "hits": 2
+        }
+      ]
+    }
+  ],
+  "node_count": 30,
+  "edge_count": 145,
+  "directed": true,
+  "focus_node_count": 24,
+  "focus_edge_count": 50,
+  "files": {
+    "nodes": "/Users/jonathankarr/Documents/catholic_media/data/network/diffusion_cascade/nodes.jsonl",
+    "edges": "/Users/jonathankarr/Documents/catholic_media/data/network/diffusion_cascade/edges.jsonl",
+    "graphml": "/Users/jonathankarr/Documents/catholic_media/data/network/diffusion_cascade/graph.graphml",
+    "focus": "/Users/jonathankarr/Documents/catholic_media/data/network/diffusion_cascade/focus.graphml",
+    "preview": "/Users/jonathankarr/Documents/catholic_media/data/network/diffusion_cascade/preview.png"
+  }
+}

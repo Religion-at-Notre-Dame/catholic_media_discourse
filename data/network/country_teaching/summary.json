@@ -1,0 +1,181 @@
+{
+  "description": "Bipartite ActionGeo country × teaching theme. Rank by lift vs U.S. rate (not raw /1k, which overweights Haiti 'mission'). distinctive = non-generic theme, n≥150, hits≥8, lift≥2.",
+  "min_country_n": 80,
+  "min_hits": 2,
+  "top_lift_vs_us": [
+    {
+      "country": "Mexico",
+      "theme": "guadalupe",
+      "rate_per_1k": 36.94,
+      "smoothed_per_1k": 36.57,
+      "lift_vs_us": 11.51,
+      "hits": 244
+    },
+    {
+      "country": "Canada",
+      "theme": "indigenous",
+      "rate_per_1k": 44.12,
+      "smoothed_per_1k": 43.89,
+      "lift_vs_us": 5.75,
+      "hits": 587
+    },
+    {
+      "country": "Argentina",
+      "theme": "mision",
+      "rate_per_1k": 2.06,
+      "smoothed_per_1k": 2.12,
+      "lift_vs_us": 5.72,
+      "hits": 12
+    },
+    {
+      "country": "Bolivia",
+      "theme": "indigenous",
+      "rate_per_1k": 40.74,
+      "smoothed_per_1k": 37.46,
+      "lift_vs_us": 5.31,
+      "hits": 31
+    },
+    {
+      "country": "Brazil",
+      "theme": "indigenous",
+      "rate_per_1k": 30.16,
+      "smoothed_per_1k": 29.43,
+      "lift_vs_us": 3.93,
+      "hits": 77
+    },
+    {
+      "country": "Guatemala",
+      "theme": "immigration",
+      "rate_per_1k": 122.19,
+      "smoothed_per_1k": 108.97,
+      "lift_vs_us": 3.53,
+      "hits": 76
+    },
+    {
+      "country": "Honduras",
+      "theme": "immigration",
+      "rate_per_1k": 77.31,
+      "smoothed_per_1k": 68.89,
+      "lift_vs_us": 2.23,
+      "hits": 46
+    },
+    {
+      "country": "Mexico",
+      "theme": "immigration",
+      "rate_per_1k": 72.82,
+      "smoothed_per_1k": 72.03,
+      "lift_vs_us": 2.1,
+      "hits": 481
+    }
+  ],
+  "top_rate_edges": [
+    {
+      "country": "Haiti",
+      "theme": "mission",
+      "rate_per_1k": 298.16,
+      "smoothed_per_1k": 280.62,
+      "lift_vs_us": 9.92,
+      "hits": 373
+    },
+    {
+      "country": "Jamaica",
+      "theme": "mission",
+      "rate_per_1k": 173.79,
+      "smoothed_per_1k": 142.69,
+      "lift_vs_us": 5.78,
+      "hits": 61
+    },
+    {
+      "country": "Guatemala",
+      "theme": "immigration",
+      "rate_per_1k": 122.19,
+      "smoothed_per_1k": 108.97,
+      "lift_vs_us": 3.53,
+      "hits": 76
+    },
+    {
+      "country": "Guatemala",
+      "theme": "mission",
+      "rate_per_1k": 96.46,
+      "smoothed_per_1k": 86.18,
+      "lift_vs_us": 3.21,
+      "hits": 60
+    },
+    {
+      "country": "Honduras",
+      "theme": "immigration",
+      "rate_per_1k": 77.31,
+      "smoothed_per_1k": 68.89,
+      "lift_vs_us": 2.23,
+      "hits": 46
+    },
+    {
+      "country": "Mexico",
+      "theme": "immigration",
+      "rate_per_1k": 72.82,
+      "smoothed_per_1k": 72.03,
+      "lift_vs_us": 2.1,
+      "hits": 481
+    },
+    {
+      "country": "Dominican Republic",
+      "theme": "mission",
+      "rate_per_1k": 52.2,
+      "smoothed_per_1k": 46.9,
+      "lift_vs_us": 1.74,
+      "hits": 32
+    },
+    {
+      "country": "Brazil",
+      "theme": "mission",
+      "rate_per_1k": 49.75,
+      "smoothed_per_1k": 48.42,
+      "lift_vs_us": 1.65,
+      "hits": 127
+    },
+    {
+      "country": "Brazil",
+      "theme": "synod",
+      "rate_per_1k": 48.57,
+      "smoothed_per_1k": 47.28,
+      "lift_vs_us": 7.96,
+      "hits": 124
+    },
+    {
+      "country": "Ecuador",
+      "theme": "mission",
+      "rate_per_1k": 46.83,
+      "smoothed_per_1k": 42.45,
+      "lift_vs_us": 1.56,
+      "hits": 31
+    },
+    {
+      "country": "El Salvador",
+      "theme": "immigration",
+      "rate_per_1k": 44.16,
+      "smoothed_per_1k": 41.56,
+      "lift_vs_us": 1.28,
+      "hits": 48
+    },
+    {
+      "country": "Canada",
+      "theme": "indigenous",
+      "rate_per_1k": 44.12,
+      "smoothed_per_1k": 43.89,
+      "lift_vs_us": 5.75,
+      "hits": 587
+    }
+  ],
+  "node_count": 50,
+  "edge_count": 165,
+  "directed": false,
+  "focus_node_count": 30,
+  "focus_edge_count": 36,
+  "files": {
+    "nodes": "/Users/jonathankarr/Documents/catholic_media/data/network/country_teaching/nodes.jsonl",
+    "edges": "/Users/jonathankarr/Documents/catholic_media/data/network/country_teaching/edges.jsonl",
+    "graphml": "/Users/jonathankarr/Documents/catholic_media/data/network/country_teaching/graph.graphml",
+    "focus": "/Users/jonathankarr/Documents/catholic_media/data/network/country_teaching/focus.graphml",
+    "preview": "/Users/jonathankarr/Documents/catholic_media/data/network/country_teaching/preview.png"
+  }
+}

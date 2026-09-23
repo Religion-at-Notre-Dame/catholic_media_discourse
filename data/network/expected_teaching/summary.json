@@ -1,0 +1,17 @@
+{
+  "description": "Overlay of the pre-specified cultural teaching map (expected) and distinctive observed lifts (unexpected_distinctive). An edge is the comparison: does the country teach what the map predicts?",
+  "n_expected": 24,
+  "n_matches": 14,
+  "node_count": 26,
+  "edge_count": 71,
+  "directed": false,
+  "focus_node_count": 21,
+  "focus_edge_count": 36,
+  "files": {
+    "nodes": "/Users/jonathankarr/Documents/catholic_media/data/network/expected_teaching/nodes.jsonl",
+    "edges": "/Users/jonathankarr/Documents/catholic_media/data/network/expected_teaching/edges.jsonl",
+    "graphml": "/Users/jonathankarr/Documents/catholic_media/data/network/expected_teaching/graph.graphml",
+    "focus": "/Users/jonathankarr/Documents/catholic_media/data/network/expected_teaching/focus.graphml",
+    "preview": "/Users/jonathankarr/Documents/catholic_media/data/network/expected_teaching/preview.png"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-09-01T15:32:06.256685+00:00",
+  "records_scanned": 693989,
+  "records_with_text": 220006,
+  "news_with_actiongeo": 169630,
+  "records_with_theme": 32661,
+  "gdelt_events_with_actor": 122124,
+  "records_with_bridge_term": 12707,
+  "max_records": null,
+  "graphs": {
+    "country_teaching": {
+      "nodes": 50,
+      "edges": 165
+    },
+    "theme_cooccurrence": {
+      "nodes": 33,
+      "edges": 49
+    },
+    "outlet_similarity": {
+      "nodes": 176,
+      "edges": 1054
+    },
+    "diffusion_cascade": {
+      "nodes": 30,
+      "edges": 145
+    },
+    "gdelt_actors": {
+      "nodes": 565,
+      "edges": 1797
+    },
+    "language_bridge": {
+      "nodes": 72,
+      "edges": 218
+    }
+  },
+  "output_dir": "/Users/jonathankarr/Documents/catholic_media/data/network"
+}

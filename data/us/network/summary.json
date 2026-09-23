@@ -1,0 +1,14 @@
+{
+  "records_seen": 124748,
+  "records_skipped": 469963,
+  "node_count": 137072,
+  "edge_count": 142494,
+  "input_files": [
+    "data/us/news/anonymized/anonymized_part_00001.jsonl",
+    "data/americas/news/anonymized/anonymized_part_00001.jsonl",
+    "data/us/tv/anonymized/anonymized_part_00001.jsonl",
+    "data/us/english/radio/anonymized/anonymized_part_00001.jsonl",
+    "data/us/spanish/radio/anonymized/anonymized_part_00001.jsonl",
+    "data/us/youtube/anonymized/anonymized_part_00001.jsonl"
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "description": "Undirected theme co-occurrence. Edges kept when lift ≥ 1.25 (P(a,b)/(P(a)P(b))); rank by lift, not raw count.",
+  "n_records_with_theme": 32661,
+  "min_count": 8,
+  "min_lift": 1.25,
+  "top_by_lift": [
+    {
+      "source": "laborem_exercens",
+      "target": "populorum_progressio",
+      "weight": 8,
+      "lift": 1360.875
+    },
+    {
+      "source": "laborem_exercens",
+      "target": "quadragesimo_anno",
+      "weight": 10,
+      "lift": 209.365
+    },
+    {
+      "source": "populorum_progressio",
+      "target": "quadragesimo_anno",
+      "weight": 8,
+      "lift": 125.619
+    },
+    {
+      "source": "centesimus_annus",
+      "target": "quadragesimo_anno",
+      "weight": 11,
+      "lift": 106.293
+    },
+    {
+      "source": "laborem_exercens",
+      "target": "rerum_novarum",
+      "weight": 10,
+      "lift": 98.258
+    },
+    {
+      "source": "populorum_progressio",
+      "target": "rerum_novarum",
+      "weight": 8,
+      "lift": 58.955
+    },
+    {
+      "source": "centesimus_annus",
+      "target": "rerum_novarum",
+      "weight": 11,
+      "lift": 49.885
+    },
+    {
+      "source": "quadragesimo_anno",
+      "target": "rerum_novarum",
+      "weight": 50,
+      "lift": 45.35
+    },
+    {
+      "source": "evangelization",
+      "target": "new_evangelization",
+      "weight": 69,
+      "lift": 40.223
+    },
+    {
+      "source": "fratelli_tutti",
+      "target": "quadragesimo_anno",
+      "weight": 9,
+      "lift": 30.556
+    },
+    {
+      "source": "evangelii_gaudium",
+      "target": "gospel",
+      "weight": 69,
+      "lift": 25.224
+    },
+    {
+      "source": "pacem_in_terris",
+      "target": "quadragesimo_anno",
+      "weight": 10,
+      "lift": 24.392
+    },
+    {
+      "source": "catholic_social_teaching",
+      "target": "laborem_exercens",
+      "weight": 10,
+      "lift": 18.121
+    },
+    {
+      "source": "evangelium_vitae",
+      "target": "gospel",
+      "weight": 19,
+      "lift": 16.547
+    },
+    {
+      "source": "catholic_social_teaching",
+      "target": "populorum_progressio",
+      "weight": 11,
+      "lift": 14.95
+    }
+  ],
+  "top_by_count": [
+    {
+      "source": "guadalupe",
+      "target": "marian_devotion",
+      "weight": 681,
+      "lift": 10.237
+    },
+    {
+      "source": "eucharist",
+      "target": "sacrament",
+      "weight": 275,
+      "lift": 2.9
+    },
+    {
+      "source": "indigenous",
+      "target": "mission",
+      "weight": 208,
+      "lift": 0.3
+    },
+    {
+      "source": "gospel",
+      "target": "mission",
+      "weight": 200,
+      "lift": 0.808
+    },
+    {
+      "source": "immigration",
+      "target": "mission",
+      "weight": 200,
+      "lift": 0.136
+    },
+    {
+      "source": "catholic_social_teaching",
+      "target": "immigration",
+      "weight": 160,
+      "lift": 0.531
+    },
+    {
+      "source": "evangelization",
+      "target": "mission",
+      "weight": 149,
+      "lift": 0.818
+    },
+    {
+      "source": "mission",
+      "target": "youth",
+      "weight": 142,
+      "lift": 0.235
+    },
+    {
+      "source": "mission",
+      "target": "pastoral",
+      "weight": 134,
+      "lift": 0.296
+    },
+    {
+      "source": "synod",
+      "target": "synodality",
+      "weight": 132,
+      "lift": 14.252
+    }
+  ],
+  "top_papal_pairs": [
+    {
+      "source": "laborem_exercens",
+      "target": "populorum_progressio",
+      "weight": 8,
+      "lift": 1360.875
+    },
+    {
+      "source": "laborem_exercens",
+      "target": "quadragesimo_anno",
+      "weight": 10,
+      "lift": 209.365
+    },
+    {
+      "source": "populorum_progressio",
+      "target": "quadragesimo_anno",
+      "weight": 8,
+      "lift": 125.619
+    },
+    {
+      "source": "centesimus_annus",
+      "target": "quadragesimo_anno",
+      "weight": 11,
+      "lift": 106.293
+    },
+    {
+      "source": "laborem_exercens",
+      "target": "rerum_novarum",
+      "weight": 10,
+      "lift": 98.258
+    },
+    {
+      "source": "populorum_progressio",
+      "target": "rerum_novarum",
+      "weight": 8,
+      "lift": 58.955
+    },
+    {
+      "source": "centesimus_annus",
+      "target": "rerum_novarum",
+      "weight": 11,
+      "lift": 49.885
+    },
+    {
+      "source": "quadragesimo_anno",
+      "target": "rerum_novarum",
+      "weight": 50,
+      "lift": 45.35
+    },
+    {
+      "source": "fratelli_tutti",
+      "target": "quadragesimo_anno",
+      "weight": 9,
+      "lift": 30.556
+    },
+    {
+      "source": "pacem_in_terris",
+      "target": "quadragesimo_anno",
+      "weight": 10,
+      "lift": 24.392
+    },
+    {
+      "source": "catholic_social_teaching",
+      "target": "laborem_exercens",
+      "weight": 10,
+      "lift": 18.121
+    },
+    {
+      "source": "catholic_social_teaching",
+      "target": "populorum_progressio",
+      "weight": 11,
+      "lift": 14.95
+    }
+  ],
+  "node_count": 33,
+  "edge_count": 49,
+  "directed": false,
+  "focus_node_count": 29,
+  "focus_edge_count": 40,
+  "files": {
+    "nodes": "/Users/jonathankarr/Documents/catholic_media/data/network/theme_cooccurrence/nodes.jsonl",
+    "edges": "/Users/jonathankarr/Documents/catholic_media/data/network/theme_cooccurrence/edges.jsonl",
+    "graphml": "/Users/jonathankarr/Documents/catholic_media/data/network/theme_cooccurrence/graph.graphml",
+    "focus": "/Users/jonathankarr/Documents/catholic_media/data/network/theme_cooccurrence/focus.graphml",
+    "preview": "/Users/jonathankarr/Documents/catholic_media/data/network/theme_cooccurrence/preview.png"
+  }
+}

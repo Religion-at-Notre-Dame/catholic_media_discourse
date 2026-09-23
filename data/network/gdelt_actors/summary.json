@@ -1,0 +1,169 @@
+{
+  "description": "Directed GDELT Actor1→Actor2 on the Catholic-keyword event slice. Pope/Vatican aliases merged. mean_goldstein > 0 is cooperation (green); < 0 is conflict (red). Focus graph drops generic hubs (Catholic, School, …).",
+  "min_weight": 5,
+  "n_actor_mentions": 184783,
+  "n_directed_pairs_raw": 11647,
+  "cooperative_edges": 1373,
+  "conflict_edges": 372,
+  "mean_goldstein_kept": 1.198,
+  "top_edges": [
+    {
+      "source": "Catholic",
+      "target": "United States",
+      "weight": 3227,
+      "mean_goldstein": 1.069
+    },
+    {
+      "source": "Catholic",
+      "target": "School",
+      "weight": 1254,
+      "mean_goldstein": 1.705
+    },
+    {
+      "source": "Vatican",
+      "target": "United States",
+      "weight": 729,
+      "mean_goldstein": 1.332
+    },
+    {
+      "source": "Catholic",
+      "target": "Canada",
+      "weight": 681,
+      "mean_goldstein": 1.624
+    },
+    {
+      "source": "Vatican",
+      "target": "Pope",
+      "weight": 663,
+      "mean_goldstein": 1.47
+    },
+    {
+      "source": "Catholic",
+      "target": "Student",
+      "weight": 564,
+      "mean_goldstein": 1.783
+    },
+    {
+      "source": "Catholic",
+      "target": "Bishop",
+      "weight": 523,
+      "mean_goldstein": 1.087
+    },
+    {
+      "source": "Catholic",
+      "target": "Mexico",
+      "weight": 474,
+      "mean_goldstein": 1.132
+    },
+    {
+      "source": "Catholic",
+      "target": "Vatican",
+      "weight": 470,
+      "mean_goldstein": 1.236
+    },
+    {
+      "source": "Vatican",
+      "target": "Catholic",
+      "weight": 387,
+      "mean_goldstein": 1.033
+    },
+    {
+      "source": "Catholic",
+      "target": "Priest",
+      "weight": 386,
+      "mean_goldstein": 0.334
+    },
+    {
+      "source": "Catholic",
+      "target": "American",
+      "weight": 372,
+      "mean_goldstein": 1.194
+    }
+  ],
+  "top_named_edges": [
+    {
+      "source": "Vatican",
+      "target": "United States",
+      "weight": 729,
+      "mean_goldstein": 1.332
+    },
+    {
+      "source": "Vatican",
+      "target": "Pope",
+      "weight": 663,
+      "mean_goldstein": 1.47
+    },
+    {
+      "source": "Vatican",
+      "target": "Argentina",
+      "weight": 319,
+      "mean_goldstein": 1.328
+    },
+    {
+      "source": "Vatican",
+      "target": "Bishop",
+      "weight": 306,
+      "mean_goldstein": 1.535
+    },
+    {
+      "source": "Vatican",
+      "target": "Chile",
+      "weight": 281,
+      "mean_goldstein": 0.68
+    },
+    {
+      "source": "United States",
+      "target": "Vatican",
+      "weight": 260,
+      "mean_goldstein": 1.811
+    },
+    {
+      "source": "Vatican",
+      "target": "Cuba",
+      "weight": 238,
+      "mean_goldstein": 3.323
+    },
+    {
+      "source": "Vatican",
+      "target": "Canada",
+      "weight": 225,
+      "mean_goldstein": 1.882
+    },
+    {
+      "source": "Vatican",
+      "target": "Mexico",
+      "weight": 202,
+      "mean_goldstein": 2.161
+    },
+    {
+      "source": "Vatican",
+      "target": "Rome",
+      "weight": 199,
+      "mean_goldstein": 1.15
+    },
+    {
+      "source": "Vatican",
+      "target": "Italy",
+      "weight": 177,
+      "mean_goldstein": 2.001
+    },
+    {
+      "source": "Vatican",
+      "target": "Priest",
+      "weight": 145,
+      "mean_goldstein": -0.065
+    }
+  ],
+  "node_count": 565,
+  "edge_count": 1797,
+  "directed": true,
+  "focus_node_count": 30,
+  "focus_edge_count": 40,
+  "files": {
+    "nodes": "/Users/jonathankarr/Documents/catholic_media/data/network/gdelt_actors/nodes.jsonl",
+    "edges": "/Users/jonathankarr/Documents/catholic_media/data/network/gdelt_actors/edges.jsonl",
+    "graphml": "/Users/jonathankarr/Documents/catholic_media/data/network/gdelt_actors/graph.graphml",
+    "focus": "/Users/jonathankarr/Documents/catholic_media/data/network/gdelt_actors/focus.graphml",
+    "preview": "/Users/jonathankarr/Documents/catholic_media/data/network/gdelt_actors/preview.png"
+  }
+}

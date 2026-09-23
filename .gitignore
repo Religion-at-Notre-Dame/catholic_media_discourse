@@ -1,0 +1,22 @@
+.env
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+.DS_Store
+
+# Paper / LaTeX (local only)
+papers/
+
+# Raw radio (keep anonymized/ only)
+data/americas/radio/archive_radio_americas_2015_2025.jsonl
+data/americas/radio/archive_radio_americas_2015_2025.jsonl.*
+
+# Affiliation graph nodes exceed GitHub 100MB limit (regenerate locally)
+data/us/network/nodes.jsonl

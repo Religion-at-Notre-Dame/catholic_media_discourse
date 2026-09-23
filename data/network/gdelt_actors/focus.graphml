@@ -1,0 +1,821 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d18" for="edge" attr.name="generic_endpoint" attr.type="boolean"/>
+<key id="d17" for="edge" attr.name="top_root" attr.type="string"/>
+<key id="d16" for="edge" attr.name="top_quad" attr.type="string"/>
+<key id="d15" for="edge" attr.name="color" attr.type="string"/>
+<key id="d14" for="edge" attr.name="polarity" attr.type="string"/>
+<key id="d13" for="edge" attr.name="signed_weight" attr.type="double"/>
+<key id="d12" for="edge" attr.name="mean_goldstein" attr.type="double"/>
+<key id="d11" for="edge" attr.name="weight" attr.type="long"/>
+<key id="d10" for="edge" attr.name="type" attr.type="string"/>
+<key id="d9" for="node" attr.name="degree" attr.type="long"/>
+<key id="d8" for="node" attr.name="size" attr.type="double"/>
+<key id="d7" for="node" attr.name="color" attr.type="string"/>
+<key id="d6" for="node" attr.name="generic" attr.type="boolean"/>
+<key id="d5" for="node" attr.name="code" attr.type="string"/>
+<key id="d4" for="node" attr.name="country" attr.type="string"/>
+<key id="d3" for="node" attr.name="n" attr.type="long"/>
+<key id="d2" for="node" attr.name="gdelt_name" attr.type="string"/>
+<key id="d1" for="node" attr.name="label" attr.type="string"/>
+<key id="d0" for="node" attr.name="item_type" attr.type="string"/>
+<graph edgedefault="directed"><node id="actor:vatican">
+  <data key="d0">actor</data>
+  <data key="d1">Vatican</data>
+  <data key="d2">VATICAN</data>
+  <data key="d3">16771</data>
+  <data key="d4">VAT</data>
+  <data key="d5">VAT</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">66.36</data>
+  <data key="d9">25</data>
+</node>
+<node id="actor:united_states">
+  <data key="d0">actor</data>
+  <data key="d1">United States</data>
+  <data key="d2">UNITED STATES</data>
+  <data key="d3">12090</data>
+  <data key="d4">USA</data>
+  <data key="d5">USA</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">64.4</data>
+  <data key="d9">9</data>
+</node>
+<node id="actor:canada">
+  <data key="d0">actor</data>
+  <data key="d1">Canada</data>
+  <data key="d2">CANADA</data>
+  <data key="d3">4588</data>
+  <data key="d4">CAN</data>
+  <data key="d5">CAN</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">58.59</data>
+  <data key="d9">3</data>
+</node>
+<node id="actor:pope">
+  <data key="d0">actor</data>
+  <data key="d1">Pope</data>
+  <data key="d2">POPE</data>
+  <data key="d3">3730</data>
+  <data key="d4"></data>
+  <data key="d5">CHRCTH</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">57.35</data>
+  <data key="d9">3</data>
+</node>
+<node id="actor:bishop">
+  <data key="d0">actor</data>
+  <data key="d1">Bishop</data>
+  <data key="d2">BISHOP</data>
+  <data key="d3">3647</data>
+  <data key="d4"></data>
+  <data key="d5">REL</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">57.21</data>
+  <data key="d9">4</data>
+</node>
+<node id="actor:archdiocese">
+  <data key="d0">actor</data>
+  <data key="d1">Archdiocese</data>
+  <data key="d2">ARCHDIOCESE</data>
+  <data key="d3">2831</data>
+  <data key="d4"></data>
+  <data key="d5">CHR</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">55.69</data>
+  <data key="d9">3</data>
+</node>
+<node id="actor:argentina">
+  <data key="d0">actor</data>
+  <data key="d1">Argentina</data>
+  <data key="d2">ARGENTINA</data>
+  <data key="d3">2208</data>
+  <data key="d4">ARG</data>
+  <data key="d5">ARG</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">54.2</data>
+  <data key="d9">2</data>
+</node>
+<node id="actor:priest">
+  <data key="d0">actor</data>
+  <data key="d1">Priest</data>
+  <data key="d2">PRIEST</data>
+  <data key="d3">2072</data>
+  <data key="d4"></data>
+  <data key="d5">REL</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">53.82</data>
+  <data key="d9">2</data>
+</node>
+<node id="actor:mexico">
+  <data key="d0">actor</data>
+  <data key="d1">Mexico</data>
+  <data key="d2">MEXICO</data>
+  <data key="d3">2061</data>
+  <data key="d4">MEX</data>
+  <data key="d5">MEX</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">53.79</data>
+  <data key="d9">2</data>
+</node>
+<node id="actor:catholic_bishop">
+  <data key="d0">actor</data>
+  <data key="d1">Catholic Bishop</data>
+  <data key="d2">CATHOLIC BISHOP</data>
+  <data key="d3">2010</data>
+  <data key="d4"></data>
+  <data key="d5">CHRCTH</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">53.64</data>
+  <data key="d9">2</data>
+</node>
+<node id="actor:diocese">
+  <data key="d0">actor</data>
+  <data key="d1">Diocese</data>
+  <data key="d2">DIOCESE</data>
+  <data key="d3">1892</data>
+  <data key="d4"></data>
+  <data key="d5">CHR</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">53.28</data>
+  <data key="d9">3</data>
+</node>
+<node id="actor:italy">
+  <data key="d0">actor</data>
+  <data key="d1">Italy</data>
+  <data key="d2">ITALY</data>
+  <data key="d3">1533</data>
+  <data key="d4">ITA</data>
+  <data key="d5">ITA</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">52.01</data>
+  <data key="d9">3</data>
+</node>
+<node id="actor:chile">
+  <data key="d0">actor</data>
+  <data key="d1">Chile</data>
+  <data key="d2">CHILE</data>
+  <data key="d3">1368</data>
+  <data key="d4">CHL</data>
+  <data key="d5">CHL</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">51.33</data>
+  <data key="d9">1</data>
+</node>
+<node id="actor:rome">
+  <data key="d0">actor</data>
+  <data key="d1">Rome</data>
+  <data key="d2">ROME</data>
+  <data key="d3">1302</data>
+  <data key="d4">ITA</data>
+  <data key="d5">ITA</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">51.03</data>
+  <data key="d9">2</data>
+</node>
+<node id="actor:cuba">
+  <data key="d0">actor</data>
+  <data key="d1">Cuba</data>
+  <data key="d2">CUBA</data>
+  <data key="d3">1201</data>
+  <data key="d4">CUB</data>
+  <data key="d5">CUB</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">50.55</data>
+  <data key="d9">1</data>
+</node>
+<node id="actor:american">
+  <data key="d0">actor</data>
+  <data key="d1">American</data>
+  <data key="d2">AMERICAN</data>
+  <data key="d3">1050</data>
+  <data key="d4">USA</data>
+  <data key="d5">USA</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">49.74</data>
+  <data key="d9">1</data>
+</node>
+<node id="actor:canadian">
+  <data key="d0">actor</data>
+  <data key="d1">Canadian</data>
+  <data key="d2">CANADIAN</data>
+  <data key="d3">902</data>
+  <data key="d4">CAN</data>
+  <data key="d5">CAN</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">48.83</data>
+  <data key="d9">1</data>
+</node>
+<node id="actor:migrant">
+  <data key="d0">actor</data>
+  <data key="d1">Migrant</data>
+  <data key="d2">MIGRANT</data>
+  <data key="d3">851</data>
+  <data key="d4"></data>
+  <data key="d5">CVL</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">48.49</data>
+  <data key="d9">1</data>
+</node>
+<node id="actor:saint">
+  <data key="d0">actor</data>
+  <data key="d1">Saint</data>
+  <data key="d2">SAINT</data>
+  <data key="d3">844</data>
+  <data key="d4"></data>
+  <data key="d5">REL</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">48.44</data>
+  <data key="d9">1</data>
+</node>
+<node id="actor:peru">
+  <data key="d0">actor</data>
+  <data key="d1">Peru</data>
+  <data key="d2">PERU</data>
+  <data key="d3">742</data>
+  <data key="d4">PER</data>
+  <data key="d5">PER</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">47.66</data>
+  <data key="d9">1</data>
+</node>
+<node id="actor:colombia">
+  <data key="d0">actor</data>
+  <data key="d1">Colombia</data>
+  <data key="d2">COLOMBIA</data>
+  <data key="d3">711</data>
+  <data key="d4">COL</data>
+  <data key="d5">COL</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">47.41</data>
+  <data key="d9">1</data>
+</node>
+<node id="actor:new_york">
+  <data key="d0">actor</data>
+  <data key="d1">New York</data>
+  <data key="d2">NEW YORK</data>
+  <data key="d3">621</data>
+  <data key="d4">USA</data>
+  <data key="d5">USA</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">46.6</data>
+  <data key="d9">1</data>
+</node>
+<node id="actor:administration">
+  <data key="d0">actor</data>
+  <data key="d1">Administration</data>
+  <data key="d2">ADMINISTRATION</data>
+  <data key="d3">566</data>
+  <data key="d4"></data>
+  <data key="d5">GOV</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">46.04</data>
+  <data key="d9">1</data>
+</node>
+<node id="actor:france">
+  <data key="d0">actor</data>
+  <data key="d1">France</data>
+  <data key="d2">FRANCE</data>
+  <data key="d3">427</data>
+  <data key="d4">FRA</data>
+  <data key="d5">FRA</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">44.35</data>
+  <data key="d9">1</data>
+</node>
+<node id="actor:venezuela">
+  <data key="d0">actor</data>
+  <data key="d1">Venezuela</data>
+  <data key="d2">VENEZUELA</data>
+  <data key="d3">358</data>
+  <data key="d4">VEN</data>
+  <data key="d5">VENREL</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">43.3</data>
+  <data key="d9">1</data>
+</node>
+<node id="actor:settlement">
+  <data key="d0">actor</data>
+  <data key="d1">Settlement</data>
+  <data key="d2">SETTLEMENT</data>
+  <data key="d3">339</data>
+  <data key="d4"></data>
+  <data key="d5">CVL</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">42.97</data>
+  <data key="d9">1</data>
+</node>
+<node id="actor:chilean">
+  <data key="d0">actor</data>
+  <data key="d1">Chilean</data>
+  <data key="d2">CHILEAN</data>
+  <data key="d3">334</data>
+  <data key="d4">CHL</data>
+  <data key="d5">CHLMED</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">42.88</data>
+  <data key="d9">1</data>
+</node>
+<node id="actor:cuban">
+  <data key="d0">actor</data>
+  <data key="d1">Cuban</data>
+  <data key="d2">CUBAN</data>
+  <data key="d3">333</data>
+  <data key="d4">CUB</data>
+  <data key="d5">CUB</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">42.87</data>
+  <data key="d9">1</data>
+</node>
+<node id="actor:military">
+  <data key="d0">actor</data>
+  <data key="d1">Military</data>
+  <data key="d2">MILITARY</data>
+  <data key="d3">246</data>
+  <data key="d4"></data>
+  <data key="d5">MIL</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">41.06</data>
+  <data key="d9">1</data>
+</node>
+<node id="actor:tourist">
+  <data key="d0">actor</data>
+  <data key="d1">Tourist</data>
+  <data key="d2">TOURIST</data>
+  <data key="d3">144</data>
+  <data key="d4"></data>
+  <data key="d5">CVL</data>
+  <data key="d6">False</data>
+  <data key="d7">#6B7280</data>
+  <data key="d8">37.86</data>
+  <data key="d9">1</data>
+</node>
+<edge source="actor:vatican" target="actor:united_states">
+  <data key="d10">cameo_event</data>
+  <data key="d11">729</data>
+  <data key="d12">1.332</data>
+  <data key="d13">8.784</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:pope">
+  <data key="d10">cameo_event</data>
+  <data key="d11">663</data>
+  <data key="d12">1.47</data>
+  <data key="d13">9.55</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:argentina">
+  <data key="d10">cameo_event</data>
+  <data key="d11">319</data>
+  <data key="d12">1.328</data>
+  <data key="d13">7.658</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:bishop">
+  <data key="d10">cameo_event</data>
+  <data key="d11">306</data>
+  <data key="d12">1.535</data>
+  <data key="d13">8.792</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:chile">
+  <data key="d10">cameo_event</data>
+  <data key="d11">281</data>
+  <data key="d12">0.68</data>
+  <data key="d13">3.839</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:cuba">
+  <data key="d10">cameo_event</data>
+  <data key="d11">238</data>
+  <data key="d12">3.323</data>
+  <data key="d13">18.199</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:canada">
+  <data key="d10">cameo_event</data>
+  <data key="d11">225</data>
+  <data key="d12">1.882</data>
+  <data key="d13">10.203</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:mexico">
+  <data key="d10">cameo_event</data>
+  <data key="d11">202</data>
+  <data key="d12">2.161</data>
+  <data key="d13">11.484</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:rome">
+  <data key="d10">cameo_event</data>
+  <data key="d11">199</data>
+  <data key="d12">1.15</data>
+  <data key="d13">6.092</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:italy">
+  <data key="d10">cameo_event</data>
+  <data key="d11">177</data>
+  <data key="d12">2.001</data>
+  <data key="d13">10.366</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:priest">
+  <data key="d10">cameo_event</data>
+  <data key="d11">145</data>
+  <data key="d12">-0.065</data>
+  <data key="d13">-0.323</data>
+  <data key="d14">neutral</data>
+  <data key="d15">#9CA3AF</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">appeal</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:venezuela">
+  <data key="d10">cameo_event</data>
+  <data key="d11">89</data>
+  <data key="d12">2.046</data>
+  <data key="d13">9.207</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:chilean">
+  <data key="d10">cameo_event</data>
+  <data key="d11">76</data>
+  <data key="d12">-0.007</data>
+  <data key="d13">-0.029</data>
+  <data key="d14">neutral</data>
+  <data key="d15">#9CA3AF</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:cuban">
+  <data key="d10">cameo_event</data>
+  <data key="d11">75</data>
+  <data key="d12">2.58</data>
+  <data key="d13">11.173</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:american">
+  <data key="d10">cameo_event</data>
+  <data key="d11">68</data>
+  <data key="d12">1.268</data>
+  <data key="d13">5.367</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:peru">
+  <data key="d10">cameo_event</data>
+  <data key="d11">68</data>
+  <data key="d12">0.722</data>
+  <data key="d13">3.057</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:colombia">
+  <data key="d10">cameo_event</data>
+  <data key="d11">68</data>
+  <data key="d12">2.126</data>
+  <data key="d13">9.004</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:saint">
+  <data key="d10">cameo_event</data>
+  <data key="d11">67</data>
+  <data key="d12">1.313</data>
+  <data key="d13">5.542</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:vatican" target="actor:migrant">
+  <data key="d10">cameo_event</data>
+  <data key="d11">62</data>
+  <data key="d12">1.761</data>
+  <data key="d13">7.297</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">diplomatic_cooperation</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:united_states" target="actor:vatican">
+  <data key="d10">cameo_event</data>
+  <data key="d11">260</data>
+  <data key="d12">1.811</data>
+  <data key="d13">10.078</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:canada" target="actor:vatican">
+  <data key="d10">cameo_event</data>
+  <data key="d11">92</data>
+  <data key="d12">1.714</data>
+  <data key="d13">7.769</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:pope" target="actor:vatican">
+  <data key="d10">cameo_event</data>
+  <data key="d11">131</data>
+  <data key="d12">1.128</data>
+  <data key="d13">5.509</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">make_public_statement</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:pope" target="actor:united_states">
+  <data key="d10">cameo_event</data>
+  <data key="d11">93</data>
+  <data key="d12">1.104</data>
+  <data key="d13">5.017</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:bishop" target="actor:united_states">
+  <data key="d10">cameo_event</data>
+  <data key="d11">87</data>
+  <data key="d12">0.886</data>
+  <data key="d13">3.968</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">make_public_statement</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:bishop" target="actor:diocese">
+  <data key="d10">cameo_event</data>
+  <data key="d11">66</data>
+  <data key="d12">0.941</data>
+  <data key="d13">3.956</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">make_public_statement</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:archdiocese" target="actor:settlement">
+  <data key="d10">cameo_event</data>
+  <data key="d11">116</data>
+  <data key="d12">-4.609</data>
+  <data key="d13">-21.947</data>
+  <data key="d14">conflict</data>
+  <data key="d15">#DC2626</data>
+  <data key="d16">material_conflict</data>
+  <data key="d17">fight</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:archdiocese" target="actor:priest">
+  <data key="d10">cameo_event</data>
+  <data key="d11">80</data>
+  <data key="d12">0.265</data>
+  <data key="d13">1.165</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">make_public_statement</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:archdiocese" target="actor:military">
+  <data key="d10">cameo_event</data>
+  <data key="d11">64</data>
+  <data key="d12">1.538</data>
+  <data key="d13">6.418</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:argentina" target="actor:vatican">
+  <data key="d10">cameo_event</data>
+  <data key="d11">83</data>
+  <data key="d12">1.377</data>
+  <data key="d13">6.102</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:mexico" target="actor:vatican">
+  <data key="d10">cameo_event</data>
+  <data key="d11">68</data>
+  <data key="d12">1.687</data>
+  <data key="d13">7.142</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:catholic_bishop" target="actor:united_states">
+  <data key="d10">cameo_event</data>
+  <data key="d11">143</data>
+  <data key="d12">2.659</data>
+  <data key="d13">13.217</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">express_intent_to_cooperate</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:catholic_bishop" target="actor:administration">
+  <data key="d10">cameo_event</data>
+  <data key="d11">66</data>
+  <data key="d12">-2.326</data>
+  <data key="d13">-9.779</data>
+  <data key="d14">conflict</data>
+  <data key="d15">#DC2626</data>
+  <data key="d16">verbal_conflict</data>
+  <data key="d17">disapprove</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:diocese" target="actor:united_states">
+  <data key="d10">cameo_event</data>
+  <data key="d11">97</data>
+  <data key="d12">1.452</data>
+  <data key="d13">6.655</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">appeal</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:diocese" target="actor:bishop">
+  <data key="d10">cameo_event</data>
+  <data key="d11">79</data>
+  <data key="d12">2.181</data>
+  <data key="d13">9.557</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:italy" target="actor:united_states">
+  <data key="d10">cameo_event</data>
+  <data key="d11">117</data>
+  <data key="d12">0.69</data>
+  <data key="d13">3.291</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:italy" target="actor:vatican">
+  <data key="d10">cameo_event</data>
+  <data key="d11">106</data>
+  <data key="d12">1.262</data>
+  <data key="d13">5.898</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:rome" target="actor:united_states">
+  <data key="d10">cameo_event</data>
+  <data key="d11">83</data>
+  <data key="d12">0.967</data>
+  <data key="d13">4.287</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">consult</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:canadian" target="actor:canada">
+  <data key="d10">cameo_event</data>
+  <data key="d11">80</data>
+  <data key="d12">2.409</data>
+  <data key="d13">10.585</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">make_public_statement</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:france" target="actor:united_states">
+  <data key="d10">cameo_event</data>
+  <data key="d11">63</data>
+  <data key="d12">0.308</data>
+  <data key="d13">1.281</data>
+  <data key="d14">cooperation</data>
+  <data key="d15">#16A34A</data>
+  <data key="d16">verbal_cooperation</data>
+  <data key="d17">make_public_statement</data>
+  <data key="d18">False</data>
+</edge>
+<edge source="actor:tourist" target="actor:new_york">
+  <data key="d10">cameo_event</data>
+  <data key="d11">101</data>
+  <data key="d12">-7.5</data>
+  <data key="d13">-34.687</data>
+  <data key="d14">conflict</data>
+  <data key="d15">#DC2626</data>
+  <data key="d16">verbal_conflict</data>
+  <data key="d17">protest</data>
+  <data key="d18">False</data>
+</edge>
+</graph></graphml>

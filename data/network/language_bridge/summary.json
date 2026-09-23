@@ -1,0 +1,294 @@
+{
+  "description": "Concept nodes tie EN/ES/PT terms even when they never co-occur. prefers = a country's dominant wording for a concept (the register graph). translation_bridge = same article, two languages.",
+  "min_count": 2,
+  "term_counts": {
+    "mission": 7326,
+    "eucharist": 2475,
+    "gospel": 1103,
+    "our_lady_of_guadalupe": 620,
+    "mision": 405,
+    "catholic_social_teaching": 307,
+    "laudato_si_latin": 210,
+    "liberation_theology": 164,
+    "evangelio": 160,
+    "catechesis": 154,
+    "virgen_de_guadalupe": 70,
+    "new_evangelization": 69,
+    "joy_of_the_gospel": 67,
+    "care_for_common_home": 60,
+    "brothers_and_sisters_all": 44,
+    "fratelli_tutti_latin": 32,
+    "preferential_option": 24,
+    "doctrina_social": 24,
+    "evangelii_gaudium_latin": 22,
+    "eucaristia": 17,
+    "doutrina_social": 16,
+    "catequesis": 15,
+    "missao": 15,
+    "evangelho": 6,
+    "nueva_evangelizacion": 4,
+    "teologia_libertacao": 3,
+    "teologia_liberacion": 2,
+    "opcion_preferencial": 2,
+    "catequese": 2,
+    "nossa_senhora_de_guadalupe": 2
+  },
+  "top_translation_bridges": [
+    {
+      "source": "care_for_common_home",
+      "target": "laudato_si_latin",
+      "weight": 42
+    },
+    {
+      "source": "our_lady_of_guadalupe",
+      "target": "virgen_de_guadalupe",
+      "weight": 19
+    },
+    {
+      "source": "mision",
+      "target": "mission",
+      "weight": 16
+    },
+    {
+      "source": "evangelii_gaudium_latin",
+      "target": "joy_of_the_gospel",
+      "weight": 8
+    },
+    {
+      "source": "catechesis",
+      "target": "catequesis",
+      "weight": 1
+    },
+    {
+      "source": "missao",
+      "target": "mission",
+      "weight": 1
+    },
+    {
+      "source": "evangelio",
+      "target": "gospel",
+      "weight": 1
+    },
+    {
+      "source": "evangelho",
+      "target": "gospel",
+      "weight": 1
+    }
+  ],
+  "country_prefers": [
+    {
+      "country": "United States",
+      "concept": "eucharist",
+      "term": "eucharist",
+      "language": "english",
+      "share": 1.0,
+      "n": 1688
+    },
+    {
+      "country": "United States",
+      "concept": "cst",
+      "term": "catholic_social_teaching",
+      "language": "english",
+      "share": 1.0,
+      "n": 176
+    },
+    {
+      "country": "United States",
+      "concept": "liberation_theology",
+      "term": "liberation_theology",
+      "language": "english",
+      "share": 1.0,
+      "n": 82
+    },
+    {
+      "country": "United States",
+      "concept": "new_evangelization",
+      "term": "new_evangelization",
+      "language": "english",
+      "share": 1.0,
+      "n": 49
+    },
+    {
+      "country": "United States",
+      "concept": "preferential_option",
+      "term": "preferential_option",
+      "language": "english",
+      "share": 1.0,
+      "n": 15
+    },
+    {
+      "country": "Canada",
+      "concept": "gospel",
+      "term": "gospel",
+      "language": "english",
+      "share": 1.0,
+      "n": 15
+    },
+    {
+      "country": "Canada",
+      "concept": "eucharist",
+      "term": "eucharist",
+      "language": "english",
+      "share": 1.0,
+      "n": 13
+    },
+    {
+      "country": "United States",
+      "concept": "gospel",
+      "term": "gospel",
+      "language": "english",
+      "share": 0.996,
+      "n": 568
+    },
+    {
+      "country": "United States",
+      "concept": "mission",
+      "term": "mission",
+      "language": "english",
+      "share": 0.988,
+      "n": 3612
+    },
+    {
+      "country": "Canada",
+      "concept": "mission",
+      "term": "mission",
+      "language": "english",
+      "share": 0.982,
+      "n": 223
+    },
+    {
+      "country": "United States",
+      "concept": "catechesis",
+      "term": "catechesis",
+      "language": "english",
+      "share": 0.981,
+      "n": 102
+    },
+    {
+      "country": "United States",
+      "concept": "guadalupe",
+      "term": "our_lady_of_guadalupe",
+      "language": "english",
+      "share": 0.939,
+      "n": 278
+    },
+    {
+      "country": "United States",
+      "concept": "evangelii_gaudium",
+      "term": "joy_of_the_gospel",
+      "language": "english",
+      "share": 0.759,
+      "n": 44
+    },
+    {
+      "country": "Grenada",
+      "concept": "mission",
+      "term": "mision",
+      "language": "spanish",
+      "share": 0.333,
+      "n": 3
+    },
+    {
+      "country": "Paraguay",
+      "concept": "mission",
+      "term": "mision",
+      "language": "spanish",
+      "share": 0.3,
+      "n": 3
+    },
+    {
+      "country": "Brazil",
+      "concept": "gospel",
+      "term": "evangelho",
+      "language": "portuguese",
+      "share": 0.222,
+      "n": 2
+    },
+    {
+      "country": "Argentina",
+      "concept": "mission",
+      "term": "mision",
+      "language": "spanish",
+      "share": 0.194,
+      "n": 12
+    },
+    {
+      "country": "Venezuela",
+      "concept": "mission",
+      "term": "mision",
+      "language": "spanish",
+      "share": 0.081,
+      "n": 3
+    },
+    {
+      "country": "United States",
+      "concept": "guadalupe",
+      "term": "virgen_de_guadalupe",
+      "language": "spanish",
+      "share": 0.061,
+      "n": 18
+    },
+    {
+      "country": "United States",
+      "concept": "catechesis",
+      "term": "catequesis",
+      "language": "spanish",
+      "share": 0.019,
+      "n": 2
+    }
+  ],
+  "top_cross_concept": [
+    {
+      "source": "gospel",
+      "target": "mission",
+      "weight": 200
+    },
+    {
+      "source": "eucharist",
+      "target": "mission",
+      "weight": 100
+    },
+    {
+      "source": "gospel",
+      "target": "joy_of_the_gospel",
+      "weight": 67
+    },
+    {
+      "source": "care_for_common_home",
+      "target": "laudato_si_latin",
+      "weight": 42
+    },
+    {
+      "source": "eucharist",
+      "target": "gospel",
+      "weight": 40
+    },
+    {
+      "source": "mission",
+      "target": "our_lady_of_guadalupe",
+      "weight": 37
+    },
+    {
+      "source": "catholic_social_teaching",
+      "target": "mission",
+      "weight": 25
+    },
+    {
+      "source": "our_lady_of_guadalupe",
+      "target": "virgen_de_guadalupe",
+      "weight": 19
+    }
+  ],
+  "node_count": 72,
+  "edge_count": 218,
+  "directed": false,
+  "focus_node_count": 31,
+  "focus_edge_count": 40,
+  "files": {
+    "nodes": "/Users/jonathankarr/Documents/catholic_media/data/network/language_bridge/nodes.jsonl",
+    "edges": "/Users/jonathankarr/Documents/catholic_media/data/network/language_bridge/edges.jsonl",
+    "graphml": "/Users/jonathankarr/Documents/catholic_media/data/network/language_bridge/graph.graphml",
+    "focus": "/Users/jonathankarr/Documents/catholic_media/data/network/language_bridge/focus.graphml",
+    "preview": "/Users/jonathankarr/Documents/catholic_media/data/network/language_bridge/preview.png"
+  }
+}
