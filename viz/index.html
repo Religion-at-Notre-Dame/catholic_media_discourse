@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How the Americas Hear the Church</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://unpkg.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    :root {
+      --ink: #f4efe4;
+      --muted: #b7b0a3;
+      --gold: #e4c37a;
+      --coral: #e07a5f;
+      --sea: #7eb8c9;
+      --sage: #9db384;
+      --panel: rgba(12, 16, 22, 0.92);
+      --line: rgba(244, 239, 228, 0.12);
+      --nav-h: 56px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; background: #0b1014; }
+    body {
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      color: var(--ink);
+      overflow: hidden;
+    }
+    button, select, input { font: inherit; color: inherit; }
+    button { cursor: pointer; }
+    #map, #graph { position: absolute; inset: var(--nav-h) 0 0 0; }
+    #graph { display: none; }
+    body.view-topics #map { visibility: hidden; pointer-events: none; }
+    body.view-topics #graph { display: block; }
+    body.view-places #graph { display: none; }
+
+    .navbar {
+      position: absolute; z-index: 1100; top: 0; left: 0; right: 0; height: var(--nav-h);
+      display: flex; align-items: center; gap: 12px;
+      padding: 0 16px 0 18px;
+      background: rgba(11, 16, 20, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+    .nav-brand {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.02rem;
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+    .nav-links { display: flex; gap: 4px; flex: 0 0 auto; }
+    .nav-links button {
+      border: 0; border-radius: 8px; padding: 8px 14px;
+      background: transparent;
+      font: 600 0.82rem/1 "IBM Plex Sans", sans-serif;
+    }
+    .nav-links button:hover { color: var(--gold); }
+    .nav-links button.active { background: var(--gold); color: #1a1408; }
+    .nav-links button.active:hover { color: #1a1408; }
+    .nav-search { position: relative; flex: 1 1 220px; min-width: 160px; max-width: 420px; }
+    .nav-search input {
+      width: 100%;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 32px 7px 14px;
+      outline: none;
+    }
+    .nav-search input:focus { border-color: var(--gold); }
+    .nav-search input::placeholder { color: #8b8478; }
+    .search-clear {
+      position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+      border: 0; background: none; color: var(--muted); padding: 4px 6px; display: none;
+    }
+    .nav-search.has-query .search-clear { display: block; }
+    .search-menu {
+      display: none; position: absolute; top: calc(100% + 6px); left: 0; right: 0;
+      background: #141a21; border: 1px solid var(--line); border-radius: 12px;
+      max-height: min(360px, 50vh); overflow: auto;
+      box-shadow: 0 18px 50px rgba(0,0,0,.5);
+    }
+    .search-menu.open { display: block; }
+    .search-item {
+      display: block; width: 100%; text-align: left;
+      border: 0; background: none; border-radius: 0;
+      padding: 9px 12px; border-bottom: 1px solid var(--line);
+    }
+    .search-item:hover, .search-item.on { background: rgba(228,195,122,.1); }
+    .search-item b { display: block; font-weight: 600; }
+    .search-item span { color: var(--muted); font-size: 0.7rem; }
+    .nav-right { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+    .nav-langs { font-size: 0.68rem; letter-spacing: .06em; color: var(--muted); }
+    .nav-langs b { color: var(--gold); font-weight: 600; }
+    .nav-qap {
+      color: var(--muted); font-size: 0.68rem; max-width: min(380px, 36vw);
+      text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+
+    .hud {
+      position: absolute; z-index: 800; pointer-events: none;
+      top: calc(var(--nav-h) + 14px); left: 16px; right: 16px;
+      display: flex; justify-content: space-between; gap: 14px; align-items: flex-start;
+    }
+    .card {
+      pointer-events: auto;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+      border-radius: 14px;
+      padding: 12px 14px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.45);
+    }
+    .left { max-width: 348px; }
+    .hint { color: var(--muted); font-size: 0.72rem; margin: 0 0 8px; line-height: 1.4; }
+    .chips, .controls { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+    .story-chips { margin: 2px 0 4px; }
+    button.chip, .controls button, .seg button {
+      font: 500 0.72rem/1 "IBM Plex Sans", sans-serif;
+      background: transparent; color: var(--ink);
+      border: 1px solid var(--line); border-radius: 999px;
+      padding: 5px 10px;
+    }
+    button.chip:hover, .controls button:hover, .seg button:hover,
+    button.chip.on, .controls button.active, .seg button.active {
+      border-color: var(--gold); color: var(--gold);
+    }
+    .story-chips button.chip { font-size: 0.73rem; padding: 6px 11px; }
+    .story-chips button.chip.on { background: rgba(228,195,122,.14); }
+    .pt-chip { letter-spacing: -0.01em; }
+    .legend { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; font-size: 0.68rem; color: var(--muted); }
+    .sw { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
+    .slide { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.72rem; }
+    input[type=range] { accent-color: var(--gold); }
+
+    .panel {
+      width: min(348px, 92vw);
+      max-height: calc(100vh - var(--nav-h) - 132px);
+      overflow: auto;
+    }
+    body.view-topics .panel { max-height: calc(100vh - var(--nav-h) - 36px); }
+    .panel h2 { font-family: Fraunces, serif; font-size: 1.16rem; margin: 0 0 6px; line-height: 1.2; }
+    .statrow { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0 6px; }
+    .stat { background: rgba(255,255,255,.04); border-radius: 10px; padding: 8px 10px; }
+    .stat b { display: block; font-family: Fraunces, serif; font-size: 1.05rem; color: var(--gold); }
+    .stat span { color: var(--muted); font-size: 0.66rem; }
+    .edge, .rank {
+      display: flex; justify-content: space-between; gap: 10px;
+      padding: 7px 0; border-top: 1px solid var(--line); font-size: 0.8rem;
+    }
+    .rank { cursor: pointer; }
+    .rank:hover span:first-child { color: var(--gold); }
+    .pill { color: var(--gold); font-size: 0.64rem; text-transform: uppercase; letter-spacing: .08em; margin: 0 0 4px; }
+    .tri { display: grid; gap: 5px; margin: 8px 0 10px; }
+    .tri div {
+      display: grid; grid-template-columns: 28px 1fr; gap: 8px; align-items: baseline;
+      font-size: 0.82rem;
+    }
+    .tri b { color: var(--gold); font-size: 0.66rem; letter-spacing: .06em; }
+    .host { color: var(--sea); }
+
+    .leaflet-control-attribution { background: rgba(0,0,0,.45) !important; color: #888 !important; }
+    .leaflet-control-attribution a { color: #aaa !important; }
+    .leaflet-overlay-pane svg { overflow: visible; }
+    .leaflet-bottom.leaflet-left { margin-bottom: 8px; margin-left: 6px; }
+    .metro-label {
+      background: transparent; border: 0; box-shadow: none;
+      color: var(--ink); font: 600 11px/1.1 "IBM Plex Sans", sans-serif;
+      text-shadow: 0 0 6px #0b1014, 0 1px 2px #000;
+      white-space: nowrap;
+    }
+    .metro-label::before { display: none; }
+    .pulse-dot { animation: pop 1.1s ease-out; }
+    @keyframes pop { from { opacity: 0; } to { opacity: 1; } }
+
+    #graph svg { width: 100%; height: 100%; }
+    .g-label {
+      font: 600 12px/1.15 "IBM Plex Sans", sans-serif;
+      fill: var(--ink); paint-order: stroke; stroke: #0b1014; stroke-width: 3.5px;
+      pointer-events: none;
+    }
+    .g-label.dim { fill: #8d877b; font-weight: 500; font-size: 11px; }
+
+    #year-badge {
+      position: absolute; z-index: 600; pointer-events: none;
+      left: 50%; top: 44%; transform: translate(-50%, -50%);
+      font-family: Fraunces, serif; font-size: clamp(4rem, 11vw, 8rem);
+      color: rgba(228,195,122,.2); letter-spacing: .06em;
+      text-shadow: 0 10px 50px rgba(0,0,0,.55);
+      opacity: 0; transition: opacity .3s;
+    }
+    #caption {
+      position: absolute; z-index: 650; pointer-events: none;
+      left: 50%; bottom: 118px; transform: translateX(-50%);
+      font-family: Fraunces, serif; font-size: clamp(1.15rem, 2.6vw, 1.9rem);
+      color: var(--gold); text-align: center; white-space: nowrap;
+      text-shadow: 0 8px 36px #000;
+      opacity: 0; transition: opacity .45s;
+    }
+    #caption.show { opacity: 1; }
+
+    .time-dock {
+      position: absolute; z-index: 750; pointer-events: auto;
+      left: 62px; right: 16px; bottom: 12px;
+      display: flex; align-items: stretch; gap: 12px;
+      background: var(--panel); border: 1px solid var(--line);
+      backdrop-filter: blur(12px); border-radius: 14px;
+      padding: 8px 12px 9px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.45);
+    }
+    #encyc-chart { display: none; width: 100%; height: 92px; }
+    body:not(.day-mode) #speed-8 { display: none; }
+    .play-btn {
+      flex: 0 0 auto; align-self: center;
+      min-width: 86px; border-radius: 999px; border: 1px solid var(--gold);
+      background: rgba(228,195,122,.12); color: var(--gold);
+      font: 600 0.78rem/1 "IBM Plex Sans", sans-serif;
+      padding: 10px 12px;
+    }
+    .time-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+    .year-ticks { display: flex; justify-content: space-between; }
+    .year-ticks button {
+      border: 0; background: none; padding: 0 1px;
+      color: var(--muted); font: 500 0.62rem/1 "IBM Plex Sans", sans-serif;
+    }
+    .year-ticks button.on { color: var(--gold); font-weight: 700; }
+    .time-dock input[type=range] { width: 100%; margin: 0; }
+    .time-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .time-label { font-family: Fraunces, serif; color: var(--gold); min-width: 72px; font-size: 1rem; }
+    .seg { display: flex; gap: 4px; }
+    .keys { margin-left: auto; color: var(--muted); font-size: 0.62rem; }
+
+    body.is-playing .left { opacity: 0.18; pointer-events: none; transition: opacity .35s; }
+    body.is-playing #year-badge { opacity: 1; color: rgba(228,195,122,.28); }
+    body.view-topics #year-badge,
+    body.view-topics #caption,
+    body.view-topics .time-dock { display: none; }
+
+    .boot-fail {
+      position: absolute; inset: var(--nav-h) 0 0 0;
+      display: grid; place-items: center; padding: 24px; text-align: center;
+    }
+    .boot-fail h1 { font-family: Fraunces, serif; }
+
+    @media (max-width: 960px) {
+      .nav-qap, .keys, .nav-langs { display: none; }
+      .nav-brand { font-size: 0.88rem; max-width: 28vw; overflow: hidden; text-overflow: ellipsis; }
+    }
+    @media (max-width: 720px) {
+      .panel { display: none; }
+      .time-dock { left: 58px; right: 8px; }
+    }
+  </style>
+</head>
+<body class="view-places">
+  <header class="navbar">
+    <div class="nav-brand">How the Americas Hear the Church</div>
+    <nav class="nav-links" aria-label="Views">
+      <button type="button" id="tab-places" class="active">Places</button>
+      <button type="button" id="tab-topics">Topics</button>
+    </nav>
+    <div class="nav-search" id="search-wrap">
+      <input id="topic-search" type="search" autocomplete="off" spellcheck="false"
+        placeholder="evangelho, misión, Guadalupe, Aparecida…"
+        aria-label="Search teachings in English, Spanish, or Portuguese" />
+      <button type="button" class="search-clear" id="search-clear" aria-label="Clear topic">×</button>
+      <div class="search-menu" id="search-menu" role="listbox"></div>
+    </div>
+    <div class="nav-right">
+      <div class="nav-langs"><b>EN</b> English · <b>ES</b> Spanish · <b>PT</b> Portuguese</div>
+      <div class="nav-qap" id="qap"></div>
+    </div>
+  </header>
+
+  <div id="map"></div>
+  <div id="graph"></div>
+  <div id="year-badge"></div>
+  <div id="caption"></div>
+
+  <div class="hud">
+    <div class="card left" id="left-card">
+      <p class="hint" id="subcopy">ActionGeo is where a story was <em>written</em> into GDELT — not viewership. English, Spanish, and Portuguese names count as one teaching.</p>
+      <div id="place-controls">
+        <div class="chips story-chips" id="story-chips" aria-label="Featured teachings"></div>
+        <div class="chips" id="region-chips" aria-label="Regions"></div>
+        <div class="controls">
+          <button type="button" id="btn-heat" class="active">Heat</button>
+          <button type="button" id="btn-cities" class="active">Cities</button>
+          <button type="button" id="btn-states" class="active">States</button>
+          <button type="button" id="btn-tour">Tour</button>
+          <button type="button" id="btn-compare">Compare</button>
+        </div>
+        <div class="legend">
+          <span><i class="sw" style="background:#e4c37a"></i>United States</span>
+          <span><i class="sw" style="background:#e07a5f"></i>rest of Americas</span>
+          <span><i class="sw" style="background:#7eb8c9"></i>RISE host Chile</span>
+        </div>
+      </div>
+      <div id="topic-controls" hidden>
+        <div class="chips" id="group-chips" aria-label="Theme groups"></div>
+        <div class="controls">
+          <label class="slide">min lift <input type="range" id="tlift" min="1" max="20" value="2" /> <span id="tlift-val">2×</span></label>
+          <button type="button" id="btn-papal">Papal only</button>
+          <button type="button" id="btn-tclear">Clear</button>
+        </div>
+        <div class="legend" id="group-legend"></div>
+      </div>
+    </div>
+    <div class="card panel" id="side"></div>
+  </div>
+
+  <div class="time-dock" id="time-dock">
+    <button type="button" class="play-btn" id="btn-play">Play</button>
+    <div class="time-main">
+      <svg id="encyc-chart" role="img" aria-label="Papal document spread by day and region"></svg>
+      <div class="year-ticks" id="year-ticks"></div>
+      <input type="range" id="time" min="0" max="43" value="43" aria-label="Quarter" />
+      <div class="time-meta">
+        <span class="time-label" id="time-label">2015–2025</span>
+        <div class="seg">
+          <button type="button" id="btn-cum" class="active">Cumulative</button>
+          <button type="button" id="btn-now">This quarter</button>
+        </div>
+        <div class="seg" id="speed-seg" aria-label="Playback speed">
+          <button type="button" data-speed="0.5">0.5×</button>
+          <button type="button" data-speed="1" class="active">1×</button>
+          <button type="button" data-speed="2">2×</button>
+          <button type="button" data-speed="8" id="speed-8">8×</button>
+        </div>
+        <span class="keys">Space play · ← → step</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+  <script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="data.js"></script>
+  <script src="extras.js"></script>
+  <script>
+    (function () {
+      if (!window.VIZ) {
+        document.body.innerHTML = '<header class="navbar"><div class="nav-brand">How the Americas Hear the Church</div></header><div class="boot-fail"><div><h1>Classroom data is missing</h1><p>Expected <code>data.js</code> to set <code>window.VIZ</code>. Re-export the map, then reload.</p></div></div>';
+        return;
+      }
+
+      const V = window.VIZ;
+      const X = window.VIZ_EXTRAS || { countryThemes: [], compare: { pairs: [] }, themeLabels: {} };
+      const countryExtra = Object.fromEntries((X.countryThemes || []).map((c) => [c.fips, c]));
+      const G = V.teaching || { nodes: [], edges: [] };
+      const T = V.topics || { nodes: [], edges: [] };
+      const geo = V.geo || {};
+      const S = V.spread || { months: [], catalog: [], themes: {}, all: [], note: "" };
+      const E = V.encyclicals || { items: {}, regions: [], note: "" };
+      const MONTHS = (S.months && S.months.length) ? S.months : (function () {
+        const m = [];
+        for (let y = 2015; y <= 2025; y++) for (let q = 1; q <= 4; q++) m.push(y + "Q" + q);
+        return m;
+      })();
+
+      document.getElementById("qap").textContent = V.qap || "";
+
+      const GROUPS = {
+        theology: "#e4c37a",
+        core_mission: "#e07a5f",
+        cultural_context: "#7eb8c9",
+        formation: "#9db384",
+        other: "#b7b0a3",
+      };
+      const GROUP_LABEL = {
+        theology: "theology",
+        core_mission: "mission",
+        cultural_context: "cultural",
+        formation: "formation",
+      };
+      const REGIONS = [
+        { id: "all", label: "All Americas" },
+        { id: "US", label: "United States" },
+        { id: "MX", label: "Mexico" },
+        { id: "central", label: "Central America" },
+        { id: "BR", label: "Brazil" },
+        { id: "andes", label: "Andes / Southern Cone" },
+        { id: "CA", label: "Canada" },
+        { id: "caribbean", label: "Caribbean" },
+      ];
+      const STORIES = [
+        { id: "guadalupe", chip: "Guadalupe" },
+        { id: "oscar_romero", chip: "Óscar Romero" },
+        { id: "aparecida_celam", chip: "Aparecida" },
+        { id: "laudato_si", chip: "Laudato Si'" },
+        { id: "amoris_laetitia", chip: "Amoris Laetitia" },
+        { id: "fratelli_tutti", chip: "Fratelli Tutti" },
+        { id: "evangelii_gaudium", chip: "Evangelii Gaudium" },
+        { id: "gospel", chip: "gospel / evangelio / evangelho", extraClass: "pt-chip" },
+      ];
+      const CAPTIONS = Object.fromEntries(
+        (S.chapters || [
+          { q: "2015Q2", label: "Laudato Si'" },
+          { q: "2016Q2", label: "Amoris Laetitia" },
+          { q: "2020Q1", label: "Querida Amazonia" },
+          { q: "2020Q4", label: "Fratelli Tutti" },
+        ]).map((c) => [c.q, (c.label || c.id) + " · " + String(c.q).slice(0, 4)])
+      );
+      const ALIASES = {
+        gospel: ["gospel", "evangelio", "evangelho"],
+        evangelio: ["gospel", "evangelio", "evangelho"],
+        evangelho: ["gospel", "evangelio", "evangelho"],
+        mission: ["mission", "mision"],
+        mision: ["mission", "mision"],
+      };
+      const CENTRAL = new Set(["GT", "BH", "HO", "ES", "NU", "CS", "PM"]);
+      const ANDES = new Set(["AR", "CI", "CO", "PE", "EC", "BL", "PA", "UY", "VE"]);
+      const CARIB = new Set(["CU", "HA", "DR", "JM", "RQ", "TD", "BB", "BF", "GJ", "VC"]);
+      const TEACH = V.teaching_map || {};
+      const SPEED_MS = { "0.5": 840, "1": 420, "2": 210, "8": 110 };
+      const DAY_SPEED_MS = { "0.5": 48, "1": 24, "2": 10, "8": 4 };
+
+      const tById = Object.fromEntries((G.nodes || []).map((d) => [d.id, d]));
+      const themeById = Object.fromEntries((T.nodes || []).map((d) => [d.id, d]));
+      const catalog = (S.catalog || []).slice();
+      const catById = Object.fromEntries(catalog.map((t) => [t.id, t]));
+      const countryByFips = Object.fromEntries((V.countries || []).map((c) => [c.fips, c]));
+
+      function inRegion(fips, region) {
+        if (!region || region === "all") return true;
+        if (region === "central") return CENTRAL.has(fips);
+        if (region === "andes") return ANDES.has(fips);
+        if (region === "caribbean") return CARIB.has(fips);
+        return fips === region;
+      }
+      function fmt(n) { return (n || 0).toLocaleString(); }
+      function esc(s) {
+        return String(s ?? "").replace(/[&<>"']/g, (c) => ({
+          "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+        }[c]));
+      }
+      function fold(s) {
+        return String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      }
+      function countryName(fips) {
+        return (countryByFips[fips] && countryByFips[fips].country) || fips || "";
+      }
+      function parseAlso(also) {
+        if (!also) return [];
+        return String(also).split("·").map((part) => part.trim()).filter(Boolean).map((part) => {
+          const m = part.match(/^((?:EN|ES|PT)(?:\/(?:EN|ES|PT))*)\s+(.+)$/i);
+          if (!m) return { langs: [], text: part };
+          return { langs: m[1].toUpperCase().split("/"), text: m[2] };
+        });
+      }
+      function triNames(cat) {
+        const n = (cat && cat.names) || (S.names && cat && S.names[cat.id]) || {};
+        const rows = {
+          EN: n.en || (cat && cat.label) || "",
+          ES: n.es || "",
+          PT: n.pt || "",
+        };
+        parseAlso(cat && cat.also).forEach(({ langs, text }) => {
+          (langs.length ? langs : ["EN"]).forEach((L) => {
+            if (rows[L] !== undefined && text && !n[L.toLowerCase()]) rows[L] = text;
+          });
+        });
+        return rows;
+      }
+      function relatedIds(id) {
+        return ALIASES[id] || [id];
+      }
+      function hypothesizedCountries(themeId) {
+        const want = new Set(relatedIds(themeId));
+        return Object.entries(TEACH)
+          .filter(([, themes]) => (themes || []).some((t) => want.has(t)))
+          .map(([fips]) => fips);
+      }
+      function encycItem() {
+        return (E.items && E.items[topic]) || null;
+      }
+      function isDayMode() { return !!encycItem(); }
+      function parseISODate(s) {
+        const p = String(s || "").split("-").map(Number);
+        if (p.length < 3) return null;
+        return new Date(Date.UTC(p[0], p[1] - 1, p[2]));
+      }
+      function addDaysISO(iso, n) {
+        const dt = parseISODate(iso);
+        if (!dt) return "";
+        dt.setUTCDate(dt.getUTCDate() + n);
+        return dt.toISOString().slice(0, 10);
+      }
+      function prettyDay(iso) {
+        const dt = parseISODate(iso);
+        if (!dt) return iso || "";
+        return dt.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+      }
+      function timeMax() {
+        const item = encycItem();
+        if (item) return Math.max(0, item.max_d || 0);
+        return MONTHS.length - 1;
+      }
+      function tickMs() {
+        const table = isDayMode() ? DAY_SPEED_MS : SPEED_MS;
+        return table[String(playSpeed)] || (isDayMode() ? 24 : 420);
+      }
+      function inEncycRegion(rid) {
+        if (!rid || rid === "other") return region === "all" ? false : rid === region;
+        if (!region || region === "all") return true;
+        if (region === "andes") return rid === "andes" || rid === "CI";
+        return rid === region;
+      }
+      function firstHitDay(item) {
+        const days = Object.values(item.first || {});
+        if (days.length) return Math.min(...days);
+        const hits = item.hits || [];
+        return hits.length ? hits[0][0] : 0;
+      }
+      function nextHitDay(item, from) {
+        const hits = item.hits || [];
+        for (let i = 0; i < hits.length; i++) {
+          if (hits[i][0] > from) return hits[i][0];
+        }
+        return null;
+      }
+      function inAmericasBox(lat, lon) {
+        return lat >= -58 && lat <= 72 && lon >= -175 && lon <= -20;
+      }
+      const encycCache = { id: null, daily: null, cum: null, roll: null };
+      function expandEncyc(item) {
+        if (!item) return null;
+        if (encycCache.id === item.id && encycCache.daily) return encycCache;
+        const nR = (E.regions || []).length;
+        const byDay = new Map((item.hits || []).map((row) => [row[0], row.slice(1)]));
+        const daily = [];
+        const cum = [];
+        let run = Array(nR).fill(0);
+        for (let d = 0; d <= (item.max_d || 0); d++) {
+          const v = (byDay.get(d) || []).slice();
+          while (v.length < nR) v.push(0);
+          run = run.map((x, i) => x + (v[i] || 0));
+          daily.push(v.slice());
+          cum.push(run.slice());
+        }
+        const roll = daily.map((_, i) => {
+          const acc = Array(nR).fill(0);
+          let k = 0;
+          for (let j = Math.max(0, i - 6); j <= i; j++) {
+            daily[j].forEach((v, ii) => { acc[ii] += v; });
+            k += 1;
+          }
+          return acc;
+        });
+        encycCache.id = item.id;
+        encycCache.daily = daily;
+        encycCache.cum = cum;
+        encycCache.roll = roll;
+        return encycCache;
+      }
+
+      let view = "places";
+      let region = "all";
+      let topic = "all";
+      let timeIdx = MONTHS.length - 1;
+      let cumulative = true;
+      let playing = false;
+      let playTimer = null;
+      let playSpeed = 1;
+      let showHeat = true, showCities = true, showStates = true;
+      let selectedPlace = null;
+      let compareMode = false;
+      let compareIdx = 0;
+      let compareHighlight = new Set();
+      let selectedTheme = null;
+      let papalOnly = false;
+      let minTopicLift = 2;
+      let touring = false;
+      let captionTimer = null;
+      let searchHi = -1;
+
+      const storyBox = document.getElementById("story-chips");
+      STORIES.forEach((s) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "chip" + (s.extraClass ? " " + s.extraClass : "");
+        b.textContent = s.chip;
+        b.dataset.id = s.id;
+        b.onclick = () => setTopic(topic === s.id ? "all" : s.id);
+        storyBox.appendChild(b);
+      });
+
+      const chipBox = document.getElementById("region-chips");
+      REGIONS.forEach((r) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "chip";
+        b.textContent = r.label;
+        b.dataset.id = r.id;
+        if (r.id === "all") b.classList.add("on");
+        b.onclick = () => {
+          region = r.id;
+          setChip(chipBox, r.id);
+          drawPlaces();
+          renderPlacePanel();
+          drawEncycChart();
+        };
+        chipBox.appendChild(b);
+      });
+
+      const gBox = document.getElementById("group-chips");
+      const groupFilter = new Set(Object.keys(GROUP_LABEL));
+      const legend = document.getElementById("group-legend");
+      Object.entries(GROUP_LABEL).forEach(([id, lab]) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "chip on";
+        b.textContent = lab;
+        b.dataset.id = id;
+        b.onclick = () => {
+          if (groupFilter.has(id) && groupFilter.size > 1) groupFilter.delete(id);
+          else groupFilter.add(id);
+          b.classList.toggle("on", groupFilter.has(id));
+          drawTopics();
+        };
+        gBox.appendChild(b);
+        const sw = document.createElement("span");
+        sw.innerHTML = '<i class="sw" style="background:' + GROUPS[id] + '"></i>' + lab;
+        legend.appendChild(sw);
+      });
+
+      function setChip(box, id) {
+        [...box.children].forEach((c) => c.classList.toggle("on", c.dataset.id === id));
+      }
+
+      function searchIndex() {
+        const seen = new Set();
+        const rows = [];
+        catalog.forEach((t) => {
+          seen.add(t.id);
+          const names = t.names || (S.names && S.names[t.id]) || {};
+          rows.push({
+            id: t.id,
+            label: t.label,
+            also: t.also || "",
+            n: t.n || 0,
+            hay: fold([t.id, t.label, t.also, names.en, names.es, names.pt].join(" ")),
+            place: true,
+            graph: !!themeById["theme:" + t.id],
+          });
+        });
+        (T.nodes || []).forEach((n) => {
+          const id = String(n.id || "").replace(/^theme:/, "");
+          if (seen.has(id)) return;
+          rows.push({
+            id,
+            label: n.label,
+            also: "",
+            n: n.n || 0,
+            hay: fold([id, n.label].join(" ")),
+            place: false,
+            graph: true,
+          });
+        });
+        return rows;
+      }
+      const SEARCH = searchIndex();
+
+      const searchInput = document.getElementById("topic-search");
+      const searchMenu = document.getElementById("search-menu");
+      const searchWrap = document.getElementById("search-wrap");
+
+      function matchesFor(q) {
+        const f = fold(q).trim();
+        if (!f) return SEARCH.slice(0, 8);
+        return SEARCH.filter((r) => r.hay.includes(f)).slice(0, 12);
+      }
+      function renderSearch(q) {
+        const rows = matchesFor(q);
+        searchHi = rows.length ? 0 : -1;
+        searchMenu.innerHTML = rows.length
+          ? rows.map((r, i) => (
+            '<button type="button" class="search-item' + (i === 0 ? " on" : "") + '" data-id="' + esc(r.id) + '">' +
+            "<b>" + esc(r.label) + "</b><span>" + esc(r.also || r.id) + (r.n ? " · " + fmt(r.n) : "") + "</span></button>"
+          )).join("")
+          : '<div class="search-item"><span>No teaching matches “' + esc(q) + '”</span></div>';
+        searchMenu.querySelectorAll(".search-item[data-id]").forEach((el) => {
+          el.onmousedown = (ev) => { ev.preventDefault(); setTopic(el.dataset.id); closeSearch(); };
+        });
+      }
+      function openSearch() {
+        searchMenu.classList.add("open");
+        renderSearch(searchInput.value);
+      }
+      function closeSearch() {
+        searchMenu.classList.remove("open");
+        searchHi = -1;
+      }
+      function highlightSearch() {
+        const items = [...searchMenu.querySelectorAll(".search-item[data-id]")];
+        items.forEach((el, i) => el.classList.toggle("on", i === searchHi));
+        if (items[searchHi]) items[searchHi].scrollIntoView({ block: "nearest" });
+      }
+      searchInput.addEventListener("focus", openSearch);
+      searchInput.addEventListener("input", () => {
+        searchWrap.classList.toggle("has-query", !!searchInput.value);
+        openSearch();
+      });
+      searchInput.addEventListener("keydown", (ev) => {
+        const items = [...searchMenu.querySelectorAll(".search-item[data-id]")];
+        if (ev.key === "ArrowDown") {
+          ev.preventDefault();
+          searchHi = Math.min(items.length - 1, searchHi + 1);
+          highlightSearch();
+        } else if (ev.key === "ArrowUp") {
+          ev.preventDefault();
+          searchHi = Math.max(0, searchHi - 1);
+          highlightSearch();
+        } else if (ev.key === "Enter") {
+          ev.preventDefault();
+          const id = items[searchHi] && items[searchHi].dataset.id;
+          if (id) { setTopic(id); closeSearch(); searchInput.blur(); }
+        } else if (ev.key === "Escape") {
+          closeSearch();
+          searchInput.blur();
+        }
+      });
+      document.getElementById("search-clear").onclick = () => {
+        searchInput.value = "";
+        searchWrap.classList.remove("has-query");
+        setTopic("all");
+        closeSearch();
+      };
+      document.addEventListener("click", (ev) => {
+        if (!searchWrap.contains(ev.target)) closeSearch();
+      });
+
+      function syncTopicChrome() {
+        [...storyBox.children].forEach((c) => c.classList.toggle("on", c.dataset.id === topic));
+        const cat = catById[topic];
+        if (topic !== "all" && cat) {
+          searchInput.value = cat.label;
+          searchWrap.classList.add("has-query");
+        } else if (topic === "all") {
+          if (document.activeElement !== searchInput) {
+            searchInput.value = "";
+            searchWrap.classList.remove("has-query");
+          }
+        }
+      }
+      function setTopic(id) {
+        const prev = topic;
+        const prevDay = isDayMode();
+        topic = id || "all";
+        selectedPlace = null;
+        const nodeId = "theme:" + topic;
+        if (themeById[nodeId]) selectedTheme = topic === "all" ? null : nodeId;
+        else if (topic === "all") selectedTheme = null;
+        syncTopicChrome();
+        const nowDay = isDayMode();
+        document.body.classList.toggle("day-mode", nowDay);
+        if (nowDay && prev !== topic) {
+          timeIdx = firstHitDay(encycItem());
+          playSpeed = 8;
+          const s8 = document.getElementById("speed-8");
+          if (s8) {
+            [...document.getElementById("speed-seg").children].forEach((c) => c.classList.toggle("active", c === s8));
+          }
+          setupTimeAxis();
+        } else if (!nowDay && prevDay) {
+          stopPlay(false);
+          timeIdx = MONTHS.length - 1;
+          setupTimeAxis();
+        } else {
+          setupTimeAxis();
+        }
+        if (view === "topics") {
+          if (topic !== "all" && !themeById[nodeId] && (catById[topic] || encycItem())) setView("places");
+          else { renderTopicPanel(); drawTopics(); }
+        } else if (topic !== "all" && !catById[topic] && !encycItem() && themeById[nodeId]) {
+          setView("topics");
+        } else {
+          drawPlaces();
+          renderPlacePanel();
+          drawEncycChart();
+          if (nowDay && prev !== topic) startPlay();
+        }
+      }
+
+      document.getElementById("tab-places").onclick = () => setView("places");
+      document.getElementById("tab-topics").onclick = () => setView("topics");
+      function setView(v) {
+        view = v;
+        document.body.classList.toggle("view-topics", v === "topics");
+        document.body.classList.toggle("view-places", v === "places");
+        document.getElementById("tab-places").classList.toggle("active", v === "places");
+        document.getElementById("tab-topics").classList.toggle("active", v === "topics");
+        document.getElementById("place-controls").hidden = v !== "places";
+        document.getElementById("topic-controls").hidden = v !== "topics";
+        document.getElementById("subcopy").innerHTML = v === "places"
+          ? "ActionGeo is where a story was <em>written</em> into GDELT — not viewership. English, Spanish, and Portuguese names count as one teaching."
+          : "Theme co-occurrence only. No map. An edge is two teachings that travel in the same story (lift, not raw count).";
+        if (v === "places") {
+          map.invalidateSize();
+          drawPlaces();
+          renderPlacePanel();
+        } else {
+          stopPlay(false);
+          renderTopicPanel();
+          drawTopics();
+        }
+      }
+
+      const map = L.map("map", {
+        center: [22, -88],
+        zoom: 4,
+        minZoom: 3,
+        maxZoom: 10,
+        zoomControl: false,
+        worldCopyJump: false,
+        maxBounds: [[-58, -175], [72, -20]],
+        maxBoundsViscosity: 0.75,
+      });
+      L.control.zoom({ position: "bottomleft" }).addTo(map);
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+        attribution: "&copy; OpenStreetMap &copy; CARTO",
+        subdomains: "abcd",
+      }).addTo(map);
+
+      function currentQ() { return MONTHS[timeIdx] || ""; }
+      function currentDayISO() {
+        const item = encycItem();
+        if (!item) return "";
+        return addDaysISO(item.start, timeIdx);
+      }
+      function timeLive() {
+        if (encycItem()) return true;
+        return topic !== "all" || timeIdx < MONTHS.length - 1 || playing;
+      }
+      function pulsesNow() {
+        const item = encycItem();
+        if (item) {
+          const d = Math.min(timeIdx, item.max_d || 0);
+          const pts = item.geo || [];
+          if (pts.length) {
+            return pts.filter((p) => {
+              if (!inEncycRegion(p.rid)) return false;
+              if (!inAmericasBox(p.lat, p.lon)) return false;
+              if (cumulative) return p.d <= d;
+              return p.d === d;
+            }).map((p) => ({
+              lat: p.lat,
+              lon: p.lon,
+              n: p.n,
+              fips: p.fips || p.rid,
+              q: addDaysISO(item.start, p.d),
+              rid: p.rid,
+              fresh: p.d === d,
+            }));
+          }
+          const series = expandEncyc(item);
+          const vals = cumulative ? series.cum[d] : series.daily[d];
+          const fresh = series.daily[d] || [];
+          return (E.regions || []).map((r, i) => {
+            const n = (vals && vals[i]) || 0;
+            if (!n || !inEncycRegion(r.id)) return null;
+            const fips = (r.id.length === 2 && r.id === r.id.toUpperCase()) ? r.id : (r.id === "andes" ? "AR" : r.id === "central" ? "ES" : r.id === "caribbean" ? "HA" : "");
+            return { lat: r.lat, lon: r.lon, n, fips: fips || r.id, q: currentDayISO(), rid: r.id, fresh: (fresh[i] || 0) > 0 };
+          }).filter(Boolean);
+        }
+        const q = currentQ();
+        const src = topic === "all" ? (S.all || []) : ((S.themes || {})[topic] || []);
+        return src.filter((p) => {
+          if (!inRegion(p.fips, region)) return false;
+          if (cumulative) return !q || p.q <= q;
+          return p.q === q;
+        });
+      }
+      function prettyQuarter(q) {
+        if (!q) return "";
+        return q.replace("Q1", " · spring").replace("Q2", " · summer").replace("Q3", " · fall").replace("Q4", " · winter");
+      }
+
+      const heatLayer = L.heatLayer([], {
+        radius: 22, blur: 28, maxZoom: 7, minOpacity: 0.25,
+        gradient: { 0.2: "#1b3a4b", 0.45: "#2E86AB", 0.7: "#e07a5f", 1: "#e4c37a" },
+      }).addTo(map);
+      const stateLayer = L.layerGroup().addTo(map);
+      const cityLayer = L.layerGroup().addTo(map);
+      const labelLayer = L.layerGroup().addTo(map);
+
+      function filteredPlaces() { return (V.places || []).filter((p) => inRegion(p.fips, region)); }
+      function filteredStates() { return (V.states || []).filter((p) => inRegion(p.fips, region)); }
+      function filteredMetros() { return (V.metros || []).filter((p) => inRegion(p.fips, region)); }
+      function rScale(n, k, floor, cap) { return Math.min(cap, floor + Math.sqrt(n) * k); }
+      function colorFor(fips) {
+        if (fips === "US") return "#e4c37a";
+        if (fips === "CI") return "#7eb8c9";
+        return "#e07a5f";
+      }
+
+      function drawPlaces() {
+        const live = timeLive();
+        const pulses = live ? pulsesNow() : [];
+        const places = live ? pulses : filteredPlaces();
+        const states = filteredStates();
+        const metros = filteredMetros();
+        const maxN = Math.max(1, ...places.map((p) => p.n));
+        const q = currentQ();
+        const badge = document.getElementById("year-badge");
+        const item = encycItem();
+        if (item) {
+          badge.textContent = prettyDay(currentDayISO()).replace(/ \d{4}$/, "");
+          badge.style.opacity = "1";
+        } else {
+          badge.textContent = q ? q.slice(0, 4) : "";
+          badge.style.opacity = (playing || live) ? "1" : "0";
+        }
+
+        if (showHeat && places.length) {
+          heatLayer.setLatLngs(places.map((p) => [p.lat, p.lon, Math.pow(p.n / maxN, 0.55)]));
+          if (!map.hasLayer(heatLayer)) heatLayer.addTo(map);
+        } else if (map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
+
+        stateLayer.clearLayers();
+        if (showStates && !live) {
+          states.forEach((s) => {
+            const c = L.circleMarker([s.lat, s.lon], {
+              radius: rScale(s.n, 0.22, 6, 28),
+              color: "#0b1014",
+              weight: 1.2,
+              fillColor: colorFor(s.fips),
+              fillOpacity: 0.55,
+            }).on("click", (e) => { L.DomEvent.stop(e); pickPlace("state", s); });
+            c.bindTooltip(s.label + " · " + fmt(s.n), { direction: "top", opacity: 0.95 });
+            stateLayer.addLayer(c);
+          });
+        }
+
+        cityLayer.clearLayers();
+        labelLayer.clearLayers();
+        if (live) {
+          const fresh = new Set(pulses.filter((p) => (item ? p.fresh : p.q === q)).map((p) => p.lat + "," + p.lon));
+          pulses.slice(0, 900).forEach((p) => {
+            const isNew = fresh.has(p.lat + "," + p.lon);
+            const mk = L.circleMarker([p.lat, p.lon], {
+              radius: rScale(p.n, item ? 0.7 : 0.35, item ? 5 : 4, 20),
+              color: isNew ? "#fff" : "#0b1014",
+              weight: isNew ? 2.4 : 1,
+              fillColor: colorFor(p.fips),
+              fillOpacity: isNew ? 0.95 : 0.7,
+              className: isNew ? "pulse-dot" : "",
+            });
+            mk.bindTooltip((p.q || "") + " · " + fmt(p.n), { direction: "top" });
+            cityLayer.addLayer(mk);
+          });
+        } else if (showCities) {
+          const zoom = map.getZoom();
+          const labeled = metros.slice(0, zoom >= 5 ? 40 : 18);
+          metros.forEach((m) => {
+            const isCompare = compareHighlight.has(m.fips);
+            const mk = L.circleMarker([m.lat, m.lon], {
+              radius: rScale(m.n, isCompare ? 0.28 : 0.18, isCompare ? 8 : 4, isCompare ? 28 : 22),
+              color: isCompare ? "#fff" : (m.fips === "CI" ? "#e4c37a" : "#0b1014"),
+              weight: isCompare ? 3 : (m.fips === "CI" ? 2.4 : 1),
+              fillColor: colorFor(m.fips),
+              fillOpacity: isCompare ? 1 : 0.92,
+            }).on("click", (e) => { L.DomEvent.stop(e); pickPlace("metro", m); });
+            mk.bindTooltip(m.name + " · " + fmt(m.n), { direction: "top" });
+            cityLayer.addLayer(mk);
+          });
+          labeled.forEach((m) => {
+            const icon = L.divIcon({
+              className: "metro-label",
+              html: esc(m.name),
+              iconSize: [0, 0],
+              iconAnchor: [0, -12],
+            });
+            labelLayer.addLayer(L.marker([m.lat, m.lon], { icon, interactive: false }));
+          });
+        }
+      }
+
+      function teachingForFips(fips) {
+        return (G.edges || []).filter((e) => e.source === "country:" + fips).sort((a, b) => b.lift - a.lift);
+      }
+      function hypThemes(fips) {
+        return (TEACH[fips] || []).map((t) => (tById["theme:" + t] || {}).pretty || String(t).replaceAll("_", " "));
+      }
+      function pickPlace(kind, obj) {
+        selectedPlace = { kind, ...obj };
+        renderPlacePanel();
+        if (obj.lat) map.flyTo([obj.lat, obj.lon], Math.max(map.getZoom(), kind === "metro" ? 6 : 5), { duration: 0.7 });
+      }
+      function triHtml(cat) {
+        const t = triNames(cat);
+        return '<div class="tri">' +
+          "<div><b>EN</b> " + esc(t.EN || "—") + "</div>" +
+          "<div><b>ES</b> " + esc(t.ES || t.EN || "—") + "</div>" +
+          "<div><b>PT</b> " + esc(t.PT || t.EN || "—") + "</div>" +
+          "</div>";
+      }
+      function bindRanks(el) {
+        el.querySelectorAll(".rank").forEach((row) => {
+          row.onclick = () => {
+            if (row.dataset.kind === "metro") {
+              const m = (V.metros || []).find((x) => x.name === row.dataset.name && x.fips === row.dataset.fips);
+              if (m) pickPlace("metro", m);
+            } else if (row.dataset.kind === "state") {
+              const s = (V.states || []).find((x) => x.id === row.dataset.id);
+              if (s) pickPlace("state", s);
+            } else {
+              const c = (V.countries || []).find((x) => x.fips === row.dataset.fips);
+              if (c) pickPlace("country", c);
+            }
+          };
+        });
+      }
+
+      function renderComparePanel() {
+        const el = document.getElementById("side");
+        const pairs = (X.compare && X.compare.pairs) || [];
+        if (!pairs.length) {
+          el.innerHTML = '<p class="pill">compare</p><h2>Country compare</h2><p class="hint">Run <code>export_viz_extras.py</code> to load US–Mexico, US–Chile, and other pairs.</p>';
+          compareHighlight = new Set();
+          drawPlaces();
+          return;
+        }
+        const pair = pairs[compareIdx % pairs.length];
+        compareHighlight = new Set([pair.a.fips, pair.b.fips]);
+        const themes = Object.keys(pair.delta_per_1k || {}).sort((a, b) => Math.abs(pair.delta_per_1k[b]) - Math.abs(pair.delta_per_1k[a])).slice(0, 8);
+        const topTheme = themes[0];
+        const exA = (countryExtra[pair.a.fips] && countryExtra[pair.a.fips].exemplars && countryExtra[pair.a.fips].exemplars[topTheme]) || [];
+        const exB = (countryExtra[pair.b.fips] && countryExtra[pair.b.fips].exemplars && countryExtra[pair.b.fips].exemplars[topTheme]) || [];
+        const pairOpts = pairs.map((p, i) =>
+          '<option value="' + i + '"' + (i === compareIdx % pairs.length ? ' selected' : '') + '>' +
+          esc(p.a.name) + ' vs ' + esc(p.b.name) + '</option>'
+        ).join("");
+        el.innerHTML =
+          '<p class="pill">compare · per 1k lexicon hits</p>' +
+          '<label class="hint">Pair <select id="compare-pair">' + pairOpts + '</select></label>' +
+          "<h2>" + esc(pair.a.name) + " vs " + esc(pair.b.name) + "</h2>" +
+          '<div class="statrow">' +
+          '<div class="stat"><b>' + fmt(pair.a.n) + "</b><span>" + esc(pair.a.name) + " rows</span></div>" +
+          '<div class="stat"><b>' + fmt(pair.b.n) + "</b><span>" + esc(pair.b.name) + " rows</span></div>" +
+          "</div>" +
+          themes.map((t) => {
+            const d = pair.delta_per_1k[t];
+            const sign = d >= 0 ? "+" : "";
+            return '<div class="edge"><span><b>' + esc((X.themeLabels && X.themeLabels[t]) || t) + "</b></span><span>" + sign + d.toFixed(1) + "/1k Δ</span></div>";
+          }).join("") +
+          (topTheme ? '<p class="hint" style="margin-top:8px">Exemplars — <b>' + esc((X.themeLabels && X.themeLabels[topTheme]) || topTheme) + '</b></p>' +
+            (exA[0] ? '<p class="hint"><em>' + esc(pair.a.name) + ':</em> ' + esc(exA[0].text) + '</p>' : '') +
+            (exB[0] ? '<p class="hint"><em>' + esc(pair.b.name) + ':</em> ' + esc(exB[0].text) + '</p>' : '') : '') +
+          '<p class="hint">Positive Δ means ' + esc(pair.a.name) + ' over-indexes vs ' + esc(pair.b.name) + '. Classroom overlay — not causal.</p>';
+        const sel = document.getElementById("compare-pair");
+        if (sel) sel.onchange = () => { compareIdx = parseInt(sel.value, 10) || 0; renderComparePanel(); drawPlaces(); };
+        drawPlaces();
+        const ma = (V.metros || []).find((m) => m.fips === pair.a.fips);
+        const mb = (V.metros || []).find((m) => m.fips === pair.b.fips);
+        if (ma && mb) map.fitBounds(L.latLngBounds([[ma.lat, ma.lon], [mb.lat, mb.lon]]), { padding: [40, 40], maxZoom: 4 });
+      }
+
+      function renderPlacePanel() {
+        const el = document.getElementById("side");
+        if (compareMode) {
+          renderComparePanel();
+          return;
+        }
+        const usShare = geo.us_share != null ? Math.round(geo.us_share * 100) + "%" : "—";
+        if (!selectedPlace) {
+          const item = encycItem();
+          if (item) {
+            const series = expandEncyc(item);
+            const d = Math.min(timeIdx, item.max_d || 0);
+            const nHere = pulsesNow().reduce((a, p) => a + p.n, 0);
+            const today = (series.daily[d] || []).reduce((a, v) => a + v, 0);
+            const firstRows = Object.entries(item.first || {})
+              .sort((a, b) => a[1] - b[1])
+              .map(([rid, day]) => {
+                const r = (E.regions || []).find((x) => x.id === rid);
+                return { rid, label: (r && r.label) || rid, day, date: addDaysISO(item.start, day) };
+              });
+            const corpusNote = item.promulgated < (E.corpus_start || "2015-01-01")
+              ? "Promulgated " + prettyDay(item.promulgated) + " — corpus starts 2015, so this is the echo we can see."
+              : "From the day it was issued.";
+            el.innerHTML =
+              '<p class="pill">' + esc(item.kind || "papal document") + " · day " + fmt(d) + "</p>" +
+              "<h2>" + esc(item.label) + "</h2>" +
+              '<div class="statrow">' +
+              '<div class="stat"><b>' + fmt(cumulative ? nHere : today) + "</b><span>" + (cumulative ? "stories so far" : "this day") + "</span></div>" +
+              '<div class="stat"><b>' + esc(prettyDay(currentDayISO())) + "</b><span>calendar day</span></div>" +
+              "</div>" +
+              (item.peak ? '<p class="hint">Peak day ' + prettyDay(item.peak.date) + " · " + fmt(item.peak.n) + " stories. " + corpusNote + "</p>" : '<p class="hint">' + corpusNote + "</p>") +
+              (firstRows.length
+                ? '<p class="pill" style="margin-top:10px">first writing region</p>' +
+                  firstRows.map((o) => '<div class="edge"><span><b>' + esc(o.label) + "</b></span><span>day " + o.day + " · " + esc(prettyDay(o.date)) + "</span></div>").join("")
+                : "") +
+              '<p class="hint">' + esc(E.note || "Chart is 7-day rolling mentions by ActionGeo region. Playhead is the calendar day.") + "</p>";
+            return;
+          }
+          const cat = catById[topic];
+          if (topic !== "all" && cat) {
+            const nHere = pulsesNow().reduce((a, p) => a + p.n, 0);
+            const hyps = hypothesizedCountries(cat.id);
+            const origins = (cat.origins || []).filter((o) => o.fips);
+            el.innerHTML =
+              '<p class="pill">topic · English · Spanish · Portuguese</p>' +
+              "<h2>" + esc(cat.label) + "</h2>" +
+              triHtml(cat) +
+              '<div class="statrow">' +
+              '<div class="stat"><b>' + fmt(cat.n) + "</b><span>stories with this teaching</span></div>" +
+              '<div class="stat"><b>' + fmt(nHere) + "</b><span>on the map at " + esc(currentQ()) + "</span></div>" +
+              "</div>" +
+              (hyps.length
+                ? '<p class="pill" style="margin-top:10px">hypothesized teaching</p>' +
+                  hyps.map((f) => '<div class="edge"><span><b>' + esc(countryName(f)) + "</b>" +
+                    (f === "CI" ? ' <span class="host">· RISE host</span>' : "") + "</span><span>" + esc(cat.label) + "</span></div>").join("")
+                : "") +
+              (origins.length
+                ? '<p class="pill" style="margin-top:12px">first ActionGeo mentions</p>' +
+                  origins.map((o) => '<div class="edge"><span><b>' + esc(o.country || countryName(o.fips)) + "</b></span><span>" + esc(o.q) + "</span></div>").join("")
+                : "") +
+              '<p class="hint">' + esc(S.note || V.note || "") + " White rings are new this quarter. This is writing location, not who watched.</p>";
+            return;
+          }
+          if (timeLive()) {
+            const nHere = pulsesNow().reduce((a, p) => a + p.n, 0);
+            el.innerHTML =
+              '<p class="pill">time · ActionGeo</p>' +
+              "<h2>" + esc(prettyQuarter(currentQ()) || currentQ()) + "</h2>" +
+              '<div class="statrow">' +
+              '<div class="stat"><b>' + fmt(nHere) + "</b><span>" + (cumulative ? "stories so far" : "this quarter") + "</span></div>" +
+              '<div class="stat"><b>' + esc(currentQ().slice(0, 4)) + "</b><span>year on the map</span></div>" +
+              "</div>" +
+              '<p class="hint">Play the spread, or filter a teaching. Gospel, evangelio, and evangelho are the same topic — English, Spanish, and Portuguese counted together.</p>';
+            return;
+          }
+          const metros = filteredMetros().slice(0, 10);
+          const states = filteredStates().slice(0, 10);
+          const countries = (V.countries || []).filter((c) => inRegion(c.fips, region)).slice(0, 8);
+          const admTitle = (region === "US" || (states.length && states.every((s) => s.us))) ? "U.S. states" : "states / provinces";
+          el.innerHTML =
+            '<p class="pill">writing locations · not viewership</p>' +
+            "<h2>" + (region === "all" ? "The U.S. is many places" : esc((REGIONS.find((r) => r.id === region) || {}).label || region)) + "</h2>" +
+            '<div class="statrow">' +
+            '<div class="stat"><b>' + fmt(geo.news_with_latlon) + "</b><span>geolocated news rows</span></div>" +
+            '<div class="stat"><b>' + usShare + "</b><span>of them from the U.S.</span></div>" +
+            "</div>" +
+            '<p class="hint">Gold = United States (D.C. leads because wire desks geocode there). Chile, FIPS CI, is the RISE host — ringed in sea. Teaching lifts stay in this panel, not as one U.S. blob.</p>' +
+            '<p class="pill" style="margin-top:12px">cities</p>' +
+            metros.map((m) => '<div class="rank" data-kind="metro" data-name="' + esc(m.name) + '" data-fips="' + esc(m.fips) + '"><span><b>' + esc(m.name) + "</b> · " + esc(m.country) + "</span><span>" + fmt(m.n) + "</span></div>").join("") +
+            (states.length ? '<p class="pill" style="margin-top:12px">' + admTitle + "</p>" + states.map((s) => '<div class="rank" data-kind="state" data-id="' + esc(s.id) + '"><span><b>' + esc(s.label) + "</b></span><span>" + fmt(s.n) + "</span></div>").join("") : "") +
+            (region === "all" ? '<p class="pill" style="margin-top:12px">countries</p>' + countries.map((c) => '<div class="rank" data-kind="country" data-fips="' + esc(c.fips) + '"><span><b>' + esc(c.country) + "</b>" + (c.host ? ' <span class="host">· host</span>' : "") + "</span><span>" + fmt(c.n) + "</span></div>").join("") : "");
+          bindRanks(el);
+          return;
+        }
+        const p = selectedPlace;
+        const fips = p.fips;
+        const extra = countryExtra[fips];
+        const rows = teachingForFips(fips).slice(0, 10);
+        const mapped = hypThemes(fips);
+        const title = p.name || p.label || p.country || fips;
+        const themeRows = extra && extra.themes_per_1k
+          ? Object.entries(extra.themes_per_1k).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]).slice(0, 6)
+          : [];
+        const exKeys = extra && extra.exemplars ? Object.keys(extra.exemplars).slice(0, 2) : [];
+        el.innerHTML =
+          '<p class="pill">' + esc(p.kind) + " · " + esc(p.country || "") + " · n=" + fmt(p.n) + "</p>" +
+          "<h2>" + esc(title) + (fips === "CI" ? ' <span class="host">· RISE host</span>' : "") + "</h2>" +
+          (mapped.length ? '<p class="hint">Map predicts: ' + esc(mapped.join(", ")) + "</p>" : "") +
+          (themeRows.length
+            ? '<p class="pill" style="margin-top:8px">theme rates (extras)</p>' +
+              themeRows.map(([t, v]) => '<div class="edge"><span><b>' + esc((X.themeLabels && X.themeLabels[t]) || t) + "</b></span><span>" + v + "/1k</span></div>").join("")
+            : "") +
+          (rows.length
+            ? '<p class="pill" style="margin-top:8px">teaching lift vs U.S. news</p>' +
+              rows.map((e) => {
+                const t = tById[e.target];
+                const mark = e.hypothesized ? " · map" : (e.distinctive ? " · distinctive" : "");
+                return '<div class="edge"><span><b>' + esc((t && t.pretty) || e.theme) + "</b>" + esc(mark) + "</span><span>" + e.lift + "×</span></div>";
+              }).join("")
+            : '<p class="hint">No country-level teaching edge for this FIPS (city dots are still writing location).</p>') +
+          (exKeys.length
+            ? '<p class="pill" style="margin-top:8px">anonymized exemplar</p>' +
+              exKeys.map((k) => {
+                const ex = (extra.exemplars[k] || [])[0];
+                return ex ? '<p class="hint" style="font-style:italic">“' + esc(ex.text) + '”</p>' : "";
+              }).join("")
+            : "") +
+          '<p class="hint">Lift is country-level, not this city. ActionGeo is not viewership.</p>';
+      }
+
+      document.getElementById("btn-heat").onclick = function () {
+        showHeat = !showHeat; this.classList.toggle("active", showHeat); drawPlaces();
+      };
+      document.getElementById("btn-cities").onclick = function () {
+        showCities = !showCities; this.classList.toggle("active", showCities); drawPlaces();
+      };
+      document.getElementById("btn-states").onclick = function () {
+        showStates = !showStates; this.classList.toggle("active", showStates); drawPlaces();
+      };
+
+      const timeEl = document.getElementById("time");
+      const timeLab = document.getElementById("time-label");
+      const btnPlay = document.getElementById("btn-play");
+      const yearTicks = document.getElementById("year-ticks");
+
+      function setupTimeAxis() {
+        const item = encycItem();
+        const max = timeMax();
+        timeIdx = Math.max(0, Math.min(timeIdx, max));
+        timeEl.max = String(max);
+        timeEl.value = String(timeIdx);
+        timeEl.setAttribute("aria-label", item ? "Day since promulgation" : "Quarter");
+        document.getElementById("btn-now").textContent = item ? "This day" : "This quarter";
+        document.body.classList.toggle("day-mode", !!item);
+        yearTicks.innerHTML = "";
+        if (item) {
+          const start = parseISODate(item.start);
+          const end = parseISODate(addDaysISO(item.start, item.max_d || 0));
+          if (start && end) {
+            for (let y = start.getUTCFullYear(); y <= end.getUTCFullYear(); y++) {
+              const b = document.createElement("button");
+              b.type = "button";
+              b.textContent = String(y);
+              b.dataset.year = String(y);
+              b.onclick = () => {
+                const jan = Date.UTC(y, 0, 1);
+                const d0 = parseISODate(item.start);
+                timeIdx = Math.max(0, Math.min(item.max_d || 0, Math.round((jan - d0) / 86400000)));
+                afterTimeChange();
+              };
+              yearTicks.appendChild(b);
+            }
+          }
+        } else {
+          for (let y = 2015; y <= 2025; y++) {
+            const b = document.createElement("button");
+            b.type = "button";
+            b.textContent = String(y);
+            b.dataset.year = String(y);
+            b.onclick = () => {
+              const i = MONTHS.indexOf(y + "Q1");
+              timeIdx = i < 0 ? 0 : i;
+              afterTimeChange();
+            };
+            yearTicks.appendChild(b);
+          }
+        }
+        syncTime();
+        drawEncycChart();
+      }
+
+      function showCaption(text) {
+        const cap = document.getElementById("caption");
+        cap.textContent = text;
+        cap.classList.add("show");
+        if (captionTimer) clearTimeout(captionTimer);
+        captionTimer = setTimeout(() => cap.classList.remove("show"), 2200);
+      }
+      function flashCaption() {
+        const item = encycItem();
+        if (item) {
+          if (timeIdx === 0) showCaption(item.label + " · issued " + prettyDay(item.promulgated));
+          else if (item.peak && timeIdx === item.peak.d) showCaption("Peak · " + fmt(item.peak.n) + " stories");
+          return;
+        }
+        const text = CAPTIONS[currentQ()];
+        if (text) showCaption(text);
+      }
+      function syncTime() {
+        const item = encycItem();
+        if (item) {
+          timeLab.textContent = "d+" + timeIdx;
+          const year = currentDayISO().slice(0, 4);
+          [...yearTicks.children].forEach((c) => c.classList.toggle("on", c.dataset.year === year));
+        } else {
+          const q = currentQ();
+          timeLab.textContent = q || "2015–2025";
+          const year = q.slice(0, 4);
+          [...yearTicks.children].forEach((c) => c.classList.toggle("on", c.dataset.year === year));
+        }
+        timeEl.value = String(timeIdx);
+        btnPlay.textContent = playing ? "Pause" : "Play";
+        document.body.classList.toggle("is-playing", playing);
+      }
+      function afterTimeChange() {
+        syncTime();
+        flashCaption();
+        drawPlaces();
+        if (!playing) renderPlacePanel();
+        drawEncycChart();
+      }
+      function stopPlay(redraw) {
+        playing = false;
+        if (playTimer) clearInterval(playTimer);
+        playTimer = null;
+        document.body.classList.remove("is-playing");
+        syncTime();
+        if (redraw !== false) { drawPlaces(); renderPlacePanel(); drawEncycChart(); }
+      }
+      function stepPlay() {
+        const item = encycItem();
+        if (item) {
+          const nxt = nextHitDay(item, timeIdx);
+          if (nxt == null) {
+            stopPlay(true);
+            return;
+          }
+          timeIdx = nxt;
+          afterTimeChange();
+          return;
+        }
+        if (timeIdx >= timeMax()) {
+          stopPlay(true);
+          return;
+        }
+        timeIdx += 1;
+        afterTimeChange();
+      }
+      function startPlay() {
+        const item = encycItem();
+        if (item) {
+          if (timeIdx >= (item.max_d || 0)) timeIdx = firstHitDay(item);
+        } else if (timeIdx >= timeMax()) {
+          timeIdx = 0;
+        }
+        playing = true;
+        afterTimeChange();
+        if (playTimer) clearInterval(playTimer);
+        playTimer = setInterval(stepPlay, tickMs());
+      }
+      let chartSig = "";
+      function drawEncycChart() {
+        const svgEl = document.getElementById("encyc-chart");
+        const svg = d3.select(svgEl);
+        const item = encycItem();
+        if (!item) {
+          svg.selectAll("*").remove();
+          chartSig = "";
+          return;
+        }
+        const series = expandEncyc(item);
+        const regions = E.regions || [];
+        const w = Math.max(120, (svgEl.clientWidth || svgEl.parentElement.clientWidth || 600));
+        const h = 92;
+        const pad = { t: 6, r: 8, b: 4, l: 2 };
+        const src = cumulative ? series.cum : series.roll;
+        const n = src.length;
+        if (!n) return;
+        const x = (d) => pad.l + (d / Math.max(n - 1, 1)) * (w - pad.l - pad.r);
+        const sig = [item.id, cumulative ? "c" : "d", region, w].join("|");
+        if (chartSig !== sig) {
+          chartSig = sig;
+          svg.attr("viewBox", [0, 0, w, h]).attr("preserveAspectRatio", "none");
+          svg.selectAll("*").remove();
+          const keys = regions.map((r, i) => i).filter((i) => inEncycRegion(regions[i].id) && src.some((row) => (row[i] || 0) > 0));
+          const step = Math.max(1, Math.floor(n / 420));
+          const idxs = [];
+          for (let d = 0; d < n; d += step) idxs.push(d);
+          if (idxs[idxs.length - 1] !== n - 1) idxs.push(n - 1);
+          const stacked = idxs.map((d) => {
+            let y0 = 0;
+            const segs = [];
+            keys.forEach((i) => {
+              const v = src[d][i] || 0;
+              segs.push({ i, y0, y1: y0 + v, d });
+              y0 += v;
+            });
+            return segs;
+          });
+          const ymax = Math.max(1, d3.max(stacked, (segs) => segs.length ? segs[segs.length - 1].y1 : 0));
+          const y = (v) => pad.t + (1 - v / ymax) * (h - pad.t - pad.b);
+          const area = d3.area()
+            .x((s) => x(s.d))
+            .y0((s) => y(s.y0))
+            .y1((s) => y(s.y1))
+            .curve(d3.curveMonotoneX);
+          keys.forEach((i) => {
+            const pts = stacked.map((segs) => segs.find((s) => s.i === i)).filter(Boolean);
+            svg.append("path")
+              .attr("d", area(pts))
+              .attr("fill", regions[i].color)
+              .attr("fill-opacity", 0.82)
+              .append("title")
+              .text(regions[i].label);
+          });
+          if (item.peak && item.peak.d <= (item.max_d || 0)) {
+            svg.append("line")
+              .attr("x1", x(item.peak.d)).attr("x2", x(item.peak.d))
+              .attr("y1", pad.t).attr("y2", h - pad.b)
+              .attr("stroke", "#e4c37a")
+              .attr("stroke-dasharray", "2 3")
+              .attr("stroke-opacity", 0.45);
+          }
+          svg.append("line")
+            .attr("class", "playhead")
+            .attr("y1", pad.t).attr("y2", h - pad.b)
+            .attr("stroke", "#f4efe4")
+            .attr("stroke-width", 1.4)
+            .attr("stroke-opacity", 0.9);
+        }
+        const playX = x(Math.min(timeIdx, n - 1));
+        svg.select(".playhead").attr("x1", playX).attr("x2", playX);
+      }
+      timeEl.oninput = () => { timeIdx = +timeEl.value; afterTimeChange(); };
+      btnPlay.onclick = () => { if (playing) stopPlay(false); else startPlay(); };
+      document.getElementById("btn-cum").onclick = function () {
+        cumulative = true;
+        this.classList.add("active");
+        document.getElementById("btn-now").classList.remove("active");
+        drawPlaces();
+        renderPlacePanel();
+        drawEncycChart();
+      };
+      document.getElementById("btn-now").onclick = function () {
+        cumulative = false;
+        this.classList.add("active");
+        document.getElementById("btn-cum").classList.remove("active");
+        drawPlaces();
+        renderPlacePanel();
+        drawEncycChart();
+      };
+      document.getElementById("speed-seg").onclick = (ev) => {
+        const b = ev.target.closest("button[data-speed]");
+        if (!b) return;
+        playSpeed = +b.dataset.speed;
+        [...document.getElementById("speed-seg").children].forEach((c) => c.classList.toggle("active", c === b));
+        if (playing) {
+          clearInterval(playTimer);
+          playTimer = setInterval(stepPlay, tickMs());
+        }
+      };
+      setupTimeAxis();
+
+      window.addEventListener("keydown", (ev) => {
+        if (view !== "places") return;
+        const tag = (ev.target && ev.target.tagName) || "";
+        if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+        if (ev.key === " " || ev.code === "Space") {
+          ev.preventDefault();
+          if (playing) stopPlay(false); else startPlay();
+        } else if (ev.key === "ArrowRight") {
+          ev.preventDefault();
+          if (timeIdx < timeMax()) { timeIdx += 1; afterTimeChange(); }
+        } else if (ev.key === "ArrowLeft") {
+          ev.preventDefault();
+          if (timeIdx > 0) { timeIdx -= 1; afterTimeChange(); }
+        }
+      });
+
+      map.on("zoomend", drawPlaces);
+      map.on("click", () => {
+        if (touring) return;
+        selectedPlace = null;
+        renderPlacePanel();
+      });
+
+      const TOUR = [
+        { name: "Mexico City", fips: "MX" },
+        { name: "San Salvador", fips: "ES" },
+        { name: "São Paulo", fips: "BR" },
+        { name: "Santiago", fips: "CI" },
+      ];
+      document.getElementById("btn-compare").onclick = function () {
+        compareMode = !compareMode;
+        this.classList.toggle("active", compareMode);
+        if (compareMode) selectedPlace = null;
+        else compareHighlight = new Set();
+        renderPlacePanel();
+        drawPlaces();
+      };
+      document.getElementById("btn-tour").onclick = async () => {
+        touring = true;
+        stopPlay(false);
+        setView("places");
+        for (const stop of TOUR) {
+          const m = (V.metros || []).find((x) => x.name === stop.name && x.fips === stop.fips);
+          if (!m) continue;
+          region = m.fips === "US" ? "US" : (CENTRAL.has(m.fips) ? "central" : (ANDES.has(m.fips) ? "andes" : m.fips));
+          setChip(chipBox, region === "central" || region === "andes" ? region : m.fips);
+          pickPlace("metro", m);
+          drawPlaces();
+          await new Promise((r) => setTimeout(r, 2400));
+        }
+        touring = false;
+      };
+
+      const svg = d3.select("#graph").append("svg");
+      const gRoot = svg.append("g");
+      const linkG = gRoot.append("g").attr("class", "links");
+      const nodeG = gRoot.append("g").attr("class", "nodes");
+      const zoom = d3.zoom().scaleExtent([0.35, 3.5]).on("zoom", (ev) => gRoot.attr("transform", ev.transform));
+      svg.call(zoom);
+      const sim = d3.forceSimulation()
+        .force("charge", d3.forceManyBody().strength((d) => (d.papal ? -200 : -130)))
+        .force("center", d3.forceCenter())
+        .force("collide", d3.forceCollide().radius((d) => 14 + Math.sqrt(d.n) * 0.14))
+        .force("x", d3.forceX().strength(0.045))
+        .force("y", d3.forceY().strength(0.045))
+        .alphaDecay(0.05);
+
+      function visibleTopicEdges() {
+        return (T.edges || []).filter((e) => {
+          if (e.lift < minTopicLift) return false;
+          const a = themeById[e.source], b = themeById[e.target];
+          if (!a || !b) return false;
+          if (!groupFilter.has(a.group) || !groupFilter.has(b.group)) return false;
+          if (papalOnly && !(a.papal && b.papal)) return false;
+          if (selectedTheme && e.source !== selectedTheme && e.target !== selectedTheme) return false;
+          return true;
+        });
+      }
+      function neighborIds(id) {
+        const out = new Set();
+        (T.edges || []).forEach((e) => {
+          if (e.source === id) out.add(e.target);
+          if (e.target === id) out.add(e.source);
+        });
+        return out;
+      }
+      function labelFor(d, neighbors) {
+        if (selectedTheme === d.id) return d.label;
+        if (selectedTheme && neighbors.has(d.id)) return d.label;
+        if (!selectedTheme && (d.papal || d.n >= 800 || d.degree >= 12)) return d.label;
+        return "";
+      }
+
+      function drawTopics() {
+        const w = document.getElementById("graph").clientWidth || window.innerWidth;
+        const h = document.getElementById("graph").clientHeight || window.innerHeight;
+        svg.attr("viewBox", [0, 0, w, h]);
+        sim.force("center").x(w / 2).y(h / 2);
+        sim.force("x").x(w / 2);
+        sim.force("y").y(h / 2);
+
+        const vedges = visibleTopicEdges();
+        const used = new Set();
+        vedges.forEach((e) => { used.add(e.source); used.add(e.target); });
+        if (selectedTheme) used.add(selectedTheme);
+        const nodes = (T.nodes || []).filter((d) => used.has(d.id) || (!selectedTheme && groupFilter.has(d.group) && (!papalOnly || d.papal)));
+        const by = Object.fromEntries(nodes.map((d) => [d.id, d]));
+        const links = vedges.map((e) => ({ ...e, source: by[e.source], target: by[e.target] })).filter((e) => e.source && e.target);
+        const neighbors = selectedTheme ? neighborIds(selectedTheme) : new Set();
+
+        sim.nodes(nodes);
+        sim.force("link", d3.forceLink(links).id((d) => d.id).distance((d) => 56 + 90 / Math.max(d.lift, 1)).strength(0.25));
+        sim.alpha(0.55).restart();
+
+        const lp = linkG.selectAll("line").data(links, (d) => d.source.id + "→" + d.target.id);
+        lp.exit().remove();
+        const lenter = lp.enter().append("line").attr("stroke-linecap", "round");
+        const lmerge = lenter.merge(lp)
+          .attr("stroke", (d) => (d.lift >= 8 ? "#e4c37a" : "rgba(180,190,200,.35)"))
+          .attr("stroke-width", (d) => 0.6 + Math.min(Math.log1p(d.lift), 4))
+          .attr("stroke-opacity", selectedTheme ? 0.9 : 0.45);
+
+        const np = nodeG.selectAll("g.node").data(nodes, (d) => d.id);
+        np.exit().remove();
+        const enter = np.enter().append("g").attr("class", "node").style("cursor", "pointer");
+        enter.append("circle");
+        enter.append("text").attr("class", "g-label").attr("dy", -16).attr("text-anchor", "middle");
+        enter.on("click", (event, d) => {
+          event.stopPropagation();
+          selectedTheme = d.id;
+          topic = String(d.id).replace(/^theme:/, "");
+          syncTopicChrome();
+          renderTopicPanel();
+          drawTopics();
+        });
+        const merged = enter.merge(np);
+        merged.select("circle")
+          .attr("r", (d) => 6 + Math.sqrt(d.n) * 0.12)
+          .attr("fill", (d) => GROUPS[d.group] || GROUPS.other)
+          .attr("stroke", (d) => (selectedTheme === d.id ? "#fff" : (d.papal ? "#e4c37a" : "#0b1014")))
+          .attr("stroke-width", (d) => (selectedTheme === d.id ? 3 : (d.papal ? 2 : 1)));
+        merged.select("text")
+          .attr("class", (d) => "g-label" + (selectedTheme && selectedTheme !== d.id ? " dim" : ""))
+          .text((d) => labelFor(d, neighbors));
+
+        sim.on("tick", () => {
+          lmerge.attr("x1", (d) => d.source.x).attr("y1", (d) => d.source.y)
+            .attr("x2", (d) => d.target.x).attr("y2", (d) => d.target.y);
+          merged.attr("transform", (d) => "translate(" + d.x + "," + d.y + ")");
+        });
+      }
+
+      svg.on("click", () => {
+        selectedTheme = null;
+        renderTopicPanel();
+        drawTopics();
+      });
+
+      function renderTopicPanel() {
+        const el = document.getElementById("side");
+        if (view !== "topics") return;
+        if (!selectedTheme) {
+          const top = (T.edges || []).slice().sort((a, b) => b.lift - a.lift).slice(0, 12);
+          el.innerHTML =
+            '<p class="pill">theme co-occurrence · no map</p>' +
+            "<h2>Topics that travel together</h2>" +
+            '<div class="statrow">' +
+            '<div class="stat"><b>' + (T.nodes || []).length + "</b><span>themes</span></div>" +
+            '<div class="stat"><b>' + (T.edges || []).length + "</b><span>lift ≥ 1.25 pairs</span></div>" +
+            "</div>" +
+            '<p class="hint">Gold edges are high-lift. Click a node to see its neighbors. This graph has no countries on purpose — teaching geography lives in Places.</p>' +
+            top.map((e) => {
+              const a = themeById[e.source], b = themeById[e.target];
+              return '<div class="edge"><span><b>' + esc(a ? a.label : e.source) + "</b> · " + esc((b && b.label) || "") + "</span><span>" + e.lift + "×</span></div>";
+            }).join("");
+          return;
+        }
+        const n = themeById[selectedTheme];
+        if (!n) return;
+        const tid = String(n.id).replace(/^theme:/, "");
+        const cat = catById[tid];
+        const rows = (T.edges || [])
+          .filter((e) => e.source === n.id || e.target === n.id)
+          .sort((a, b) => b.lift - a.lift)
+          .slice(0, 14);
+        const hyps = hypothesizedCountries(tid);
+        el.innerHTML =
+          '<p class="pill">' + esc(GROUP_LABEL[n.group] || n.group) + (n.papal ? " · papal" : "") + " · n=" + fmt(n.n) + "</p>" +
+          "<h2>" + esc(n.label) + "</h2>" +
+          (cat ? triHtml(cat) : "") +
+          (hyps.length
+            ? '<p class="pill">hypothesized teaching</p>' +
+              hyps.map((f) => '<div class="edge"><span><b>' + esc(countryName(f)) + "</b>" + (f === "CI" ? ' <span class="host">· RISE host</span>' : "") + "</span><span>vs U.S.</span></div>").join("")
+            : "") +
+          '<p class="pill" style="margin-top:10px">neighbors</p>' +
+          rows.map((e) => {
+            const other = themeById[e.source === n.id ? e.target : e.source];
+            return '<div class="edge"><span><b>' + esc(other ? other.label : "") + "</b></span><span>" + e.lift + "× · " + fmt(e.n) + "</span></div>";
+          }).join("") +
+          '<p class="hint">' + fmt(n.n) + " stories mention this theme. Lift is P(a,b)/(P(a)P(b)). Click the canvas to clear.</p>";
+      }
+
+      document.getElementById("tlift").oninput = (e) => {
+        minTopicLift = +e.target.value;
+        document.getElementById("tlift-val").textContent = minTopicLift + "×";
+        drawTopics();
+      };
+      document.getElementById("btn-papal").onclick = function () {
+        papalOnly = !papalOnly;
+        this.classList.toggle("active", papalOnly);
+        drawTopics();
+        renderTopicPanel();
+      };
+      document.getElementById("btn-tclear").onclick = () => {
+        selectedTheme = null;
+        setTopic("all");
+        renderTopicPanel();
+        drawTopics();
+      };
+
+      window.addEventListener("resize", () => {
+        if (view === "topics") drawTopics();
+        else {
+          map.invalidateSize();
+          drawEncycChart();
+        }
+      });
+
+      drawPlaces();
+      renderPlacePanel();
+    })();
+  </script>
+</body>
+</html>

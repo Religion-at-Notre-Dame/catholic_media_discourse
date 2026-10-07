@@ -14,6 +14,12 @@ __pycache__/
 # Paper / LaTeX (local only)
 papers/
 
+# Viz export cache (regenerate with viz/export_*.py)
+viz/.cache/
+
+# Grant applications & budgets (local only)
+funding/
+
 # Raw radio (keep anonymized/ only)
 data/americas/radio/archive_radio_americas_2015_2025.jsonl
 data/americas/radio/archive_radio_americas_2015_2025.jsonl.*

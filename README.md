@@ -15,29 +15,44 @@ Raw GDELT/API collection lives in:
 | `data/us/network/` | Affiliation graph |
 | `scripts/common/` | Themes, geography, stratified sample, path helpers |
 | `scripts/build_*.py` | Network rebuild from anonymized inputs |
-| `papers/` | Local paper / LaTeX / viz sources (**gitignored**) |
+| `viz/` | Interactive Americas map + teaching network |
 
 **No** raw `*_paragraphs_*.jsonl`, fetch shards, API keys, or collector launchers.
 
-## Quick start
+## Setup
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 python -c "import spacy; spacy.cli.download('en_core_web_sm'); spacy.cli.download('es_core_news_sm')"
-
-python3 scripts/corpus_stats.py --quiet
-python3 papers/rise_education_2026/viz/serve.py   # if papers/ present locally
 ```
 
-Open **http://127.0.0.1:8765/index.html**
-
-## Analysis (local `papers/` tree)
+## Start the website
 
 ```bash
-./papers/rise_education_2026/analysis/run_extended_analysis.sh --skip-corpus --resume
-python3 papers/rise_education_2026/analysis/print_extended_brief.py
-cd papers/rise_education_2026 && pdflatex main.tex
+python3 viz/serve.py
+```
+
+Then open **http://127.0.0.1:8765/index.html** in your browser.
+
+Optional flags:
+
+```bash
+python3 viz/serve.py --port 8765
+python3 viz/serve.py --no-browser   # print URL only
+```
+
+Refresh map data from anonymized JSONL (when needed):
+
+```bash
+python3 viz/export_map_network.py --use-cache
+python3 viz/export_viz_extras.py --use-cache
+```
+
+## Corpus stats
+
+```bash
+python3 scripts/corpus_stats.py --quiet
 ```
 
 ## Sync anonymized data from Data
