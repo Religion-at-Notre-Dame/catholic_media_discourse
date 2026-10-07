@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How Catholic themes circulate in media across the Americas — University of Notre Dame." />
+  <title>Methods · How the Americas Hear the Church · Notre Dame</title>
+  <link rel="icon" type="image/svg+xml" href="../branding/nd-monogram.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://unpkg.com" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="../css/site.css" />
+  
+</head>
+<body class="mode-methods">
+  <header class="nd-nav" role="banner">
+    <div class="nd-nav__top">
+      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame — home">
+        <img class="nd-nav__mark" src="../branding/nd-monogram.svg" alt="" width="36" height="36" />
+        <img class="nd-nav__wordmark" src="../branding/wordmark.svg" alt="University of Notre Dame" />
+        <span class="nd-nav__site">How the Americas Hear the Church</span>
+      </a>
+      <nav class="nd-nav__pages" aria-label="Primary">
+        <a href="index.html" id="nav-story">Story</a>
+        <a href="findings.html" id="nav-findings">Findings</a>
+        <a href="explore.html#/places" id="tab-places">Places</a>
+        <a href="explore.html#/topics" id="tab-topics">Topics</a>
+        <a href="methods.html" id="nav-methods" class="is-active">Methods</a>
+      </nav>
+    </div>
+    <div class="nd-nav__sub nd-nav__sub--simple">
+      <div class="nav-langs"><b>EN</b> English · <b>ES</b> Spanish · <b>PT</b> Portuguese</div>
+    </div>
+  </header>
+
+<main id="methods" class="page">
+    <header class="page-hero page-hero--paper">
+      <div class="page-hero__inner">
+        <p class="kicker">Methods · computational techniques</p>
+        <h1>Techniques behind the maps and graphs</h1>
+        <p class="lead">
+          Catholic Media of the Americas is scored with classical IR, deterministic lexicon matching,
+          rate normalization, association measures, and graph construction — not opaque embeddings.
+          Each technique below maps to a visible claim on Places, Topics, or Findings.
+        </p>
+      </div>
+    </header>
+
+    <div class="methods-impact" aria-label="Education and impact">
+      <div class="methods-impact__inner">
+        <p class="kicker">Education &amp; impact</p>
+        <h2>Why the method matters beyond the dashboard</h2>
+        <div class="methods-impact__grid">
+          <article>
+            <h3>Classroom &amp; OCIA</h3>
+            <p>
+              Inquirers often meet the Church in news and digital media before a syllabus.
+              Shareable lift charts and place panels give formation leaders evidence of
+              <em>which</em> vocabularies already circulate in their region.
+            </p>
+          </article>
+          <article>
+            <h3>Scholarly transparency</h3>
+            <p>
+              Every claim is tied to a reproducible step: lexicon match → country rate →
+              lift vs. baseline. Limits (ActionGeo, English-skewed wires) stay visible so
+              students learn responsible computational theology, not black-box maps.
+            </p>
+          </article>
+          <article>
+            <h3>Force for good</h3>
+            <p>
+              Measuring liberation, preferential option, and magisterial language as data —
+              while redacting personal identifiers — turns Notre Dame’s mission into
+              hemispheric evidence educators can cite, critique, and extend.
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="methods-body">
+      <nav class="methods-toc" aria-label="Methods sections">
+        <a href="#techniques">Techniques</a>
+        <a href="#lexicon">Lexicon</a>
+        <a href="#actiongeo">ActionGeo</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#limits">Limits</a>
+      </nav>
+
+      <section id="techniques">
+        <h2>Techniques</h2>
+        <p>
+          Pipeline shape: information retrieval and harvest → language/time/geo normalization →
+          lexicon labeling → aggregation and association → static classroom viz. Multimodal sources
+          (news, TV, radio, YouTube; X forthcoming) become text spans scored against a fixed
+          multilingual lexicon; exports feed Places heat, Topics graphs, and Findings charts
+          (<code>data.js</code>).
+        </p>
+        <dl class="methods-dl methods-dl--techniques">
+          <dt>Controlled lexicon matching</dt>
+          <dd>
+            Frozen, versioned <code>THEME_PATTERNS</code> (compiled regex per theme × language).
+            Output is a binary theme set per document span — not embedding similarity and not
+            open-ended keyword search. Parallel EN/ES/PT surface forms collapse to one teaching ID.
+          </dd>
+          <dt>Geolocated IR / ActionGeo</dt>
+          <dd>
+            Keyword-gated collection plus GDELT ActionGeo → FIPS aggregation. Coordinates mark
+            <em>writing / event location in the stream</em>, not viewership. Metro and country
+            layers are therefore writing geography under a shared constraint.
+          </dd>
+          <dt>Rate normalization</dt>
+          <dd>
+            Theme presence is reported as hits per 1,000 documents (or paragraphs) so large wire
+            desks do not automatically dominate interpretation. Country teaching compares rates
+            against a U.S. baseline.
+          </dd>
+          <dt>Association / lift</dt>
+          <dd>
+            Theme co-occurrence edges use lift
+            <code>P(a,b) / (P(a)·P(b))</code>
+            (equivalently <code>n·w / (n<sub>a</sub>·n<sub>b</sub>)</code>).
+            Edges are kept by minimum lift, not raw weight, so generic high-volume terms do not
+            flood the Topics graph.
+          </dd>
+          <dt>Bipartite + undirected graphs</dt>
+          <dd>
+            <strong>Country × theme</strong> bipartite networks rank teachings by lift vs. U.S.;
+            <strong>theme–theme</strong> undirected graphs show co-travel. Language-bridge exports
+            link parallel EN/ES/PT terms to the same concept node.
+          </dd>
+          <dt>Network dependence (QAP)</dt>
+          <dd>
+            Quadratic Assignment Procedure diagnostics compare expected cultural teaching maps
+            with observed lifts (reported in corpus network exports; QAP summary appears in the
+            classroom header when available).
+          </dd>
+          <dt>Privacy pipeline</dt>
+          <dd>
+            Personal identifiers are redacted before anonymized shards and classroom payloads
+            ship — techniques stay inspectable without exposing people in the source text.
+          </dd>
+        </dl>
+        <ol class="methods-pipeline">
+          <li><strong>Collect</strong> — keyword-gated harvest across EN/ES/PT media streams (2015–Q2 2026).</li>
+          <li><strong>Normalize</strong> — language ID, time bucketing (day/quarter), ActionGeo → FIPS, PII redaction.</li>
+          <li><strong>Label</strong> — deterministic lexicon matchers (compiled regex per theme × language).</li>
+          <li><strong>Aggregate</strong> — rates per 1k; co-occurrence matrices; lift and QAP diagnostics.</li>
+          <li><strong>Serve</strong> — static classroom site: story, findings, map heat, teaching graph.</li>
+        </ol>
+      </section>
+
+      <section id="lexicon">
+        <h2>Lexicon (definition)</h2>
+        <p>
+          A <strong>lexicon</strong> here is a frozen, versioned set of <em>controlled vocabulary
+          patterns</em> — the labeling technique above, spelled out as data. Each entry is a
+          named teaching (theme ID) plus one or more language-specific regular expressions that fire
+          on token and phrase boundaries. Hits are binary per document span: the theme is present or not.
+        </p>
+        <p>
+          The list is not only mission verbs. It includes <strong>papal / magisterial document titles</strong>
+          (encyclicals and exhortations such as <em>Rerum Novarum</em>, <em>Laudato Si'</em>,
+          <em>Fratelli Tutti</em>, <em>Evangelii Gaudium</em>), <strong>Catholic social teaching</strong>
+          umbrella phrases, regional and popular-piety markers (Guadalupe, Aparecida, Romero), and
+          parallel EN/ES/PT evangelization terms. Pontiff names enter mainly through those document
+          titles and CST phrases rather than as bare name tokens. A broader <em>collection keyword</em>
+          gate (used to harvest media) sits beside the scoring patterns and is included in the CSV.
+        </p>
+        <dl class="methods-dl">
+          <dt>Parallel teachings</dt>
+          <dd>
+            English, Spanish, and Portuguese surface forms collapse to one analytic teaching
+            (e.g. <code>gospel</code> / <code>evangelio</code> / <code>evangelho</code>). The UI search box
+            accepts all three; the graph node is singular.
+          </dd>
+          <dt>Theme groups</dt>
+          <dd>
+            Patterns are bucketed for navigation: <em>core mission &amp; evangelization</em>,
+            <em>pastoral formation &amp; catechesis</em>, <em>cultural &amp; social context</em>,
+            and <em>theological accents</em> (magisterial, liberation / preferential option,
+            popular piety, sacramental, inculturation, synodal).
+          </dd>
+          <dt>What a hit is</dt>
+          <dd>
+            Matcher output is a set of theme IDs per text unit. We do <em>not</em> treat raw mention
+            counts as belief intensity; we use them as features for rates and associations.
+            Gold-standard human labels are planned to calibrate precision/recall.
+          </dd>
+          <dt>Examples (illustrative)</dt>
+          <dd>
+            <code>liberation_theology</code> ← “liberation theology” · “teología de la liberación” · “teologia da libertação”;
+            <code>preferential_option</code> ← “option for the poor” · “opción preferencial”;
+            <code>laudato_si</code> / <code>fratelli_tutti</code> / <code>evangelii_gaudium</code> ← encyclical &amp; exhortation titles across languages.
+          </dd>
+        </dl>
+        <p class="methods-download">
+          <a class="cta" href="../data/lexicon.csv" download="catholic_media_lexicon.csv">Download complete lexicon (CSV)</a>
+          <span class="methods-note" style="display:block;margin-top:0.65rem">
+            Columns include <code>kind</code> (scoring_pattern · papal_document · collection_keyword),
+            <code>theme_id</code>, <code>language</code> (english · spanish · portuguese),
+            <code>group</code>, <code>pattern_or_phrase</code>, and papal metadata
+            (<code>pontiff</code> / <code>year</code> / <code>document_kind</code> where applicable.
+            Regenerate with <code>python3 viz/tools/export_lexicon_csv.py</code>.
+          </span>
+        </p>
+        <p class="methods-download" id="geo-download">
+          <a class="cta cta--ghost" href="explore.html#/places" style="border-color:var(--nd-blue);color:var(--nd-blue)">Download ActionGeo aggregates on Places</a>
+          <span class="methods-note" style="display:block;margin-top:0.65rem">
+            On the map: <strong>Download all</strong> (entire hemisphere aggregates),
+            <strong>Download view</strong> (current region chip), or
+            <strong>Download this location</strong> after selecting a city / country / state.
+            Each CSV row includes <code>exported_at</code> (ISO timestamp) plus
+            <code>coverage_start</code> / <code>coverage_end</code> quarters. These are
+            geolocated writing-location counts — not raw article text and not viewership.
+          </span>
+        </p>
+        <p class="methods-note">
+          Scoring implementation: <code>THEME_PATTERNS</code> in the research theme module.
+          Papal catalog: <code>CST_PAPAL_DOCUMENTS</code>. Collection keywords are broader harvest gates,
+          separate from binary scoring patterns.
+        </p>
+      </section>
+
+      <section id="actiongeo">
+        <h2>ActionGeo ≠ viewership</h2>
+        <p>
+          GDELT <strong>ActionGeo</strong> is an event-location field: where the reported action or
+          writing desk was geocoded into the stream — often a national wire hub — <em>not</em> who
+          read or watched the story. That is why Washington, D.C. dominates metro ranks. Places heat
+          and city dots are therefore best read as <em>writing geography</em>, while country lifts
+          compare theme density across ActionGeo nations under that same constraint.
+        </p>
+      </section>
+
+      <section id="coverage">
+        <h2>Corpus coverage</h2>
+        <p>
+          News is the densest layer (2015–Q2 2026). TV, radio, and YouTube are present but thinner;
+          a social-media (X) layer is planned. Public demo shards use the privacy pipeline above.
+        </p>
+      </section>
+
+      <section id="limits">
+        <h2>Limits &amp; prototype status</h2>
+        <p>
+          This site is initial public development. Lexicon matches are high-precision patterns, not
+          full semantic parsers; English-language wire volume still skews hemispheric totals;
+          ActionGeo confounds “where faith is lived” with “where desks write.” Findings will deepen
+          as gold-standard annotation, multimodal balance, and peer review land — the interface is
+          built so those updates remain inspectable by students and pastors alike.
+        </p>
+      </section>
+
+      <p class="methods-cta-row">
+        <a class="cta" id="methods-cta-places" href="explore.html#/places">Open Places</a>
+        <a class="cta cta--ghost" id="methods-cta-findings" href="findings.html" style="border-color:var(--nd-blue);color:var(--nd-blue)">See findings</a>
+      </p>
+    </div>
+  </main>
+
+<footer class="nd-footer" id="site-footer">
+      <div class="nd-footer__inner">
+        <div class="nd-footer__brands">
+          <img
+            class="nd-footer__mark"
+            src="../branding/academic-mark.svg"
+            alt="University of Notre Dame"
+          />
+          <img
+            class="nd-footer__lucy"
+            src="../branding/partners/lucy-family-institute.svg"
+            alt="Lucy Family Institute for Data &amp; Society"
+          />
+        </div>
+        <p class="nd-footer__title">How the Americas Hear the Church</p>
+        <p class="nd-footer__meta">
+          Built for education and public impact: inspectable lexicon lifts, not black-box maps.
+          ActionGeo marks writing location in GDELT — not viewership.
+        </p>
+        <p class="nd-footer__meta">
+          <a href="https://lucyinstitute.nd.edu/" target="_blank" rel="noreferrer">Lucy Institute</a>
+          ·
+          <a href="https://www.nd.edu/" target="_blank" rel="noreferrer">Notre Dame</a>
+          ·
+          <a class="nd-footer__link" href="explore.html#/places">Explore the map</a>
+        </p>
+      </div>
+  </footer>
+
+<script>
+    (function () {
+      const nodes = document.querySelectorAll(".reveal");
+      if (!nodes.length) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        nodes.forEach((n) => n.classList.add("is-visible"));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-visible");
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.18, rootMargin: "0px 0px -6% 0px" });
+      nodes.forEach((n) => io.observe(n));
+    })();
+  </script>
+  <script src="../js/site.js" defer></script>
+</body>
+</html>

@@ -4,9 +4,9 @@
 Place counts use the unified GDELT news corpora (2015-01-01 → 2026-06-30):
 ``gdelt_us_paragraphs_20150101_20260630.jsonl`` + ``gdelt_americas_paragraphs_20150101_20260630.jsonl``.
 
-  python3 viz/export_map_network.py
-  python3 viz/export_map_network.py --skip-themes
-  python3 viz/export_map_network.py --encyclicals-only
+  python3 viz/tools/export_map_network.py
+  python3 viz/tools/export_map_network.py --skip-themes
+  python3 viz/tools/export_map_network.py --encyclicals-only
 """
 
 from __future__ import annotations
@@ -21,10 +21,11 @@ from collections import Counter, defaultdict
 from datetime import date, timedelta
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+TOOLS = Path(__file__).resolve().parent
+VIZ = TOOLS.parent
+ROOT = VIZ.parent
 SCRIPTS = ROOT / "scripts"
-VIZ_DIR = Path(__file__).resolve().parent
-for p in (SCRIPTS, VIZ_DIR):
+for p in (SCRIPTS, TOOLS):
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
 
@@ -34,11 +35,11 @@ from common.geography import fips_country_name  # noqa: E402
 from common.progress import section, write  # noqa: E402
 from viz_fast import cache_path, default_jobs, inventory_fingerprint, load_cache, save_cache  # noqa: E402
 
-CACHE_DIR = VIZ_DIR / ".cache"
+CACHE_DIR = VIZ / ".cache"
 _MAX_NEWS_ROWS = int(os.environ.get("VIZ_MAX_NEWS_ROWS", "0") or "0")
 
 NET = ROOT / "data/network"
-OUT = Path(__file__).resolve().parent / "data.js"
+OUT = VIZ / "data" / "data.js"
 
 try:
     import orjson as _orjson
@@ -1040,8 +1041,10 @@ def harvest_spread() -> dict:
         write(f"  {n_here:,} articles in {path.name}")
 
     months = []
-    for y in range(2015, 2026):
+    for y in range(2015, 2027):
         for q in range(1, 5):
+            if y == 2026 and q > 2:
+                break
             months.append(f"{y}Q{q}")
 
     by_theme: dict[str, list] = defaultdict(list)

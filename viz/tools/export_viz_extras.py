@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Export classroom viz extras: country theme breakdown, compare pairs, exemplars.
 
-  python3 viz/export_viz_extras.py
-  python3 viz/export_viz_extras.py --use-cache --jobs 4
+  python3 viz/tools/export_viz_extras.py
+  python3 viz/tools/export_viz_extras.py --use-cache --jobs 4
 
-Writes viz/extras.js (loaded by index.html alongside data.js).
+Writes viz/data/extras.js (loaded by explore alongside data.js).
 """
 
 from __future__ import annotations
@@ -17,12 +17,13 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+TOOLS = Path(__file__).resolve().parent
+VIZ = TOOLS.parent
+ROOT = VIZ.parent
 SCRIPTS = ROOT / "scripts"
-VIZ = Path(__file__).resolve().parent
-OUT = VIZ / "extras.js"
+OUT = VIZ / "data" / "extras.js"
 CACHE_DIR = VIZ / ".cache"
-for p in (SCRIPTS, VIZ):
+for p in (SCRIPTS, TOOLS):
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
 

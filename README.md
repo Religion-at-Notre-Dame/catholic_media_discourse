@@ -15,7 +15,7 @@ Raw GDELT/API collection lives in:
 | `data/us/network/` | Affiliation graph |
 | `scripts/common/` | Themes, geography, stratified sample, path helpers |
 | `scripts/build_*.py` | Network rebuild from anonymized inputs |
-| `viz/` | Interactive Americas map + teaching network |
+| `viz/` | ND site: Story · Findings · Places · Topics · Methods (`bash viz/tools/check.sh`) |
 
 **No** raw `*_paragraphs_*.jsonl`, fetch shards, API keys, or collector launchers.
 
@@ -33,7 +33,7 @@ python -c "import spacy; spacy.cli.download('en_core_web_sm'); spacy.cli.downloa
 python3 viz/serve.py
 ```
 
-Then open **http://127.0.0.1:8765/index.html** in your browser.
+Then open **http://127.0.0.1:8765/pages/index.html** in your browser.
 
 Optional flags:
 
@@ -45,8 +45,8 @@ python3 viz/serve.py --no-browser   # print URL only
 Refresh map data from anonymized JSONL (when needed):
 
 ```bash
-python3 viz/export_map_network.py --use-cache
-python3 viz/export_viz_extras.py --use-cache
+python3 viz/tools/export_map_network.py --use-cache
+python3 viz/tools/export_viz_extras.py --use-cache
 ```
 
 ## Corpus stats

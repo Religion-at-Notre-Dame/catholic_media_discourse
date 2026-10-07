@@ -1,0 +1,413 @@
+kind,theme_id,label,language,group,group_label,pattern_or_phrase,is_papal_document,pontiff,year,document_kind
+scoring_pattern,evangelization,evangelization,english,core_mission,Core mission & evangelization,\bevangeliz\w*\b,no,,,
+scoring_pattern,evangelization,evangelization,spanish,core_mission,Core mission & evangelization,\bevangeliz\w*\b,no,,,
+scoring_pattern,evangelization,evangelization,portuguese,core_mission,Core mission & evangelization,\bevangeliz\w*\b,no,,,
+scoring_pattern,new_evangelization,new evangelization,english,core_mission,Core mission & evangelization,\bnew evangelization\b,no,,,
+scoring_pattern,nueva_evangelizacion,nueva evangelizacion,spanish,core_mission,Core mission & evangelization,\bnueva evangelizaci[oó]n\b|\bnova evangeliza[cç][aã]o\b,no,,,
+scoring_pattern,mission,mission,english,core_mission,Core mission & evangelization,\bmission(?:ary|s)?\b,no,,,
+scoring_pattern,mision,mision,spanish,core_mission,Core mission & evangelization,\bmisi[oó]n(?:ero|es)?\b|\bmiss[aã]o\b|\bmission[aá]ri[oa]s?\b,no,,,
+scoring_pattern,gospel,gospel,english,core_mission,Core mission & evangelization,\bgospel\b,no,,,
+scoring_pattern,evangelio,evangelio,spanish,core_mission,Core mission & evangelization,\bevangelio\b|\bevangelho\b,no,,,
+scoring_pattern,kerygma,kerygma,english,theology,Theological accents,\bkerygma\b|\bquerigma\b,no,,,
+scoring_pattern,kerygma,kerygma,spanish,theology,Theological accents,\bkerygma\b|\bquerigma\b,no,,,
+scoring_pattern,kerygma,kerygma,portuguese,theology,Theological accents,\bkerygma\b|\bquerigma\b,no,,,
+scoring_pattern,pastoral,pastoral,english,formation,Pastoral formation & catechesis,\bpastoral\b,no,,,
+scoring_pattern,pastoral,pastoral,spanish,formation,Pastoral formation & catechesis,\bpastoral\b,no,,,
+scoring_pattern,pastoral,pastoral,portuguese,formation,Pastoral formation & catechesis,\bpastoral\b,no,,,
+scoring_pattern,catechesis,catechesis,english,formation,Pastoral formation & catechesis,\bcatequesis\b|\bcatechesis\b,no,,,
+scoring_pattern,catechesis,catechesis,spanish,formation,Pastoral formation & catechesis,\bcatequesis\b|\bcatechesis\b,no,,,
+scoring_pattern,catechesis,catechesis,portuguese,formation,Pastoral formation & catechesis,\bcatequesis\b|\bcatechesis\b,no,,,
+scoring_pattern,synod,synod,english,formation,Pastoral formation & catechesis,\bsynod(?:al)?\b|\bs[ií]nodo\b,no,,,
+scoring_pattern,synod,synod,spanish,formation,Pastoral formation & catechesis,\bsynod(?:al)?\b|\bs[ií]nodo\b,no,,,
+scoring_pattern,synod,synod,portuguese,formation,Pastoral formation & catechesis,\bsynod(?:al)?\b|\bs[ií]nodo\b,no,,,
+scoring_pattern,youth,youth,english,formation,Pastoral formation & catechesis,\byouth\b|\bjuventud\b|\bj[oó]venes\b|\bjovens\b,no,,,
+scoring_pattern,youth,youth,spanish,formation,Pastoral formation & catechesis,\byouth\b|\bjuventud\b|\bj[oó]venes\b|\bjovens\b,no,,,
+scoring_pattern,youth,youth,portuguese,formation,Pastoral formation & catechesis,\byouth\b|\bjuventud\b|\bj[oó]venes\b|\bjovens\b,no,,,
+scoring_pattern,witness,witness,english,formation,Pastoral formation & catechesis,\bwitness\b|\btestimonio\b|\btestemunho\b|\btestimony\b,no,,,
+scoring_pattern,witness,witness,spanish,formation,Pastoral formation & catechesis,\bwitness\b|\btestimonio\b|\btestemunho\b|\btestimony\b,no,,,
+scoring_pattern,witness,witness,portuguese,formation,Pastoral formation & catechesis,\bwitness\b|\btestimonio\b|\btestemunho\b|\btestimony\b,no,,,
+scoring_pattern,immigration,immigration,english,cultural_context,Cultural & social context,\bimmigr\w*\b|\bmigraci[oó]n\b|\bimigra[cç][aã]o\b|\bmigrant\w*\b|\bfrontera\b|\bfronteira\b,no,,,
+scoring_pattern,immigration,immigration,spanish,cultural_context,Cultural & social context,\bimmigr\w*\b|\bmigraci[oó]n\b|\bimigra[cç][aã]o\b|\bmigrant\w*\b|\bfrontera\b|\bfronteira\b,no,,,
+scoring_pattern,immigration,immigration,portuguese,cultural_context,Cultural & social context,\bimmigr\w*\b|\bmigraci[oó]n\b|\bimigra[cç][aã]o\b|\bmigrant\w*\b|\bfrontera\b|\bfronteira\b,no,,,
+scoring_pattern,indigenous,indigenous,english,cultural_context,Cultural & social context,\bindigenous\b|\bnative american\b|\bfirst nations\b|\bpueblos originarios\b|\bpovos origin[aá]rios\b|\bind[ií]genas?\b|\btribal\b,no,,,
+scoring_pattern,indigenous,indigenous,spanish,cultural_context,Cultural & social context,\bindigenous\b|\bnative american\b|\bfirst nations\b|\bpueblos originarios\b|\bpovos origin[aá]rios\b|\bind[ií]genas?\b|\btribal\b,no,,,
+scoring_pattern,indigenous,indigenous,portuguese,cultural_context,Cultural & social context,\bindigenous\b|\bnative american\b|\bfirst nations\b|\bpueblos originarios\b|\bpovos origin[aá]rios\b|\bind[ií]genas?\b|\btribal\b,no,,,
+scoring_pattern,evangelii_gaudium,evangelii gaudium,english,theology,Theological accents,\bevangelii gaudium\b|\bjoy of the gospel\b|\balegr[ií]a del evangelio\b|\balegría do evangelho\b|\balegria do evangelho\b,yes,,,
+scoring_pattern,evangelii_gaudium,evangelii gaudium,spanish,theology,Theological accents,\bevangelii gaudium\b|\bjoy of the gospel\b|\balegr[ií]a del evangelio\b|\balegría do evangelho\b|\balegria do evangelho\b,yes,,,
+scoring_pattern,evangelii_gaudium,evangelii gaudium,portuguese,theology,Theological accents,\bevangelii gaudium\b|\bjoy of the gospel\b|\balegr[ií]a del evangelio\b|\balegría do evangelho\b|\balegria do evangelho\b,yes,,,
+scoring_pattern,aparecida_celam,aparecida celam,english,theology,Theological accents,\baparecida\b|\bcelam\b|\bconference of latin american bishops\b|\bconsejo episcopal latinoamericano\b|\bconselho episcopal latino-americano\b|\bconfer[eê]ncia nacional dos bispos do brasil\b|\bcnbb\b,yes,,,
+scoring_pattern,aparecida_celam,aparecida celam,spanish,theology,Theological accents,\baparecida\b|\bcelam\b|\bconference of latin american bishops\b|\bconsejo episcopal latinoamericano\b|\bconselho episcopal latino-americano\b|\bconfer[eê]ncia nacional dos bispos do brasil\b|\bcnbb\b,yes,,,
+scoring_pattern,aparecida_celam,aparecida celam,portuguese,theology,Theological accents,\baparecida\b|\bcelam\b|\bconference of latin american bishops\b|\bconsejo episcopal latinoamericano\b|\bconselho episcopal latino-americano\b|\bconfer[eê]ncia nacional dos bispos do brasil\b|\bcnbb\b,yes,,,
+scoring_pattern,liberation_theology,liberation theology,english,theology,Theological accents,\bliberation theology\b|\btheology of liberation\b|\bteolog[ií]a de la liberaci[oó]n\b|\bteologia da liberta[cç][aã]o\b|\bliberation(?:ist)? theolog\w*\b,no,,,
+scoring_pattern,liberation_theology,liberation theology,spanish,theology,Theological accents,\bliberation theology\b|\btheology of liberation\b|\bteolog[ií]a de la liberaci[oó]n\b|\bteologia da liberta[cç][aã]o\b|\bliberation(?:ist)? theolog\w*\b,no,,,
+scoring_pattern,liberation_theology,liberation theology,portuguese,theology,Theological accents,\bliberation theology\b|\btheology of liberation\b|\bteolog[ií]a de la liberaci[oó]n\b|\bteologia da liberta[cç][aã]o\b|\bliberation(?:ist)? theolog\w*\b,no,,,
+scoring_pattern,preferential_option,preferential option,english,theology,Theological accents,\bpreferential option\b|\boption for the poor\b|\bopci[oó]n preferencial\b|\bopci[oó]n por los pobres\b|\bop[cç][aã]o preferencial\b|\bop[cç][aã]o pelos pobres\b|\bpreferencia(?:l)? por los pobres\b|\bpreferential love of the poor\b,no,,,
+scoring_pattern,preferential_option,preferential option,spanish,theology,Theological accents,\bpreferential option\b|\boption for the poor\b|\bopci[oó]n preferencial\b|\bopci[oó]n por los pobres\b|\bop[cç][aã]o preferencial\b|\bop[cç][aã]o pelos pobres\b|\bpreferencia(?:l)? por los pobres\b|\bpreferential love of the poor\b,no,,,
+scoring_pattern,preferential_option,preferential option,portuguese,theology,Theological accents,\bpreferential option\b|\boption for the poor\b|\bopci[oó]n preferencial\b|\bopci[oó]n por los pobres\b|\bop[cç][aã]o preferencial\b|\bop[cç][aã]o pelos pobres\b|\bpreferencia(?:l)? por los pobres\b|\bpreferential love of the poor\b,no,,,
+scoring_pattern,guadalupe,guadalupe,english,theology,Theological accents,\bguadalupe\b|\bour lady of guadalupe\b|\bvirgen de guadalupe\b|\bnuestra se[nñ]ora de guadalupe\b|\bnossa senhora de guadalupe\b,no,,,
+scoring_pattern,guadalupe,guadalupe,spanish,theology,Theological accents,\bguadalupe\b|\bour lady of guadalupe\b|\bvirgen de guadalupe\b|\bnuestra se[nñ]ora de guadalupe\b|\bnossa senhora de guadalupe\b,no,,,
+scoring_pattern,guadalupe,guadalupe,portuguese,theology,Theological accents,\bguadalupe\b|\bour lady of guadalupe\b|\bvirgen de guadalupe\b|\bnuestra se[nñ]ora de guadalupe\b|\bnossa senhora de guadalupe\b,no,,,
+scoring_pattern,marian_devotion,marian devotion,english,theology,Theological accents,"\b(?:Our Lady of|Nuestra Se[nñ]ora de|Nossa Senhora de|Virgen de)\b|\b(?:Marian|Mar[ií]a)\b.{0,40}\b(?:devotion|devoci[oó]n|pilgrimage|peregrinaci[oó]n)\b|\b(?:Fatima|F[aá]tima|Lourdes|Aparecida|Caridad del Cobre|Altagracia|San Juan de los Lagos)\b",no,,,
+scoring_pattern,marian_devotion,marian devotion,spanish,theology,Theological accents,"\b(?:Our Lady of|Nuestra Se[nñ]ora de|Nossa Senhora de|Virgen de)\b|\b(?:Marian|Mar[ií]a)\b.{0,40}\b(?:devotion|devoci[oó]n|pilgrimage|peregrinaci[oó]n)\b|\b(?:Fatima|F[aá]tima|Lourdes|Aparecida|Caridad del Cobre|Altagracia|San Juan de los Lagos)\b",no,,,
+scoring_pattern,marian_devotion,marian devotion,portuguese,theology,Theological accents,"\b(?:Our Lady of|Nuestra Se[nñ]ora de|Nossa Senhora de|Virgen de)\b|\b(?:Marian|Mar[ií]a)\b.{0,40}\b(?:devotion|devoci[oó]n|pilgrimage|peregrinaci[oó]n)\b|\b(?:Fatima|F[aá]tima|Lourdes|Aparecida|Caridad del Cobre|Altagracia|San Juan de los Lagos)\b",no,,,
+scoring_pattern,catholic_social_teaching,catholic social teaching,english,theology,Theological accents,\bcatholic social teaching\b|\bsocial doctrine\b|\bdoctrina social\b|\bdoutrina social\b|\bcommon good\b|\bbien com[uú]n\b|\bbem comum\b|\bhuman dignity\b|\bdignidad humana\b|\bdignidade humana\b|\bsolidarity\b|\bsolidaridad\b|\bsolidariedade\b|\bsubsidiarity\b|\bsubsidiari(?:edad|ty|edade)\b,yes,,,
+scoring_pattern,catholic_social_teaching,catholic social teaching,spanish,theology,Theological accents,\bcatholic social teaching\b|\bsocial doctrine\b|\bdoctrina social\b|\bdoutrina social\b|\bcommon good\b|\bbien com[uú]n\b|\bbem comum\b|\bhuman dignity\b|\bdignidad humana\b|\bdignidade humana\b|\bsolidarity\b|\bsolidaridad\b|\bsolidariedade\b|\bsubsidiarity\b|\bsubsidiari(?:edad|ty|edade)\b,yes,,,
+scoring_pattern,catholic_social_teaching,catholic social teaching,portuguese,theology,Theological accents,\bcatholic social teaching\b|\bsocial doctrine\b|\bdoctrina social\b|\bdoutrina social\b|\bcommon good\b|\bbien com[uú]n\b|\bbem comum\b|\bhuman dignity\b|\bdignidad humana\b|\bdignidade humana\b|\bsolidarity\b|\bsolidaridad\b|\bsolidariedade\b|\bsubsidiarity\b|\bsubsidiari(?:edad|ty|edade)\b,yes,,,
+scoring_pattern,base_communities,base communities,english,theology,Theological accents,\bbase (?:ecclesial |christian )?communit(?:y|ies)\b|\bcomunidades? (?:eclesiales? )?de base\b|\bcomunidades? eclesiais de base\b|\bCEBs?\b|\bcomunidad(?:es)? eclesial(?:es)?\b,no,,,
+scoring_pattern,base_communities,base communities,spanish,theology,Theological accents,\bbase (?:ecclesial |christian )?communit(?:y|ies)\b|\bcomunidades? (?:eclesiales? )?de base\b|\bcomunidades? eclesiais de base\b|\bCEBs?\b|\bcomunidad(?:es)? eclesial(?:es)?\b,no,,,
+scoring_pattern,base_communities,base communities,portuguese,theology,Theological accents,\bbase (?:ecclesial |christian )?communit(?:y|ies)\b|\bcomunidades? (?:eclesiales? )?de base\b|\bcomunidades? eclesiais de base\b|\bCEBs?\b|\bcomunidad(?:es)? eclesial(?:es)?\b,no,,,
+scoring_pattern,oscar_romero,oscar romero,english,theology,Theological accents,\b(?:Oscar|Óscar)\s+Romero\b|\bSan Romero\b|\bSaint Romero\b,no,,,
+scoring_pattern,oscar_romero,oscar romero,spanish,theology,Theological accents,\b(?:Oscar|Óscar)\s+Romero\b|\bSan Romero\b|\bSaint Romero\b,no,,,
+scoring_pattern,oscar_romero,oscar romero,portuguese,theology,Theological accents,\b(?:Oscar|Óscar)\s+Romero\b|\bSan Romero\b|\bSaint Romero\b,no,,,
+scoring_pattern,popular_piety,popular piety,english,theology,Theological accents,\bpopular piety\b|\bpopular religion\b|\bpopular devotion\b|\bpiedad popular\b|\bpiedade popular\b|\breligiosidad popular\b|\breligiosidade popular\b|\bdevoci[oó]n popular\b|\bdevoc[aã]o popular\b|\bfolk Catholicism\b,no,,,
+scoring_pattern,popular_piety,popular piety,spanish,theology,Theological accents,\bpopular piety\b|\bpopular religion\b|\bpopular devotion\b|\bpiedad popular\b|\bpiedade popular\b|\breligiosidad popular\b|\breligiosidade popular\b|\bdevoci[oó]n popular\b|\bdevoc[aã]o popular\b|\bfolk Catholicism\b,no,,,
+scoring_pattern,popular_piety,popular piety,portuguese,theology,Theological accents,\bpopular piety\b|\bpopular religion\b|\bpopular devotion\b|\bpiedad popular\b|\bpiedade popular\b|\breligiosidad popular\b|\breligiosidade popular\b|\bdevoci[oó]n popular\b|\bdevoc[aã]o popular\b|\bfolk Catholicism\b,no,,,
+scoring_pattern,inculturation,inculturation,english,theology,Theological accents,\binculturat\w*\b|\binculturaci[oó]n\b|\benculturaci[oó]n\b|\bincultura[cç][aã]o\b,no,,,
+scoring_pattern,inculturation,inculturation,spanish,theology,Theological accents,\binculturat\w*\b|\binculturaci[oó]n\b|\benculturaci[oó]n\b|\bincultura[cç][aã]o\b,no,,,
+scoring_pattern,inculturation,inculturation,portuguese,theology,Theological accents,\binculturat\w*\b|\binculturaci[oó]n\b|\benculturaci[oó]n\b|\bincultura[cç][aã]o\b,no,,,
+scoring_pattern,sacrament,sacrament,english,theology,Theological accents,\bsacrament(?:s|al)?\b|\bsacramento(?:s)?\b,no,,,
+scoring_pattern,sacrament,sacrament,spanish,theology,Theological accents,\bsacrament(?:s|al)?\b|\bsacramento(?:s)?\b,no,,,
+scoring_pattern,sacrament,sacrament,portuguese,theology,Theological accents,\bsacrament(?:s|al)?\b|\bsacramento(?:s)?\b,no,,,
+scoring_pattern,eucharist,eucharist,english,theology,Theological accents,\beucharist\w*\b|\bholy communion\b|\beucarist[ií]a\b|\bsanta comunión\b|\bsanta comunion\b|\bsanta comunh[aã]o\b,no,,,
+scoring_pattern,eucharist,eucharist,spanish,theology,Theological accents,\beucharist\w*\b|\bholy communion\b|\beucarist[ií]a\b|\bsanta comunión\b|\bsanta comunion\b|\bsanta comunh[aã]o\b,no,,,
+scoring_pattern,eucharist,eucharist,portuguese,theology,Theological accents,\beucharist\w*\b|\bholy communion\b|\beucarist[ií]a\b|\bsanta comunión\b|\bsanta comunion\b|\bsanta comunh[aã]o\b,no,,,
+scoring_pattern,conversion_discipleship,conversion discipleship,english,theology,Theological accents,\bdiscipleship\b|\bdisciple(?:s)? of Christ\b|\bdiscipulado\b|\bconversi[oó]n\b|\bconvers[aã]o\b|\bpersonal conversion\b|\bmetanoia\b,no,,,
+scoring_pattern,conversion_discipleship,conversion discipleship,spanish,theology,Theological accents,\bdiscipleship\b|\bdisciple(?:s)? of Christ\b|\bdiscipulado\b|\bconversi[oó]n\b|\bconvers[aã]o\b|\bpersonal conversion\b|\bmetanoia\b,no,,,
+scoring_pattern,conversion_discipleship,conversion discipleship,portuguese,theology,Theological accents,\bdiscipleship\b|\bdisciple(?:s)? of Christ\b|\bdiscipulado\b|\bconversi[oó]n\b|\bconvers[aã]o\b|\bpersonal conversion\b|\bmetanoia\b,no,,,
+scoring_pattern,synodality,synodality,english,theology,Theological accents,\bsynodality\b|\bsinodalidad\b|\bsinodalidade\b|\bsynodal church\b|\biglesia sinodal\b|\bigreja sinodal\b,no,,,
+scoring_pattern,synodality,synodality,spanish,theology,Theological accents,\bsynodality\b|\bsinodalidad\b|\bsinodalidade\b|\bsynodal church\b|\biglesia sinodal\b|\bigreja sinodal\b,no,,,
+scoring_pattern,synodality,synodality,portuguese,theology,Theological accents,\bsynodality\b|\bsinodalidad\b|\bsinodalidade\b|\bsynodal church\b|\biglesia sinodal\b|\bigreja sinodal\b,no,,,
+scoring_pattern,laudato_si,laudato si,english,theology,Theological accents,\blaudato\s+s[ií]['\u2019´`]?\b|\bcuidado de la casa com[uú]n\b|\bcuidado da casa comum\b|\bcare for (?:our |the )?common home\b,yes,,,
+scoring_pattern,laudato_si,laudato si,spanish,theology,Theological accents,\blaudato\s+s[ií]['\u2019´`]?\b|\bcuidado de la casa com[uú]n\b|\bcuidado da casa comum\b|\bcare for (?:our |the )?common home\b,yes,,,
+scoring_pattern,laudato_si,laudato si,portuguese,theology,Theological accents,\blaudato\s+s[ií]['\u2019´`]?\b|\bcuidado de la casa com[uú]n\b|\bcuidado da casa comum\b|\bcare for (?:our |the )?common home\b,yes,,,
+scoring_pattern,fratelli_tutti,fratelli tutti,english,theology,Theological accents,\bfratelli tutti\b|\btodos hermanos\b|\btodos somos hermanos\b|\btodos irm[aã]os\b|\bbrothers and sisters all\b,yes,,,
+scoring_pattern,fratelli_tutti,fratelli tutti,spanish,theology,Theological accents,\bfratelli tutti\b|\btodos hermanos\b|\btodos somos hermanos\b|\btodos irm[aã]os\b|\bbrothers and sisters all\b,yes,,,
+scoring_pattern,fratelli_tutti,fratelli tutti,portuguese,theology,Theological accents,\bfratelli tutti\b|\btodos hermanos\b|\btodos somos hermanos\b|\btodos irm[aã]os\b|\bbrothers and sisters all\b,yes,,,
+scoring_pattern,evangelii_nuntiandi,evangelii nuntiandi,english,theology,Theological accents,\bevangelii nuntiandi\b,yes,,,
+scoring_pattern,evangelii_nuntiandi,evangelii nuntiandi,spanish,theology,Theological accents,\bevangelii nuntiandi\b,yes,,,
+scoring_pattern,evangelii_nuntiandi,evangelii nuntiandi,portuguese,theology,Theological accents,\bevangelii nuntiandi\b,yes,,,
+scoring_pattern,redemptoris_missio,redemptoris missio,english,theology,Theological accents,\bredemptoris missio\b|\bmission of the redeemer\b,yes,,,
+scoring_pattern,redemptoris_missio,redemptoris missio,spanish,theology,Theological accents,\bredemptoris missio\b|\bmission of the redeemer\b,yes,,,
+scoring_pattern,redemptoris_missio,redemptoris missio,portuguese,theology,Theological accents,\bredemptoris missio\b|\bmission of the redeemer\b,yes,,,
+scoring_pattern,rerum_novarum,rerum novarum,english,theology,Theological accents,\brerum novarum\b,yes,,,
+scoring_pattern,rerum_novarum,rerum novarum,spanish,theology,Theological accents,\brerum novarum\b,yes,,,
+scoring_pattern,rerum_novarum,rerum novarum,portuguese,theology,Theological accents,\brerum novarum\b,yes,,,
+scoring_pattern,quadragesimo_anno,quadragesimo anno,english,theology,Theological accents,\bquadragesimo anno\b,yes,,,
+scoring_pattern,quadragesimo_anno,quadragesimo anno,spanish,theology,Theological accents,\bquadragesimo anno\b,yes,,,
+scoring_pattern,quadragesimo_anno,quadragesimo anno,portuguese,theology,Theological accents,\bquadragesimo anno\b,yes,,,
+scoring_pattern,divini_redemptoris,divini redemptoris,english,theology,Theological accents,\bdivini redemptoris\b,yes,,,
+scoring_pattern,divini_redemptoris,divini redemptoris,spanish,theology,Theological accents,\bdivini redemptoris\b,yes,,,
+scoring_pattern,divini_redemptoris,divini redemptoris,portuguese,theology,Theological accents,\bdivini redemptoris\b,yes,,,
+scoring_pattern,mater_et_magistra,mater et magistra,english,theology,Theological accents,\bmater et magistra\b|\bmother and teacher\b|\bmadre y maestra\b,yes,,,
+scoring_pattern,mater_et_magistra,mater et magistra,spanish,theology,Theological accents,\bmater et magistra\b|\bmother and teacher\b|\bmadre y maestra\b,yes,,,
+scoring_pattern,mater_et_magistra,mater et magistra,portuguese,theology,Theological accents,\bmater et magistra\b|\bmother and teacher\b|\bmadre y maestra\b,yes,,,
+scoring_pattern,pacem_in_terris,pacem in terris,english,theology,Theological accents,\bpacem in terris\b|\bpeace on earth\b|\bpaz en la tierra\b,yes,,,
+scoring_pattern,pacem_in_terris,pacem in terris,spanish,theology,Theological accents,\bpacem in terris\b|\bpeace on earth\b|\bpaz en la tierra\b,yes,,,
+scoring_pattern,pacem_in_terris,pacem in terris,portuguese,theology,Theological accents,\bpacem in terris\b|\bpeace on earth\b|\bpaz en la tierra\b,yes,,,
+scoring_pattern,populorum_progressio,populorum progressio,english,theology,Theological accents,\bpopulorum progressio\b|\bdevelopment of peoples\b|\bdesarrollo de los pueblos\b,yes,,,
+scoring_pattern,populorum_progressio,populorum progressio,spanish,theology,Theological accents,\bpopulorum progressio\b|\bdevelopment of peoples\b|\bdesarrollo de los pueblos\b,yes,,,
+scoring_pattern,populorum_progressio,populorum progressio,portuguese,theology,Theological accents,\bpopulorum progressio\b|\bdevelopment of peoples\b|\bdesarrollo de los pueblos\b,yes,,,
+scoring_pattern,octogesima_adveniens,octogesima adveniens,english,theology,Theological accents,\boctogesima adveniens\b,yes,,,
+scoring_pattern,octogesima_adveniens,octogesima adveniens,spanish,theology,Theological accents,\boctogesima adveniens\b,yes,,,
+scoring_pattern,octogesima_adveniens,octogesima adveniens,portuguese,theology,Theological accents,\boctogesima adveniens\b,yes,,,
+scoring_pattern,laborem_exercens,laborem exercens,english,theology,Theological accents,\blaborem exercens\b|\bon human work\b|\btrabajo humano\b,yes,,,
+scoring_pattern,laborem_exercens,laborem exercens,spanish,theology,Theological accents,\blaborem exercens\b|\bon human work\b|\btrabajo humano\b,yes,,,
+scoring_pattern,laborem_exercens,laborem exercens,portuguese,theology,Theological accents,\blaborem exercens\b|\bon human work\b|\btrabajo humano\b,yes,,,
+scoring_pattern,familiaris_consortio,familiaris consortio,english,theology,Theological accents,\bfamiliaris consortio\b,yes,,,
+scoring_pattern,familiaris_consortio,familiaris consortio,spanish,theology,Theological accents,\bfamiliaris consortio\b,yes,,,
+scoring_pattern,familiaris_consortio,familiaris consortio,portuguese,theology,Theological accents,\bfamiliaris consortio\b,yes,,,
+scoring_pattern,sollicitudo_rei_socialis,sollicitudo rei socialis,english,theology,Theological accents,\bsollicitudo rei socialis\b|\bon social concern\b,yes,,,
+scoring_pattern,sollicitudo_rei_socialis,sollicitudo rei socialis,spanish,theology,Theological accents,\bsollicitudo rei socialis\b|\bon social concern\b,yes,,,
+scoring_pattern,sollicitudo_rei_socialis,sollicitudo rei socialis,portuguese,theology,Theological accents,\bsollicitudo rei socialis\b|\bon social concern\b,yes,,,
+scoring_pattern,christifideles_laici,christifideles laici,english,theology,Theological accents,\bchristifideles laici\b,yes,,,
+scoring_pattern,christifideles_laici,christifideles laici,spanish,theology,Theological accents,\bchristifideles laici\b,yes,,,
+scoring_pattern,christifideles_laici,christifideles laici,portuguese,theology,Theological accents,\bchristifideles laici\b,yes,,,
+scoring_pattern,centesimus_annus,centesimus annus,english,theology,Theological accents,\bcentesimus annus\b,yes,,,
+scoring_pattern,centesimus_annus,centesimus annus,spanish,theology,Theological accents,\bcentesimus annus\b,yes,,,
+scoring_pattern,centesimus_annus,centesimus annus,portuguese,theology,Theological accents,\bcentesimus annus\b,yes,,,
+scoring_pattern,evangelium_vitae,evangelium vitae,english,theology,Theological accents,\bevangelium vitae\b|\bgospel of life\b|\bevangelio de la vida\b,yes,,,
+scoring_pattern,evangelium_vitae,evangelium vitae,spanish,theology,Theological accents,\bevangelium vitae\b|\bgospel of life\b|\bevangelio de la vida\b,yes,,,
+scoring_pattern,evangelium_vitae,evangelium vitae,portuguese,theology,Theological accents,\bevangelium vitae\b|\bgospel of life\b|\bevangelio de la vida\b,yes,,,
+scoring_pattern,fides_et_ratio,fides et ratio,english,theology,Theological accents,\bfides et ratio\b|\bfaith and reason\b|\bfe y raz[oó]n\b,yes,,,
+scoring_pattern,fides_et_ratio,fides et ratio,spanish,theology,Theological accents,\bfides et ratio\b|\bfaith and reason\b|\bfe y raz[oó]n\b,yes,,,
+scoring_pattern,fides_et_ratio,fides et ratio,portuguese,theology,Theological accents,\bfides et ratio\b|\bfaith and reason\b|\bfe y raz[oó]n\b,yes,,,
+scoring_pattern,deus_caritas_est,deus caritas est,english,theology,Theological accents,\bdeus caritas est\b|\bgod is love\b|\bdios es amor\b,yes,,,
+scoring_pattern,deus_caritas_est,deus caritas est,spanish,theology,Theological accents,\bdeus caritas est\b|\bgod is love\b|\bdios es amor\b,yes,,,
+scoring_pattern,deus_caritas_est,deus caritas est,portuguese,theology,Theological accents,\bdeus caritas est\b|\bgod is love\b|\bdios es amor\b,yes,,,
+scoring_pattern,spe_salvi,spe salvi,english,theology,Theological accents,\bspe salvi\b|\bsaved in hope\b|\bsalvados en esperanza\b,yes,,,
+scoring_pattern,spe_salvi,spe salvi,spanish,theology,Theological accents,\bspe salvi\b|\bsaved in hope\b|\bsalvados en esperanza\b,yes,,,
+scoring_pattern,spe_salvi,spe salvi,portuguese,theology,Theological accents,\bspe salvi\b|\bsaved in hope\b|\bsalvados en esperanza\b,yes,,,
+scoring_pattern,amoris_laetitia,amoris laetitia,english,theology,Theological accents,\bamoris laetitia\b|\bla alegr[ií]a del amor\b|\ba alegria do amor\b|\bjoy of love\b,yes,,,
+scoring_pattern,amoris_laetitia,amoris laetitia,spanish,theology,Theological accents,\bamoris laetitia\b|\bla alegr[ií]a del amor\b|\ba alegria do amor\b|\bjoy of love\b,yes,,,
+scoring_pattern,amoris_laetitia,amoris laetitia,portuguese,theology,Theological accents,\bamoris laetitia\b|\bla alegr[ií]a del amor\b|\ba alegria do amor\b|\bjoy of love\b,yes,,,
+scoring_pattern,lumen_fidei,lumen fidei,english,theology,Theological accents,\blumen fidei\b|\bla luz de la fe\b|\blight of faith\b,yes,,,
+scoring_pattern,lumen_fidei,lumen fidei,spanish,theology,Theological accents,\blumen fidei\b|\bla luz de la fe\b|\blight of faith\b,yes,,,
+scoring_pattern,lumen_fidei,lumen fidei,portuguese,theology,Theological accents,\blumen fidei\b|\bla luz de la fe\b|\blight of faith\b,yes,,,
+scoring_pattern,caritas_in_veritate,caritas in veritate,english,theology,Theological accents,\bcaritas in veritate\b|\bcharity in truth\b|\bcaridad en la verdad\b,yes,,,
+scoring_pattern,caritas_in_veritate,caritas in veritate,spanish,theology,Theological accents,\bcaritas in veritate\b|\bcharity in truth\b|\bcaridad en la verdad\b,yes,,,
+scoring_pattern,caritas_in_veritate,caritas in veritate,portuguese,theology,Theological accents,\bcaritas in veritate\b|\bcharity in truth\b|\bcaridad en la verdad\b,yes,,,
+scoring_pattern,gaudete_et_exsultate,gaudete et exsultate,english,theology,Theological accents,\bgaudete et exsultate\b|\brejoice and be glad\b,yes,,,
+scoring_pattern,gaudete_et_exsultate,gaudete et exsultate,spanish,theology,Theological accents,\bgaudete et exsultate\b|\brejoice and be glad\b,yes,,,
+scoring_pattern,gaudete_et_exsultate,gaudete et exsultate,portuguese,theology,Theological accents,\bgaudete et exsultate\b|\brejoice and be glad\b,yes,,,
+scoring_pattern,christus_vivit,christus vivit,english,theology,Theological accents,\bchristus vivit\b|\bchrist is alive\b|\bcristo vive\b,yes,,,
+scoring_pattern,christus_vivit,christus vivit,spanish,theology,Theological accents,\bchristus vivit\b|\bchrist is alive\b|\bcristo vive\b,yes,,,
+scoring_pattern,christus_vivit,christus vivit,portuguese,theology,Theological accents,\bchristus vivit\b|\bchrist is alive\b|\bcristo vive\b,yes,,,
+scoring_pattern,querida_amazonia,querida amazonia,english,theology,Theological accents,\bquerida amazon[ií]a\b|\bbeloved amazon\b,yes,,,
+scoring_pattern,querida_amazonia,querida amazonia,spanish,theology,Theological accents,\bquerida amazon[ií]a\b|\bbeloved amazon\b,yes,,,
+scoring_pattern,querida_amazonia,querida amazonia,portuguese,theology,Theological accents,\bquerida amazon[ií]a\b|\bbeloved amazon\b,yes,,,
+scoring_pattern,laudate_deum,laudate deum,english,theology,Theological accents,\blaudate deum\b,yes,,,
+scoring_pattern,laudate_deum,laudate deum,spanish,theology,Theological accents,\blaudate deum\b,yes,,,
+scoring_pattern,laudate_deum,laudate deum,portuguese,theology,Theological accents,\blaudate deum\b,yes,,,
+scoring_pattern,dilexit_nos,dilexit nos,english,theology,Theological accents,\bdilexit nos\b|\bhe loved us\b,yes,,,
+scoring_pattern,dilexit_nos,dilexit nos,spanish,theology,Theological accents,\bdilexit nos\b|\bhe loved us\b,yes,,,
+scoring_pattern,dilexit_nos,dilexit nos,portuguese,theology,Theological accents,\bdilexit nos\b|\bhe loved us\b,yes,,,
+scoring_pattern,magnifica_humanitas,magnifica humanitas,english,theology,Theological accents,\bmagnifica humanitas\b|\bmagnificent humanity\b|\bmagn[ií]fica humanidad\b|\bmagn[ií]fica humanidade\b|\bsafeguarding the human person\b|\bcustodia de la persona humana\b|\bsalvaguarda da pessoa humana\b,yes,,,
+scoring_pattern,magnifica_humanitas,magnifica humanitas,spanish,theology,Theological accents,\bmagnifica humanitas\b|\bmagnificent humanity\b|\bmagn[ií]fica humanidad\b|\bmagn[ií]fica humanidade\b|\bsafeguarding the human person\b|\bcustodia de la persona humana\b|\bsalvaguarda da pessoa humana\b,yes,,,
+scoring_pattern,magnifica_humanitas,magnifica humanitas,portuguese,theology,Theological accents,\bmagnifica humanitas\b|\bmagnificent humanity\b|\bmagn[ií]fica humanidad\b|\bmagn[ií]fica humanidade\b|\bsafeguarding the human person\b|\bcustodia de la persona humana\b|\bsalvaguarda da pessoa humana\b,yes,,,
+papal_document,rerum_novarum,Rerum Novarum,english,theology,Theological accents,Rerum Novarum,yes,Leo XIII,1891,encyclical
+papal_document,rerum_novarum,Rerum Novarum,spanish,theology,Theological accents,Rerum Novarum,yes,Leo XIII,1891,encyclical
+papal_document,rerum_novarum,Rerum Novarum,portuguese,theology,Theological accents,Rerum Novarum,yes,Leo XIII,1891,encyclical
+papal_document,quadragesimo_anno,Quadragesimo Anno,english,theology,Theological accents,Quadragesimo Anno,yes,Pius XI,1931,encyclical
+papal_document,quadragesimo_anno,Quadragesimo Anno,spanish,theology,Theological accents,Quadragesimo Anno,yes,Pius XI,1931,encyclical
+papal_document,quadragesimo_anno,Quadragesimo Anno,portuguese,theology,Theological accents,Quadragesimo Anno,yes,Pius XI,1931,encyclical
+papal_document,divini_redemptoris,Divini Redemptoris,english,theology,Theological accents,Divini Redemptoris,yes,Pius XI,1937,encyclical
+papal_document,divini_redemptoris,Divini Redemptoris,spanish,theology,Theological accents,Divini Redemptoris,yes,Pius XI,1937,encyclical
+papal_document,divini_redemptoris,Divini Redemptoris,portuguese,theology,Theological accents,Divini Redemptoris,yes,Pius XI,1937,encyclical
+papal_document,mater_et_magistra,Mater et Magistra,english,theology,Theological accents,Mater et Magistra,yes,John XXIII,1961,encyclical
+papal_document,mater_et_magistra,Mater et Magistra,spanish,theology,Theological accents,Mater et Magistra,yes,John XXIII,1961,encyclical
+papal_document,mater_et_magistra,Mater et Magistra,portuguese,theology,Theological accents,Mater et Magistra,yes,John XXIII,1961,encyclical
+papal_document,pacem_in_terris,Pacem in Terris,english,theology,Theological accents,Pacem in Terris,yes,John XXIII,1963,encyclical
+papal_document,pacem_in_terris,Pacem in Terris,spanish,theology,Theological accents,Pacem in Terris,yes,John XXIII,1963,encyclical
+papal_document,pacem_in_terris,Pacem in Terris,portuguese,theology,Theological accents,Pacem in Terris,yes,John XXIII,1963,encyclical
+papal_document,populorum_progressio,Populorum Progressio,english,theology,Theological accents,Populorum Progressio,yes,Paul VI,1967,encyclical
+papal_document,populorum_progressio,Populorum Progressio,spanish,theology,Theological accents,Populorum Progressio,yes,Paul VI,1967,encyclical
+papal_document,populorum_progressio,Populorum Progressio,portuguese,theology,Theological accents,Populorum Progressio,yes,Paul VI,1967,encyclical
+papal_document,octogesima_adveniens,Octogesima Adveniens,english,theology,Theological accents,Octogesima Adveniens,yes,Paul VI,1971,apostolic_letter
+papal_document,octogesima_adveniens,Octogesima Adveniens,spanish,theology,Theological accents,Octogesima Adveniens,yes,Paul VI,1971,apostolic_letter
+papal_document,octogesima_adveniens,Octogesima Adveniens,portuguese,theology,Theological accents,Octogesima Adveniens,yes,Paul VI,1971,apostolic_letter
+papal_document,evangelii_nuntiandi,Evangelii Nuntiandi,english,theology,Theological accents,Evangelii Nuntiandi,yes,Paul VI,1975,apostolic_exhortation
+papal_document,evangelii_nuntiandi,Evangelii Nuntiandi,spanish,theology,Theological accents,Evangelii Nuntiandi,yes,Paul VI,1975,apostolic_exhortation
+papal_document,evangelii_nuntiandi,Evangelii Nuntiandi,portuguese,theology,Theological accents,Evangelii Nuntiandi,yes,Paul VI,1975,apostolic_exhortation
+papal_document,laborem_exercens,Laborem Exercens,english,theology,Theological accents,Laborem Exercens,yes,John Paul II,1981,encyclical
+papal_document,laborem_exercens,Laborem Exercens,spanish,theology,Theological accents,Laborem Exercens,yes,John Paul II,1981,encyclical
+papal_document,laborem_exercens,Laborem Exercens,portuguese,theology,Theological accents,Laborem Exercens,yes,John Paul II,1981,encyclical
+papal_document,familiaris_consortio,Familiaris Consortio,english,theology,Theological accents,Familiaris Consortio,yes,John Paul II,1981,apostolic_exhortation
+papal_document,familiaris_consortio,Familiaris Consortio,spanish,theology,Theological accents,Familiaris Consortio,yes,John Paul II,1981,apostolic_exhortation
+papal_document,familiaris_consortio,Familiaris Consortio,portuguese,theology,Theological accents,Familiaris Consortio,yes,John Paul II,1981,apostolic_exhortation
+papal_document,sollicitudo_rei_socialis,Sollicitudo Rei Socialis,english,theology,Theological accents,Sollicitudo Rei Socialis,yes,John Paul II,1987,encyclical
+papal_document,sollicitudo_rei_socialis,Sollicitudo Rei Socialis,spanish,theology,Theological accents,Sollicitudo Rei Socialis,yes,John Paul II,1987,encyclical
+papal_document,sollicitudo_rei_socialis,Sollicitudo Rei Socialis,portuguese,theology,Theological accents,Sollicitudo Rei Socialis,yes,John Paul II,1987,encyclical
+papal_document,christifideles_laici,Christifideles Laici,english,theology,Theological accents,Christifideles Laici,yes,John Paul II,1988,apostolic_exhortation
+papal_document,christifideles_laici,Christifideles Laici,spanish,theology,Theological accents,Christifideles Laici,yes,John Paul II,1988,apostolic_exhortation
+papal_document,christifideles_laici,Christifideles Laici,portuguese,theology,Theological accents,Christifideles Laici,yes,John Paul II,1988,apostolic_exhortation
+papal_document,redemptoris_missio,Redemptoris Missio,english,theology,Theological accents,Redemptoris Missio,yes,John Paul II,1990,encyclical
+papal_document,redemptoris_missio,Redemptoris Missio,spanish,theology,Theological accents,Redemptoris Missio,yes,John Paul II,1990,encyclical
+papal_document,redemptoris_missio,Redemptoris Missio,portuguese,theology,Theological accents,Redemptoris Missio,yes,John Paul II,1990,encyclical
+papal_document,centesimus_annus,Centesimus Annus,english,theology,Theological accents,Centesimus Annus,yes,John Paul II,1991,encyclical
+papal_document,centesimus_annus,Centesimus Annus,spanish,theology,Theological accents,Centesimus Annus,yes,John Paul II,1991,encyclical
+papal_document,centesimus_annus,Centesimus Annus,portuguese,theology,Theological accents,Centesimus Annus,yes,John Paul II,1991,encyclical
+papal_document,evangelium_vitae,Evangelium Vitae,english,theology,Theological accents,Evangelium Vitae,yes,John Paul II,1995,encyclical
+papal_document,evangelium_vitae,Evangelium Vitae,spanish,theology,Theological accents,Evangelium Vitae,yes,John Paul II,1995,encyclical
+papal_document,evangelium_vitae,Evangelium Vitae,portuguese,theology,Theological accents,Evangelium Vitae,yes,John Paul II,1995,encyclical
+papal_document,fides_et_ratio,Fides et Ratio,english,theology,Theological accents,Fides et Ratio,yes,John Paul II,1998,encyclical
+papal_document,fides_et_ratio,Fides et Ratio,spanish,theology,Theological accents,Fides et Ratio,yes,John Paul II,1998,encyclical
+papal_document,fides_et_ratio,Fides et Ratio,portuguese,theology,Theological accents,Fides et Ratio,yes,John Paul II,1998,encyclical
+papal_document,deus_caritas_est,Deus Caritas Est,english,theology,Theological accents,Deus Caritas Est,yes,Benedict XVI,2005,encyclical
+papal_document,deus_caritas_est,Deus Caritas Est,spanish,theology,Theological accents,Deus Caritas Est,yes,Benedict XVI,2005,encyclical
+papal_document,deus_caritas_est,Deus Caritas Est,portuguese,theology,Theological accents,Deus Caritas Est,yes,Benedict XVI,2005,encyclical
+papal_document,spe_salvi,Spe Salvi,english,theology,Theological accents,Spe Salvi,yes,Benedict XVI,2007,encyclical
+papal_document,spe_salvi,Spe Salvi,spanish,theology,Theological accents,Spe Salvi,yes,Benedict XVI,2007,encyclical
+papal_document,spe_salvi,Spe Salvi,portuguese,theology,Theological accents,Spe Salvi,yes,Benedict XVI,2007,encyclical
+papal_document,caritas_in_veritate,Caritas in Veritate,english,theology,Theological accents,Caritas in Veritate,yes,Benedict XVI,2009,encyclical
+papal_document,caritas_in_veritate,Caritas in Veritate,spanish,theology,Theological accents,Caritas in Veritate,yes,Benedict XVI,2009,encyclical
+papal_document,caritas_in_veritate,Caritas in Veritate,portuguese,theology,Theological accents,Caritas in Veritate,yes,Benedict XVI,2009,encyclical
+papal_document,lumen_fidei,Lumen Fidei,english,theology,Theological accents,Lumen Fidei,yes,Francis,2013,encyclical
+papal_document,lumen_fidei,Lumen Fidei,spanish,theology,Theological accents,Lumen Fidei,yes,Francis,2013,encyclical
+papal_document,lumen_fidei,Lumen Fidei,portuguese,theology,Theological accents,Lumen Fidei,yes,Francis,2013,encyclical
+papal_document,evangelii_gaudium,Evangelii Gaudium,english,theology,Theological accents,Evangelii Gaudium,yes,Francis,2013,apostolic_exhortation
+papal_document,evangelii_gaudium,Evangelii Gaudium,spanish,theology,Theological accents,Evangelii Gaudium,yes,Francis,2013,apostolic_exhortation
+papal_document,evangelii_gaudium,Evangelii Gaudium,portuguese,theology,Theological accents,Evangelii Gaudium,yes,Francis,2013,apostolic_exhortation
+papal_document,laudato_si,Laudato Si,english,theology,Theological accents,Laudato Si,yes,Francis,2015,encyclical
+papal_document,laudato_si,Laudato Si,spanish,theology,Theological accents,Laudato Si,yes,Francis,2015,encyclical
+papal_document,laudato_si,Laudato Si,portuguese,theology,Theological accents,Laudato Si,yes,Francis,2015,encyclical
+papal_document,amoris_laetitia,Amoris Laetitia,english,theology,Theological accents,Amoris Laetitia,yes,Francis,2016,apostolic_exhortation
+papal_document,amoris_laetitia,Amoris Laetitia,spanish,theology,Theological accents,Amoris Laetitia,yes,Francis,2016,apostolic_exhortation
+papal_document,amoris_laetitia,Amoris Laetitia,portuguese,theology,Theological accents,Amoris Laetitia,yes,Francis,2016,apostolic_exhortation
+papal_document,gaudete_et_exsultate,Gaudete et Exsultate,english,theology,Theological accents,Gaudete et Exsultate,yes,Francis,2018,apostolic_exhortation
+papal_document,gaudete_et_exsultate,Gaudete et Exsultate,spanish,theology,Theological accents,Gaudete et Exsultate,yes,Francis,2018,apostolic_exhortation
+papal_document,gaudete_et_exsultate,Gaudete et Exsultate,portuguese,theology,Theological accents,Gaudete et Exsultate,yes,Francis,2018,apostolic_exhortation
+papal_document,christus_vivit,Christus Vivit,english,theology,Theological accents,Christus Vivit,yes,Francis,2019,apostolic_exhortation
+papal_document,christus_vivit,Christus Vivit,spanish,theology,Theological accents,Christus Vivit,yes,Francis,2019,apostolic_exhortation
+papal_document,christus_vivit,Christus Vivit,portuguese,theology,Theological accents,Christus Vivit,yes,Francis,2019,apostolic_exhortation
+papal_document,querida_amazonia,Querida Amazonia,english,theology,Theological accents,Querida Amazonia,yes,Francis,2020,apostolic_exhortation
+papal_document,querida_amazonia,Querida Amazonia,spanish,theology,Theological accents,Querida Amazonia,yes,Francis,2020,apostolic_exhortation
+papal_document,querida_amazonia,Querida Amazonia,portuguese,theology,Theological accents,Querida Amazonia,yes,Francis,2020,apostolic_exhortation
+papal_document,fratelli_tutti,Fratelli Tutti,english,theology,Theological accents,Fratelli Tutti,yes,Francis,2020,encyclical
+papal_document,fratelli_tutti,Fratelli Tutti,spanish,theology,Theological accents,Fratelli Tutti,yes,Francis,2020,encyclical
+papal_document,fratelli_tutti,Fratelli Tutti,portuguese,theology,Theological accents,Fratelli Tutti,yes,Francis,2020,encyclical
+papal_document,laudate_deum,Laudate Deum,english,theology,Theological accents,Laudate Deum,yes,Francis,2023,apostolic_exhortation
+papal_document,laudate_deum,Laudate Deum,spanish,theology,Theological accents,Laudate Deum,yes,Francis,2023,apostolic_exhortation
+papal_document,laudate_deum,Laudate Deum,portuguese,theology,Theological accents,Laudate Deum,yes,Francis,2023,apostolic_exhortation
+papal_document,dilexit_nos,Dilexit Nos,english,theology,Theological accents,Dilexit Nos,yes,Francis,2024,encyclical
+papal_document,dilexit_nos,Dilexit Nos,spanish,theology,Theological accents,Dilexit Nos,yes,Francis,2024,encyclical
+papal_document,dilexit_nos,Dilexit Nos,portuguese,theology,Theological accents,Dilexit Nos,yes,Francis,2024,encyclical
+papal_document,magnifica_humanitas,Magnifica Humanitas,english,theology,Theological accents,Magnifica Humanitas,yes,Leo XIV,2026,encyclical
+papal_document,magnifica_humanitas,Magnifica Humanitas,spanish,theology,Theological accents,Magnifica Humanitas,yes,Leo XIV,2026,encyclical
+papal_document,magnifica_humanitas,Magnifica Humanitas,portuguese,theology,Theological accents,Magnifica Humanitas,yes,Leo XIV,2026,encyclical
+collection_keyword,,evangelization,english,collection,Harvest / collection gate,evangelization,no,,,
+collection_keyword,,new evangelization,english,collection,Harvest / collection gate,new evangelization,no,,,
+collection_keyword,,missionary,english,collection,Harvest / collection gate,missionary,no,,,
+collection_keyword,,pastoral,english,collection,Harvest / collection gate,pastoral,no,,,
+collection_keyword,,catechesis,english,collection,Harvest / collection gate,catechesis,no,,,
+collection_keyword,,kerygma,english,collection,Harvest / collection gate,kerygma,no,,,
+collection_keyword,,liberation theology,english,collection,Harvest / collection gate,liberation theology,no,,,
+collection_keyword,,preferential option,english,collection,Harvest / collection gate,preferential option,no,,,
+collection_keyword,,inculturation,english,collection,Harvest / collection gate,inculturation,no,,,
+collection_keyword,,Our Lady of Guadalupe,english,collection,Harvest / collection gate,Our Lady of Guadalupe,no,,,
+collection_keyword,,discipleship,english,collection,Harvest / collection gate,discipleship,no,,,
+collection_keyword,,preferential option for the poor,english,collection,Harvest / collection gate,preferential option for the poor,no,,,
+collection_keyword,,Rerum Novarum,english,collection,Harvest / collection gate,Rerum Novarum,no,,,
+collection_keyword,,Quadragesimo Anno,english,collection,Harvest / collection gate,Quadragesimo Anno,no,,,
+collection_keyword,,Divini Redemptoris,english,collection,Harvest / collection gate,Divini Redemptoris,no,,,
+collection_keyword,,Mater et Magistra,english,collection,Harvest / collection gate,Mater et Magistra,no,,,
+collection_keyword,,Pacem in Terris,english,collection,Harvest / collection gate,Pacem in Terris,no,,,
+collection_keyword,,Populorum Progressio,english,collection,Harvest / collection gate,Populorum Progressio,no,,,
+collection_keyword,,Octogesima Adveniens,english,collection,Harvest / collection gate,Octogesima Adveniens,no,,,
+collection_keyword,,Evangelii Nuntiandi,english,collection,Harvest / collection gate,Evangelii Nuntiandi,no,,,
+collection_keyword,,Laborem Exercens,english,collection,Harvest / collection gate,Laborem Exercens,no,,,
+collection_keyword,,Familiaris Consortio,english,collection,Harvest / collection gate,Familiaris Consortio,no,,,
+collection_keyword,,Sollicitudo Rei Socialis,english,collection,Harvest / collection gate,Sollicitudo Rei Socialis,no,,,
+collection_keyword,,Christifideles Laici,english,collection,Harvest / collection gate,Christifideles Laici,no,,,
+collection_keyword,,Redemptoris Missio,english,collection,Harvest / collection gate,Redemptoris Missio,no,,,
+collection_keyword,,Centesimus Annus,english,collection,Harvest / collection gate,Centesimus Annus,no,,,
+collection_keyword,,Evangelium Vitae,english,collection,Harvest / collection gate,Evangelium Vitae,no,,,
+collection_keyword,,Fides et Ratio,english,collection,Harvest / collection gate,Fides et Ratio,no,,,
+collection_keyword,,Deus Caritas Est,english,collection,Harvest / collection gate,Deus Caritas Est,no,,,
+collection_keyword,,Spe Salvi,english,collection,Harvest / collection gate,Spe Salvi,no,,,
+collection_keyword,,Caritas in Veritate,english,collection,Harvest / collection gate,Caritas in Veritate,no,,,
+collection_keyword,,Lumen Fidei,english,collection,Harvest / collection gate,Lumen Fidei,no,,,
+collection_keyword,,Evangelii Gaudium,english,collection,Harvest / collection gate,Evangelii Gaudium,no,,,
+collection_keyword,,Laudato Si,english,collection,Harvest / collection gate,Laudato Si,no,,,
+collection_keyword,,Amoris Laetitia,english,collection,Harvest / collection gate,Amoris Laetitia,no,,,
+collection_keyword,,Gaudete et Exsultate,english,collection,Harvest / collection gate,Gaudete et Exsultate,no,,,
+collection_keyword,,Christus Vivit,english,collection,Harvest / collection gate,Christus Vivit,no,,,
+collection_keyword,,Querida Amazonia,english,collection,Harvest / collection gate,Querida Amazonia,no,,,
+collection_keyword,,Fratelli Tutti,english,collection,Harvest / collection gate,Fratelli Tutti,no,,,
+collection_keyword,,Laudate Deum,english,collection,Harvest / collection gate,Laudate Deum,no,,,
+collection_keyword,,Dilexit Nos,english,collection,Harvest / collection gate,Dilexit Nos,no,,,
+collection_keyword,,Magnifica Humanitas,english,collection,Harvest / collection gate,Magnifica Humanitas,no,,,
+collection_keyword,,Catholic social teaching,english,collection,Harvest / collection gate,Catholic social teaching,no,,,
+collection_keyword,,Catholic social doctrine,english,collection,Harvest / collection gate,Catholic social doctrine,no,,,
+collection_keyword,,social encyclical,english,collection,Harvest / collection gate,social encyclical,no,,,
+collection_keyword,,papal encyclical,english,collection,Harvest / collection gate,papal encyclical,no,,,
+collection_keyword,,evangelización,spanish,collection,Harvest / collection gate,evangelización,no,,,
+collection_keyword,,evangelizacion,spanish,collection,Harvest / collection gate,evangelizacion,no,,,
+collection_keyword,,nueva evangelización,spanish,collection,Harvest / collection gate,nueva evangelización,no,,,
+collection_keyword,,misión,spanish,collection,Harvest / collection gate,misión,no,,,
+collection_keyword,,misionero,spanish,collection,Harvest / collection gate,misionero,no,,,
+collection_keyword,,pastoral,spanish,collection,Harvest / collection gate,pastoral,no,,,
+collection_keyword,,catequesis,spanish,collection,Harvest / collection gate,catequesis,no,,,
+collection_keyword,,evangelio,spanish,collection,Harvest / collection gate,evangelio,no,,,
+collection_keyword,,testimonio,spanish,collection,Harvest / collection gate,testimonio,no,,,
+collection_keyword,,teología de la liberación,spanish,collection,Harvest / collection gate,teología de la liberación,no,,,
+collection_keyword,,opción preferencial,spanish,collection,Harvest / collection gate,opción preferencial,no,,,
+collection_keyword,,inculturación,spanish,collection,Harvest / collection gate,inculturación,no,,,
+collection_keyword,,Virgen de Guadalupe,spanish,collection,Harvest / collection gate,Virgen de Guadalupe,no,,,
+collection_keyword,,discipulado,spanish,collection,Harvest / collection gate,discipulado,no,,,
+collection_keyword,,opción por los pobres,spanish,collection,Harvest / collection gate,opción por los pobres,no,,,
+collection_keyword,,Rerum Novarum,spanish,collection,Harvest / collection gate,Rerum Novarum,no,,,
+collection_keyword,,Quadragesimo Anno,spanish,collection,Harvest / collection gate,Quadragesimo Anno,no,,,
+collection_keyword,,Divini Redemptoris,spanish,collection,Harvest / collection gate,Divini Redemptoris,no,,,
+collection_keyword,,Mater et Magistra,spanish,collection,Harvest / collection gate,Mater et Magistra,no,,,
+collection_keyword,,Pacem in Terris,spanish,collection,Harvest / collection gate,Pacem in Terris,no,,,
+collection_keyword,,Populorum Progressio,spanish,collection,Harvest / collection gate,Populorum Progressio,no,,,
+collection_keyword,,Octogesima Adveniens,spanish,collection,Harvest / collection gate,Octogesima Adveniens,no,,,
+collection_keyword,,Evangelii Nuntiandi,spanish,collection,Harvest / collection gate,Evangelii Nuntiandi,no,,,
+collection_keyword,,Laborem Exercens,spanish,collection,Harvest / collection gate,Laborem Exercens,no,,,
+collection_keyword,,Familiaris Consortio,spanish,collection,Harvest / collection gate,Familiaris Consortio,no,,,
+collection_keyword,,Sollicitudo Rei Socialis,spanish,collection,Harvest / collection gate,Sollicitudo Rei Socialis,no,,,
+collection_keyword,,Christifideles Laici,spanish,collection,Harvest / collection gate,Christifideles Laici,no,,,
+collection_keyword,,Redemptoris Missio,spanish,collection,Harvest / collection gate,Redemptoris Missio,no,,,
+collection_keyword,,Centesimus Annus,spanish,collection,Harvest / collection gate,Centesimus Annus,no,,,
+collection_keyword,,Evangelium Vitae,spanish,collection,Harvest / collection gate,Evangelium Vitae,no,,,
+collection_keyword,,Fides et Ratio,spanish,collection,Harvest / collection gate,Fides et Ratio,no,,,
+collection_keyword,,Deus Caritas Est,spanish,collection,Harvest / collection gate,Deus Caritas Est,no,,,
+collection_keyword,,Spe Salvi,spanish,collection,Harvest / collection gate,Spe Salvi,no,,,
+collection_keyword,,Caritas in Veritate,spanish,collection,Harvest / collection gate,Caritas in Veritate,no,,,
+collection_keyword,,Lumen Fidei,spanish,collection,Harvest / collection gate,Lumen Fidei,no,,,
+collection_keyword,,Evangelii Gaudium,spanish,collection,Harvest / collection gate,Evangelii Gaudium,no,,,
+collection_keyword,,Laudato Si,spanish,collection,Harvest / collection gate,Laudato Si,no,,,
+collection_keyword,,Amoris Laetitia,spanish,collection,Harvest / collection gate,Amoris Laetitia,no,,,
+collection_keyword,,Gaudete et Exsultate,spanish,collection,Harvest / collection gate,Gaudete et Exsultate,no,,,
+collection_keyword,,Christus Vivit,spanish,collection,Harvest / collection gate,Christus Vivit,no,,,
+collection_keyword,,Querida Amazonia,spanish,collection,Harvest / collection gate,Querida Amazonia,no,,,
+collection_keyword,,Fratelli Tutti,spanish,collection,Harvest / collection gate,Fratelli Tutti,no,,,
+collection_keyword,,Laudate Deum,spanish,collection,Harvest / collection gate,Laudate Deum,no,,,
+collection_keyword,,Dilexit Nos,spanish,collection,Harvest / collection gate,Dilexit Nos,no,,,
+collection_keyword,,Magnifica Humanitas,spanish,collection,Harvest / collection gate,Magnifica Humanitas,no,,,
+collection_keyword,,doctrina social de la Iglesia,spanish,collection,Harvest / collection gate,doctrina social de la Iglesia,no,,,
+collection_keyword,,doctrina social católica,spanish,collection,Harvest / collection gate,doctrina social católica,no,,,
+collection_keyword,,doctrina social,spanish,collection,Harvest / collection gate,doctrina social,no,,,
+collection_keyword,,encíclica social,spanish,collection,Harvest / collection gate,encíclica social,no,,,
+collection_keyword,,enciclica social,spanish,collection,Harvest / collection gate,enciclica social,no,,,
+collection_keyword,,encíclica papal,spanish,collection,Harvest / collection gate,encíclica papal,no,,,
+collection_keyword,,enciclica papal,spanish,collection,Harvest / collection gate,enciclica papal,no,,,
+collection_keyword,,evangelização,portuguese,collection,Harvest / collection gate,evangelização,no,,,
+collection_keyword,,evangelizacao,portuguese,collection,Harvest / collection gate,evangelizacao,no,,,
+collection_keyword,,nova evangelização,portuguese,collection,Harvest / collection gate,nova evangelização,no,,,
+collection_keyword,,missão,portuguese,collection,Harvest / collection gate,missão,no,,,
+collection_keyword,,missionário,portuguese,collection,Harvest / collection gate,missionário,no,,,
+collection_keyword,,missionario,portuguese,collection,Harvest / collection gate,missionario,no,,,
+collection_keyword,,pastoral,portuguese,collection,Harvest / collection gate,pastoral,no,,,
+collection_keyword,,catequese,portuguese,collection,Harvest / collection gate,catequese,no,,,
+collection_keyword,,evangelho,portuguese,collection,Harvest / collection gate,evangelho,no,,,
+collection_keyword,,testemunho,portuguese,collection,Harvest / collection gate,testemunho,no,,,
+collection_keyword,,teologia da libertação,portuguese,collection,Harvest / collection gate,teologia da libertação,no,,,
+collection_keyword,,teologia da libertacao,portuguese,collection,Harvest / collection gate,teologia da libertacao,no,,,
+collection_keyword,,opção preferencial,portuguese,collection,Harvest / collection gate,opção preferencial,no,,,
+collection_keyword,,opcao preferencial,portuguese,collection,Harvest / collection gate,opcao preferencial,no,,,
+collection_keyword,,inculturação,portuguese,collection,Harvest / collection gate,inculturação,no,,,
+collection_keyword,,inculturacao,portuguese,collection,Harvest / collection gate,inculturacao,no,,,
+collection_keyword,,Nossa Senhora de Aparecida,portuguese,collection,Harvest / collection gate,Nossa Senhora de Aparecida,no,,,
+collection_keyword,,Nossa Senhora de Guadalupe,portuguese,collection,Harvest / collection gate,Nossa Senhora de Guadalupe,no,,,
+collection_keyword,,discipulado,portuguese,collection,Harvest / collection gate,discipulado,no,,,
+collection_keyword,,opção pelos pobres,portuguese,collection,Harvest / collection gate,opção pelos pobres,no,,,
+collection_keyword,,opcao pelos pobres,portuguese,collection,Harvest / collection gate,opcao pelos pobres,no,,,
+collection_keyword,,comunidades eclesiais de base,portuguese,collection,Harvest / collection gate,comunidades eclesiais de base,no,,,
+collection_keyword,,Rerum Novarum,portuguese,collection,Harvest / collection gate,Rerum Novarum,no,,,
+collection_keyword,,Quadragesimo Anno,portuguese,collection,Harvest / collection gate,Quadragesimo Anno,no,,,
+collection_keyword,,Divini Redemptoris,portuguese,collection,Harvest / collection gate,Divini Redemptoris,no,,,
+collection_keyword,,Mater et Magistra,portuguese,collection,Harvest / collection gate,Mater et Magistra,no,,,
+collection_keyword,,Pacem in Terris,portuguese,collection,Harvest / collection gate,Pacem in Terris,no,,,
+collection_keyword,,Populorum Progressio,portuguese,collection,Harvest / collection gate,Populorum Progressio,no,,,
+collection_keyword,,Octogesima Adveniens,portuguese,collection,Harvest / collection gate,Octogesima Adveniens,no,,,
+collection_keyword,,Evangelii Nuntiandi,portuguese,collection,Harvest / collection gate,Evangelii Nuntiandi,no,,,
+collection_keyword,,Laborem Exercens,portuguese,collection,Harvest / collection gate,Laborem Exercens,no,,,
+collection_keyword,,Familiaris Consortio,portuguese,collection,Harvest / collection gate,Familiaris Consortio,no,,,
+collection_keyword,,Sollicitudo Rei Socialis,portuguese,collection,Harvest / collection gate,Sollicitudo Rei Socialis,no,,,
+collection_keyword,,Christifideles Laici,portuguese,collection,Harvest / collection gate,Christifideles Laici,no,,,
+collection_keyword,,Redemptoris Missio,portuguese,collection,Harvest / collection gate,Redemptoris Missio,no,,,
+collection_keyword,,Centesimus Annus,portuguese,collection,Harvest / collection gate,Centesimus Annus,no,,,
+collection_keyword,,Evangelium Vitae,portuguese,collection,Harvest / collection gate,Evangelium Vitae,no,,,
+collection_keyword,,Fides et Ratio,portuguese,collection,Harvest / collection gate,Fides et Ratio,no,,,
+collection_keyword,,Deus Caritas Est,portuguese,collection,Harvest / collection gate,Deus Caritas Est,no,,,
+collection_keyword,,Spe Salvi,portuguese,collection,Harvest / collection gate,Spe Salvi,no,,,
+collection_keyword,,Caritas in Veritate,portuguese,collection,Harvest / collection gate,Caritas in Veritate,no,,,
+collection_keyword,,Lumen Fidei,portuguese,collection,Harvest / collection gate,Lumen Fidei,no,,,
+collection_keyword,,Evangelii Gaudium,portuguese,collection,Harvest / collection gate,Evangelii Gaudium,no,,,
+collection_keyword,,Laudato Si,portuguese,collection,Harvest / collection gate,Laudato Si,no,,,
+collection_keyword,,Amoris Laetitia,portuguese,collection,Harvest / collection gate,Amoris Laetitia,no,,,
+collection_keyword,,Gaudete et Exsultate,portuguese,collection,Harvest / collection gate,Gaudete et Exsultate,no,,,
+collection_keyword,,Christus Vivit,portuguese,collection,Harvest / collection gate,Christus Vivit,no,,,
+collection_keyword,,Querida Amazonia,portuguese,collection,Harvest / collection gate,Querida Amazonia,no,,,
+collection_keyword,,Fratelli Tutti,portuguese,collection,Harvest / collection gate,Fratelli Tutti,no,,,
+collection_keyword,,Laudate Deum,portuguese,collection,Harvest / collection gate,Laudate Deum,no,,,
+collection_keyword,,Dilexit Nos,portuguese,collection,Harvest / collection gate,Dilexit Nos,no,,,
+collection_keyword,,Magnifica Humanitas,portuguese,collection,Harvest / collection gate,Magnifica Humanitas,no,,,
+collection_keyword,,doutrina social da Igreja,portuguese,collection,Harvest / collection gate,doutrina social da Igreja,no,,,
+collection_keyword,,doutrina social católica,portuguese,collection,Harvest / collection gate,doutrina social católica,no,,,
+collection_keyword,,doutrina social,portuguese,collection,Harvest / collection gate,doutrina social,no,,,
+collection_keyword,,encíclica social,portuguese,collection,Harvest / collection gate,encíclica social,no,,,
+collection_keyword,,enciclica social,portuguese,collection,Harvest / collection gate,enciclica social,no,,,
+collection_keyword,,encíclica papal,portuguese,collection,Harvest / collection gate,encíclica papal,no,,,
+collection_keyword,,enciclica papal,portuguese,collection,Harvest / collection gate,enciclica papal,no,,,

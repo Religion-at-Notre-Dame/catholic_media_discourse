@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How Catholic themes circulate in media across the Americas — University of Notre Dame." />
+  <title>Findings · How the Americas Hear the Church · Notre Dame</title>
+  <link rel="icon" type="image/svg+xml" href="../branding/nd-monogram.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://unpkg.com" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="../css/site.css" />
+    <script src="../data/findings-data.js" defer></script>
+  <script src="../js/findings.js" defer></script>
+
+</head>
+<body class="mode-findings">
+  <header class="nd-nav" role="banner">
+    <div class="nd-nav__top">
+      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame — home">
+        <img class="nd-nav__mark" src="../branding/nd-monogram.svg" alt="" width="36" height="36" />
+        <img class="nd-nav__wordmark" src="../branding/wordmark.svg" alt="University of Notre Dame" />
+        <span class="nd-nav__site">How the Americas Hear the Church</span>
+      </a>
+      <nav class="nd-nav__pages" aria-label="Primary">
+        <a href="index.html" id="nav-story">Story</a>
+        <a href="findings.html" id="nav-findings" class="is-active">Findings</a>
+        <a href="explore.html#/places" id="tab-places">Places</a>
+        <a href="explore.html#/topics" id="tab-topics">Topics</a>
+        <a href="methods.html" id="nav-methods">Methods</a>
+      </nav>
+    </div>
+    <div class="nd-nav__sub nd-nav__sub--simple">
+      <div class="nav-langs"><b>EN</b> English · <b>ES</b> Spanish · <b>PT</b> Portuguese</div>
+    </div>
+  </header>
+
+<main id="findings" class="page">
+    <header class="page-hero">
+      <div class="page-hero__inner reveal is-visible">
+        <p class="kicker">Findings · early results</p>
+        <h1>Regional traditions, not one register</h1>
+        <p class="lead">
+          Evidence for the geography and accents questions: theme rates and lifts from geolocated
+          news (ActionGeo writing locations), plus co-occurrence lift for teachings that travel together.
+        </p>
+        <p class="page-hero__links">
+          <a class="cta" id="findings-to-places" href="explore.html#/places">Open Places</a>
+          <a class="cta cta--ghost" id="findings-to-methods" href="methods.html">Methods &amp; techniques</a>
+        </p>
+      </div>
+    </header>
+    <div class="findings-grid">
+      <article class="f-card f-card--wide" id="f-corpus"></article>
+      <article class="f-card" id="f-sigs"></article>
+      <article class="f-card" id="f-santiago"></article>
+      <article class="f-card" id="f-lifts"></article>
+      <article class="f-card f-card--wide" id="f-heat"></article>
+      <article class="f-card" id="f-cooccur"></article>
+      <article class="f-card" id="f-compare"></article>
+      <article class="f-card f-card--wide" id="f-metros"></article>
+    </div>
+  </main>
+
+<footer class="nd-footer" id="site-footer">
+      <div class="nd-footer__inner">
+        <div class="nd-footer__brands">
+          <img
+            class="nd-footer__mark"
+            src="../branding/academic-mark.svg"
+            alt="University of Notre Dame"
+          />
+          <img
+            class="nd-footer__lucy"
+            src="../branding/partners/lucy-family-institute.svg"
+            alt="Lucy Family Institute for Data &amp; Society"
+          />
+        </div>
+        <p class="nd-footer__title">How the Americas Hear the Church</p>
+        <p class="nd-footer__meta">
+          Built for education and public impact: inspectable lexicon lifts, not black-box maps.
+          ActionGeo marks writing location in GDELT — not viewership.
+        </p>
+        <p class="nd-footer__meta">
+          <a href="https://lucyinstitute.nd.edu/" target="_blank" rel="noreferrer">Lucy Institute</a>
+          ·
+          <a href="https://www.nd.edu/" target="_blank" rel="noreferrer">Notre Dame</a>
+          ·
+          <a class="nd-footer__link" href="explore.html#/places">Explore the map</a>
+        </p>
+      </div>
+  </footer>
+
+<script>
+    (function () {
+      const nodes = document.querySelectorAll(".reveal");
+      if (!nodes.length) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        nodes.forEach((n) => n.classList.add("is-visible"));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-visible");
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.18, rootMargin: "0px 0px -6% 0px" });
+      nodes.forEach((n) => io.observe(n));
+    })();
+  </script>
+  <script src="../js/site.js" defer></script>
+</body>
+</html>
