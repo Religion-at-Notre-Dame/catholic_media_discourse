@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Rebuild findings-data.js from data.js + extras.js (fast, no corpus scan)."""
+"""Rebuild findings-data.js from data.js + extras.js (fast, no corpus scan).
+
+Merges Education-track fixture summary so `FINDINGS.education` survives rebuilds.
+"""
 
 from __future__ import annotations
 
@@ -10,7 +13,17 @@ from pathlib import Path
 
 TOOLS = Path(__file__).resolve().parent
 VIZ = TOOLS.parent
+ROOT = VIZ.parent
 DATA = VIZ / "data"
+EDU_SUMMARY_LIVE = (
+    ROOT
+    / "papers/rise_education_2026/analysis/jev_judgments/jev_dual_20261012T080844Z.summary.json"
+)
+EDU_SUMMARY_FIXTURE = (
+    ROOT
+    / "papers/rise_education_2026/analysis/jev_judgments/fixtures/demo_summary.json"
+)
+EDU_SUMMARY = EDU_SUMMARY_LIVE if EDU_SUMMARY_LIVE.exists() else EDU_SUMMARY_FIXTURE
 
 
 def load_assign(path: Path, name: str) -> dict:
@@ -104,6 +117,8 @@ def main() -> int:
         for m in sorted(viz.get("metros") or [], key=lambda x: -x.get("n", 0))[:12]
     ]
 
+    education = load_education_block()
+
     out = {
         "generated": "viz/tools/build_findings_data.py",
         "corpus": {
@@ -135,12 +150,70 @@ def main() -> int:
         "metros": metros,
         "themeLabels": labels,
         "delayNote": "Papal documents such as Aparecida can reach Chile days after U.S. desks.",
+        "education": education,
     }
 
     dest = DATA / "findings-data.js"
     dest.write_text("window.FINDINGS = " + json.dumps(out, ensure_ascii=False) + ";\n", encoding="utf-8")
     print(f"wrote {dest.relative_to(VIZ)} ({dest.stat().st_size:,} B)")
     return 0
+
+
+def load_education_block() -> dict:
+    """Build FINDINGS.education from offline Jev fixture summary (or defaults)."""
+    pathways = [
+        "Week 0 listening — label media snippets learners recall",
+        "Correct gently — misunderstanding / low accuracy triage",
+        "Multilingual exemplars — EN/ES/PT prior vocabulary",
+    ]
+    if not EDU_SUMMARY.exists():
+        return {
+            "source": "fixtures/demo_dual_en_es_pt.jsonl",
+            "n": 0,
+            "note": "Dual-taxonomy summary missing — run summarize_jev_judgments.py.",
+            "misunderstanding_n": 0,
+            "misunderstanding_rate": None,
+            "needs_human_review": 0,
+            "accuracy_mean": None,
+            "top_content": [],
+            "top_discourse": [],
+            "cross_top": [],
+            "pathways": pathways,
+        }
+    s = json.loads(EDU_SUMMARY.read_text(encoding="utf-8"))
+    n = int(s.get("rows_ok") or 0)
+    mis = int(s.get("misunderstanding_n") or s.get("misunderstanding") or 0)
+    rate = s.get("misunderstanding_rate")
+    if rate is None and n:
+        rate = round(mis / n, 3)
+    content = s.get("content_labels") or {}
+    discourse = s.get("discourse_labels") or {}
+    cross = s.get("content_x_discourse_top") or s.get("content_x_discourse") or {}
+    acc = s.get("accuracy_mean")
+    if acc is None and isinstance(s.get("accuracy_score"), dict):
+        acc = (s.get("accuracy_score") or {}).get("mean")
+    live = EDU_SUMMARY.resolve() == EDU_SUMMARY_LIVE.resolve()
+    return {
+        "source": (
+            "jev_dual_20261012T080844Z.jsonl"
+            if live
+            else "fixtures/demo_dual_en_es_pt.jsonl"
+        ),
+        "n": n,
+        "note": (
+            "Live dual-taxonomy pilot (stratified EN/ES/PT) — triage for educators, not Theology gold."
+            if live
+            else "Offline dual-taxonomy fixture (EN/ES/PT) — not Theology gold."
+        ),
+        "misunderstanding_n": mis,
+        "misunderstanding_rate": rate,
+        "needs_human_review": int(s.get("needs_human_review") or 0),
+        "accuracy_mean": acc,
+        "top_content": [{"label": k, "n": v} for k, v in list(content.items())[:6]],
+        "top_discourse": [{"label": k, "n": v} for k, v in list(discourse.items())[:6]],
+        "cross_top": [{"pair": k, "n": v} for k, v in list(cross.items())[:6]],
+        "pathways": pathways,
+    }
 
 
 if __name__ == "__main__":

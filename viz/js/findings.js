@@ -197,6 +197,67 @@
       "</div>";
   }
 
+  function renderEducation(el, F) {
+    if (!el) return;
+    const e = F.education || {};
+    const topC = (e.top_content || [])
+      .map((d) => "<li><strong>" + esc(d.label) + "</strong> · " + d.n + "</li>")
+      .join("");
+    const topD = (e.top_discourse || [])
+      .map((d) => "<li><strong>" + esc(d.label) + "</strong> · " + d.n + "</li>")
+      .join("");
+    const cross = (e.cross_top || [])
+      .map((d) => "<li><strong>" + esc(d.pair) + "</strong> · " + d.n + "</li>")
+      .join("");
+    const paths = (e.pathways || []).map((p) => "<li>" + esc(p) + "</li>").join("");
+    const rate = e.misunderstanding_rate != null ? Math.round(100 * e.misunderstanding_rate) + "%" : "—";
+    const acc =
+      e.accuracy_mean != null
+        ? typeof e.accuracy_mean === "number"
+          ? e.accuracy_mean.toFixed(2)
+          : String(e.accuracy_mean)
+        : "—";
+    el.innerHTML =
+      '<p class="kicker">Education · informal learning</p>' +
+      "<h3>Prior knowledge triage (fixture)</h3>" +
+      '<p class="f-note">' +
+      esc(e.note || "Dual taxonomy: content (what) + discourse (how) + accuracy triage.") +
+      "</p>" +
+      '<div class="f-corpus">' +
+      "<div><strong>" +
+      esc(String(e.n || "—")) +
+      "</strong><span>fixture rows EN/ES/PT</span></div>" +
+      "<div><strong>" +
+      esc(rate) +
+      "</strong><span>misunderstanding flags</span></div>" +
+      "<div><strong>" +
+      esc(String(e.needs_human_review != null ? e.needs_human_review : "—")) +
+      "</strong><span>human-review flags</span></div>" +
+      "<div><strong>" +
+      esc(acc) +
+      "</strong><span>mean accuracy (0–4)</span></div>" +
+      "</div>" +
+      '<div class="sig-list" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">' +
+      "<div><p class=\"f-note\">Top content</p><ul>" +
+      topC +
+      "</ul></div>" +
+      "<div><p class=\"f-note\">Top discourse</p><ul>" +
+      topD +
+      "</ul></div>" +
+      "</div>" +
+      (cross
+        ? '<p class="f-note" style="margin-top:1rem">Content × discourse</p><ul>' + cross + "</ul>"
+        : "") +
+      (paths
+        ? '<p class="f-note" style="margin-top:1rem">Educator pathways</p><ul>' + paths + "</ul>"
+        : "") +
+      '<p class="f-note" style="margin-top:1rem">' +
+      '<a href="triage.html">Open Triage lab</a> · ' +
+      '<a href="methods.html#triage">Methods</a> · ' +
+      '<a href="explore.html#/places">Places map</a>' +
+      "</p>";
+  }
+
   function bindCtas(root) {
     root.querySelectorAll("[data-go]").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -217,6 +278,7 @@
       return;
     }
     renderCorpus(document.getElementById("f-corpus"), F);
+    renderEducation(document.getElementById("f-education"), F);
     renderSignatures(document.getElementById("f-sigs"), F);
     renderSantiago(document.getElementById("f-santiago"), F);
     renderLifts(document.getElementById("f-lifts"), F);

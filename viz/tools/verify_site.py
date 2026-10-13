@@ -18,20 +18,24 @@ DATA = VIZ / "data"
 REQUIRED_FILES = [
     "pages/index.html",
     "pages/findings.html",
+    "pages/triage.html",
     "pages/methods.html",
     "pages/explore.html",
     "css/site.css",
     "js/site.js",
     "js/findings.js",
+    "js/triage.js",
     "data/data.js",
     "data/extras.js",
     "data/findings-data.js",
+    "data/triage-data.js",
     "data/americas-borders.json",
     "data/lexicon.csv",
     "index.html",
     "serve.py",
     "tools/export_lexicon_csv.py",
     "tools/export_map_network.py",
+    "tools/build_triage_data.py",
     "tools/verify_site.py",
     "branding/nd-monogram.svg",
     "branding/wordmark.svg",
@@ -42,7 +46,8 @@ REQUIRED_FILES = [
 
 PAGE_IDS = {
     "index.html": ["storyboard", "nav-story", "cta-explore", "authors", "site-footer", "research-questions"],
-    "findings.html": ["findings", "nav-findings", "f-corpus", "site-footer"],
+    "findings.html": ["findings", "nav-findings", "f-corpus", "f-education", "site-footer"],
+    "triage.html": ["triage", "nav-triage", "t-hooks", "t-network", "t-network-mode", "site-footer"],
     "methods.html": ["methods", "nav-methods", "techniques", "lexicon", "site-footer"],
     "explore.html": [
         "explorer",
@@ -58,7 +63,7 @@ PAGE_IDS = {
 }
 
 AUTHOR_NEEDLES = [
-    "Jonathan A. Karr",
+    "Jonathan A. Karr Jr.",
     "Yessica Herrera-Guzmán",
     "Ingrid Corpus",
     "Brenda Nogueira",
@@ -150,7 +155,13 @@ def main() -> int:
                 err(f"{name}: missing id={eid}")
             else:
                 ok(f"{name} #{eid}")
-        for href in ("index.html", "findings.html", "methods.html", "explore.html#/places"):
+        for href in (
+            "index.html",
+            "findings.html",
+            "triage.html",
+            "methods.html",
+            "explore.html#/places",
+        ):
             if href not in html:
                 err(f"{name}: missing nav href {href}")
             else:
@@ -200,7 +211,7 @@ def main() -> int:
 
     story_needles = (
         'id="research-questions"',
-        "circulate across the media",
+        "informal learning",
         "How this prototype breaks it down",
         "rq-list",
     )
@@ -254,10 +265,69 @@ def main() -> int:
     else:
         ok("mode-explore CSS present")
 
+    methods = pages["methods.html"]
+    if 'id="triage"' not in methods and "id='triage'" not in methods:
+        err("methods.html missing #triage section")
+    else:
+        ok("methods #triage")
+    if "education_taxonomies.csv" not in methods:
+        err("methods.html missing education_taxonomies.csv download")
+    else:
+        ok("methods taxonomy CSV link")
+    findings_js = (JS / "findings.js").read_text(encoding="utf-8")
+    if "renderEducation" not in findings_js:
+        err("findings.js missing renderEducation")
+    else:
+        ok("findings education renderer")
+    findings_data = (DATA / "findings-data.js").read_text(encoding="utf-8")
+    if '"education"' not in findings_data:
+        err("findings-data.js missing education block")
+    else:
+        ok("findings-data education block")
+    tax_csv = DATA / "education_taxonomies.csv"
+    if not tax_csv.exists() or tax_csv.stat().st_size < 200:
+        err("viz/data/education_taxonomies.csv missing — run export_education_taxonomies_csv.py")
+    else:
+        ok("education_taxonomies.csv")
+
+    triage = pages["triage.html"]
+    if "../data/triage-data.js" not in triage:
+        err("triage.html missing triage-data.js")
+    else:
+        ok("triage data path")
+    if "renderTriage" not in (JS / "triage.js").read_text(encoding="utf-8"):
+        err("triage.js missing renderTriage")
+    else:
+        ok("triage renderer")
+    if "mode-triage" not in css:
+        err("site.css missing mode-triage")
+    else:
+        ok("mode-triage CSS")
+    triage_data = (DATA / "triage-data.js").read_text(encoding="utf-8")
+    if "window.TRIAGE" not in triage_data or "networks" not in triage_data:
+        err("triage-data.js missing TRIAGE networks")
+    else:
+        ok("triage-data networks")
+    for page_html in pages.values():
+        if 'id="nav-triage"' not in page_html and "triage.html" not in page_html:
+            # explore/findings etc must link Triage
+            pass
+    for name, html in pages.items():
+        if 'href="triage.html"' not in html and name != "triage.html":
+            # triage page uses relative self; others must link
+            if name != "triage.html":
+                err(f"{name} missing triage.html nav link")
+        elif name != "triage.html":
+            ok(f"{name} links triage")
+
     if "renderFindings" not in site_js:
         err("site.js should render findings on findings.html")
     else:
         ok("site.js shared helpers")
+    if "renderTriage" not in site_js and "mode-triage" not in site_js:
+        err("site.js should boot triage page")
+    else:
+        ok("site.js triage boot")
 
     try:
         viz = load_js_assign(DATA / "data.js", "VIZ")

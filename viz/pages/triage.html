@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Informal-learning triage: Jev dual taxonomy, place×type lifts, and co-occurrence networks." />
+  <title>Triage · How the Americas Hear the Church · Notre Dame</title>
+  <link rel="icon" type="image/svg+xml" href="../branding/nd-monogram.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://unpkg.com" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/site.css" />
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="../data/triage-data.js" defer></script>
+  <script src="../js/triage.js" defer></script>
+  <script src="../js/site.js" defer></script>
+</head>
+<body class="mode-triage">
+  <header class="nd-nav" role="banner">
+    <div class="nd-nav__top">
+      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame — home">
+        <img class="nd-nav__mark" src="../branding/nd-monogram.svg" alt="" width="36" height="36" />
+        <img class="nd-nav__wordmark" src="../branding/wordmark.svg" alt="University of Notre Dame" />
+        <span class="nd-nav__site">How the Americas Hear the Church</span>
+      </a>
+      <nav class="nd-nav__pages" aria-label="Primary">
+        <a href="index.html" id="nav-story">Story</a>
+        <a href="findings.html" id="nav-findings">Findings</a>
+        <a href="triage.html" id="nav-triage" class="is-active">Triage</a>
+        <a href="explore.html#/places" id="tab-places">Places</a>
+        <a href="explore.html#/topics" id="tab-topics">Topics</a>
+        <a href="methods.html" id="nav-methods">Methods</a>
+      </nav>
+    </div>
+    <div class="nd-nav__sub nd-nav__sub--simple">
+      <div class="nav-langs"><b>EN</b> English · <b>ES</b> Spanish · <b>PT</b> Portuguese</div>
+    </div>
+  </header>
+
+  <main id="triage" class="page">
+    <header class="page-hero">
+      <div class="page-hero__inner reveal is-visible">
+        <p class="kicker">Triage lab · informal learning</p>
+        <h1>Prior knowledge from media</h1>
+        <p class="lead">
+          Dual-taxonomy Jev labels (~61k excerpts): what content travels where, which speech-acts
+          carry teaching claims, and which types co-occur — a Week-0 listening board for OCIA and
+          parish formation.
+        </p>
+        <p class="page-hero__links">
+          <a class="cta" href="methods.html#triage">Methods · triage</a>
+          <a class="cta cta--ghost" href="findings.html#f-education">Findings panel</a>
+          <a class="cta cta--ghost" href="explore.html#/topics">Topics graph</a>
+        </p>
+      </div>
+    </header>
+
+    <div class="findings-grid triage-grid">
+      <article class="f-card f-card--wide" id="t-hooks"></article>
+
+      <article class="f-card f-card--wide triage-net-card">
+        <p class="kicker">Network</p>
+        <div class="triage-net-head">
+          <h3>Jev prior-knowledge graph</h3>
+          <label class="triage-mode">
+            View
+            <select id="t-network-mode" aria-label="Network mode">
+              <option value="place_x_type">Place × type (ActionGeo lifts)</option>
+              <option value="types_together">Types together (co-occurrence)</option>
+            </select>
+          </label>
+        </div>
+        <p class="f-note">
+          Gold = places · green = content · blue = discourse. Edges prefer Fisher+Holm
+          significant associations (α=0.05); width scales with lift. Drag nodes.
+          Not Theology gold — triage for educators.
+        </p>
+        <div class="triage-network-wrap" id="t-network-wrap">
+          <svg id="t-network" role="img" aria-label="Jev triage network"></svg>
+        </div>
+      </article>
+
+      <article class="f-card" id="t-places"></article>
+      <article class="f-card" id="t-mis"></article>
+      <article class="f-card" id="t-lang"></article>
+      <article class="f-card" id="t-pairs"></article>
+      <article class="f-card f-card--wide" id="t-cross"></article>
+    </div>
+  </main>
+
+  <footer class="nd-footer" id="site-footer">
+    <div class="nd-footer__inner">
+      <div class="nd-footer__brands">
+        <img class="nd-footer__mark" src="../branding/academic-mark.svg" alt="University of Notre Dame" />
+        <img class="nd-footer__lucy" src="../branding/partners/lucy-family-institute.svg" alt="Lucy Family Institute for Data &amp; Society" />
+      </div>
+      <p class="nd-footer__title">How the Americas Hear the Church</p>
+      <p class="nd-footer__meta">
+        Built for education and public impact: inspectable lexicon lifts, not black-box maps.
+        ActionGeo marks writing location in GDELT — not viewership.
+      </p>
+      <p class="nd-footer__meta">
+        <a href="https://lucyinstitute.nd.edu/" target="_blank" rel="noreferrer">Lucy Institute</a>
+        ·
+        <a href="https://www.nd.edu/" target="_blank" rel="noreferrer">Notre Dame</a>
+        ·
+        <a class="nd-footer__link" href="explore.html#/places">Explore the map</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const nodes = document.querySelectorAll(".reveal");
+      const io = new IntersectionObserver(
+        (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("is-visible")),
+        { threshold: 0.12 }
+      );
+      nodes.forEach((n) => io.observe(n));
+    })();
+  </script>
+</body>
+</html>

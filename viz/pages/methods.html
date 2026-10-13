@@ -25,6 +25,7 @@
       <nav class="nd-nav__pages" aria-label="Primary">
         <a href="index.html" id="nav-story">Story</a>
         <a href="findings.html" id="nav-findings">Findings</a>
+        <a href="triage.html" id="nav-triage">Triage</a>
         <a href="explore.html#/places" id="tab-places">Places</a>
         <a href="explore.html#/topics" id="tab-topics">Topics</a>
         <a href="methods.html" id="nav-methods" class="is-active">Methods</a>
@@ -84,6 +85,7 @@
     <div class="methods-body">
       <nav class="methods-toc" aria-label="Methods sections">
         <a href="#techniques">Techniques</a>
+        <a href="#triage">Triage</a>
         <a href="#lexicon">Lexicon</a>
         <a href="#actiongeo">ActionGeo</a>
         <a href="#coverage">Coverage</a>
@@ -149,8 +151,36 @@
           <li><strong>Normalize</strong> — language ID, time bucketing (day/quarter), ActionGeo → FIPS, PII redaction.</li>
           <li><strong>Label</strong> — deterministic lexicon matchers (compiled regex per theme × language).</li>
           <li><strong>Aggregate</strong> — rates per 1k; co-occurrence matrices; lift and QAP diagnostics.</li>
+          <li><strong>Triage (Education)</strong> — dual taxonomy via TypeSafe Jev (OpenRouter Decisions API): content/teaching type + discourse/speech-act + accuracy score for prior-knowledge diagnostics.</li>
           <li><strong>Serve</strong> — static classroom site: story, findings, map heat, teaching graph.</li>
         </ol>
+      </section>
+
+      <section id="triage">
+        <h2>Informal-learning triage (Education)</h2>
+        <p>
+          Beyond lexicon geography, the Education layer labels anonymized excerpts with two
+          orthogonal multi-label schemes: <em>what</em> media may teach before OCIA/parish formation
+          (doctrine, CST, devotion, moral, migration/politics, mission, misunderstanding, …) and
+          <em>how</em> it is said (question, news report, claim, advocacy, homily, interview, …).
+          Accuracy triage (0–4) flags rows for human/Theology review — not magisterial judgment.
+        </p>
+        <p>
+          Offline fixtures live under
+          <code>papers/rise_education_2026/analysis/jev_judgments/fixtures/</code>.
+          Sanity-check with <code>python3 scripts/judge/run_jev_pipeline.py --self-test</code>.
+          Explore the interactive
+          <a href="triage.html">Triage lab</a>
+          or the Findings
+          <a href="findings.html#f-education">prior-knowledge panel</a>.
+        </p>
+        <p class="methods-download">
+          <a class="cta" href="../data/education_taxonomies.csv" download="education_taxonomies.csv">Download dual taxonomies (CSV)</a>
+          <span class="methods-note">
+            Content + discourse label cards for classroom handouts.
+            Regenerate with <code>python3 viz/tools/export_education_taxonomies_csv.py</code>.
+          </span>
+        </p>
       </section>
 
       <section id="lexicon">
