@@ -48,7 +48,13 @@ def rows_for(layer: str, tax: dict) -> list[dict]:
                 "layer": layer,
                 "label_id": lab.get("id") or "",
                 "name": lab.get("name") or "",
-                "description": (lab.get("description") or "").strip().replace("\n", " "),
+                "description": (
+                    (lab.get("description") or "")
+                    .strip()
+                    .replace("\n", " ")
+                    .replace(" \u2014 ", ": ")
+                    .replace("\u2014", ", ")
+                ),
                 "example_en": _first(lab.get("examples_en") or lab.get("examples")),
                 "example_es": _first(lab.get("examples_es")),
                 "example_pt": _first(lab.get("examples_pt")),

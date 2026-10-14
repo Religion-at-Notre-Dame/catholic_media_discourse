@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="How Catholic themes circulate in media across the Americas — University of Notre Dame." />
+  <meta name="description" content="How Catholic themes circulate in media across the Americas: University of Notre Dame." />
   <title>Methods · How the Americas Hear the Church · Notre Dame</title>
   <link rel="icon" type="image/svg+xml" href="../branding/nd-monogram.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +17,7 @@
 <body class="mode-methods">
   <header class="nd-nav" role="banner">
     <div class="nd-nav__top">
-      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame — home">
+      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame: home">
         <img class="nd-nav__mark" src="../branding/nd-monogram.svg" alt="" width="36" height="36" />
         <img class="nd-nav__wordmark" src="../branding/wordmark.svg" alt="University of Notre Dame" />
         <span class="nd-nav__site">How the Americas Hear the Church</span>
@@ -43,8 +43,8 @@
         <h1>Techniques behind the maps and graphs</h1>
         <p class="lead">
           Catholic Media of the Americas is scored with classical IR, deterministic lexicon matching,
-          rate normalization, association measures, and graph construction — not opaque embeddings.
-          Each technique below maps to a visible claim on Places, Topics, or Findings.
+          rate normalization, association measures, and graph construction, not opaque embeddings.
+          Each technique below maps to a visible claim on Places, Topics, Findings, or Triage.
         </p>
       </div>
     </header>
@@ -73,8 +73,7 @@
           <article>
             <h3>Force for good</h3>
             <p>
-              Measuring liberation, preferential option, and magisterial language as data —
-              while redacting personal identifiers — turns Notre Dame’s mission into
+              Measuring liberation, preferential option, and magisterial language as data, while redacting personal identifiers, turns Notre Dame’s mission into
               hemispheric evidence educators can cite, critique, and extend.
             </p>
           </article>
@@ -105,7 +104,7 @@
           <dt>Controlled lexicon matching</dt>
           <dd>
             Frozen, versioned <code>THEME_PATTERNS</code> (compiled regex per theme × language).
-            Output is a binary theme set per document span — not embedding similarity and not
+            Output is a binary theme set per document span, not embedding similarity and not
             open-ended keyword search. Parallel EN/ES/PT surface forms collapse to one teaching ID.
           </dd>
           <dt>Geolocated IR / ActionGeo</dt>
@@ -143,16 +142,16 @@
           <dt>Privacy pipeline</dt>
           <dd>
             Personal identifiers are redacted before anonymized shards and classroom payloads
-            ship — techniques stay inspectable without exposing people in the source text.
+            ship: techniques stay inspectable without exposing people in the source text.
           </dd>
         </dl>
         <ol class="methods-pipeline">
-          <li><strong>Collect</strong> — keyword-gated harvest across EN/ES/PT media streams (2015–Q2 2026).</li>
-          <li><strong>Normalize</strong> — language ID, time bucketing (day/quarter), ActionGeo → FIPS, PII redaction.</li>
-          <li><strong>Label</strong> — deterministic lexicon matchers (compiled regex per theme × language).</li>
-          <li><strong>Aggregate</strong> — rates per 1k; co-occurrence matrices; lift and QAP diagnostics.</li>
-          <li><strong>Triage (Education)</strong> — dual taxonomy via TypeSafe Jev (OpenRouter Decisions API): content/teaching type + discourse/speech-act + accuracy score for prior-knowledge diagnostics.</li>
-          <li><strong>Serve</strong> — static classroom site: story, findings, map heat, teaching graph.</li>
+          <li><strong>Collect</strong>: keyword-gated harvest across EN/ES/PT media streams (2015–Q2 2026).</li>
+          <li><strong>Normalize</strong>: language ID, time bucketing (day/quarter), ActionGeo → FIPS, PII redaction.</li>
+          <li><strong>Label</strong>: deterministic lexicon matchers (compiled regex per theme × language).</li>
+          <li><strong>Aggregate</strong>: rates per 1k; co-occurrence matrices; lift and QAP diagnostics.</li>
+          <li><strong>Triage (Education)</strong>: dual taxonomy (content + discourse) with accuracy flags; association tests feed the plain-language Triage board.</li>
+          <li><strong>Serve</strong>: static classroom site: Story, Findings, Triage, Places, and Topics.</li>
         </ol>
       </section>
 
@@ -161,24 +160,39 @@
         <p>
           Beyond lexicon geography, the Education layer labels anonymized excerpts with two
           orthogonal multi-label schemes: <em>what</em> media may teach before OCIA/parish formation
-          (doctrine, CST, devotion, moral, migration/politics, mission, misunderstanding, …) and
-          <em>how</em> it is said (question, news report, claim, advocacy, homily, interview, …).
-          Accuracy triage (0–4) flags rows for human/Theology review — not magisterial judgment.
+          (doctrine, CST, devotion, moral, migration/politics, mission, misunderstanding, and related types)
+          and <em>how</em> it is said (question, news report, claim, advocacy, homily, interview, and related acts).
+          An accuracy score (0–4) flags rows for human and Theology review. It is a listening aid for
+          educators, not a magisterial judgment of the Church.
         </p>
-        <p>
-          Offline fixtures live under
-          <code>papers/rise_education_2026/analysis/jev_judgments/fixtures/</code>.
-          Sanity-check with <code>python3 scripts/judge/run_jev_pipeline.py --self-test</code>.
-          Explore the interactive
-          <a href="triage.html">Triage lab</a>
-          or the Findings
-          <a href="findings.html#f-education">prior-knowledge panel</a>.
-        </p>
+        <dl class="methods-dl">
+          <dt>How associations are tested</dt>
+          <dd>
+            Place accents, theme co-travel, language mix, and news-vs-radio contrasts use
+            Fisher exact tests with Holm–Bonferroni correction within each family (α = 0.05).
+            On the <a href="triage.html">Triage</a> page those results appear as plain badges
+            (<strong>Strong</strong> / <strong>Clear</strong> / <strong>Modest</strong> / <strong>Unclear</strong>),
+            not star counts.
+          </dd>
+          <dt>Connection maps</dt>
+          <dd>
+            Educators see a bipartite map of places and the teaching types they elevate, plus a
+            theme-co-travel view. Clicking a circle or line yields a plain-language readout.
+            Interactive figures with short EN/ES/PT vignettes sit below the lists.
+          </dd>
+          <dt>Where to read it</dt>
+          <dd>
+            Open
+            <a href="triage.html">Triage</a>
+            for the Week-0 listening board, or Findings’
+            <a href="findings.html#f-education">prior-knowledge panel</a>.
+            Label cards for handouts are in the CSV download below.
+          </dd>
+        </dl>
         <p class="methods-download">
           <a class="cta" href="../data/education_taxonomies.csv" download="education_taxonomies.csv">Download dual taxonomies (CSV)</a>
           <span class="methods-note">
             Content + discourse label cards for classroom handouts.
-            Regenerate with <code>python3 viz/tools/export_education_taxonomies_csv.py</code>.
           </span>
         </p>
       </section>
@@ -187,7 +201,7 @@
         <h2>Lexicon (definition)</h2>
         <p>
           A <strong>lexicon</strong> here is a frozen, versioned set of <em>controlled vocabulary
-          patterns</em> — the labeling technique above, spelled out as data. Each entry is a
+          patterns</em>: the labeling technique above, spelled out as data. Each entry is a
           named teaching (theme ID) plus one or more language-specific regular expressions that fire
           on token and phrase boundaries. Hits are binary per document span: the theme is present or not.
         </p>
@@ -234,24 +248,23 @@
             <code>theme_id</code>, <code>language</code> (english · spanish · portuguese),
             <code>group</code>, <code>pattern_or_phrase</code>, and papal metadata
             (<code>pontiff</code> / <code>year</code> / <code>document_kind</code> where applicable.
-            Regenerate with <code>python3 viz/tools/export_lexicon_csv.py</code>.
           </span>
         </p>
         <p class="methods-download" id="geo-download">
-          <a class="cta cta--ghost" href="explore.html#/places" style="border-color:var(--nd-blue);color:var(--nd-blue)">Download ActionGeo aggregates on Places</a>
+          <a class="cta cta--ghost" href="explore.html#/places">Download ActionGeo aggregates on Places</a>
           <span class="methods-note" style="display:block;margin-top:0.65rem">
             On the map: <strong>Download all</strong> (entire hemisphere aggregates),
             <strong>Download view</strong> (current region chip), or
             <strong>Download this location</strong> after selecting a city / country / state.
             Each CSV row includes <code>exported_at</code> (ISO timestamp) plus
             <code>coverage_start</code> / <code>coverage_end</code> quarters. These are
-            geolocated writing-location counts — not raw article text and not viewership.
+            geolocated writing-location counts, not raw article text and not viewership.
           </span>
         </p>
         <p class="methods-note">
-          Scoring implementation: <code>THEME_PATTERNS</code> in the research theme module.
-          Papal catalog: <code>CST_PAPAL_DOCUMENTS</code>. Collection keywords are broader harvest gates,
-          separate from binary scoring patterns.
+          Scoring uses a frozen <code>THEME_PATTERNS</code> table (theme × language regexes) plus a
+          papal / CST document catalog. Collection keywords are broader harvest gates, separate from
+          binary scoring patterns.
         </p>
       </section>
 
@@ -259,7 +272,7 @@
         <h2>ActionGeo ≠ viewership</h2>
         <p>
           GDELT <strong>ActionGeo</strong> is an event-location field: where the reported action or
-          writing desk was geocoded into the stream — often a national wire hub — <em>not</em> who
+          writing desk was geocoded into the stream: often a national wire hub: <em>not</em> who
           read or watched the story. That is why Washington, D.C. dominates metro ranks. Places heat
           and city dots are therefore best read as <em>writing geography</em>, while country lifts
           compare theme density across ActionGeo nations under that same constraint.
@@ -280,14 +293,15 @@
           This site is initial public development. Lexicon matches are high-precision patterns, not
           full semantic parsers; English-language wire volume still skews hemispheric totals;
           ActionGeo confounds “where faith is lived” with “where desks write.” Findings will deepen
-          as gold-standard annotation, multimodal balance, and peer review land — the interface is
+          as gold-standard annotation, multimodal balance, and peer review land: the interface is
           built so those updates remain inspectable by students and pastors alike.
         </p>
       </section>
 
       <p class="methods-cta-row">
         <a class="cta" id="methods-cta-places" href="explore.html#/places">Open Places</a>
-        <a class="cta cta--ghost" id="methods-cta-findings" href="findings.html" style="border-color:var(--nd-blue);color:var(--nd-blue)">See findings</a>
+        <a class="cta cta--ghost" id="methods-cta-findings" href="findings.html">See findings</a>
+        <a class="cta cta--ghost" href="triage.html">Open Triage</a>
       </p>
     </div>
   </main>
@@ -309,7 +323,7 @@
         <p class="nd-footer__title">How the Americas Hear the Church</p>
         <p class="nd-footer__meta">
           Built for education and public impact: inspectable lexicon lifts, not black-box maps.
-          ActionGeo marks writing location in GDELT — not viewership.
+          ActionGeo marks writing location in GDELT, not viewership.
         </p>
         <p class="nd-footer__meta">
           <a href="https://lucyinstitute.nd.edu/" target="_blank" rel="noreferrer">Lucy Institute</a>

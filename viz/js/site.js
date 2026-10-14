@@ -1,8 +1,9 @@
 /* Shared classroom site helpers (multi-page). */
 (function () {
-  if (document.body.classList.contains("mode-findings")) {
+  function boot(modeClass, fnName) {
+    if (!document.body.classList.contains(modeClass)) return;
     function tryRender() {
-      if (typeof window.renderFindings === "function") window.renderFindings();
+      if (typeof window[fnName] === "function") window[fnName]();
     }
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", tryRender);
@@ -12,17 +13,12 @@
     window.addEventListener("load", tryRender);
   }
 
-  if (document.body.classList.contains("mode-triage")) {
-    function tryTriage() {
-      if (typeof window.renderTriage === "function") window.renderTriage();
-    }
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", tryTriage);
-    } else {
-      tryTriage();
-    }
-    window.addEventListener("load", tryTriage);
-  }
+  boot("mode-story", "renderStory");
+  boot("mode-findings", "renderFindings");
+  boot("mode-triage", "renderTriage");
+  boot("mode-story", "renderFigures");
+  boot("mode-findings", "renderFigures");
+  boot("mode-triage", "renderFigures");
 
   document.querySelectorAll("a.cta, a.act").forEach(function (a) {
     a.addEventListener("keydown", function (e) {

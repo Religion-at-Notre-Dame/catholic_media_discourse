@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="How Catholic themes circulate in media across the Americas — University of Notre Dame." />
+  <meta name="description" content="How Catholic themes circulate in media across the Americas: University of Notre Dame." />
   <title>Explore · How the Americas Hear the Church · Notre Dame</title>
   <link rel="icon" type="image/svg+xml" href="../branding/nd-monogram.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,7 @@
 <body class="mode-explore view-places">
   <header class="nd-nav" role="banner">
     <div class="nd-nav__top">
-      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame — home">
+      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame: home">
         <img class="nd-nav__mark" src="../branding/nd-monogram.svg" alt="" width="36" height="36" />
         <img class="nd-nav__wordmark" src="../branding/wordmark.svg" alt="University of Notre Dame" />
         <span class="nd-nav__site">How the Americas Hear the Church</span>
@@ -54,7 +54,7 @@
 
     <div class="hud">
       <div class="card left" id="left-card">
-        <p class="hint" id="subcopy">ActionGeo is where a story was <em>written</em> into GDELT — not viewership. English, Spanish, and Portuguese names count as one teaching.</p>
+        <p class="hint" id="subcopy">ActionGeo is where a story was <em>written</em> into GDELT, not viewership. English, Spanish, and Portuguese names count as one teaching.</p>
         <div id="place-controls">
           <div class="chips story-chips" id="story-chips" aria-label="Featured teachings"></div>
           <div class="chips" id="region-chips" aria-label="Regions"></div>
@@ -604,7 +604,7 @@
         document.getElementById("place-controls").hidden = v !== "places";
         document.getElementById("topic-controls").hidden = v !== "topics";
         document.getElementById("subcopy").innerHTML = v === "places"
-          ? "ActionGeo is where a story was <em>written</em> into GDELT — not viewership. English, Spanish, and Portuguese names count as one teaching."
+          ? "ActionGeo is where a story was <em>written</em> into GDELT, not viewership. English, Spanish, and Portuguese names count as one teaching."
           : "Theme co-occurrence only. No map. An edge is two teachings that travel in the same story (lift, not raw count).";
         if (v === "places") {
           map.invalidateSize();
@@ -629,7 +629,7 @@
         maxBoundsViscosity: 0.75,
       });
       L.control.zoom({ position: "bottomleft" }).addTo(map);
-      // Night atlas basemap — heat + gold borders read better than pale Carto light
+      // Night atlas basemap: heat + gold borders read better than pale Carto light
       L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png", {
         attribution: "&copy; OpenStreetMap &copy; CARTO",
         subdomains: "abcd",
@@ -826,7 +826,7 @@
         const zoom = map.getZoom();
         if (typeof window.__restyleBorders === "function") window.__restyleBorders();
         const countries = filteredCountries();
-        // Country centroids (log-scaled) so every nation shows — U.S. raw counts no longer wipe the hemisphere
+        // Country centroids (log-scaled) so every nation shows: U.S. raw counts no longer wipe the hemisphere
         const heatCountries = countries.length ? countries : places;
         const heatMax = Math.max(1, ...heatCountries.map((p) => p.n || 0));
         if (showHeat && heatCountries.length) {
@@ -947,9 +947,9 @@
       function triHtml(cat) {
         const t = triNames(cat);
         return '<div class="tri">' +
-          "<div><b>EN</b> " + esc(t.EN || "—") + "</div>" +
-          "<div><b>ES</b> " + esc(t.ES || t.EN || "—") + "</div>" +
-          "<div><b>PT</b> " + esc(t.PT || t.EN || "—") + "</div>" +
+          "<div><b>EN</b> " + esc(t.EN || "n/a") + "</div>" +
+          "<div><b>ES</b> " + esc(t.ES || t.EN || "n/a") + "</div>" +
+          "<div><b>PT</b> " + esc(t.PT || t.EN || "n/a") + "</div>" +
           "</div>";
       }
       function bindRanks(el) {
@@ -973,7 +973,7 @@
         const el = document.getElementById("side");
         const pairs = (X.compare && X.compare.pairs) || [];
         if (!pairs.length) {
-          el.innerHTML = '<p class="pill">compare</p><h2>Country compare</h2><p class="hint">Run <code>export_viz_extras.py</code> to load US–Mexico, US–Chile, and other pairs.</p>';
+          el.innerHTML = '<p class="pill">compare</p><h2>Country compare</h2><p class="hint">Country compare pairs are not loaded yet. Rebuild the classroom extras export, then refresh.</p>';
           compareHighlight = new Set();
           drawPlaces();
           return;
@@ -1001,10 +1001,10 @@
             const sign = d >= 0 ? "+" : "";
             return '<div class="edge"><span><b>' + esc((X.themeLabels && X.themeLabels[t]) || t) + "</b></span><span>" + sign + d.toFixed(1) + "/1k Δ</span></div>";
           }).join("") +
-          (topTheme ? '<p class="hint" style="margin-top:8px">Exemplars — <b>' + esc((X.themeLabels && X.themeLabels[topTheme]) || topTheme) + '</b></p>' +
+          (topTheme ? '<p class="hint" style="margin-top:8px">Exemplars: <b>' + esc((X.themeLabels && X.themeLabels[topTheme]) || topTheme) + '</b></p>' +
             (exA[0] ? '<p class="hint"><em>' + esc(pair.a.name) + ':</em> ' + esc(exA[0].text) + '</p>' : '') +
             (exB[0] ? '<p class="hint"><em>' + esc(pair.b.name) + ':</em> ' + esc(exB[0].text) + '</p>' : '') : '') +
-          '<p class="hint">Positive Δ means ' + esc(pair.a.name) + ' over-indexes vs ' + esc(pair.b.name) + '. Classroom overlay — not causal.</p>';
+          '<p class="hint">Positive Δ means ' + esc(pair.a.name) + ' over-indexes vs ' + esc(pair.b.name) + '. Classroom overlay, not causal.</p>';
         const sel = document.getElementById("compare-pair");
         if (sel) sel.onchange = () => { compareIdx = parseInt(sel.value, 10) || 0; renderComparePanel(); drawPlaces(); };
         drawPlaces();
@@ -1199,7 +1199,7 @@
           renderComparePanel();
           return;
         }
-        const usShare = geo.us_share != null ? Math.round(geo.us_share * 100) + "%" : "—";
+        const usShare = geo.us_share != null ? Math.round(geo.us_share * 100) + "%" : "n/a";
         if (!selectedPlace) {
           const item = encycItem();
           if (item) {
@@ -1214,7 +1214,7 @@
                 return { rid, label: (r && r.label) || rid, day, date: addDaysISO(item.start, day) };
               });
             const corpusNote = item.promulgated < (E.corpus_start || "2015-01-01")
-              ? "Promulgated " + prettyDay(item.promulgated) + " — corpus starts 2015, so this is the echo we can see."
+              ? "Promulgated " + prettyDay(item.promulgated) + ": corpus starts 2015, so this is the echo we can see."
               : "From the day it was issued.";
             el.innerHTML =
               '<p class="pill">' + esc(item.kind || "papal document") + " · day " + fmt(d) + "</p>" +
@@ -1265,7 +1265,7 @@
               '<div class="stat"><b>' + fmt(nHere) + "</b><span>" + (cumulative ? "stories so far" : "this quarter") + "</span></div>" +
               '<div class="stat"><b>' + esc(currentQ().slice(0, 4)) + "</b><span>year on the map</span></div>" +
               "</div>" +
-              '<p class="hint">Play the spread, or filter a teaching. Gospel, evangelio, and evangelho are the same topic — English, Spanish, and Portuguese counted together.</p>';
+              '<p class="hint">Play the spread, or filter a teaching. Gospel, evangelio, and evangelho are the same topic: English, Spanish, and Portuguese counted together.</p>';
             return;
           }
           const metros = filteredMetros().slice(0, 10);
@@ -1279,7 +1279,7 @@
             '<div class="stat"><b>' + fmt(geo.news_with_latlon) + "</b><span>geolocated news rows</span></div>" +
             '<div class="stat"><b>' + usShare + "</b><span>of them from the U.S.</span></div>" +
             "</div>" +
-            '<p class="hint">ActionGeo is writing location, not viewership — D.C. leads because wire desks geocode there. Chile (FIPS CI) is the RISE host. Click a country or city for teaching lifts.</p>' +
+            '<p class="hint">ActionGeo is writing location, not viewership: D.C. leads because wire desks geocode there. Chile (FIPS CI) is the RISE host. Click a country or city for teaching lifts.</p>' +
             downloadButtonsHtml("region") +
             '<p class="pill" style="margin-top:12px">cities</p>' +
             metros.map((m) => '<div class="rank" data-kind="metro" data-name="' + esc(m.name) + '" data-fips="' + esc(m.fips) + '"><span><b>' + esc(m.name) + "</b> · " + esc(m.country) + "</span><span>" + fmt(m.n) + "</span></div>").join("") +
@@ -1744,7 +1744,7 @@
             '<div class="stat"><b>' + (T.nodes || []).length + "</b><span>themes</span></div>" +
             '<div class="stat"><b>' + (T.edges || []).length + "</b><span>lift ≥ 1.25 pairs</span></div>" +
             "</div>" +
-            '<p class="hint">Gold edges are high-lift. Click a node to see its neighbors. This graph has no countries on purpose — teaching geography lives in Places.</p>' +
+            '<p class="hint">Gold edges are high-lift. Click a node to see its neighbors. This graph has no countries on purpose: teaching geography lives in Places.</p>' +
             top.map((e) => {
               const a = themeById[e.source], b = themeById[e.target];
               return '<div class="edge"><span><b>' + esc(a ? a.label : e.source) + "</b> · " + esc((b && b.label) || "") + "</span><span>" + e.lift + "×</span></div>";

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Informal-learning triage: Jev dual taxonomy, place×type lifts, and co-occurrence networks." />
+  <meta name="description" content="What media may already teach about Catholicism: place accents, themes that travel together, and a gentle-correction queue." />
   <title>Triage · How the Americas Hear the Church · Notre Dame</title>
   <link rel="icon" type="image/svg+xml" href="../branding/nd-monogram.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,14 +12,17 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/site.css" />
   <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="../data/findings-data.js" defer></script>
   <script src="../data/triage-data.js" defer></script>
+  <script src="../data/figures-data.js" defer></script>
   <script src="../js/triage.js" defer></script>
+  <script src="../js/figures.js" defer></script>
   <script src="../js/site.js" defer></script>
 </head>
 <body class="mode-triage">
   <header class="nd-nav" role="banner">
     <div class="nd-nav__top">
-      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame — home">
+      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame: home">
         <img class="nd-nav__mark" src="../branding/nd-monogram.svg" alt="" width="36" height="36" />
         <img class="nd-nav__wordmark" src="../branding/wordmark.svg" alt="University of Notre Dame" />
         <span class="nd-nav__site">How the Americas Hear the Church</span>
@@ -41,51 +44,84 @@
   <main id="triage" class="page">
     <header class="page-hero">
       <div class="page-hero__inner reveal is-visible">
-        <p class="kicker">Triage lab · informal learning</p>
-        <h1>Prior knowledge from media</h1>
+        <p class="kicker">Triage · Week 0 listening</p>
+        <h1>What media may already have taught</h1>
         <p class="lead">
-          Dual-taxonomy Jev labels (~61k excerpts): what content travels where, which speech-acts
-          carry teaching claims, and which types co-occur — a Week-0 listening board for OCIA and
-          parish formation.
+          Before OCIA or a parish short course, people meet the Church in headlines and clips.
+          This page shows the patterns that show up most clearly in a labeled sample of media,
+          in plain language you can use in class.
         </p>
         <p class="page-hero__links">
-          <a class="cta" href="methods.html#triage">Methods · triage</a>
-          <a class="cta cta--ghost" href="findings.html#f-education">Findings panel</a>
-          <a class="cta cta--ghost" href="explore.html#/topics">Topics graph</a>
+          <a class="cta" href="#t-hooks">Start with the headlines</a>
+          <a class="cta cta--ghost" href="findings.html#f-education">Findings</a>
+          <a class="cta cta--ghost" href="methods.html#triage">How we labeled</a>
         </p>
       </div>
     </header>
 
     <div class="findings-grid triage-grid">
-      <article class="f-card f-card--wide" id="t-hooks"></article>
-
-      <article class="f-card f-card--wide triage-net-card">
-        <p class="kicker">Network</p>
-        <div class="triage-net-head">
-          <h3>Jev prior-knowledge graph</h3>
-          <label class="triage-mode">
-            View
-            <select id="t-network-mode" aria-label="Network mode">
-              <option value="place_x_type">Place × type (ActionGeo lifts)</option>
-              <option value="types_together">Types together (co-occurrence)</option>
-            </select>
-          </label>
-        </div>
-        <p class="f-note">
-          Gold = places · green = content · blue = discourse. Edges prefer Fisher+Holm
-          significant associations (α=0.05); width scales with lift. Drag nodes.
-          Not Theology gold — triage for educators.
+      <article class="f-card f-card--wide triage-howto" id="t-howto">
+        <p class="kicker">How to read this page</p>
+        <h3>Four short stops</h3>
+        <ol class="triage-steps">
+          <li><strong>Headlines</strong>: the biggest takeaways from the labeled media sample.</li>
+          <li><strong>Where &amp; what</strong>: which countries lean toward which teaching types.</li>
+          <li><strong>Connections</strong>: a simple map of places and themes (or themes that travel together).</li>
+          <li><strong>Examples</strong>: clickable figures with short EN/ES/PT vignettes.</li>
+        </ol>
+        <p class="f-note triage-key">
+          <span class="triage-badge triage-badge--strong">Strong signal</span>
+          means the pattern is clearer than chance after a careful check.
+          This is a listening board for educators, not a Theology gold grade of the Church.
         </p>
-        <div class="triage-network-wrap" id="t-network-wrap">
-          <svg id="t-network" role="img" aria-label="Jev triage network"></svg>
-        </div>
       </article>
+
+      <article class="f-card f-card--wide" id="t-hooks"></article>
 
       <article class="f-card" id="t-places"></article>
       <article class="f-card" id="t-mis"></article>
-      <article class="f-card" id="t-lang"></article>
       <article class="f-card" id="t-pairs"></article>
-      <article class="f-card f-card--wide" id="t-cross"></article>
+      <article class="f-card" id="t-lang"></article>
+      <article class="f-card" id="t-family"></article>
+      <article class="f-card" id="t-cross"></article>
+
+      <article class="f-card f-card--wide triage-net-card" id="t-network-card">
+        <p class="kicker">Connections</p>
+        <div class="triage-net-head">
+          <h3>See how themes link</h3>
+          <label class="triage-mode">
+            Show
+            <select id="t-network-mode" aria-label="Connection view">
+              <option value="place_x_type">Places and the themes they elevate</option>
+              <option value="types_together">Themes that often appear together</option>
+            </select>
+          </label>
+        </div>
+        <p class="f-note" id="t-network-blurb">
+          Left: places. Right: teaching types. A line means that theme shows up more often there
+          than in the rest of the geolocated news sample. Click a circle to read it in words.
+        </p>
+        <div class="triage-legend" id="t-network-legend" aria-hidden="true">
+          <span><i class="triage-swatch triage-swatch--place"></i> Place</span>
+          <span><i class="triage-swatch triage-swatch--content"></i> Teaching type</span>
+          <span><i class="triage-swatch triage-swatch--discourse"></i> How it is said</span>
+        </div>
+        <div class="triage-network-wrap" id="t-network-wrap">
+          <svg id="t-network" role="img" aria-label="Theme connection map"></svg>
+        </div>
+        <p class="triage-readout" id="t-network-readout" aria-live="polite">
+          Click a circle or line for a plain-language readout.
+        </p>
+      </article>
+
+      <article class="f-card f-card--wide" id="t-figures">
+        <p class="kicker">Examples</p>
+        <h3>Figures with short media vignettes</h3>
+        <p class="f-note">
+          Click a bar or card, then read an EN/ES/PT example with content and discourse labels.
+        </p>
+        <div data-figures id="triage-figures-board" aria-label="Interactive paper figures"></div>
+      </article>
     </div>
   </main>
 
@@ -98,7 +134,7 @@
       <p class="nd-footer__title">How the Americas Hear the Church</p>
       <p class="nd-footer__meta">
         Built for education and public impact: inspectable lexicon lifts, not black-box maps.
-        ActionGeo marks writing location in GDELT — not viewership.
+        ActionGeo marks writing location in GDELT, not viewership.
       </p>
       <p class="nd-footer__meta">
         <a href="https://lucyinstitute.nd.edu/" target="_blank" rel="noreferrer">Lucy Institute</a>

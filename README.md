@@ -13,11 +13,15 @@ Raw GDELT/API collection lives in:
 | `data/*/…/anonymized/` | De-identified JSONL (news, TV, radio, YouTube) |
 | `data/network/` | Discourse graphs (country×teaching, actors, bridges, …) |
 | `data/us/network/` | Affiliation graph |
-| `scripts/common/` | Themes, geography, stratified sample, path helpers |
+| `scripts/common/` | Themes, geography, stratified sample, Jev path helpers |
+| `scripts/judge/` | Dual-taxonomy Jev pipeline (OpenRouter), QC, correlations |
+| `scripts/paper/` | **Tracked** paper figure/table generators (`papers/` is gitignored) |
 | `scripts/build_*.py` | Network rebuild from anonymized inputs |
-| `viz/` | ND site: Story · Findings · Places · Topics · Methods (`bash viz/tools/check.sh`) |
+| `viz/` | ND site: Story · Findings · Triage · Places · Topics · Methods |
 
 **No** raw `*_paragraphs_*.jsonl`, fetch shards, API keys, or collector launchers.
+
+`papers/` is local-only (LaTeX, PDFs, large Jev JSONL). Generators that rebuild those artifacts live in `scripts/paper/`.
 
 ## Setup
 
@@ -31,15 +35,16 @@ python -c "import spacy; spacy.cli.download('en_core_web_sm'); spacy.cli.downloa
 
 ```bash
 python3 viz/serve.py
+# rebuild Story/Findings/Triage snapshots then serve:
+python3 viz/serve.py --verify --build-findings
 ```
 
 Then open **http://127.0.0.1:8765/pages/index.html** in your browser.
 
-Optional flags:
-
 ```bash
+bash viz/tools/check.sh          # findings + triage + verify
 python3 viz/serve.py --port 8765
-python3 viz/serve.py --no-browser   # print URL only
+python3 viz/serve.py --no-browser
 ```
 
 Refresh map data from anonymized JSONL (when needed):
@@ -47,7 +52,26 @@ Refresh map data from anonymized JSONL (when needed):
 ```bash
 python3 viz/tools/export_map_network.py --use-cache
 python3 viz/tools/export_viz_extras.py --use-cache
+python3 viz/tools/build_findings_data.py
+python3 viz/tools/build_triage_data.py
 ```
+
+## Education track (Jev + paper figures)
+
+```bash
+# Correlations / networks (after a live or fixture Jev run)
+python3 scripts/judge/analyze_jev_correlations.py
+
+# Slide-ready paper figures → papers/rise_education_2026/figures/
+MPLCONFIGDIR=/tmp/mpl python3 scripts/paper/plot_jev_paper_figures.py
+python3 scripts/paper/generate_results_corpus_table.py
+
+# Full paper PDF (local; requires TeX under papers/)
+bash papers/rise_education_2026/build_main.sh
+bash papers/rise_education_2026/build_abstract.sh
+```
+
+See [`scripts/paper/README.md`](scripts/paper/README.md) and [`scripts/judge/README.md`](scripts/judge/README.md).
 
 ## Corpus stats
 

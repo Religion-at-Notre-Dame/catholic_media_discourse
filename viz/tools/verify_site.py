@@ -23,18 +23,26 @@ REQUIRED_FILES = [
     "pages/explore.html",
     "css/site.css",
     "js/site.js",
+    "js/story.js",
     "js/findings.js",
     "js/triage.js",
+    "js/figures.js",
     "data/data.js",
     "data/extras.js",
     "data/findings-data.js",
     "data/triage-data.js",
+    "data/figures-data.js",
+    "assets/figures/jev_educator_flash.png",
+    "assets/figures/chile_theme_lifts.png",
+    "tools/build_figures_data.py",
     "data/americas-borders.json",
     "data/lexicon.csv",
+    "data/education_taxonomies.csv",
     "index.html",
     "serve.py",
     "tools/export_lexicon_csv.py",
     "tools/export_map_network.py",
+    "tools/build_findings_data.py",
     "tools/build_triage_data.py",
     "tools/verify_site.py",
     "branding/nd-monogram.svg",
@@ -45,9 +53,45 @@ REQUIRED_FILES = [
 ]
 
 PAGE_IDS = {
-    "index.html": ["storyboard", "nav-story", "cta-explore", "authors", "site-footer", "research-questions"],
-    "findings.html": ["findings", "nav-findings", "f-corpus", "f-education", "site-footer"],
-    "triage.html": ["triage", "nav-triage", "t-hooks", "t-network", "t-network-mode", "site-footer"],
+    "index.html": [
+        "storyboard",
+        "nav-story",
+        "cta-explore",
+        "authors",
+        "site-footer",
+        "research-questions",
+        "story-corpus",
+        "story-signatures",
+        "story-santiago",
+        "story-santiago-lead",
+        "story-education",
+        "story-education-headline",
+        "story-education-note",
+        "story-education-beats",
+        "story-figures",
+        "story-figures-board",
+        "cta-santiago",
+    ],
+    "findings.html": [
+        "findings",
+        "nav-findings",
+        "f-corpus",
+        "f-education",
+        "f-figures",
+        "site-footer",
+    ],
+    "triage.html": [
+        "triage",
+        "nav-triage",
+        "t-howto",
+        "t-hooks",
+        "t-figures",
+        "t-network",
+        "t-network-mode",
+        "t-network-readout",
+        "t-family",
+        "site-footer",
+    ],
     "methods.html": ["methods", "nav-methods", "techniques", "lexicon", "site-footer"],
     "explore.html": [
         "explorer",
@@ -191,6 +235,31 @@ def main() -> int:
         err("findings.html missing ../data/findings-data.js")
     else:
         ok("findings data path")
+    if "../data/findings-data.js" not in pages["index.html"]:
+        err("index.html (Story) missing ../data/findings-data.js")
+    else:
+        ok("story findings-data path")
+    if "../js/story.js" not in pages["index.html"]:
+        err("index.html missing ../js/story.js")
+    else:
+        ok("story.js path")
+    if "../data/figures-data.js" not in pages["index.html"]:
+        err("index.html missing ../data/figures-data.js")
+    else:
+        ok("story figures-data path")
+    if "../js/figures.js" not in pages["index.html"]:
+        err("index.html missing ../js/figures.js")
+    else:
+        ok("figures.js path")
+    if "data-figures" not in pages["index.html"]:
+        err("index.html missing figures mount")
+    else:
+        ok("story figures mount")
+    for name in ("index.html", "findings.html", "triage.html", "methods.html"):
+        if "Triage lab" in pages[name] or "figures lab" in pages[name].lower():
+            err(f"{name} still says lab")
+        else:
+            ok(f"{name} no lab wording")
 
     index = pages["index.html"]
     if "orcid.org" in index.lower():
@@ -240,8 +309,10 @@ def main() -> int:
     else:
         ok("methods: techniques + lexicon + impact")
 
-    if "viz/tools/export_lexicon_csv.py" not in methods:
-        warn("methods regenerate path may still say old location")
+    if ".py" in methods:
+        err("methods.html should not cite .py script paths (classroom readers)")
+    else:
+        ok("methods has no .py script paths")
 
     explore = pages["explore.html"]
     if "window.__bootVizApp" not in explore:
@@ -286,7 +357,7 @@ def main() -> int:
         ok("findings-data education block")
     tax_csv = DATA / "education_taxonomies.csv"
     if not tax_csv.exists() or tax_csv.stat().st_size < 200:
-        err("viz/data/education_taxonomies.csv missing — run export_education_taxonomies_csv.py")
+        err("viz/data/education_taxonomies.csv missing: run export_education_taxonomies_csv.py")
     else:
         ok("education_taxonomies.csv")
 
@@ -308,16 +379,33 @@ def main() -> int:
         err("triage-data.js missing TRIAGE networks")
     else:
         ok("triage-data networks")
-    for page_html in pages.values():
-        if 'id="nav-triage"' not in page_html and "triage.html" not in page_html:
-            # explore/findings etc must link Triage
-            pass
+    if "family_contrast" not in triage_data:
+        err("triage-data.js missing family_contrast")
+    else:
+        ok("triage-data family_contrast")
+    triage_js = (JS / "triage.js").read_text(encoding="utf-8")
+    if "renderFamily" not in triage_js:
+        err("triage.js missing renderFamily")
+    else:
+        ok("triage family renderer")
+    if "Strong signal" not in triage and "Strong signal" not in triage_js:
+        err("triage page should use plain Strong signal badges (not star counts)")
+    else:
+        ok("triage plain-language signal badges")
+    if "place_x_type" not in triage_js or "t-network-readout" not in triage:
+        err("triage should expose bipartite place×type map + readout")
+    else:
+        ok("triage bipartite map + readout")
+    if "triage-steps" not in triage or "t-howto" not in triage:
+        err("triage.html missing how-to flow steps")
+    else:
+        ok("triage how-to flow")
     for name, html in pages.items():
-        if 'href="triage.html"' not in html and name != "triage.html":
-            # triage page uses relative self; others must link
-            if name != "triage.html":
-                err(f"{name} missing triage.html nav link")
-        elif name != "triage.html":
+        if name == "triage.html":
+            continue
+        if 'href="triage.html"' not in html:
+            err(f"{name} missing triage.html nav link")
+        else:
             ok(f"{name} links triage")
 
     if "renderFindings" not in site_js:
@@ -328,6 +416,23 @@ def main() -> int:
         err("site.js should boot triage page")
     else:
         ok("site.js triage boot")
+    if "renderStory" not in site_js and "mode-story" not in site_js:
+        err("site.js should boot story page")
+    else:
+        ok("site.js story boot")
+    if "renderStory" not in (JS / "story.js").read_text(encoding="utf-8"):
+        err("story.js missing renderStory")
+    else:
+        ok("story renderer")
+    fig_js = (JS / "figures.js").read_text(encoding="utf-8")
+    if "renderFigures" not in fig_js:
+        err("figures.js missing renderFigures")
+    else:
+        ok("figures renderer")
+    if "figlab" in fig_js or "data-figures-lab" in fig_js:
+        err("figures.js still uses lab naming")
+    else:
+        ok("figures.js naming")
 
     try:
         viz = load_js_assign(DATA / "data.js", "VIZ")
@@ -348,6 +453,29 @@ def main() -> int:
     except Exception as e:
         err(str(e))
         findings = {}
+
+    try:
+        triage = load_js_assign(DATA / "triage-data.js", "TRIAGE")
+        ok("triage-data.js parses")
+    except Exception as e:
+        err(str(e))
+        triage = {}
+
+    try:
+        figures = load_js_assign(DATA / "figures-data.js", "FIGURES")
+        ok("figures-data.js parses")
+        panels = figures.get("panels") or []
+        examples = figures.get("examples") or []
+        if len(panels) >= 5 and len(examples) >= 8:
+            ok(f"FIGURES panels={len(panels)} examples={len(examples)}")
+        else:
+            err("FIGURES missing panels/examples: run build_figures_data.py")
+        for need in ("educator", "chile", "place", "types"):
+            if not any(p.get("id") == need for p in panels):
+                err(f"FIGURES missing panel {need}")
+    except Exception as e:
+        err(str(e))
+        figures = {}
 
     months = (viz.get("spread") or {}).get("months") or []
     want = expected_months()
@@ -389,6 +517,67 @@ def main() -> int:
     else:
         err("santiago lifts thin")
 
+    story = findings.get("story") or {}
+    beats = story.get("beats") or []
+    if len(beats) >= 2 and story.get("headline"):
+        ok(f"FINDINGS.story beats={len(beats)}")
+    else:
+        err("FINDINGS.story missing headline/beats: rebuild build_findings_data.py")
+    # Beat hrefs must land on Triage/Findings mounts
+    triage_html = pages["triage.html"]
+    findings_html = pages["findings.html"]
+    for b in beats:
+        href = str(b.get("href") or "")
+        if not href:
+            err(f"story beat {b.get('id')} missing href")
+            continue
+        if href.startswith("triage.html#"):
+            frag = href.split("#", 1)[1]
+            if f'id="{frag}"' not in triage_html:
+                err(f"story beat href missing mount: {href}")
+            else:
+                ok(f"story beat → #{frag}")
+        elif href.startswith("findings.html#"):
+            frag = href.split("#", 1)[1]
+            if f'id="{frag}"' not in findings_html:
+                err(f"story beat href missing mount: {href}")
+            else:
+                ok(f"story beat → #{frag}")
+    # Humanized labels (no raw snake_case taxonomy on Story)
+    joined = " ".join(str(b.get("text") or "") for b in beats)
+    if "devotion_piety" in joined or "cst_papal" in joined:
+        err("FINDINGS.story beats still use snake_case taxonomy ids: rebuild findings")
+    else:
+        ok("FINDINGS.story beats use human labels")
+
+    # Santiago lifts must match Chile matrix (within float rounding).
+    ci = next((r for r in matrix if r.get("fips") == "CI"), None)
+    if ci and lifts:
+        bad = []
+        for d in lifts:
+            tid = d.get("theme_id")
+            if not tid:
+                bad.append("missing theme_id")
+                continue
+            want = (ci.get("lifts") or {}).get(tid)
+            got = d.get("x")
+            if want is None or got is None:
+                bad.append(f"{tid}: missing")
+            elif abs(float(want) - float(got)) > 0.051:
+                bad.append(f"{tid}: matrix={want} santiago={got}")
+        if bad:
+            err("santiago lifts diverge from Chile matrix: " + "; ".join(bad))
+        else:
+            ok("santiago lifts match Chile matrix")
+    else:
+        err("cannot verify Santiago vs Chile matrix")
+
+    fam = triage.get("family_contrast") or []
+    if fam:
+        ok(f"TRIAGE.family_contrast n={len(fam)}")
+    else:
+        err("TRIAGE.family_contrast empty")
+
     export = TOOLS / "export_map_network.py"
     if export.exists() and "2026Q2" in export.read_text(encoding="utf-8"):
         ok("export_map_network months include through 2026Q2")
@@ -397,12 +586,20 @@ def main() -> int:
 
     for js in (
         JS / "site.js",
+        JS / "story.js",
         JS / "findings.js",
+        JS / "triage.js",
+        JS / "figures.js",
         DATA / "data.js",
         DATA / "extras.js",
         DATA / "findings-data.js",
+        DATA / "triage-data.js",
+        DATA / "figures-data.js",
     ):
+        before = len(errors)
         check_node_syntax(js, errors)
+        if len(errors) == before:
+            ok(f"syntax {js.name}")
     if explore.count("<script") != explore.count("</script>"):
         err("explore.html unbalanced script tags")
     else:

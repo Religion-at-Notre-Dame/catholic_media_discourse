@@ -135,7 +135,7 @@ def main() -> int:
 
     if args.write_tex:
         lines = [
-            "% Auto-generated Jev education-layer brief — do not hand-edit.",
+            "% Auto-generated Jev education-layer brief; do not hand-edit.",
             f"Fixture/pilot rows: {n}. "
             f"Misunderstanding rate: {(summary['misunderstanding_rate'] or 0)*100:.0f}\\%. "
             f"Human-review flags: {review}.",

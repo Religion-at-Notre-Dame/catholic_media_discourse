@@ -1,4 +1,4 @@
-/* Findings charts — uses window.FINDINGS (small JSON). No Leaflet required. */
+/* Findings charts: uses window.FINDINGS (small JSON). No Leaflet required. */
 (function () {
   function esc(s) {
     return String(s == null ? "" : s)
@@ -111,7 +111,7 @@
       "</h3>" +
       '<p class="f-note">Country rate ÷ U.S. rate. Gutiérrez’s preferential-option vocabulary is stronger across much of Latin America.</p>' +
       ranked.map((d) => barRow(d.name, d.x + "×", max)).join("") +
-      '<button type="button" class="cta cta--ghost f-cta" data-go="topics" style="border-color:var(--nd-blue);color:var(--nd-blue)">Open Topics graph</button>';
+      '<button type="button" class="cta cta--ghost f-cta" data-go="topics">Open Topics graph</button>';
   }
 
   function renderCooccur(el, F) {
@@ -177,7 +177,7 @@
     el.innerHTML =
       '<p class="kicker">Writing desks</p>' +
       "<h3>Top ActionGeo metros</h3>" +
-      '<p class="f-note">Counts reflect where stories were written into GDELT — D.C. leads because wire desks geocode there.</p>' +
+      '<p class="f-note">Counts reflect where stories were written into GDELT. D.C. leads because wire desks geocode there.</p>' +
       rows.map((d) => barRow(d.name + (d.fips === "CI" ? " · RISE" : ""), d.n.toLocaleString(), max)).join("");
   }
 
@@ -186,7 +186,7 @@
     el.innerHTML =
       '<p class="kicker">Corpus</p>' +
       "<h3>Scale of the collection</h3>" +
-      '<p class="f-note">Multimodal harvest scored with a frozen EN/ES/PT lexicon — the substrate for geography and language questions.</p>' +
+      '<p class="f-note">Multimodal harvest scored with a frozen EN/ES/PT lexicon, the substrate for geography and language questions.</p>' +
       '<div class="f-corpus">' +
       '<div><strong>' + esc(c.usNews) + "</strong><span>U.S. news paragraphs</span></div>" +
       '<div><strong>' + esc(c.americasNews) + "</strong><span>Americas news</span></div>" +
@@ -210,33 +210,61 @@
       .map((d) => "<li><strong>" + esc(d.pair) + "</strong> · " + d.n + "</li>")
       .join("");
     const paths = (e.pathways || []).map((p) => "<li>" + esc(p) + "</li>").join("");
-    const rate = e.misunderstanding_rate != null ? Math.round(100 * e.misunderstanding_rate) + "%" : "—";
+    const rate = e.misunderstanding_rate != null ? Math.round(100 * e.misunderstanding_rate) + "%" : "n/a";
     const acc =
       e.accuracy_mean != null
         ? typeof e.accuracy_mean === "number"
           ? e.accuracy_mean.toFixed(2)
           : String(e.accuracy_mean)
-        : "—";
+        : "n/a";
+    const live = e.live === true || (e.source && String(e.source).indexOf("fixture") === -1 && (e.n || 0) > 100);
+    const title = live ? "Prior knowledge triage (live pilot)" : "Prior knowledge triage (fixture)";
+    const nLabel = live ? "stratified rows EN/ES/PT" : "fixture rows EN/ES/PT";
+    const langAcc = e.accuracy_mean_by_language || {};
+    const langLine = ["english", "spanish", "portuguese"]
+      .filter(function (k) {
+        return langAcc[k] != null;
+      })
+      .map(function (k) {
+        return k.slice(0, 2).toUpperCase() + " " + Number(langAcc[k]).toFixed(2);
+      })
+      .join(" · ");
+    const hookLine =
+      e.hooks && e.hooks.institutional_vs_doctrine
+        ? '<p class="f-note" style="margin-top:.75rem"><strong>' +
+          esc(e.hooks.institutional_vs_doctrine) +
+          "</strong></p>"
+        : "";
     el.innerHTML =
       '<p class="kicker">Education · informal learning</p>' +
-      "<h3>Prior knowledge triage (fixture)</h3>" +
+      "<h3>" +
+      esc(title) +
+      "</h3>" +
       '<p class="f-note">' +
       esc(e.note || "Dual taxonomy: content (what) + discourse (how) + accuracy triage.") +
       "</p>" +
+      hookLine +
       '<div class="f-corpus">' +
       "<div><strong>" +
-      esc(String(e.n || "—")) +
-      "</strong><span>fixture rows EN/ES/PT</span></div>" +
+      esc(String(e.n || "n/a")) +
+      "</strong><span>" +
+      esc(nLabel) +
+      "</span></div>" +
       "<div><strong>" +
       esc(rate) +
       "</strong><span>misunderstanding flags</span></div>" +
       "<div><strong>" +
-      esc(String(e.needs_human_review != null ? e.needs_human_review : "—")) +
+      esc(String(e.needs_human_review != null ? e.needs_human_review : "n/a")) +
       "</strong><span>human-review flags</span></div>" +
       "<div><strong>" +
       esc(acc) +
       "</strong><span>mean accuracy (0–4)</span></div>" +
       "</div>" +
+      (langLine
+        ? '<p class="f-note" style="margin-top:.75rem">Accuracy by language: ' +
+          esc(langLine) +
+          " (reportage register, not “wrong”)</p>"
+        : "") +
       '<div class="sig-list" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">' +
       "<div><p class=\"f-note\">Top content</p><ul>" +
       topC +
@@ -252,7 +280,7 @@
         ? '<p class="f-note" style="margin-top:1rem">Educator pathways</p><ul>' + paths + "</ul>"
         : "") +
       '<p class="f-note" style="margin-top:1rem">' +
-      '<a href="triage.html">Open Triage lab</a> · ' +
+      '<a href="triage.html">Open Triage</a> · ' +
       '<a href="methods.html#triage">Methods</a> · ' +
       '<a href="explore.html#/places">Places map</a>' +
       "</p>";

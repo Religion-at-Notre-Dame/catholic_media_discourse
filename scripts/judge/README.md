@@ -23,14 +23,15 @@ python3 scripts/judge/export_jev_qc_sheet.py
 python3 scripts/judge/export_a5_classroom_csv.py
 python3 scripts/judge/export_formation_subset.py   # live formation CSV + Sidney priority QC
 python3 scripts/judge/analyze_jev_correlations.py  # co-occurrence + ActionGeo×type + networks
-python3 viz/tools/build_triage_data.py            # → viz Triage lab
+python3 viz/tools/build_triage_data.py            # → viz Triage page
 python3 scripts/judge/summarize_jev_judgments.py \
   papers/rise_education_2026/analysis/jev_judgments/fixtures/demo_dual_en_es_pt.jsonl \
   --write-json papers/rise_education_2026/analysis/jev_judgments/fixtures/demo_summary.json \
   --write-tex papers/rise_education_2026/sections/jev_education_brief.tex
 python3 scripts/judge/score_jev_qc.py \
   papers/rise_education_2026/analysis/jev_judgments/qc_sheet.csv
-python3 papers/rise_education_2026/analysis/plot_jev_education_fixture.py
+python3 scripts/paper/plot_jev_education_fixture.py
+python3 scripts/paper/plot_jev_paper_figures.py
 ```
 
 ## Live pilot (needs key)

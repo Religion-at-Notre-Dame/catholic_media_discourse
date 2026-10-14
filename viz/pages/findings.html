@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="How Catholic themes circulate in media across the Americas — University of Notre Dame." />
+  <meta name="description" content="How Catholic themes circulate in media across the Americas: University of Notre Dame." />
   <title>Findings · How the Americas Hear the Church · Notre Dame</title>
   <link rel="icon" type="image/svg+xml" href="../branding/nd-monogram.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,13 +13,17 @@
   
   <link rel="stylesheet" href="../css/site.css" />
     <script src="../data/findings-data.js" defer></script>
+  <script src="../data/triage-data.js" defer></script>
+  <script src="../data/figures-data.js" defer></script>
   <script src="../js/findings.js" defer></script>
+  <script src="../js/figures.js" defer></script>
+  <script src="../js/site.js" defer></script>
 
 </head>
 <body class="mode-findings">
   <header class="nd-nav" role="banner">
     <div class="nd-nav__top">
-      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame — home">
+      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame: home">
         <img class="nd-nav__mark" src="../branding/nd-monogram.svg" alt="" width="36" height="36" />
         <img class="nd-nav__wordmark" src="../branding/wordmark.svg" alt="University of Notre Dame" />
         <span class="nd-nav__site">How the Americas Hear the Church</span>
@@ -57,6 +61,15 @@
     <div class="findings-grid">
       <article class="f-card f-card--wide" id="f-corpus"></article>
       <article class="f-card f-card--wide" id="f-education"></article>
+      <article class="f-card f-card--wide" id="f-figures">
+        <p class="kicker">Figures · interactive</p>
+        <h3>Figures with examples</h3>
+        <p class="f-note">
+          Educator flash, place lifts, Chile / Santiago, and types-together, with clickable
+          EN/ES/PT examples.
+        </p>
+        <div data-figures id="findings-figures-board" aria-label="Interactive paper figures"></div>
+      </article>
       <article class="f-card" id="f-sigs"></article>
       <article class="f-card" id="f-santiago"></article>
       <article class="f-card" id="f-lifts"></article>
@@ -84,7 +97,7 @@
         <p class="nd-footer__title">How the Americas Hear the Church</p>
         <p class="nd-footer__meta">
           Built for education and public impact: inspectable lexicon lifts, not black-box maps.
-          ActionGeo marks writing location in GDELT — not viewership.
+          ActionGeo marks writing location in GDELT, not viewership.
         </p>
         <p class="nd-footer__meta">
           <a href="https://lucyinstitute.nd.edu/" target="_blank" rel="noreferrer">Lucy Institute</a>

@@ -21,12 +21,18 @@ def main() -> None:
     p.add_argument("--port", type=int, default=8765)
     p.add_argument("--no-browser", action="store_true")
     p.add_argument("--verify", action="store_true", help="run verify_site.py before serving")
-    p.add_argument("--build-findings", action="store_true", help="rebuild findings-data.js first")
+    p.add_argument(
+        "--build-findings",
+        action="store_true",
+        help="rebuild findings-data.js and triage-data.js first",
+    )
     args = p.parse_args()
     os.chdir(HERE)
 
     if args.build_findings:
         subprocess.check_call([sys_executable(), str(TOOLS / "build_findings_data.py")])
+        subprocess.check_call([sys_executable(), str(TOOLS / "build_triage_data.py")])
+        subprocess.check_call([sys_executable(), str(TOOLS / "build_figures_data.py")])
     if args.verify:
         subprocess.check_call([sys_executable(), str(TOOLS / "verify_site.py")])
 
@@ -42,9 +48,23 @@ def main() -> None:
         }
 
         def end_headers(self):
-            # Story HTML: no cache. Heavy data blobs: short cache for local reloads.
             path = self.path.split("?", 1)[0]
-            if path.endswith((".js", ".css", ".svg", ".png", ".json", ".csv")) and "index.html" not in path:
+            # Classroom snapshots + renderers: never cache (Story/Findings/Triage).
+            no_store = (
+                "findings-data.js" in path
+                or "triage-data.js" in path
+                or "figures-data.js" in path
+                or path.endswith("/story.js")
+                or path.endswith("/findings.js")
+                or path.endswith("/triage.js")
+                or path.endswith("/figures.js")
+                or path.endswith("/site.js")
+                or path.endswith(".html")
+                or "index.html" in path
+            )
+            if no_store:
+                self.send_header("Cache-Control", "no-store")
+            elif path.endswith((".js", ".css", ".svg", ".png", ".json", ".csv")):
                 self.send_header("Cache-Control", "public, max-age=60")
             else:
                 self.send_header("Cache-Control", "no-store")
@@ -58,7 +78,10 @@ def main() -> None:
         url = f"http://127.0.0.1:{args.port}/pages/index.html"
         print(f"Classroom site → {url}")
         print("Layout: pages/  css/  js/  data/  branding/  tools/")
-        print("Pages: pages/index.html  findings  methods  explore.html#/places|#/topics|#/santiago")
+        print(
+            "Pages: pages/index.html  findings  triage  methods  "
+            "explore.html#/places|#/topics|#/santiago"
+        )
         if not args.no_browser:
             threading.Timer(0.4, lambda: webbrowser.open(url)).start()
         try:

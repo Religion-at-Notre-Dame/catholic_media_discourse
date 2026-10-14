@@ -1,4 +1,4 @@
-"""Fast JSONL scan helpers for Mac — orjson, mtime cache, parallel file workers."""
+"""Fast JSONL scan helpers for Mac: orjson, mtime cache, parallel file workers."""
 
 from __future__ import annotations
 

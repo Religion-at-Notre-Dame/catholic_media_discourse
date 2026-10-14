@@ -5,11 +5,11 @@
     papers/rise_education_2026/analysis/jev_judgments/jev_dual_20261012T080844Z.jsonl
 
 Outputs (next to the JSONL by default):
-  *_correlations.json   — full summary
-  *_label_cooccur.csv   — content×content, discourse×discourse, content×discourse
-  *_location_x_type.csv — ActionGeo country/region × content (news join)
-  *_lang_x_type.csv     — language / family × content rates
-  figures/jev_corr_*.png — optional heatmaps
+  *_correlations.json  : full summary
+  *_label_cooccur.csv  : content×content, discourse×discourse, content×discourse
+  *_location_x_type.csv: ActionGeo country/region × content (news join)
+  *_lang_x_type.csv    : language / family × content rates
+  figures/jev_corr_*.png: optional heatmaps
 """
 
 from __future__ import annotations
@@ -37,6 +37,7 @@ from common.geography import (  # noqa: E402
     fips_country_name,
     record_action_fips,
 )
+from common.label_pretty import pretty_label  # noqa: E402
 from scipy.stats import fisher_exact  # noqa: E402
 
 NEWS_SOURCES = {
@@ -99,7 +100,7 @@ def attach_holm(rows: list[dict[str, Any]], p_key: str = "p") -> list[dict[str, 
     ps: list[float] = []
     for r in rows:
         raw = r.get(p_key)
-        # Important: p=0.0 is significant — do not use `or 1.0` (0.0 is falsy).
+        # Important: p=0.0 is significant: do not use `or 1.0` (0.0 is falsy).
         ps.append(1.0 if raw is None else float(raw))
     adj = holm_adjust(ps)
     for r, q in zip(rows, adj):
@@ -668,7 +669,7 @@ def main() -> int:
     sig_lang = [r for r in lang_contrast if r.get("significant")] or lang_contrast[:8]
     sig_mis = [r for r in mis_by_loc if r.get("significant")] or mis_by_loc[:8]
 
-    # —— Network payloads (Gephi + viz) ——
+    # , ,  Network payloads (Gephi + viz) , , 
     def nid(kind: str, name: str) -> str:
         return f"{kind}:{name}"
 
@@ -797,13 +798,14 @@ def main() -> int:
 
     def _hook_pair(r: dict) -> str:
         return (
-            f"{r['a']} × {r['b']} (lift {r['lift']}, OR {r.get('odds_ratio')}, "
+            f"{pretty_label(r['a'])} × {pretty_label(r['b'])} "
+            f"(lift {r['lift']}, OR {r.get('odds_ratio')}, "
             f"{r.get('stars') or 'ns'} Holm)"
         )
 
     def _hook_place(r: dict) -> str:
         return (
-            f"{r['location']} · {r['label']} "
+            f"{r['location']} · {pretty_label(r['label'])} "
             f"({r['lift_vs_geo_news']}×, OR {r.get('odds_ratio')}, {r.get('stars') or 'ns'})"
         )
 
@@ -842,7 +844,7 @@ def main() -> int:
             "types_together": _hook_pair(clean_content_co[0]) if clean_content_co else "n/a",
             "place_hook": _hook_place(sig_distinctive[0]) if sig_distinctive else "n/a",
             "lang_hook": (
-                f"EN {sig_lang[0]['label']} {sig_lang[0]['rate_a_pct']}% vs "
+                f"EN {pretty_label(sig_lang[0]['label'])} {sig_lang[0]['rate_a_pct']}% vs "
                 f"ES {sig_lang[0]['rate_b_pct']}% "
                 f"(OR {sig_lang[0].get('odds_ratio')}, {sig_lang[0].get('stars')})"
                 if sig_lang

@@ -6,6 +6,8 @@ echo "== build findings-data =="
 python3 build_findings_data.py
 echo "== build triage-data =="
 python3 build_triage_data.py
+echo "== build figures-data =="
+python3 build_figures_data.py
 echo "== export lexicon CSV =="
 python3 export_lexicon_csv.py
 echo "== export education taxonomies CSV =="
