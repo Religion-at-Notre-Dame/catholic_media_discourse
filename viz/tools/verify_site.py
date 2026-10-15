@@ -39,12 +39,14 @@ REQUIRED_FILES = [
     "data/lexicon.csv",
     "data/education_taxonomies.csv",
     "index.html",
+    ".nojekyll",
     "serve.py",
     "tools/export_lexicon_csv.py",
     "tools/export_map_network.py",
     "tools/build_findings_data.py",
     "tools/build_triage_data.py",
     "tools/verify_site.py",
+    "tools/publish_personal_site.sh",
     "branding/nd-monogram.svg",
     "branding/wordmark.svg",
     "branding/academic-mark.svg",
@@ -180,6 +182,9 @@ def main() -> int:
         p = VIZ / rel
         if not p.exists():
             err(f"missing file: {rel}")
+        elif rel == ".nojekyll":
+            # Empty marker is valid for GitHub Pages (disables Jekyll).
+            ok(f"file {rel} (Pages marker)")
         elif p.stat().st_size < 10:
             err(f"empty/tiny file: {rel}")
         else:
@@ -610,6 +615,25 @@ def main() -> int:
         err("root index.html should redirect to pages/index.html")
     else:
         ok("root index redirects to pages/")
+
+    # Subpath-safe for jonathankarr.com/how_the_americas_hear_the_church/
+    abs_hits = []
+    for html_path in PAGES.glob("*.html"):
+        text = html_path.read_text(encoding="utf-8")
+        for needle in ('href="/', 'src="/'):
+            if needle in text:
+                abs_hits.append(f"{html_path.name}:{needle}")
+    if abs_hits:
+        err("absolute root paths break GitHub Pages subpath: " + ", ".join(abs_hits[:6]))
+    else:
+        ok("pages use relative asset paths (Pages subpath-safe)")
+    publish = TOOLS / "publish_personal_site.sh"
+    if publish.exists() and "jonathankarr.com/how_the_americas_hear_the_church" in publish.read_text(
+        encoding="utf-8"
+    ):
+        ok("personal-site publish script")
+    else:
+        err("publish_personal_site.sh missing public URL")
 
     if not errors:
         print(f"\n{ok_n} checks passed · {len(warnings)} warnings · 0 errors")

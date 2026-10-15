@@ -24,6 +24,16 @@ python3 viz/serve.py --verify --build-findings
 
 Open **http://127.0.0.1:8765/pages/index.html** (or `/index.html` for the redirect).
 
+**Public URLs**
+
+- GitHub Pages: [https://religion-at-notre-dame.github.io/catholic_media_discourse/](https://religion-at-notre-dame.github.io/catholic_media_discourse/)
+- Personal mirror: [https://jonathankarr.com/how_the_americas_hear_the_church/](https://jonathankarr.com/how_the_americas_hear_the_church/)
+
+```bash
+# optional: sync the same static payload to the personal site
+bash viz/tools/publish_personal_site.sh
+```
+
 | Page | File |
 |------|------|
 | Story | [`pages/index.html`](pages/index.html) · mounts from `findings-data.js` via [`js/story.js`](js/story.js); interactive figures |

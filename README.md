@@ -47,6 +47,24 @@ python3 viz/serve.py --port 8765
 python3 viz/serve.py --no-browser
 ```
 
+## Public site (GitHub Pages)
+
+This repo is **public**. The classroom site deploys from `viz/` via [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
+
+| URL | Host |
+|-----|------|
+| [religion-at-notre-dame.github.io/catholic_media_discourse](https://religion-at-notre-dame.github.io/catholic_media_discourse/) | This repo (GitHub Pages) |
+| [jonathankarr.com/how_the_americas_hear_the_church](https://jonathankarr.com/how_the_americas_hear_the_church/) | Personal site mirror (optional) |
+
+**First-time setup** (once): GitHub → **Settings → Pages → Source: GitHub Actions**. Then push to `main` (or run the workflow manually). Site root is the staged `viz/` payload (no `tools/`).
+
+**Optional personal-site mirror** (same static files under your CNAME):
+
+```bash
+bash viz/tools/publish_personal_site.sh
+# then commit/push in JonathanKarr33.github.io
+```
+
 Refresh map data from anonymized JSONL (when needed):
 
 ```bash
