@@ -59,6 +59,7 @@ PAGE_IDS = {
         "storyboard",
         "nav-story",
         "cta-explore",
+        "cta-abstract",
         "authors",
         "site-footer",
         "research-questions",
