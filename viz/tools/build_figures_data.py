@@ -159,7 +159,7 @@ EXAMPLES = [
         "content": ["institutional_news"],
         "discourse": ["factual_claim", "news_report"],
         "tags": ["educator", "taxonomy", "news"],
-        "why": "Institutional news bulk: what learners meet first (~31.5% in the pilot).",
+        "why": "Institutional news bulk: what learners meet first (~31.8% in the pilot).",
     },
     {
         "id": "liberation_def",

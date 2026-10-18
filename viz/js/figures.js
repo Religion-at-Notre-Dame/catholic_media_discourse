@@ -124,7 +124,7 @@
     const cards = [
       {
         key: "news",
-        big: (h.institutional_vs_doctrine || "~31.5% institutional vs ~3% doctrine").split(
+        big: (h.institutional_vs_doctrine || "~31.8% institutional vs ~3.1% doctrine").split(
           " vs "
         )[0],
         label: "Institutional news",
