@@ -20,6 +20,19 @@
   boot("mode-findings", "renderFigures");
   boot("mode-triage", "renderFigures");
 
+  const footer = document.getElementById("site-footer");
+  if (footer && !footer.childElementCount) {
+    fetch("../partials/footer.html")
+      .then(function (res) {
+        if (!res.ok) throw new Error(String(res.status));
+        return res.text();
+      })
+      .then(function (html) {
+        footer.innerHTML = html;
+      })
+      .catch(function () {});
+  }
+
   document.querySelectorAll("a.cta, a.act").forEach(function (a) {
     a.addEventListener("keydown", function (e) {
       if (e.key === " ") {

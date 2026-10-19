@@ -806,12 +806,13 @@ a.act {
   object-fit: contain;
   object-position: left center;
 }
-.nd-footer__lucy {
+.nd-footer__lucy,
+.nd-footer__partner {
   height: 2.6rem;
   width: auto;
   max-width: min(12rem, 100%);
   object-fit: contain;
-  /* Lucy SVG is navy (#08334F): invert to white on ND blue */
+  /* Partner SVGs are navy (#08334F): invert to white on ND blue */
   filter: brightness(0) invert(1);
   opacity: 0.95;
 }

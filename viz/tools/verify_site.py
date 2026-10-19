@@ -23,6 +23,7 @@ REQUIRED_FILES = [
     "pages/explore.html",
     "css/site.css",
     "js/site.js",
+    "partials/footer.html",
     "js/story.js",
     "js/findings.js",
     "js/triage.js",
@@ -51,6 +52,9 @@ REQUIRED_FILES = [
     "branding/wordmark.svg",
     "branding/academic-mark.svg",
     "branding/partners/lucy-family-institute.svg",
+    "branding/partners/dac.svg",
+    "branding/partners/dial-lab.png",
+    "branding/partners/de-nicola.png",
     "branding/nd-monogram-gold-96.png",
 ]
 
@@ -60,6 +64,7 @@ PAGE_IDS = {
         "nav-story",
         "cta-explore",
         "cta-abstract",
+        "cta-poster",
         "authors",
         "site-footer",
         "research-questions",
@@ -426,6 +431,20 @@ def main() -> int:
         err("site.js should boot story page")
     else:
         ok("site.js story boot")
+    footer_html = (VIZ / "partials" / "footer.html").read_text(encoding="utf-8")
+    if "../partials/footer.html" not in site_js:
+        err("site.js should load the shared footer")
+    elif "dial-lab.png" not in footer_html or "de-nicola.png" not in footer_html:
+        err("shared footer missing poster logos")
+    else:
+        ok("shared footer")
+        for name, html in pages.items():
+            if name == "explore.html":
+                continue
+            if html.count('id="site-footer"') != 1 or "nd-footer__brands" in html:
+                err(f"{name} should mount the shared footer once")
+            else:
+                ok(f"{name} shared footer mount")
     if "renderStory" not in (JS / "story.js").read_text(encoding="utf-8"):
         err("story.js missing renderStory")
     else:
