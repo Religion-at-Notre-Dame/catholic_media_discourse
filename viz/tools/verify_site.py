@@ -106,7 +106,7 @@ PAGE_IDS = {
         "site-footer",
     ],
     "methods.html": ["methods", "nav-methods", "techniques", "lexicon", "rigor", "theories", "site-footer"],
-    "misconceptions.html": ["misconceptions", "nav-misconceptions", "mis-sources", "mis-outlets", "mis-types", "site-footer"],
+    "misconceptions.html": ["misconceptions", "nav-misconceptions", "mis-sources", "mis-outlets", "mis-types", "mis-accuracy", "mis-by-type", "site-footer"],
     "label.html": ["label", "nav-label", "label-post", "label-check", "site-footer"],
     "next.html": ["next", "nav-next", "pending-funding", "site-footer"],
     "explore.html": [

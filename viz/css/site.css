@@ -2178,8 +2178,8 @@ a.triage-hook--link:hover {
   border-radius: 999px;
   padding: 0.28rem 0.55rem;
 }
-.sev--mild { background: #f4e7b8; color: #6a5200; }
-.sev--bad { background: #0c2340; color: #fff; }
+.sev--mild, .sev--partial { background: #f4e7b8; color: #6a5200; }
+.sev--bad, .sev--clear { background: #0c2340; color: #fff; }
 button.sev {
   border: 1px solid transparent;
   cursor: pointer;
@@ -2348,8 +2348,8 @@ button.sev.is-on { outline: 2px solid var(--nd-gold); }
   border-top: 1px solid var(--line);
   padding-top: 0.7rem;
 }
-#mis-sources, #mis-company, #mis-types, #mis-outlets { margin: 0 0 1.6rem; }
-#mis-types h2, #mis-outlets h2 { font-family: var(--font-serif); font-size: 1.7rem; margin: 0.15rem 0 0.8rem; }
+#mis-sources, #mis-company, #mis-types, #mis-outlets, #mis-accuracy, #mis-by-type { margin: 0 0 1.6rem; }
+#mis-types h2, #mis-outlets h2, #mis-accuracy h2, #mis-by-type h2 { font-family: var(--font-serif); font-size: 1.7rem; margin: 0.15rem 0 0.8rem; }
 #mis-type-bars .src-row { grid-template-columns: minmax(220px, 1.1fr) 1fr 4.2rem; }
 #mis-sources h2, #mis-company h2 {
   font-family: var(--font-serif);

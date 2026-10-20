@@ -58,6 +58,96 @@ def _outlet_rates(corr_path: Path) -> list:
     return rows
 
 
+_ACC_LABELS = {
+    0: "Cannot assess",
+    1: "Clearly inaccurate",
+    2: "Partial or misleading",
+    3: "Broadly accurate",
+    4: "Accurate and clear",
+}
+
+
+def _iter_judgments(corr_path: Path):
+    jsonl = corr_path.with_name(corr_path.name.replace("_correlations.json", ".jsonl"))
+    if not jsonl.is_file():
+        return
+    with jsonl.open(encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            rec = json.loads(line)
+            if rec.get("error"):
+                continue
+            yield rec
+
+
+def _accuracy_breakdown(corr_path: Path) -> list:
+    counts = {i: 0 for i in range(5)}
+    n = 0
+    for rec in _iter_judgments(corr_path):
+        n += 1
+        score = rec.get("accuracy_score")
+        if score is None:
+            continue
+        try:
+            idx = int(score)
+        except (TypeError, ValueError):
+            continue
+        if idx in counts:
+            counts[idx] += 1
+    rows = []
+    for idx in range(5):
+        c = counts[idx]
+        rows.append(
+            {
+                "score": idx,
+                "label": _ACC_LABELS[idx],
+                "n": c,
+                "pct": round(100 * c / n, 2) if n else 0,
+            }
+        )
+    return rows
+
+
+def _mis_by_content(corr_path: Path) -> list:
+    labels = (
+        "doctrine_sacrament",
+        "moral_ethics",
+        "migration_politics",
+        "other_unclear",
+        "devotion_piety",
+        "cst_papal",
+        "institutional_news",
+        "evangelization_mission",
+    )
+    cat_n = {k: 0 for k in labels}
+    mis_n = {k: 0 for k in labels}
+    for rec in _iter_judgments(corr_path):
+        cl = set(rec.get("content_labels") or [])
+        flagged = "misunderstanding" in cl
+        for lab in labels:
+            if lab not in cl:
+                continue
+            cat_n[lab] += 1
+            if flagged:
+                mis_n[lab] += 1
+    rows = []
+    for lab in labels:
+        base = cat_n[lab]
+        hits = mis_n[lab]
+        rows.append(
+            {
+                "label": pretty_label(lab),
+                "n": base,
+                "misunderstanding_n": hits,
+                "pct_within": round(100 * hits / base, 2) if base else 0,
+            }
+        )
+    rows.sort(key=lambda r: -r["pct_within"])
+    return rows
+
+
 def main() -> int:
     if not CORR.exists() or not NET.exists():
         raise SystemExit(
@@ -100,6 +190,8 @@ def main() -> int:
         "outlet_counts": corr.get("families") or {},
         "outlet_rates": _outlet_rates(CORR),
         "content_counts": corr.get("content_label_counts") or {},
+        "accuracy_counts": _accuracy_breakdown(CORR),
+        "misunderstanding_by_content": _mis_by_content(CORR),
         "discourse_counts": corr.get("discourse_label_counts") or {},
         "types_together": pretty_rows(
             (corr.get("content_cooccur_clean_top") or corr.get("content_cooccur_top") or [])[:10]

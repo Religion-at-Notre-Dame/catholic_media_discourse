@@ -110,6 +110,36 @@
         ". The flag marks a passage for educator review. It is not a theologian’s verdict.";
     }
 
+    var accHost = document.getElementById("mis-accuracy-bars");
+    var accRows = T.accuracy_counts || [];
+    if (accHost && accRows.length) {
+      var accMax = accRows.reduce(function (m, r) { return Math.max(m, r.pct || 0); }, 1);
+      var scored = accRows.filter(function (r) { return r.score === 1 || r.score === 2; });
+      var scoredN = scored.reduce(function (s, r) { return s + (r.n || 0); }, 0);
+      accHost.innerHTML = accRows.map(function (r) {
+        var weight = "";
+        if ((r.score === 1 || r.score === 2) && scoredN) {
+          weight = " · " + (100 * r.n / scoredN).toFixed(1) + "% of the inaccurate or partial scores";
+        }
+        return bar(r.label, r.pct || 0, accMax, (r.n || 0).toLocaleString() + " excerpts" + weight, "%");
+      }).join("");
+    }
+
+    var byType = document.getElementById("mis-by-type-bars");
+    var typeRates = T.misunderstanding_by_content || [];
+    if (byType && typeRates.length) {
+      var typeMax = typeRates.reduce(function (m, r) { return Math.max(m, r.pct_within || 0); }, 1);
+      byType.innerHTML = typeRates.map(function (r) {
+        return bar(
+          r.label,
+          r.pct_within || 0,
+          typeMax,
+          (r.misunderstanding_n || 0).toLocaleString() + " of " + (r.n || 0).toLocaleString() + " in this type",
+          "%"
+        );
+      }).join("");
+    }
+
     var company = document.getElementById("mis-company-bars");
     if (company) {
       var pairs = (T.types_together || []).filter(function (r) {

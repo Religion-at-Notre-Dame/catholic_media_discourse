@@ -42,8 +42,7 @@
       <p class="kicker">Formation · accuracy scale</p>
       <h1>Common misconceptions, by how far they drift</h1>
       <p class="lead">
-        The model flagged a possible misunderstanding in about 3% of excerpts.
-        News is the highest of the four outlets. Radio is the lowest. Television and YouTube fall in between, and that gap was not part of the significance test. The cards below are formation examples, not counts from the corpus.
+        Two different measures sit on this page. The misunderstanding flag is a content label, about 3% of excerpts. The accuracy score is separate: most excerpts are “cannot assess,” and the rest are clearly inaccurate, partial or misleading, or broadly accurate. “Mild” and “bad” are not the scale.
       </p>
     </div>
   </header>
@@ -67,6 +66,18 @@
       <p class="mis-note" id="mis-type-note">Shares are of the labeled excerpts. They do not add to 100%, because one paragraph can carry two types. “Institutional news” is not a newspaper section. It means the excerpt is about a Church office, appointment, event, or schedule, and it does not teach a doctrine.</p>
       <div id="mis-type-bars"></div>
     </section>
+    <section id="mis-accuracy" aria-label="Accuracy score breakdown">
+      <p class="kicker">How wrong, when the model scores it</p>
+      <h2>Clearly inaccurate, partial, or not a teaching</h2>
+      <p class="mis-note">Score 1 is clearly inaccurate: the model reads the claim as contradicting ordinary Catholic teaching. Score 2 is partial or misleading: something true is missing or skewed. Score 0 is cannot assess, not a verdict of error. Score 4, accurate and clear, does not appear in this run. These are triage scores, not a theologian’s judgment.</p>
+      <div id="mis-accuracy-bars"></div>
+    </section>
+    <section id="mis-by-type" aria-label="Misunderstanding rate by content type">
+      <p class="kicker">Where the flag is more common</p>
+      <h2>Doctrine and moral teaching carry it most often</h2>
+      <p class="mis-note">Each bar is the share of that content type also marked misunderstanding. Institutional news is common in the corpus and rarely flagged. Doctrine is uncommon and flagged much more often.</p>
+      <div id="mis-by-type-bars"></div>
+    </section>
     <section id="mis-company" aria-label="What travels with misunderstanding">
       <p class="kicker">Same excerpt</p>
       <h2>The flag rides with doctrine, ethics, and opinion</h2>
@@ -75,20 +86,20 @@
     </section>
     <div class="mis-legend" aria-label="Severity key">
       <button type="button" class="sev sev--all is-on" data-sev="all">All</button>
-      <button type="button" class="sev sev--mild" data-sev="mild">Mild · partial or misleading</button>
-      <button type="button" class="sev sev--bad" data-sev="bad">Bad · clearly inaccurate</button>
+      <button type="button" class="sev sev--partial" data-sev="partial">Partial or misleading</button>
+      <button type="button" class="sev sev--clear" data-sev="clear">Clearly inaccurate</button>
     </div>
     <div class="mis-grid">
       <article class="mis-card">
         <h2>Doctrine and sacraments</h2>
         <p class="mis-note">Creed, Mass, and what the Church actually claims to teach.</p>
         <div class="mis-item">
-          <span class="sev sev--mild">Mild</span>
+          <span class="sev sev--partial">Partial or misleading</span>
           <p class="quote">“The pope is infallible in everything he says.”</p>
           <p>Infallibility is a narrow claim about defined teaching, not every interview or homily.</p>
         </div>
         <div class="mis-item">
-          <span class="sev sev--bad">Bad</span>
+          <span class="sev sev--clear">Clearly inaccurate</span>
           <p class="quote">“Each Mass is a new sacrifice of Christ.”</p>
           <p>The Church teaches one sacrifice of Christ, made present at Mass, not repeated as a second death.</p>
         </div>
@@ -98,12 +109,12 @@
         <h2>Devotion and popular piety</h2>
         <p class="mis-note">Mary, saints, Guadalupe, rosary.</p>
         <div class="mis-item">
-          <span class="sev sev--mild">Mild</span>
+          <span class="sev sev--partial">Partial or misleading</span>
           <p class="quote">“Guadalupe is only a national symbol, not Marian devotion.”</p>
           <p>The pilgrimage is cultural and religious. Dropping the devotion leaves a partial account.</p>
         </div>
         <div class="mis-item">
-          <span class="sev sev--bad">Bad</span>
+          <span class="sev sev--clear">Clearly inaccurate</span>
           <p class="quote">“Catholics worship Mary as a goddess.”</p>
           <p>The taxonomy’s own example of misunderstanding. Veneration is not worship due to God alone.</p>
         </div>
@@ -113,12 +124,12 @@
         <h2>Moral teaching</h2>
         <p class="mis-note">Life, dignity, and what counts as Church teaching.</p>
         <div class="mis-item">
-          <span class="sev sev--mild">Mild</span>
+          <span class="sev sev--partial">Partial or misleading</span>
           <p class="quote">“Catholic social teaching is optional politics.”</p>
           <p>CST is teaching about public life. A news fight about a bill is not the same thing as the principle.</p>
         </div>
         <div class="mis-item">
-          <span class="sev sev--bad">Bad</span>
+          <span class="sev sev--clear">Clearly inaccurate</span>
           <p class="quote">“The Church teaches that some human lives count for less.”</p>
           <p>That reverses the claim that every human life has dignity.</p>
         </div>
@@ -128,12 +139,12 @@
         <h2>Papal documents and CST</h2>
         <p class="mis-note">Named encyclicals versus a paraphrase.</p>
         <div class="mis-item">
-          <span class="sev sev--mild">Mild</span>
+          <span class="sev sev--partial">Partial or misleading</span>
           <p class="quote">“Laudato Si’ is only about recycling.”</p>
           <p>Care for the common home is in the text. Reducing it to one habit drops the moral argument.</p>
         </div>
         <div class="mis-item">
-          <span class="sev sev--bad">Bad</span>
+          <span class="sev sev--clear">Clearly inaccurate</span>
           <p class="quote">“Fratelli Tutti replaces the Gospel with politics.”</p>
           <p>The document is a papal exhortation on social friendship, not a substitute creed.</p>
         </div>
@@ -143,12 +154,12 @@
         <h2>Migration and public controversy</h2>
         <p class="mis-note">A bishop’s statement is not always a doctrine.</p>
         <div class="mis-item">
-          <span class="sev sev--mild">Mild</span>
+          <span class="sev sev--partial">Partial or misleading</span>
           <p class="quote">“A bishop’s comment on a bill is defined dogma.”</p>
           <p>Policy statements can teach prudentially. They are not the same act as a creed definition.</p>
         </div>
         <div class="mis-item">
-          <span class="sev sev--bad">Bad</span>
+          <span class="sev sev--clear">Clearly inaccurate</span>
           <p class="quote">“The Church requires Catholics to vote for one party.”</p>
           <p>Formation distinguishes moral teaching from a partisan instruction the Church does not give.</p>
         </div>
