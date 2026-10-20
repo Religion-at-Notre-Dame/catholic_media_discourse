@@ -29,6 +29,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Stage Pages payload
+        env:
+          CARTO_BASEMAP_KEY: ${{ secrets.CARTO_BASEMAP_KEY }}
         run: |
           mkdir -p _site
           rsync -a \
@@ -40,6 +42,11 @@ jobs:
           touch _site/.nojekyll
           # Friendly landing if someone opens the repo Pages root
           test -f _site/index.html
+          # Key is public in the built site; lock it to these hosts in the CARTO dashboard.
+          python3 -c 'import os; k=os.environ.get("CARTO_BASEMAP_KEY",""); k=k.replace("\\","\\\\").replace("\"","\\\""); open("_site/js/basemap-key.js","w").write("window.CARTO_BASEMAP_KEY = \"%s\";\n" % k)'
+          if [ -z "${CARTO_BASEMAP_KEY}" ]; then
+            echo "::warning::CARTO_BASEMAP_KEY secret is empty; Explore basemap tiles will ask for a key."
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

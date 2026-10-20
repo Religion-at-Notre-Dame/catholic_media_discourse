@@ -34,6 +34,33 @@ if [[ "${SKIP_CHECK:-0}" != "1" ]]; then
   bash "$TOOLS/check.sh"
 fi
 
+# Write the map key into the mirror only. Do not copy it back into this repo.
+KEY_FILE="$VIZ/js/basemap-key.js"
+if [[ -f "$ROOT/.env" ]]; then
+  CARTO_BASEMAP_KEY="$(
+    python3 - "$ROOT/.env" <<'PY'
+import sys
+from pathlib import Path
+key = ""
+for line in Path(sys.argv[1]).read_text(encoding="utf-8").splitlines():
+    line = line.strip()
+    if not line or line.startswith("#") or "=" not in line:
+        continue
+    name, _, value = line.partition("=")
+    if name.strip() == "CARTO_BASEMAP_KEY":
+        key = value.strip().strip('"').strip("'")
+print(key, end="")
+PY
+  )"
+fi
+CARTO_BASEMAP_KEY="${CARTO_BASEMAP_KEY:-}"
+KEY_FILE="$KEY_FILE" CARTO_BASEMAP_KEY="$CARTO_BASEMAP_KEY" python3 -c 'import os; k=os.environ.get("CARTO_BASEMAP_KEY",""); k=k.replace("\\","\\\\").replace("\"","\\\""); open(os.environ["KEY_FILE"],"w").write("window.CARTO_BASEMAP_KEY = \"%s\";\n" % k)'
+if [[ -z "$CARTO_BASEMAP_KEY" ]]; then
+  echo "CARTO_BASEMAP_KEY is empty in .env; the mirror map will not have a basemap key." >&2
+else
+  echo "CARTO basemap key written for the personal mirror (not committed here)."
+fi
+
 mkdir -p "$DEST"
 # Replace published payload; keep any local .git if someone nested one (unusual).
 rsync -a --delete \
@@ -43,6 +70,7 @@ rsync -a --delete \
   --exclude 'README.md' \
   --exclude '.DS_Store' \
   "$VIZ/" "$DEST/"
+rm -f "$KEY_FILE"
 
 # Ensure Pages does not run Jekyll on the mirror either.
 touch "$DEST/.nojekyll"
