@@ -1,4 +1,5 @@
 .env
+viz/js/basemap-key.js
 venv/
 .venv/
 __pycache__/

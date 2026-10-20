@@ -111,7 +111,10 @@
     </div>
   </div>
 
+  <script src="../js/basemap-key.js"></script>
   <script>
+    const CARTO_BASEMAP_KEY = window.CARTO_BASEMAP_KEY || "";
+
     window.__bootVizApp = function () {
       if (!window.VIZ) {
         document.body.innerHTML = '<header class="nd-nav"><div class="nd-nav__top"><span class="nd-nav__site">How the Americas Hear the Church</span></div></header><div class="boot-fail"><div><h1>Classroom data is missing</h1><p>Expected <code>data.js</code> to set <code>window.VIZ</code>. Re-export the map, then reload.</p></div></div>';
@@ -630,7 +633,7 @@
       });
       L.control.zoom({ position: "bottomleft" }).addTo(map);
       // Night atlas basemap: heat + gold borders read better than pale Carto light
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png", {
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png" + (CARTO_BASEMAP_KEY ? "?key=" + encodeURIComponent(CARTO_BASEMAP_KEY) : ""), {
         attribution: "&copy; OpenStreetMap &copy; CARTO",
         subdomains: "abcd",
         maxZoom: 12,

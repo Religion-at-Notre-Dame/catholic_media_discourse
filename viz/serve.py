@@ -13,7 +13,39 @@ import webbrowser
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
 TOOLS = HERE / "tools"
+BASEMAP_KEY_JS = HERE / "js" / "basemap-key.js"
+
+
+def _env_value(name: str) -> str:
+    """Read one variable from the repo .env, then the process environment."""
+    env_path = ROOT / ".env"
+    if env_path.is_file():
+        for line in env_path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, value = line.partition("=")
+            if key.strip() != name:
+                continue
+            value = value.strip().strip('"').strip("'")
+            return value
+    return os.environ.get(name, "").strip()
+
+
+def write_basemap_key_js() -> None:
+    """Expose CARTO_BASEMAP_KEY to the static map without committing the key."""
+    key = _env_value("CARTO_BASEMAP_KEY")
+    escaped = key.replace("\\", "\\\\").replace('"', '\\"')
+    BASEMAP_KEY_JS.write_text(
+        f'window.CARTO_BASEMAP_KEY = "{escaped}";\n',
+        encoding="utf-8",
+    )
+    if key:
+        print("CARTO basemap key loaded from .env")
+    else:
+        print("CARTO_BASEMAP_KEY is empty — set it in .env and restart")
 
 
 def main() -> None:
@@ -28,6 +60,7 @@ def main() -> None:
     )
     args = p.parse_args()
     os.chdir(HERE)
+    write_basemap_key_js()
 
     if args.build_findings:
         subprocess.check_call([sys_executable(), str(TOOLS / "build_findings_data.py")])
