@@ -35,6 +35,29 @@ NET = Path(_JEV["networks"])
 OUT = VIZ / "data" / "triage-data.js"
 
 
+def _outlet_rates(corr_path: Path) -> list:
+    """Content-label percents by outlet, from the family rows of lang_x_type.csv."""
+    csv_path = corr_path.with_name(corr_path.name.replace("_correlations.json", "_lang_x_type.csv"))
+    if not csv_path.is_file():
+        return []
+    import csv
+
+    rows = []
+    with csv_path.open(encoding="utf-8") as f:
+        for rec in csv.DictReader(f):
+            if (rec.get("axis") or "") != "family":
+                continue
+            item = {"outlet": rec.get("location") or "", "n": int(float(rec.get("n") or 0))}
+            for key, val in rec.items():
+                if key in ("location", "n", "axis"):
+                    continue
+                item[key] = float(val or 0)
+            rows.append(item)
+    order = {"news": 0, "tv": 1, "youtube": 2, "radio": 3}
+    rows.sort(key=lambda r: order.get(r["outlet"], 9))
+    return rows
+
+
 def main() -> int:
     if not CORR.exists() or not NET.exists():
         raise SystemExit(
@@ -74,6 +97,8 @@ def main() -> int:
         "geo_with_fips": corr.get("geo_with_fips"),
         "stats": corr.get("stats") or net.get("stats") or {},
         "hooks": hooks,
+        "outlet_counts": corr.get("families") or {},
+        "outlet_rates": _outlet_rates(CORR),
         "content_counts": corr.get("content_label_counts") or {},
         "discourse_counts": corr.get("discourse_label_counts") or {},
         "types_together": pretty_rows(

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Label one Catholic-media passage and check it against the classroom answer key." />
+  <title>Label · How the Americas Hear the Church · Notre Dame</title>
+  <link rel="icon" type="image/svg+xml" href="../branding/nd-monogram.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="mode-methods">
+  <header class="nd-nav" role="banner">
+    <div class="nd-nav__top">
+      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame: home">
+        <img class="nd-nav__mark" src="../branding/nd-monogram.svg" alt="" width="36" height="36" />
+        <img class="nd-nav__wordmark" src="../branding/wordmark.svg" alt="University of Notre Dame" />
+        <span class="nd-nav__site">How the Americas Hear the Church</span>
+      </a>
+      <nav class="nd-nav__pages" aria-label="Primary">
+        <a href="index.html" id="nav-story">Story</a>
+        <a href="findings.html" id="nav-findings">Findings</a>
+        <a href="triage.html" id="nav-triage">Triage</a>
+        <a href="explore.html#/places" id="tab-places">Places</a>
+        <a href="explore.html#/topics" id="tab-topics">Topics</a>
+        <a href="misconceptions.html" id="nav-misconceptions">Misconceptions</a>
+        <a href="label.html" id="nav-label" class="is-active">Label</a>
+        <a href="next.html" id="nav-next">Next</a>
+        <a href="methods.html" id="nav-methods">Methods</a>
+      </nav>
+    </div>
+    <div class="nd-nav__sub nd-nav__sub--simple">
+      <div class="nav-langs"><b>EN</b> English · <b>ES</b> Spanish · <b>PT</b> Portuguese</div>
+    </div>
+  </header>
+
+<main id="label" class="page">
+  <header class="page-hero page-hero--paper">
+    <div class="page-hero__inner">
+      <p class="kicker">Your turn</p>
+      <h1>Label three passages</h1>
+      <p class="lead" id="label-progress">
+        Pick every label that fits, then check the answer key.
+        Hover a label for its definition. Content and discourse can both apply. Accuracy is one score.
+      </p>
+    </div>
+  </header>
+
+  <div class="label-wrap">
+    <div class="label-layout">
+      <article class="post-card" aria-label="Sample passage">
+        <p class="post-card__kicker">Classroom example · not a corpus quote</p>
+        <p id="label-post"></p>
+      </article>
+      <div>
+        <div class="label-group">
+          <h2>Content · what a learner might absorb</h2>
+          <ul class="chip-list" id="chips-content"></ul>
+        </div>
+        <div class="label-group">
+          <h2>Discourse · how the passage speaks</h2>
+          <ul class="chip-list" id="chips-discourse"></ul>
+        </div>
+        <div class="label-group">
+          <h2>Accuracy · how far the claim drifts</h2>
+          <ul class="chip-list" id="chips-accuracy"></ul>
+        </div>
+        <div class="label-actions">
+          <button type="button" class="cta" id="label-check">Check against the answer key</button>
+          <button type="button" class="cta cta--ghost" id="label-reset" hidden>Try again</button>
+          <button type="button" class="cta cta--ghost" id="label-next" hidden>Next passage</button>
+        </div>
+        <div class="label-result" id="label-result" hidden role="status"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="nd-footer" id="site-footer"></footer>
+<script src="../js/label.js" defer></script>
+<script src="../js/site.js" defer></script>
+</body>
+</html>

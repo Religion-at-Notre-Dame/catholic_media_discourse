@@ -28,6 +28,9 @@
         <a href="triage.html" id="nav-triage">Triage</a>
         <a href="explore.html#/places" id="tab-places">Places</a>
         <a href="explore.html#/topics" id="tab-topics">Topics</a>
+        <a href="misconceptions.html" id="nav-misconceptions">Misconceptions</a>
+        <a href="label.html" id="nav-label">Label</a>
+        <a href="next.html" id="nav-next">Next</a>
         <a href="methods.html" id="nav-methods" class="is-active">Methods</a>
       </nav>
     </div>
@@ -84,6 +87,8 @@
     <div class="methods-body">
       <nav class="methods-toc" aria-label="Methods sections">
         <a href="#techniques">Techniques</a>
+        <a href="#rigor">What tests can say</a>
+        <a href="#theories">Theories</a>
         <a href="#triage">Triage</a>
         <a href="#lexicon">Lexicon</a>
         <a href="#actiongeo">ActionGeo</a>
@@ -151,8 +156,69 @@
           <li><strong>Label</strong>: deterministic lexicon matchers (compiled regex per theme × language).</li>
           <li><strong>Aggregate</strong>: rates per 1k; co-occurrence matrices; lift and QAP diagnostics.</li>
           <li><strong>Triage (Education)</strong>: dual taxonomy (content + discourse) with accuracy flags; association tests feed the plain-language Triage board.</li>
-          <li><strong>Serve</strong>: static classroom site: Story, Findings, Triage, Places, and Topics.</li>
+          <li><strong>Serve</strong>: static classroom site: Story, Findings, Triage, Misconceptions, Label, Places, Topics, Methods, and Next.</li>
         </ol>
+      </section>
+
+      <section id="rigor">
+        <h2>What the statistics can and cannot say</h2>
+        <dl class="methods-dl">
+          <dt>Estimator</dt>
+          <dd>
+            A theme hit is binary on a paragraph after a frozen regex. The reported quantity is a rate per 1,000 paragraphs, or lift
+            <code>n·w / (n<sub>a</sub>·n<sub>b</sub>)</code> against a stated baseline (usually U.S. news). Lift above 1 means the pair is more common than independence, not that the theme is important.
+          </dd>
+          <dt>Null and correction</dt>
+          <dd>
+            Triage contrasts use two-sided Fisher exact tests. Holm–Bonferroni is applied inside each family (content pairs, place×type, language, news vs radio) at α = 0.05. A star on one family is not a license to scan the others.
+          </dd>
+          <dt>Dependence</dt>
+          <dd>
+            Paragraphs from the same outlet and day are not independent draws. Fisher p-values are therefore sharper than a design that clustered by outlet. Treat them as triage, not as a census of the Americas. Network comparisons use QAP because permuting labels respects that the graph is one object.
+          </dd>
+          <dt>Selection</dt>
+          <dd>
+            Collection is keyword-gated. The corpus is Catholic-media talk that matched the lexicon, not a sample of all news. Rates describe that gated stream.
+          </dd>
+          <dt>Labels</dt>
+          <dd>
+            Lexicon matches are deterministic. Education labels and the 0–4 accuracy score come from a model (Jev). They queue excerpts for a theologian. They are not inter-annotator gold.
+          </dd>
+        </dl>
+      </section>
+
+      <section id="theories">
+        <h2>Theological claims this corpus can touch</h2>
+        <p>
+          These are claims about public language, checked against writing location and lexicon or triage labels. None of them is a finding about what audiences believe.
+        </p>
+        <div class="theory-list">
+          <article>
+            <p class="theory-verdict theory-verdict--against">Cuts against</p>
+            <h3>One hemispheric Catholic voice</h3>
+            <p>If media spoke one Catholic register, country×theme lifts would sit near the U.S. baseline. Mexico–Guadalupe, Brazil–Aparecida, and other pre-specified cells do not. That cuts against homogenization of <em>writing</em>. It does not show that audiences hear different churches.</p>
+          </article>
+          <article>
+            <p class="theory-verdict theory-verdict--with">Consistent with</p>
+            <h3>Inculturation and popular piety are place-marked</h3>
+            <p>Guadalupe and Aparecida are coded as devotion tied to a place, not as a generic Marian token. Their lifts on the pre-specified map match that expectation for ActionGeo news. The match was specified before coloring the cells; it is not a search over every saint name.</p>
+          </article>
+          <article>
+            <p class="theory-verdict theory-verdict--with">Consistent with</p>
+            <h3>Gutiérrez: the option for the poor leaves a public footprint</h3>
+            <p>The liberation-theology lexicon is the test: higher prevalence in Latin American news than in U.S. coverage, as the Story page reports. That is a keyword rate by writing location. It does not show the theology is practiced more, or that Gutiérrez caused the coverage.</p>
+          </article>
+          <article>
+            <p class="theory-verdict theory-verdict--with">Consistent with</p>
+            <h3>News covers the Church as an institution</h3>
+            <p>In the Education triage set, institutional news is about 32% of excerpts and doctrine about 3%. Inside news text the institutional share is about 38%. Radio is about 5%. That fits a press habit of covering offices and events more than creed. It does not show doctrine is absent from parishes, or that secularization caused the mix.</p>
+          </article>
+          <article>
+            <p class="theory-verdict theory-verdict--open">Not tested</p>
+            <h3>People learn the faith from media before OCIA</h3>
+            <p>Mediatization as a claim about learners needs audiences, syllabi, or interviews. This corpus has texts and a writing location. Keyword gates also mean we never see Catholic life that never uses these words.</p>
+          </article>
+        </div>
       </section>
 
       <section id="triage">
