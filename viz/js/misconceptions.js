@@ -94,6 +94,34 @@
       }).join("");
     }
 
+    var clusterHost = document.getElementById("mis-cluster-bars");
+    var dep = T.dependence || {};
+    var clus = dep.misunderstanding_cluster || {};
+    if (clusterHost && clus.news) {
+      var cmax = 1;
+      ["news", "tv", "youtube", "radio"].forEach(function (k) {
+        if (clus[k]) cmax = Math.max(cmax, clus[k].pct || 0);
+      });
+      var chtml = "";
+      ["news", "tv", "youtube", "radio"].forEach(function (k) {
+        var row = clus[k];
+        if (!row) return;
+        chtml += bar(names[k] || k, row.pct || 0, cmax, (row.hits || 0).toLocaleString() + " of " + (row.n || 0).toLocaleString() + " groups", "%");
+      });
+      clusterHost.innerHTML = chtml;
+      var test = dep.news_vs_radio_cluster || {};
+      var cnote = document.getElementById("mis-cluster-note");
+      if (cnote) {
+        cnote.innerHTML =
+          (dep.n_paragraphs || 0).toLocaleString() + " paragraphs become " +
+          (dep.n_clusters || 0).toLocaleString() + " outlet-day groups. News is about <strong>" +
+          (test.ratio != null ? test.ratio.toFixed(1) : "?") +
+          "×</strong> radio, and that gap " +
+          (test.significant ? "still clears" : "does not clear") +
+          " a 0.05 Fisher test. Television is as high as news once repeated paragraphs are grouped.";
+      }
+    }
+
     var note = document.getElementById("mis-source-note");
     if (note && fam) {
       var spots = T.misunderstanding_hotspots || [];

@@ -148,6 +148,169 @@ def _mis_by_content(corr_path: Path) -> list:
     return rows
 
 
+def _day_key(raw: str) -> str:
+    digits = "".join(ch for ch in str(raw or "") if ch.isdigit())
+    return digits[:8] if len(digits) >= 8 else ""
+
+
+def _dependence_check(corr_path: Path) -> dict:
+    """Collapse paragraphs that share an outlet and a day, then retest."""
+    from collections import defaultdict
+
+    from scipy.stats import fisher_exact
+
+    from common.analysis_paths import analysis_source_paths, source_path_list
+    from common.api_record import domain_from_url
+
+    judgments = []
+    wanted: dict[tuple[str, str], list[int]] = defaultdict(list)
+    for rec in _iter_judgments(corr_path):
+        uid = str(rec.get("id") or "")
+        parts = uid.split("|")
+        source = str(rec.get("source") or (parts[0] if parts else ""))
+        eid = parts[1] if len(parts) > 1 else ""
+        idx = len(judgments)
+        judgments.append(
+            {
+                "source": source,
+                "family": str(rec.get("family") or ""),
+                "labels": set(rec.get("content_labels") or []),
+                "eid": eid,
+            }
+        )
+        if source and eid:
+            wanted[(source, eid)].append(idx)
+
+    paths_map = analysis_source_paths(ROOT)
+    cluster_for = {}
+    for (source, eid), idxs in wanted.items():
+        cluster_for[(source, eid)] = None
+
+    def assign(source: str, eid: str, key: str) -> None:
+        if (source, eid) in cluster_for and cluster_for[(source, eid)] is None and key:
+            cluster_for[(source, eid)] = key
+
+    for source, path_val in paths_map.items():
+        if not any(s == source for s, _ in wanted):
+            continue
+        for path in source_path_list(path_val):
+            with path.open(encoding="utf-8") as f:
+                for line in f:
+                    if not line.strip():
+                        continue
+                    try:
+                        rec = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+                    eid = str(
+                        rec.get("event_id")
+                        or rec.get("record_id")
+                        or rec.get("item_id")
+                        or rec.get("id")
+                        or ""
+                    )
+                    if (source, eid) not in cluster_for or cluster_for[(source, eid)]:
+                        continue
+                    day = _day_key(
+                        rec.get("gdelt_day")
+                        or rec.get("show_date")
+                        or rec.get("published_at")
+                        or rec.get("date")
+                        or ""
+                    )
+                    if source.startswith("gdelt_news"):
+                        outlet = domain_from_url(str(rec.get("url") or "")) or source
+                    elif source == "gdelt_tv":
+                        outlet = str(rec.get("station") or source)
+                    elif source.startswith("aapb") or source.endswith("radio"):
+                        outlet = str(rec.get("station") or rec.get("series_title") or source)
+                    elif "youtube" in source:
+                        outlet = str(rec.get("channel_id") or rec.get("channel_title") or source)
+                    else:
+                        outlet = source
+                    assign(source, eid, f"{outlet}|{day or 'nd'}")
+
+    groups: dict[str, dict] = {}
+    for i, row in enumerate(judgments):
+        key = cluster_for.get((row["source"], row["eid"])) or f"row:{i}"
+        g = groups.get(key)
+        if g is None:
+            groups[key] = {"family": row["family"], "labels": set(row["labels"])}
+        else:
+            g["labels"].update(row["labels"])
+
+    def rates(units, label="misunderstanding"):
+        out = {}
+        for fam in ("news", "tv", "youtube", "radio"):
+            rows = [u for u in units if u["family"] == fam]
+            if not rows:
+                continue
+            hits = sum(1 for u in rows if label in u["labels"])
+            out[fam] = {
+                "n": len(rows),
+                "hits": hits,
+                "pct": round(100 * hits / len(rows), 2),
+            }
+        return out
+
+    para_units = [
+        {"family": r["family"], "labels": r["labels"]} for r in judgments
+    ]
+    clus_units = list(groups.values())
+    para = rates(para_units)
+    clus = rates(clus_units)
+
+    def fisher_news_radio(table):
+        a = table.get("news") or {"hits": 0, "n": 0}
+        b = table.get("radio") or {"hits": 0, "n": 0}
+        oddsr, p = fisher_exact(
+            [
+                [a["hits"], a["n"] - a["hits"]],
+                [b["hits"], b["n"] - b["hits"]],
+            ]
+        )
+        ratio = (a["pct"] / b["pct"]) if b.get("pct") else None
+        return {
+            "odds_ratio": round(float(oddsr), 3),
+            "p": float(p),
+            "ratio": round(ratio, 2) if ratio else None,
+            "significant": bool(p < 0.05),
+        }
+
+    within = []
+    for lab in (
+        "doctrine_sacrament",
+        "moral_ethics",
+        "migration_politics",
+        "institutional_news",
+        "devotion_piety",
+        "cst_papal",
+        "evangelization_mission",
+    ):
+        base = [u for u in clus_units if lab in u["labels"]]
+        if not base:
+            continue
+        hits = sum(1 for u in base if "misunderstanding" in u["labels"])
+        within.append(
+            {
+                "label": pretty_label(lab),
+                "n": len(base),
+                "misunderstanding_n": hits,
+                "pct_within": round(100 * hits / len(base), 2),
+            }
+        )
+    within.sort(key=lambda r: -r["pct_within"])
+    news_radio = fisher_news_radio(clus)
+    return {
+        "n_paragraphs": len(judgments),
+        "n_clusters": len(groups),
+        "misunderstanding_paragraph": para,
+        "misunderstanding_cluster": clus,
+        "news_vs_radio_cluster": news_radio,
+        "within_type_cluster": within,
+    }
+
+
 def main() -> int:
     if not CORR.exists() or not NET.exists():
         raise SystemExit(
@@ -192,6 +355,7 @@ def main() -> int:
         "content_counts": corr.get("content_label_counts") or {},
         "accuracy_counts": _accuracy_breakdown(CORR),
         "misunderstanding_by_content": _mis_by_content(CORR),
+        "dependence": _dependence_check(CORR),
         "discourse_counts": corr.get("discourse_label_counts") or {},
         "types_together": pretty_rows(
             (corr.get("content_cooccur_clean_top") or corr.get("content_cooccur_top") or [])[:10]
