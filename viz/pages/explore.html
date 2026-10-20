@@ -650,8 +650,10 @@
       map.createPane("borders");
       map.getPane("borderHalo").style.zIndex = 440;
       map.getPane("borders").style.zIndex = 455;
+      map.createPane("places");
+      map.getPane("places").style.zIndex = 470;
       map.getPane("borderHalo").style.pointerEvents = "none";
-      map.getPane("borders").style.pointerEvents = "none";
+      map.getPane("borders").style.pointerEvents = "auto";
       const borderHalo = L.geoJSON(null, {
         pane: "borderHalo",
         style: { color: "rgba(201,151,0,0.35)", weight: 4.5, opacity: 1, fill: false, lineJoin: "round" },
@@ -672,24 +674,34 @@
         .then(function (geo) {
           borderHalo.addData(geo);
           borderLayer.addData(geo);
+          borderLayer.eachLayer(function (ly) {
+            ly.on("click", function (e) {
+              L.DomEvent.stop(e);
+              const fips = (ly.feature && ly.feature.properties && ly.feature.properties.fips) || "";
+              const c = countryByFips[fips];
+              if (c) pickPlace("country", c);
+            });
+          });
           function restyleBorders() {
             const counts = Object.fromEntries((V.countries || []).map(function (c) { return [c.fips, c.n || 0]; }));
             const maxN = Math.max(1, ...Object.values(counts));
             borderLayer.eachLayer(function (ly) {
               const fips = (ly.feature && ly.feature.properties && ly.feature.properties.fips) || "";
               const on = !region || region === "all" || inRegion(fips, region);
+              const selected = selectedPlace && selectedPlace.kind === "country" && selectedPlace.fips === fips;
               const n = counts[fips] || 0;
               const t = Math.log1p(n) / Math.log1p(maxN);
               const fill =
+                selected ? "#f0d78c" :
                 fips === "CI" ? "#1c4f8f" :
                 fips === "US" ? "#c99700" :
                 "#c45c26";
               ly.setStyle({
-                color: on ? (fips === "CI" ? "#c99700" : "#f3ead0") : "rgba(160,170,185,0.35)",
-                weight: on ? (fips === "CI" ? 2.6 : 1.35) : 0.6,
-                opacity: on ? 0.98 : 0.35,
+                color: selected ? "#fff6d6" : (on ? (fips === "CI" ? "#c99700" : "#f3ead0") : "rgba(160,170,185,0.35)"),
+                weight: selected ? 3.4 : (on ? (fips === "CI" ? 2.6 : 1.35) : 0.6),
+                opacity: on || selected ? 1 : 0.35,
                 fillColor: fill,
-                fillOpacity: on ? (0.08 + 0.28 * t) : 0.03,
+                fillOpacity: selected ? 0.62 : (on ? (0.08 + 0.28 * t) : 0.03),
               });
             });
             borderHalo.eachLayer(function (ly) {
@@ -777,9 +789,9 @@
           1.0: "#fff6d6",
         },
       }).addTo(map);
-      const countryLayer = L.layerGroup().addTo(map);
-      const stateLayer = L.layerGroup().addTo(map);
-      const cityLayer = L.layerGroup().addTo(map);
+      const countryLayer = L.layerGroup({ pane: "places" }).addTo(map);
+      const stateLayer = L.layerGroup({ pane: "places" }).addTo(map);
+      const cityLayer = L.layerGroup({ pane: "places" }).addTo(map);
 
       function heatOptsForZoom(z) {
         if (z >= 8) return { radius: 24, blur: 16, minOpacity: 0.32, maxZoom: 9 };
@@ -859,12 +871,14 @@
         if (!live && zoom <= 7 && countries.length) {
           countries.forEach((c) => {
             const isHost = c.fips === "CI";
+            const selected = selectedPlace && selectedPlace.kind === "country" && selectedPlace.fips === c.fips;
             const mk = L.circleMarker([c.lat, c.lon], {
-              radius: Math.max(5, Math.min(15, 3.5 + Math.log1p(c.n || 0) * 0.75)),
-              color: isHost ? "#f0d78c" : "#fff6d6",
-              weight: isHost ? 2.5 : 1.25,
-              fillColor: colorFor(c.fips),
-              fillOpacity: isHost ? 0.95 : 0.72,
+              pane: "places",
+              radius: selected ? 16 : Math.max(5, Math.min(15, 3.5 + Math.log1p(c.n || 0) * 0.75)),
+              color: selected ? "#fff" : (isHost ? "#f0d78c" : "#fff6d6"),
+              weight: selected ? 3 : (isHost ? 2.5 : 1.25),
+              fillColor: selected ? "#f0d78c" : colorFor(c.fips),
+              fillOpacity: selected ? 1 : (isHost ? 0.95 : 0.72),
               className: isHost ? "country-dot host-dot" : "country-dot",
             }).on("click", (e) => { L.DomEvent.stop(e); pickPlace("country", c); });
             mk.bindTooltip(c.country || c.fips, {
@@ -882,6 +896,7 @@
         if (showStates && !live && zoom <= 7) {
           states.forEach((s) => {
             const c = L.circleMarker([s.lat, s.lon], {
+              pane: "places",
               radius: rScale(s.n, 0.18, 5, 22),
               color: "#0c2340",
               weight: 1,
@@ -899,6 +914,7 @@
           pulses.slice(0, 900).forEach((p) => {
             const isNew = fresh.has(p.lat + "," + p.lon);
             const mk = L.circleMarker([p.lat, p.lon], {
+              pane: "places",
               radius: rScale(p.n, item ? 0.55 : 0.28, item ? 4 : 3, 16),
               color: isNew ? "#fff" : "#0c2340",
               weight: isNew ? 2 : 1,
@@ -914,12 +930,14 @@
           const labeled = new Set(metros.slice(0, labelLimit).map((m) => m.name + "|" + m.fips));
           metros.forEach((m) => {
             const isCompare = compareHighlight.has(m.fips);
+            const selected = selectedPlace && selectedPlace.kind === "metro" && selectedPlace.name === m.name && selectedPlace.fips === m.fips;
             const mk = L.circleMarker([m.lat, m.lon], {
-              radius: rScale(m.n, isCompare ? 0.22 : 0.14, isCompare ? 7 : 3.5, isCompare ? 22 : 16),
-              color: isCompare ? "#fff" : (m.fips === "CI" ? "#c99700" : "#0c2340"),
-              weight: isCompare ? 2.5 : (m.fips === "CI" ? 2 : 1),
-              fillColor: colorFor(m.fips),
-              fillOpacity: isCompare ? 1 : 0.9,
+              pane: "places",
+              radius: rScale(m.n, (isCompare || selected) ? 0.22 : 0.14, (isCompare || selected) ? 7 : 3.5, (isCompare || selected) ? 22 : 16),
+              color: selected ? "#fff" : (isCompare ? "#fff" : (m.fips === "CI" ? "#c99700" : "#0c2340")),
+              weight: selected ? 3 : (isCompare ? 2.5 : (m.fips === "CI" ? 2 : 1)),
+              fillColor: selected ? "#f0d78c" : colorFor(m.fips),
+              fillOpacity: (isCompare || selected) ? 1 : 0.9,
             }).on("click", (e) => { L.DomEvent.stop(e); pickPlace("metro", m); });
             const tip = m.name + " · " + fmt(m.n);
             // Prefer country labels at wide zoom; metro names when zoomed in
@@ -948,6 +966,8 @@
       function pickPlace(kind, obj) {
         selectedPlace = { kind, ...obj };
         renderPlacePanel();
+        if (typeof window.__restyleBorders === "function") window.__restyleBorders();
+        drawPlaces();
         if (obj.lat) map.flyTo([obj.lat, obj.lon], Math.max(map.getZoom(), kind === "metro" ? 6 : 5), { duration: 0.7 });
       }
       function triHtml(cat) {
