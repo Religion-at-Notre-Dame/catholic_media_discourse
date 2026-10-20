@@ -2272,22 +2272,48 @@ button.sev.is-on { outline: 2px solid var(--nd-gold); }
   margin: 0;
   padding: 0;
 }
-.chip {
+.label-wrap button.chip {
   position: relative;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(12, 35, 64, 0.35);
   background: #fff;
   border-radius: 999px;
-  padding: 0.35rem 0.7rem;
+  padding: 0.4rem 0.75rem;
   font: 600 0.82rem/1.2 var(--font-sans);
   cursor: pointer;
-  color: var(--nd-blue);
+  color: #0c2340;
 }
-.chip.is-on { background: #0c2340; color: #fff; border-color: #0c2340; }
-.chip.is-hit { background: #1f7a4d; color: #fff; border-color: #1f7a4d; }
-.chip.is-miss { background: #8c2f2f; color: #fff; border-color: #8c2f2f; }
-.chip.is-missed { background: #fff; color: #8c2f2f; border-color: #8c2f2f; }
-.chip:disabled { cursor: default; }
-.chip-tip {
+.label-wrap button.chip:hover,
+.label-wrap button.chip:focus {
+  background: #fff;
+  color: #0c2340;
+  border-color: var(--nd-gold);
+}
+.label-wrap button.chip.is-on,
+.label-wrap button.chip.is-on:hover {
+  background: #0c2340;
+  color: #fff;
+  border-color: #0c2340;
+}
+.label-wrap button.chip.is-hit,
+.label-wrap button.chip.is-hit:hover {
+  background: #0a843d;
+  color: #fff;
+  border-color: #0a843d;
+}
+.label-wrap button.chip.is-miss,
+.label-wrap button.chip.is-miss:hover {
+  background: #8c2f2f;
+  color: #fff;
+  border-color: #8c2f2f;
+}
+.label-wrap button.chip.is-missed,
+.label-wrap button.chip.is-missed:hover {
+  background: #fff;
+  color: #8c2f2f;
+  border-color: #8c2f2f;
+}
+.label-wrap button.chip:disabled { cursor: default; opacity: 1; }
+.label-wrap .chip-tip {
   display: none;
   position: absolute;
   z-index: 3;
@@ -2295,13 +2321,13 @@ button.sev.is-on { outline: 2px solid var(--nd-gold); }
   top: calc(100% + 6px);
   width: min(260px, 70vw);
   background: #0c2340;
-  color: #fff;
+  color: #f7f4ef;
   border-radius: 6px;
   padding: 0.45rem 0.55rem;
   font: 500 0.78rem/1.35 var(--font-sans);
 }
-.chip:hover .chip-tip,
-.chip:focus .chip-tip { display: block; }
+.label-wrap button.chip:hover .chip-tip,
+.label-wrap button.chip:focus .chip-tip { display: block; }
 .label-actions { display: flex; gap: 0.5rem; align-items: center; }
 .label-result {
   margin-top: 0.9rem;
