@@ -1,28 +1,28 @@
 (function () {
   var ITEMS = [
     {
-      kicker: "1 of 3 · devotion",
-      text: "Catholics worship Mary as a goddess. That is why pilgrims walk to Guadalupe and pray the rosary.",
-      content: ["devotion_piety", "misunderstanding"],
-      discourse: ["doctrinal_claim"],
-      accuracy: "1",
-      accuracyName: "clearly inaccurate"
+      kicker: "1 of 3 · news · score 1.77",
+      text: "Pope [PERSON] says that just because [ORGANIZATION] bans artificial contraceptives, it does not mean Catholics have to \"breed like rabbits.\"",
+      content: ["moral_ethics", "misunderstanding"],
+      discourse: ["factual_claim", "news_report"],
+      accuracy: "2",
+      accuracyName: "partial or misleading (nearest to 1.77)"
     },
     {
-      kicker: "2 of 3 · a papal document",
-      text: "Laudato Si' calls for care of our common home.",
+      kicker: "2 of 3 · news · score 3.28",
+      text: "In his encyclical, \"Laudato Si', on Care for Our Common Home,\" the pope said that human life depends on the well-being of the planet.",
       content: ["cst_papal"],
-      discourse: ["doctrinal_claim"],
-      accuracy: "4",
-      accuracyName: "accurate and clear"
+      discourse: ["factual_claim", "news_report"],
+      accuracy: "3",
+      accuracyName: "broadly accurate (nearest to 3.28)"
     },
     {
-      kicker: "3 of 3 · a schedule, not a teaching",
-      text: "The diocese announced a new cathedral renovation schedule.",
+      kicker: "3 of 3 · news · score 0.35",
+      text: "She said the archdiocese assured her that the priest, [PERSON], would never be a pastor or counsel women again.",
       content: ["institutional_news"],
-      discourse: ["news_report"],
+      discourse: ["factual_claim", "news_report"],
       accuracy: "0",
-      accuracyName: "cannot assess"
+      accuracyName: "cannot assess (nearest to 0.35)"
     }
   ];
   var itemIndex = 0;
