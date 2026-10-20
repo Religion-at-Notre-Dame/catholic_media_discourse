@@ -1443,6 +1443,20 @@ button.cta--ghost:hover {
   padding-top: 1.25rem;
   border-top: 1px solid var(--line);
 }
+.methods-body .cta--ghost,
+.methods-cta-row .cta--ghost,
+.mis-wrap .cta--ghost {
+  color: var(--nd-blue);
+  border-color: var(--nd-blue);
+  background: #fff;
+}
+.methods-body .cta--ghost:hover,
+.methods-cta-row .cta--ghost:hover,
+.mis-wrap .cta--ghost:hover {
+  color: var(--nd-dark-gold);
+  border-color: var(--nd-gold);
+  background: #fff;
+}
 .methods-download {
   margin: 1.25rem 0 0;
 }
