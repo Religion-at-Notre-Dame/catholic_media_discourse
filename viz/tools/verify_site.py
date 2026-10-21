@@ -21,6 +21,7 @@ REQUIRED_FILES = [
     "pages/triage.html",
     "pages/methods.html",
     "pages/next.html",
+    "pages/language.html",
     "pages/misconceptions.html",
     "pages/label.html",
     "pages/explore.html",
@@ -109,6 +110,7 @@ PAGE_IDS = {
     "misconceptions.html": ["misconceptions", "nav-misconceptions", "mis-sources", "mis-outlets", "mis-types", "mis-accuracy", "mis-by-type", "site-footer"],
     "label.html": ["label", "nav-label", "label-post", "label-check", "site-footer"],
     "next.html": ["next", "nav-next", "pending-funding", "site-footer"],
+    "language.html": ["language", "nav-language", "lang-table", "site-footer"],
     "explore.html": [
         "explorer",
         "map",
@@ -223,9 +225,8 @@ def main() -> int:
             "findings.html",
             "triage.html",
             "methods.html",
-            "next.html",
             "misconceptions.html",
-            "label.html",
+            "language.html",
             "explore.html#/places",
         ):
             if href not in html:

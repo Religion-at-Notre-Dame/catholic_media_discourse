@@ -88,6 +88,12 @@
       });
     });
     if (!rows.length) rows = G.examples || [];
+    var lang = window.__exampleLang || "all";
+    if (lang !== "all") {
+      rows = rows.filter(function (ex) {
+        return (ex.lang || "en") === lang;
+      });
+    }
     if (filterKey === "content" && filterVal) {
       const hit = rows.filter(function (ex) {
         return (ex.content || []).indexOf(filterVal) >= 0;
@@ -362,7 +368,7 @@
   function renderExamples(el, examples, activeId) {
     if (!el) return;
     if (!examples.length) {
-      el.innerHTML = '<p class="f-note">No matching examples for this filter.</p>';
+      el.innerHTML = '<p class="f-note">No example quotes in this language for the current filter.</p>';
       return;
     }
     el.innerHTML = examples
@@ -568,7 +574,7 @@
         "<h3>Media vignettes</h3></div>" +
         '<p class="figboard-count" data-fig-count></p>' +
         "</div>" +
-        '<p class="f-note">EN / ES / PT excerpts with content and discourse labels. Not Theology gold.</p>' +
+        '<p class="f-note">The Examples control filters these quotes by language. It does not translate the page.</p>' +
         '<div class="figboard-examples" data-fig-examples></div>' +
         "</aside>" +
         "</div></div>";

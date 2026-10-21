@@ -130,10 +130,10 @@
         return r.location + " " + r.misunderstanding_pct.toFixed(2) + "% (" + dir + " the news baseline)";
       });
       note.innerHTML =
-        "The only outlet contrast that was hypothesis-tested is news versus radio: about <strong>" +
+        "Paragraph rates, two-sided Fisher exact tests, Holm across the outlet family: news is higher than television (2.58%, odds ratio 0.75), YouTube (2.59%, odds ratio 0.75), and radio (about <strong>" +
         fam.ratio_a_over_b.toFixed(1) +
-        "×</strong> (Fisher exact, Holm-adjusted " + esc(fam.stars || "") +
-        "). Television and YouTube sit near 2.6%, between news and radio, and were not in that test. Among news writing locations: " +
+        "×</strong>, Holm " + esc(fam.stars || "") +
+        "). Those television and YouTube gaps are paragraph tests. The grouping below is the dependence check. Among news writing locations: " +
         esc(placeBits.join("; ")) +
         ". The flag marks a passage for educator review. It is not a theologian’s verdict.";
     }

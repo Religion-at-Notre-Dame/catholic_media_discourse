@@ -29,9 +29,8 @@
         <a href="triage.html" id="nav-triage">Triage</a>
         <a href="explore.html#/places" id="tab-places" class="is-active">Places</a>
         <a href="explore.html#/topics" id="tab-topics">Topics</a>
-        <a href="misconceptions.html" id="nav-misconceptions">Misconceptions</a>
-        <a href="label.html" id="nav-label">Label</a>
-        <a href="next.html" id="nav-next">Next</a>
+        <a href="language.html" id="nav-language">Language</a>
+        <a href="misconceptions.html" id="nav-classroom">Classroom</a>
         <a href="methods.html" id="nav-methods">Methods</a>
       </nav>
     </div>
@@ -43,7 +42,6 @@
         <button type="button" class="search-clear" id="search-clear" aria-label="Clear topic">×</button>
         <div class="search-menu" id="search-menu" role="listbox"></div>
       </div>
-      <div class="nav-langs"><b>EN</b> English · <b>ES</b> Spanish · <b>PT</b> Portuguese</div>
       <div class="nav-qap" id="qap"></div>
     </div>
   </header>
@@ -85,6 +83,7 @@
             <button type="button" id="btn-tclear">Clear</button>
           </div>
           <div class="legend" id="group-legend"></div>
+          <p class="hint" id="topic-hint">A gold line means two themes appear in the same stories far more often than chance. Click a dot, or a pair in the list.</p>
         </div>
       </div>
       <div class="card panel" id="side"></div>
@@ -1718,14 +1717,15 @@
         lp.exit().remove();
         const lenter = lp.enter().append("line").attr("stroke-linecap", "round");
         const lmerge = lenter.merge(lp)
-          .attr("stroke", (d) => (d.lift >= 8 ? "#c99700" : "rgba(12,35,64,.18)"))
-          .attr("stroke-width", (d) => 0.6 + Math.min(Math.log1p(d.lift), 4))
-          .attr("stroke-opacity", selectedTheme ? 0.9 : 0.45);
+          .attr("stroke", (d) => (d.lift >= 8 ? "#f0d78c" : "rgba(240,230,200,.55)"))
+          .attr("stroke-width", (d) => 1.1 + Math.min(Math.log1p(d.lift), 4))
+          .attr("stroke-opacity", selectedTheme ? 0.95 : 0.7);
 
         const np = nodeG.selectAll("g.node").data(nodes, (d) => d.id);
         np.exit().remove();
         const enter = np.enter().append("g").attr("class", "node").style("cursor", "pointer");
         enter.append("circle");
+        enter.append("title");
         enter.append("text").attr("class", "g-label").attr("dy", -16).attr("text-anchor", "middle");
         enter.on("click", (event, d) => {
           event.stopPropagation();
@@ -1736,10 +1736,12 @@
           drawTopics();
         });
         const merged = enter.merge(np);
+        merged.select("title").text((d) => d.label + " · " + fmt(d.n) + " stories");
         merged.select("circle")
           .attr("r", (d) => 6 + Math.sqrt(d.n) * 0.12)
           .attr("fill", (d) => GROUPS[d.group] || GROUPS.other)
-          .attr("stroke", (d) => (selectedTheme === d.id ? "#0c2340" : (d.papal ? "#c99700" : "#ffffff")))
+          .attr("fill-opacity", (d) => (!selectedTheme || selectedTheme === d.id || neighbors.has(d.id) ? 1 : 0.22))
+          .attr("stroke", (d) => (selectedTheme === d.id ? "#f0d78c" : (d.papal ? "#c99700" : "#ffffff")))
           .attr("stroke-width", (d) => (selectedTheme === d.id ? 3.5 : (d.papal ? 2 : 1.5)));
         merged.select("text")
           .attr("class", (d) => "g-label" + (selectedTheme && selectedTheme !== d.id ? " dim" : ""))
@@ -1773,7 +1775,7 @@
             '<p class="hint">Gold edges are high-lift. Click a node to see its neighbors. This graph has no countries on purpose: teaching geography lives in Places.</p>' +
             top.map((e) => {
               const a = themeById[e.source], b = themeById[e.target];
-              return '<div class="edge"><span><b>' + esc(a ? a.label : e.source) + "</b> · " + esc((b && b.label) || "") + "</span><span>" + e.lift + "×</span></div>";
+              return '<button type="button" class="edge edge-btn" data-theme="' + esc(e.source) + '"><span><b>' + esc(a ? a.label : e.source) + "</b> · " + esc((b && b.label) || "") + "</span><span>" + e.lift + "×</span></button>";
             }).join("");
           return;
         }
@@ -1796,11 +1798,24 @@
             : "") +
           '<p class="pill" style="margin-top:10px">neighbors</p>' +
           rows.map((e) => {
-            const other = themeById[e.source === n.id ? e.target : e.source];
-            return '<div class="edge"><span><b>' + esc(other ? other.label : "") + "</b></span><span>" + e.lift + "× · " + fmt(e.n) + "</span></div>";
+            const oid = e.source === n.id ? e.target : e.source;
+            const other = themeById[oid];
+            return '<button type="button" class="edge edge-btn" data-theme="' + esc(oid) + '"><span><b>' + esc(other ? other.label : "") + "</b></span><span>" + e.lift + "× · " + fmt(e.n) + "</span></button>";
           }).join("") +
           '<p class="hint">' + fmt(n.n) + " stories mention this theme. Lift is P(a,b)/(P(a)P(b)). Click the canvas to clear.</p>";
       }
+
+      document.getElementById("side").addEventListener("click", (ev) => {
+        const btn = ev.target.closest(".edge-btn");
+        if (!btn || view !== "topics") return;
+        const id = btn.getAttribute("data-theme");
+        if (!id || !themeById[id]) return;
+        selectedTheme = id;
+        topic = String(id).replace(/^theme:/, "");
+        syncTopicChrome();
+        renderTopicPanel();
+        drawTopics();
+      });
 
       document.getElementById("tlift").oninput = (e) => {
         minTopicLift = +e.target.value;

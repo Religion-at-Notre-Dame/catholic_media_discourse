@@ -45,8 +45,7 @@ EXAMPLES = [
         "id": "laudato",
         "lang": "en",
         "text": (
-            "Laudato Si' calls Catholics to care for our common home and to hear "
-            "both the cry of the earth and the cry of the poor."
+            "In his encyclical, \"Laudato Si', on Care for Our Common Home,\" the pope said that human life depends on the well-being of the planet."
         ),
         "content": ["cst_papal", "moral_ethics"],
         "discourse": ["doctrinal_claim", "news_report"],
@@ -57,8 +56,7 @@ EXAMPLES = [
         "id": "option",
         "lang": "en",
         "text": (
-            "What does the preferential option for the poor require of a parish "
-            "that already feels stretched thin?"
+            "Pope [PERSON] says that just because [ORGANIZATION] bans artificial contraceptives, it does not mean Catholics have to \"breed like rabbits.\""
         ),
         "content": ["moral_ethics", "cst_papal"],
         "discourse": ["question", "homily_devotional"],
@@ -69,8 +67,7 @@ EXAMPLES = [
         "id": "guadalupe",
         "lang": "en",
         "text": (
-            "At the border shrine, pilgrims invoked Our Lady of Guadalupe while "
-            "bishops urged compassion for migrants."
+            "It is a short leap from [LOCATION], Catholic saint, to Bride the folkloric [ORGANIZATION]."
         ),
         "content": ["devotion_piety", "migration_politics", "moral_ethics"],
         "discourse": ["news_report", "advocacy"],
@@ -81,8 +78,7 @@ EXAMPLES = [
         "id": "romero",
         "lang": "es",
         "text": (
-            "En El Salvador, la memoria de Óscar Romero sigue enlazando martirio, "
-            "justicia y opción por los pobres."
+            "La primera JMJ del Papa Francisco. Los jóvenes de todo el mundo fueron convocados por Benedicto XVI… y el Papa Francisco recibió a más de 3 millones."
         ),
         "content": ["devotion_piety", "moral_ethics", "migration_politics"],
         "discourse": ["news_report", "opinion_editorial"],
@@ -93,8 +89,7 @@ EXAMPLES = [
         "id": "mision",
         "lang": "es",
         "text": (
-            "La nueva evangelización pide salir a las periferias y anunciar el "
-            "evangelio con alegría misionera."
+            "Hola amigos de Tekton. ¿Qué intentamos hacer en este canal de youtube católico? Extender el mensaje del Evangelio."
         ),
         "content": ["evangelization_mission"],
         "discourse": ["doctrinal_claim", "homily_devotional", "advocacy"],
@@ -103,10 +98,9 @@ EXAMPLES = [
     },
     {
         "id": "aparecida",
-        "lang": "pt",
+        "lang": "en",
         "text": (
-            "Aparecida marca o caminho missionário da Igreja na América Latina e o "
-            "discipulado missionário."
+            "Leonardo Boff and Clodovis Boff, Como Fazer Teologia da Libertação, [LOCATION], [LOCATION], 1986, p. 57."
         ),
         "content": ["cst_papal", "evangelization_mission", "devotion_piety"],
         "discourse": ["doctrinal_claim", "news_report"],
@@ -115,10 +109,9 @@ EXAMPLES = [
     },
     {
         "id": "eucharist",
-        "lang": "es",
+        "lang": "en",
         "text": (
-            "La Eucaristía es el centro de la vida cristiana y hace presente el "
-            "sacrificio de Cristo."
+            "Catholics and Orthodox Christians believe when a priest consecrates the red and wine, they cease to exist."
         ),
         "content": ["doctrine_sacrament"],
         "discourse": ["doctrinal_claim", "homily_devotional"],
@@ -129,8 +122,7 @@ EXAMPLES = [
         "id": "mary_mis",
         "lang": "en",
         "text": (
-            "Critics claimed that Catholics worship Mary as a goddess rather than "
-            "asking for her intercession."
+            "The 'semi' is because Roman Catholic theology also centers on grace, but sees grace as a substance working renewal in the justified person."
         ),
         "content": ["devotion_piety", "misunderstanding", "doctrine_sacrament"],
         "discourse": ["factual_claim", "news_report"],
@@ -139,10 +131,9 @@ EXAMPLES = [
     },
     {
         "id": "borders_mis",
-        "lang": "es",
+        "lang": "en",
         "text": (
-            "Algunos dijeron que la Iglesia exige fronteras abiertas sin límite, "
-            "citando solo un fragmento de una homilía."
+            "[PERSON] is trying to get [ORGANIZATION] to loosen up."
         ),
         "content": ["migration_politics", "misunderstanding", "moral_ethics"],
         "discourse": ["news_report", "opinion_editorial"],
@@ -153,8 +144,7 @@ EXAMPLES = [
         "id": "diocese_news",
         "lang": "en",
         "text": (
-            "The diocese announced a three-year cathedral renovation schedule and a "
-            "capital campaign kickoff."
+            "She said the archdiocese assured her that the priest, [PERSON], would never be a pastor or counsel women again."
         ),
         "content": ["institutional_news"],
         "discourse": ["factual_claim", "news_report"],
@@ -163,10 +153,9 @@ EXAMPLES = [
     },
     {
         "id": "liberation_def",
-        "lang": "en",
+        "lang": "pt",
         "text": (
-            "Liberation theology has been defined as: an interpretation of Christian "
-            "faith out of the experiences of the poor."
+            "irmãos gêmeos, morreram por [ORGANIZATION] que foram [ORGANIZATION]. Santidade é atribuída a [PERSON] exercido a medicina sem cobrar por isso, devotados à fé. Na Igreja Católica."
         ),
         "content": ["moral_ethics"],
         "discourse": ["factual_claim"],

@@ -33,6 +33,28 @@
       .catch(function () {});
   }
 
+  var langKey = "viz-example-lang";
+  try { window.__exampleLang = sessionStorage.getItem(langKey) || "all"; } catch (e) { window.__exampleLang = "all"; }
+  function paintLang() {
+    document.querySelectorAll("#lang-switch button").forEach(function (btn) {
+      btn.classList.toggle("is-on", btn.getAttribute("data-lang") === window.__exampleLang);
+    });
+  }
+  paintLang();
+  var langSwitch = document.getElementById("lang-switch");
+  if (langSwitch) {
+    langSwitch.addEventListener("click", function (e) {
+      var btn = e.target.closest("button[data-lang]");
+      if (!btn) return;
+      window.__exampleLang = btn.getAttribute("data-lang") || "all";
+      sessionStorage.setItem(langKey, window.__exampleLang);
+      paintLang();
+      document.querySelectorAll("[data-figures]").forEach(function (root) {
+        if (typeof window.renderFigures === "function") window.renderFigures(root);
+      });
+    });
+  }
+
   document.querySelectorAll("a.cta, a.act").forEach(function (a) {
     a.addEventListener("keydown", function (e) {
       if (e.key === " ") {

@@ -28,14 +28,19 @@
         <a href="triage.html" id="nav-triage">Triage</a>
         <a href="explore.html#/places" id="tab-places">Places</a>
         <a href="explore.html#/topics" id="tab-topics">Topics</a>
-        <a href="misconceptions.html" id="nav-misconceptions">Misconceptions</a>
-        <a href="label.html" id="nav-label">Label</a>
-        <a href="next.html" id="nav-next">Next</a>
+        <a href="language.html" id="nav-language">Language</a>
+        <a href="misconceptions.html" id="nav-classroom">Classroom</a>
         <a href="methods.html" id="nav-methods">Methods</a>
       </nav>
     </div>
     <div class="nd-nav__sub nd-nav__sub--simple">
-      <div class="nav-langs"><b>EN</b> English · <b>ES</b> Spanish · <b>PT</b> Portuguese</div>
+      <div class="nav-langs" id="lang-switch" title="Filters example quotes. Does not translate this page.">
+        <span>Examples</span>
+        <button type="button" data-lang="all">All</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="es">ES</button>
+        <button type="button" data-lang="pt">PT</button>
+      </div>
     </div>
   </header>
 
@@ -84,6 +89,16 @@
       </div>
     </section>
 
+    <nav class="story-path" aria-label="On this page">
+      <a href="#research-questions">Questions</a>
+      <a href="#gap">The gap</a>
+      <a href="#gutierrez">Gutiérrez</a>
+      <a href="#santiago">Santiago</a>
+      <a href="#story-education">Education</a>
+      <a href="#story-figures">Figures</a>
+      <a href="#explore-cta">Open a page</a>
+    </nav>
+
     <div class="story-band story-band--rq" id="research-questions">
       <div class="story-band__inner">
         <p class="story-band__kicker">Core research question</p>
@@ -105,6 +120,8 @@
             <span class="rq-list__tag">Language</span>
             <span class="rq-list__body">
               How do parallel English, Spanish, and Portuguese lexicon teachings travel as one concept?
+              Inside television and YouTube, Spanish excerpts are flagged more often than English ones. News in this set is almost all English, and Portuguese is too small to test.
+              <span class="rq-list__links"><a href="language.html">Language</a></span>
             </span>
           </li>
           <li>
@@ -112,9 +129,11 @@
             <span class="rq-list__body">
               How can multi-label categories and computational accuracy scores help flag
               misunderstandings for educator review?
+              About 3% of excerpts are flagged. At paragraph level news is higher than television, YouTube, and radio. After grouping by outlet and day, television rises to news and radio stays lower. Doctrine is flagged far more often than institutional news.
               <span class="rq-list__links">
                 <a href="triage.html">Triage</a>
                 <a href="findings.html#f-education">Findings</a>
+                <a href="misconceptions.html">Misconceptions</a>
                 <a href="methods.html#triage">Methods</a>
               </span>
             </span>
@@ -263,8 +282,8 @@
           </a>
           <a class="act" id="cta-misconceptions" href="misconceptions.html">
             <span class="act__label">Misconceptions</span>
-            <strong>News highest, radio lowest</strong>
-            <span>Source rates · clearly inaccurate versus partial</span>
+            <strong>News higher than radio</strong>
+            <span>Doctrine flagged more often than institutional news</span>
           </a>
           <a class="act" id="cta-label" href="label.html">
             <span class="act__label">Label</span>
@@ -273,8 +292,10 @@
           </a>
         </div>
         <p class="story-note" style="margin-top:1.25rem">
-          Techniques and lexicon definition live on
+          Techniques live on
           <a class="chapter-link" id="story-to-methods" href="methods.html">Methods</a>.
+          What would change a claim is on
+          <a class="chapter-link" href="next.html">Next</a>.
         </p>
       </div>
     </section>
