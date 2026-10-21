@@ -67,11 +67,25 @@
   var cardTick = null;
   var remain = 0;
   var started = 0;
-  function arm(ms) {
+  var barToken = 0;
+  function arm(ms, timed) {
     remain = ms;
     started = Date.now();
     clearTimeout(timer);
     timer = setTimeout(function () { go(i + 1); }, ms);
+    if (!timed) return;
+    barToken += 1;
+    var stamp = barToken;
+    var base = parseFloat(bar.style.width) || 0;
+    function tick() {
+      if (stamp !== barToken) return;
+      if (!paused) {
+        var gone = Date.now() - started;
+        bar.style.width = Math.min(100, base + (100 - base) * (gone / ms)) + "%";
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
   }
 
   function doc() {
@@ -149,10 +163,11 @@
     function begin() {
       if (token !== scroller) return;
       var total = scene.ms;
+      var timed = !(scene.to || scene.full || scene.cards);
       if (scene.to || scene.full) total = glide(d, scene, token);
       else if (scene.cards) showCards(d);
       else bar.style.width = "0%";
-      if (!scene.cards) arm(total);
+      if (!scene.cards) arm(total, timed);
     }
     if (!scene.ready) { begin(); return; }
     var tries = 0;
@@ -201,7 +216,7 @@
     if (paused) {
       remain = Math.max(800, remain - (Date.now() - started));
       clearTimeout(timer);
-    } else arm(remain);
+    } else arm(remain, !(scenes[i].full || scenes[i].to));
   });
   againBtn.addEventListener("click", function () { go(0); });
   document.getElementById("reel-pages-btn").addEventListener("click", function (e) {
