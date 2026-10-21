@@ -25,6 +25,7 @@ REQUIRED_FILES = [
     "pages/misconceptions.html",
     "pages/label.html",
     "pages/explore.html",
+    "pages/present.html",
     "css/site.css",
     "js/site.js",
     "partials/footer.html",
@@ -111,6 +112,7 @@ PAGE_IDS = {
     "label.html": ["label", "nav-label", "label-post", "label-check", "site-footer"],
     "next.html": ["next", "nav-next", "pending-funding", "site-footer"],
     "language.html": ["language", "nav-language", "lang-table", "site-footer"],
+    "present.html": ["present", "reel", "reel-pages", "site-footer"],
     "explore.html": [
         "explorer",
         "map",

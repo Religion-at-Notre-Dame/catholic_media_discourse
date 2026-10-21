@@ -2295,6 +2295,70 @@ button.sev.is-on { outline: 2px solid var(--nd-gold); }
   font-size: 1.08rem;
   margin: 0;
 }
+body.mode-present {
+  background: #0c2340;
+  overflow: hidden;
+  height: 100dvh;
+}
+.reel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100dvh - 64px);
+  border: 0;
+  background: #071018;
+}
+.reel-bar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  background: #0c2340;
+  color: #fff;
+  border-top: 3px solid var(--nd-gold);
+  z-index: 5;
+}
+.reel-progress {
+  position: absolute;
+  left: 0; top: -3px;
+  height: 3px;
+  width: 0;
+  background: #f0d78c;
+}
+.reel-caption { color: rgba(255,255,255,.75); font-size: 0.85rem; flex: 1; min-width: 8rem; }
+.reel-jumps { display: flex; gap: 6px; flex-wrap: wrap; }
+.reel-bar .reel-jumps button { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.35); }
+.reel-bar .reel-jumps button.is-on { background: #f0d78c; color: #0c2340; border-color: #f0d78c; }
+.reel-bar strong { font-family: var(--font-serif); font-weight: 600; font-size: 1.05rem; }
+.reel-bar span { color: rgba(255,255,255,.7); font-size: 0.82rem; }
+.reel-bar button, .reel-bar a.reel-exit {
+  font: 600 0.78rem/1 var(--font-sans);
+  color: #0c2340;
+  background: #f0d78c;
+  border: 0;
+  border-radius: 999px;
+  padding: 7px 12px;
+  text-decoration: none;
+}
+.reel-pages {
+  position: fixed;
+  right: 14px;
+  bottom: 60px;
+  background: #fff;
+  color: #0c2340;
+  padding: 10px 14px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 6;
+}
+.reel-pages a { color: #0c2340; font-weight: 600; text-decoration: none; }
+.reel-pages[hidden] { display: none; }
 
 .label-layout {
   display: grid;

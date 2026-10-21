@@ -588,15 +588,16 @@
         });
       }
       window.__focusSantiago = function () {
+        region = "all";
+        setChip(chipBox, "all");
         const m = (V.metros || []).find((x) => x.name === "Santiago" && x.fips === "CI");
         if (m) {
-          region = ANDES.has(m.fips) ? "andes" : m.fips;
-          setChip(chipBox, region === "andes" ? "andes" : m.fips);
-          pickPlace("metro", m);
-          drawPlaces();
-        } else {
-          map.flyTo([-33.45, -70.67], 6, { duration: 1.0 });
+          selectedPlace = { kind: "metro", ...m };
+          renderPlacePanel();
+          if (typeof window.__restyleBorders === "function") window.__restyleBorders();
         }
+        drawPlaces();
+        map.flyTo([14, -82], 3, { duration: 0.9 });
       };
       function setView(v) {
         view = v;
