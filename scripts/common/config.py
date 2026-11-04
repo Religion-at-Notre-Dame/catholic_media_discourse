@@ -30,3 +30,7 @@ YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
 
 GOOGLE_CSE_ID = os.getenv("GOOGLE_CSE_ID")
 GOOGLE_CSE_API_KEY = os.getenv("GOOGLE_CSE_API_KEY") or YOUTUBE_API_KEY
+
+# OpenRouter (TypeSafe Jev Decisions API — informal-learning judge)
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+OPENROUTER_JEV_MODEL = os.getenv("OPENROUTER_JEV_MODEL", "typesafe/jev-1.13")

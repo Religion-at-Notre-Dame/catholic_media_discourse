@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="How Catholic themes circulate in media across the Americas — University of Notre Dame." />
+  <meta name="description" content="How Catholic themes circulate in media across the Americas: University of Notre Dame." />
   <title>Findings · How the Americas Hear the Church · Notre Dame</title>
   <link rel="icon" type="image/svg+xml" href="../branding/nd-monogram.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,13 +13,17 @@
   
   <link rel="stylesheet" href="../css/site.css" />
     <script src="../data/findings-data.js" defer></script>
+  <script src="../data/triage-data.js" defer></script>
+  <script src="../data/figures-data.js" defer></script>
   <script src="../js/findings.js" defer></script>
+  <script src="../js/figures.js" defer></script>
+  <script src="../js/site.js" defer></script>
 
 </head>
 <body class="mode-findings">
   <header class="nd-nav" role="banner">
     <div class="nd-nav__top">
-      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame — home">
+      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame: home">
         <img class="nd-nav__mark" src="../branding/nd-monogram.svg" alt="" width="36" height="36" />
         <img class="nd-nav__wordmark" src="../branding/wordmark.svg" alt="University of Notre Dame" />
         <span class="nd-nav__site">How the Americas Hear the Church</span>
@@ -27,13 +31,22 @@
       <nav class="nd-nav__pages" aria-label="Primary">
         <a href="index.html" id="nav-story">Story</a>
         <a href="findings.html" id="nav-findings" class="is-active">Findings</a>
+        <a href="triage.html" id="nav-triage">Triage</a>
         <a href="explore.html#/places" id="tab-places">Places</a>
         <a href="explore.html#/topics" id="tab-topics">Topics</a>
+        <a href="language.html" id="nav-language">Language</a>
+        <a href="misconceptions.html" id="nav-classroom">Classroom</a>
         <a href="methods.html" id="nav-methods">Methods</a>
       </nav>
     </div>
     <div class="nd-nav__sub nd-nav__sub--simple">
-      <div class="nav-langs"><b>EN</b> English · <b>ES</b> Spanish · <b>PT</b> Portuguese</div>
+      <div class="nav-langs" id="lang-switch" title="Filters example quotes. Does not translate this page.">
+        <span>Examples</span>
+        <button type="button" data-lang="all">All</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="es">ES</button>
+        <button type="button" data-lang="pt">PT</button>
+      </div>
     </div>
   </header>
 
@@ -43,17 +56,30 @@
         <p class="kicker">Findings · early results</p>
         <h1>Regional traditions, not one register</h1>
         <p class="lead">
-          Evidence for the geography and accents questions: theme rates and lifts from geolocated
-          news (ActionGeo writing locations), plus co-occurrence lift for teachings that travel together.
+          Evidence for geography, accents, and informal learning: theme rates and lifts from geolocated
+          news (ActionGeo writing locations), co-occurrence lift for teachings that travel together,
+          and dual-taxonomy triage of what learners may already know from media.
         </p>
         <p class="page-hero__links">
-          <a class="cta" id="findings-to-places" href="explore.html#/places">Open Places</a>
-          <a class="cta cta--ghost" id="findings-to-methods" href="methods.html">Methods &amp; techniques</a>
+          <a class="cta" id="findings-to-places" href="#f-corpus">Corpus first</a>
+          <a class="cta cta--ghost" id="findings-to-edu" href="#f-education">Education</a>
+          <a class="cta cta--ghost" href="misconceptions.html">Misconceptions</a>
+          <a class="cta cta--ghost" id="findings-to-methods" href="methods.html">Methods</a>
         </p>
       </div>
     </header>
     <div class="findings-grid">
       <article class="f-card f-card--wide" id="f-corpus"></article>
+      <article class="f-card f-card--wide" id="f-education"></article>
+      <article class="f-card f-card--wide" id="f-figures">
+        <p class="kicker">Figures · interactive</p>
+        <h3>Figures with examples</h3>
+        <p class="f-note">
+          Educator flash, place lifts, Chile / Santiago, and types-together, with clickable
+          EN/ES/PT examples.
+        </p>
+        <div data-figures id="findings-figures-board" aria-label="Interactive paper figures"></div>
+      </article>
       <article class="f-card" id="f-sigs"></article>
       <article class="f-card" id="f-santiago"></article>
       <article class="f-card" id="f-lifts"></article>
@@ -64,34 +90,7 @@
     </div>
   </main>
 
-<footer class="nd-footer" id="site-footer">
-      <div class="nd-footer__inner">
-        <div class="nd-footer__brands">
-          <img
-            class="nd-footer__mark"
-            src="../branding/academic-mark.svg"
-            alt="University of Notre Dame"
-          />
-          <img
-            class="nd-footer__lucy"
-            src="../branding/partners/lucy-family-institute.svg"
-            alt="Lucy Family Institute for Data &amp; Society"
-          />
-        </div>
-        <p class="nd-footer__title">How the Americas Hear the Church</p>
-        <p class="nd-footer__meta">
-          Built for education and public impact: inspectable lexicon lifts, not black-box maps.
-          ActionGeo marks writing location in GDELT — not viewership.
-        </p>
-        <p class="nd-footer__meta">
-          <a href="https://lucyinstitute.nd.edu/" target="_blank" rel="noreferrer">Lucy Institute</a>
-          ·
-          <a href="https://www.nd.edu/" target="_blank" rel="noreferrer">Notre Dame</a>
-          ·
-          <a class="nd-footer__link" href="explore.html#/places">Explore the map</a>
-        </p>
-      </div>
-  </footer>
+<footer class="nd-footer" id="site-footer"></footer>
 
 <script>
     (function () {
@@ -112,6 +111,5 @@
       nodes.forEach((n) => io.observe(n));
     })();
   </script>
-  <script src="../js/site.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Common misconceptions about Catholic teaching, grouped by category and severity." />
+  <title>Misconceptions · How the Americas Hear the Church · Notre Dame</title>
+  <link rel="icon" type="image/svg+xml" href="../branding/nd-monogram.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body class="mode-methods">
+  <header class="nd-nav" role="banner">
+    <div class="nd-nav__top">
+      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame: home">
+        <img class="nd-nav__mark" src="../branding/nd-monogram.svg" alt="" width="36" height="36" />
+        <img class="nd-nav__wordmark" src="../branding/wordmark.svg" alt="University of Notre Dame" />
+        <span class="nd-nav__site">How the Americas Hear the Church</span>
+      </a>
+      <nav class="nd-nav__pages" aria-label="Primary">
+        <a href="index.html" id="nav-story">Story</a>
+        <a href="findings.html" id="nav-findings">Findings</a>
+        <a href="triage.html" id="nav-triage">Triage</a>
+        <a href="explore.html#/places" id="tab-places">Places</a>
+        <a href="explore.html#/topics" id="tab-topics">Topics</a>
+        <a href="language.html" id="nav-language">Language</a>
+        <a href="misconceptions.html" id="nav-classroom" class="is-active">Classroom</a>
+        <a href="methods.html" id="nav-methods">Methods</a>
+      </nav>
+    </div>
+    <div class="nd-nav__sub nd-nav__sub--simple">
+      <nav class="classroom-sub" aria-label="Classroom">
+        <a href="misconceptions.html" id="nav-misconceptions" class="is-active">Misconceptions</a>
+        <a href="label.html" id="nav-label">Label</a>
+        <a href="next.html" id="nav-next">Next</a>
+      </nav>
+    </div>
+  </header>
+
+<main id="misconceptions" class="page">
+  <header class="page-hero page-hero--paper">
+    <div class="page-hero__inner">
+      <p class="kicker">Formation · accuracy scale</p>
+      <h1>Common misconceptions, by how far they drift</h1>
+      <p class="lead">
+        Two different measures sit on this page. The misunderstanding flag is a content label, about 3% of excerpts. Grouping paragraphs from the same outlet and day keeps a news-versus-radio gap and lifts television up to news. The accuracy score is separate: most excerpts are “cannot assess.”
+      </p>
+    </div>
+  </header>
+
+  <div class="mis-wrap">
+    <section id="mis-sources" aria-label="Misunderstanding by source">
+      <p class="kicker">Measured · outlet contrasts</p>
+      <h2>At paragraph level, news is higher than television, YouTube, and radio.</h2>
+      <div id="mis-source-bars"></div>
+      <p id="mis-source-note" class="mis-note"></p>
+      <h2>Same test after grouping outlet and day</h2>
+      <p class="mis-note">Paragraphs from the same outlet on the same day are one group. The group is flagged if any paragraph in it is flagged. That is the dependence check.</p>
+      <div id="mis-cluster-bars"></div>
+      <p id="mis-cluster-note" class="mis-note"></p>
+    </section>
+    <section id="mis-outlets" aria-label="Outlet types">
+      <p class="kicker">Where the excerpt came from</p>
+      <h2>Outlet is not the same as content type</h2>
+      <p class="mis-note" id="mis-outlet-note">An outlet is the stream: news, television, YouTube, or radio. Institutional news is a content label that can appear inside any of those streams.</p>
+      <div id="mis-outlet-bars"></div>
+    </section>
+    <section id="mis-types" aria-label="Content types and definitions">
+      <p class="kicker">What the labels mean</p>
+      <h2>A passage can carry more than one type</h2>
+      <p class="mis-note" id="mis-type-note">Shares are of the labeled excerpts. They do not add to 100%, because one paragraph can carry two types. “Institutional news” is not a newspaper section. It means the excerpt is about a Church office, appointment, event, or schedule, and it does not teach a doctrine.</p>
+      <div id="mis-type-bars"></div>
+    </section>
+    <section id="mis-accuracy" aria-label="Accuracy score breakdown">
+      <p class="kicker">How wrong, when the model scores it</p>
+      <h2>Clearly inaccurate, partial, or not a teaching</h2>
+      <p class="mis-note">Score 1 is clearly inaccurate: the model reads the claim as contradicting ordinary Catholic teaching. Score 2 is partial or misleading: something true is missing or skewed. Score 0 is cannot assess, not a verdict of error. Score 4, accurate and clear, does not appear in this run. These are triage scores, not a theologian’s judgment.</p>
+      <div id="mis-accuracy-bars"></div>
+    </section>
+    <section id="mis-by-type" aria-label="Misunderstanding rate by content type">
+      <p class="kicker">Where the flag is more common</p>
+      <h2>Doctrine and moral teaching carry it most often</h2>
+      <p class="mis-note">Each bar is the share of that content type also marked misunderstanding. Institutional news is common in the corpus and rarely flagged. Doctrine is uncommon and flagged much more often.</p>
+      <div id="mis-by-type-bars"></div>
+    </section>
+    <section id="mis-company" aria-label="What travels with misunderstanding">
+      <p class="kicker">Same excerpt</p>
+      <h2>The flag rides with doctrine, ethics, and opinion</h2>
+      <div id="mis-company-bars"></div>
+      <p class="mis-note" id="mis-company-caption">Lift is how often two labels share an excerpt compared with chance. It is not a percent of the corpus.</p>
+    </section>
+    <div class="mis-legend" aria-label="Severity key">
+      <button type="button" class="sev sev--all is-on" data-sev="all">All</button>
+      <button type="button" class="sev sev--partial" data-sev="partial">Partial or misleading</button>
+      <button type="button" class="sev sev--clear" data-sev="clear">Clearly inaccurate</button>
+    </div>
+    <p class="mis-note">Each quotation is a de-identified excerpt from the labeled set. The badge is the model’s accuracy score, rounded. Names and places were already redacted in the corpus.</p>
+    <div class="mis-grid" id="mis-examples">
+      <article class="mis-card">
+        <h2>Doctrine and sacraments</h2>
+        <p class="mis-note">Creed, Mass, and what the Church holds.</p>
+        <div class="mis-item">
+          <span class="sev sev--partial">Partial or misleading</span>
+          <p class="quote">“The ‘semi’ is because Roman Catholic theology also centers on grace, but sees grace as a substance working renewal in the justified person.”</p>
+          <p>News · score 2 · doctrine and misunderstanding.</p>
+        </div>
+        <div class="mis-item">
+          <span class="sev sev--clear">Clearly inaccurate</span>
+          <p class="quote">“Catholics and Orthodox Christians believe when a priest consecrates the red and wine, they cease to exist.”</p>
+          <p>YouTube · score 1.67 · doctrine and misunderstanding.</p>
+        </div>
+      </article>
+
+      <article class="mis-card">
+        <h2>Devotion and popular piety</h2>
+        <p class="mis-note">Saints, Mary, and devotional practice.</p>
+        <div class="mis-item">
+          <span class="sev sev--clear">Clearly inaccurate</span>
+          <p class="quote">“And many of them are surprised to find it a short leap from [LOCATION], Catholic saint, to Bride the folkloric [ORGANIZATION].”</p>
+          <p>News · score 0.87 · devotion and misunderstanding.</p>
+        </div>
+      </article>
+
+      <article class="mis-card">
+        <h2>Moral teaching</h2>
+        <p class="mis-note">What the excerpt presents as a moral claim.</p>
+        <div class="mis-item">
+          <span class="sev sev--partial">Partial or misleading</span>
+          <p class="quote">“The Vatican is in support of the traditional family. They don’t want to see same-sex unions being able to adopt and have children.”</p>
+          <p>Television · score 2.43 · migration, moral teaching, and misunderstanding.</p>
+        </div>
+        <div class="mis-item">
+          <span class="sev sev--clear">Clearly inaccurate</span>
+          <p class="quote">“Pope [PERSON] says that just because [ORGANIZATION] bans artificial contraceptives, it does not mean Catholics have to ‘breed like rabbits.’”</p>
+          <p>News · score 1.77 · moral teaching and misunderstanding.</p>
+        </div>
+      </article>
+
+      <article class="mis-card">
+        <h2>Papal documents</h2>
+        <p class="mis-note">A named encyclical in the excerpt.</p>
+        <div class="mis-item">
+          <span class="sev sev--partial">Partial or misleading</span>
+          <p class="quote">“‘Laudato Si'’ is ‘not just a teaching document, but it’s a dialogue document.’”</p>
+          <p>News · score 2.5 · Catholic social teaching.</p>
+        </div>
+        <div class="mis-item">
+          <span class="sev sev--clear">Clearly inaccurate</span>
+          <p class="quote">“‘Pope [PERSON] could not be more strong on jobs,’ said [PERSON], who referred to the pope’s [DATE] encyclical ‘Laudato Si’, on Care for Our Common Home.’”</p>
+          <p>News · score 1.17 · Catholic social teaching.</p>
+        </div>
+      </article>
+
+      <article class="mis-card">
+        <h2>Public controversy</h2>
+        <p class="mis-note">A policy or family-politics frame.</p>
+        <div class="mis-item">
+          <span class="sev sev--clear">Clearly inaccurate</span>
+          <p class="quote">“[PERSON] is trying to get [ORGANIZATION] to loosen up and be more accepting of non-traditional family lifestyles that includes catholics who are gay, divorced or in straight domestic partnerships.”</p>
+          <p>Television · score 1.12 · moral teaching and misunderstanding.</p>
+        </div>
+      </article>
+    </div>
+    <p class="methods-cta-row">
+      <a class="cta" href="label.html">Label an example</a>
+      <a class="cta cta--ghost" href="methods.html">Methods</a>
+    </p>
+  </div>
+</main>
+
+<footer class="nd-footer" id="site-footer"></footer>
+<script src="../data/triage-data.js" defer></script>
+<script src="../js/misconceptions.js" defer></script>
+<script src="../js/site.js" defer></script>
+</body>
+</html>

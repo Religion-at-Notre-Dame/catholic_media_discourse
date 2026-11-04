@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="How Catholic themes circulate in media across the Americas — University of Notre Dame." />
+  <meta name="description" content="How Catholic themes circulate in media across the Americas: University of Notre Dame." />
   <title>Story · How the Americas Hear the Church · Notre Dame</title>
   <link rel="icon" type="image/svg+xml" href="../branding/nd-monogram.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +17,7 @@
 <body class="mode-story">
   <header class="nd-nav" role="banner">
     <div class="nd-nav__top">
-      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame — home">
+      <a class="nd-nav__brand" href="index.html" aria-label="University of Notre Dame: home">
         <img class="nd-nav__mark" src="../branding/nd-monogram.svg" alt="" width="36" height="36" />
         <img class="nd-nav__wordmark" src="../branding/wordmark.svg" alt="University of Notre Dame" />
         <span class="nd-nav__site">How the Americas Hear the Church</span>
@@ -25,13 +25,22 @@
       <nav class="nd-nav__pages" aria-label="Primary">
         <a href="index.html" id="nav-story" class="is-active">Story</a>
         <a href="findings.html" id="nav-findings">Findings</a>
+        <a href="triage.html" id="nav-triage">Triage</a>
         <a href="explore.html#/places" id="tab-places">Places</a>
         <a href="explore.html#/topics" id="tab-topics">Topics</a>
+        <a href="language.html" id="nav-language">Language</a>
+        <a href="misconceptions.html" id="nav-classroom">Classroom</a>
         <a href="methods.html" id="nav-methods">Methods</a>
       </nav>
     </div>
     <div class="nd-nav__sub nd-nav__sub--simple">
-      <div class="nav-langs"><b>EN</b> English · <b>ES</b> Spanish · <b>PT</b> Portuguese</div>
+      <div class="nav-langs" id="lang-switch" title="Filters example quotes. Does not translate this page.">
+        <span>Examples</span>
+        <button type="button" data-lang="all">All</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="es">ES</button>
+        <button type="button" data-lang="pt">PT</button>
+      </div>
     </div>
   </header>
 
@@ -63,47 +72,79 @@
             </div>
           </div>
           <h1 class="hook__title">How the Americas Hear the Church</h1>
-          <p class="hook__subtitle">Not one hemispheric register — distinct regional traditions in media.</p>
+          <p class="hook__subtitle">Not one hemispheric register. Distinct regional traditions in media.</p>
           <p class="hook__pitch">
             People meet Catholicism in news and digital media before a classroom.
             This prototype traces how Catholic themes circulate across countries and
-            languages — with maps, lift charts, and an inspectable lexicon.
+            languages, with maps, lift charts, and an inspectable lexicon.
           </p>
           <div class="hook__ctas">
             <a class="cta" id="cta-explore" href="explore.html#/places">Explore the map</a>
+            <a class="cta cta--ghost" id="cta-play" href="present.html">Play</a>
             <a class="cta cta--ghost" id="cta-findings" href="findings.html">See findings</a>
+            <a class="cta cta--ghost" id="cta-abstract" href="https://jonathankarr.com/documents/how_the_americas_hear_the_church_abstract.pdf" target="_blank" rel="noopener noreferrer">Read the abstract</a>
+            <a class="cta cta--ghost" id="cta-poster" href="https://docs.google.com/presentation/d/1OcvlUY28Ig3L1JT0lPvCVUaqyzal0mBl/edit?usp=sharing&amp;ouid=116310928031028965375&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer">See the poster</a>
             <a class="cta-scroll" href="#research-questions">Read the questions ↓</a>
           </div>
         </div>
       </div>
     </section>
 
+    <nav class="story-path" aria-label="On this page">
+      <a href="#research-questions">Questions</a>
+      <a href="#gap">The gap</a>
+      <a href="#gutierrez">Gutiérrez</a>
+      <a href="#santiago">Santiago</a>
+      <a href="#story-education">Education</a>
+      <a href="#story-figures">Figures</a>
+      <a href="#explore-cta">Open a page</a>
+    </nav>
+
     <div class="story-band story-band--rq" id="research-questions">
       <div class="story-band__inner">
         <p class="story-band__kicker">Core research question</p>
         <p class="story-band__line">
-          How do Catholic themes and social teachings circulate across the media, and how do country
-          and language shape how people encounter Catholicism?
+          What do learners already know, assume, or misunderstand about Catholicism from news and
+          digital media, and how do country and language shape that informal learning before OCIA
+          or parish formation?
         </p>
         <p class="story-band__sub">How this prototype breaks it down</p>
         <ol class="rq-list">
           <li>
-            <span class="rq-list__tag">Geography</span>
-            How do theme rates differ by ActionGeo country and metro — and where do lifts vs. a U.S.
-            baseline appear?
+            <span class="rq-list__tag">Prior environments</span>
+            <span class="rq-list__body">
+              Which themes circulate in media before formal instruction, and where do lifts vs. a U.S.
+              baseline appear by ActionGeo country and metro?
+            </span>
           </li>
           <li>
             <span class="rq-list__tag">Language</span>
-            How do parallel English, Spanish, and Portuguese lexicon teachings travel as one concept?
+            <span class="rq-list__body">
+              How do parallel English, Spanish, and Portuguese lexicon teachings travel as one concept?
+              Inside television and YouTube, Spanish excerpts are flagged more often than English ones. News in this set is almost all English, and Portuguese is too small to test.
+              <span class="rq-list__links"><a href="language.html">Language</a></span>
+            </span>
           </li>
           <li>
-            <span class="rq-list__tag">Accents</span>
-            Where do liberation, preferential-option, magisterial, and popular-piety vocabularies
-            concentrate across the Americas?
+            <span class="rq-list__tag">Accuracy triage</span>
+            <span class="rq-list__body">
+              How can multi-label categories and computational accuracy scores help flag
+              misunderstandings for educator review?
+              About 3% of excerpts are flagged. At paragraph level news is higher than television, YouTube, and radio. After grouping by outlet and day, television rises to news and radio stays lower. Doctrine is flagged far more often than institutional news.
+              <span class="rq-list__links">
+                <a href="triage.html">Triage</a>
+                <a href="findings.html#f-education">Findings</a>
+                <a href="misconceptions.html">Misconceptions</a>
+                <a href="methods.html#triage">Methods</a>
+              </span>
+            </span>
           </li>
           <li>
             <span class="rq-list__tag">Education</span>
-            What can educators use from these patterns without mistaking writing location for audiences?
+            <span class="rq-list__body">
+              How do findings translate into diagnostics, media literacy, and multilingual resources,
+              without mistaking writing location for audiences?
+            </span>
           </li>
         </ol>
       </div>
@@ -114,14 +155,14 @@
         <p class="kicker">The gap</p>
         <h2>Official documents are not the whole conversation</h2>
         <p class="lead">
-          People often meet Catholicism in news and digital media before a classroom — yet analysis
+          People often meet Catholicism in news and digital media before a classroom, yet analysis
           still stays in U.S. English sources or magisterial texts alone. Latin American audiences
           spend nearly double the global average on online news, so a hemispheric media view is
-          required — not one English register.
+          required, not one English register.
         </p>
-        <div class="scale-strip" aria-label="Corpus scale">
-          <div><strong>446k</strong><span>U.S. news paragraphs</span></div>
-          <div><strong>128k</strong><span>Americas news</span></div>
+        <div class="scale-strip" id="story-corpus" aria-label="Corpus scale">
+          <div><strong>…</strong><span>U.S. news paragraphs</span></div>
+          <div><strong>…</strong><span>Americas news</span></div>
           <div><strong>EN · ES · PT</strong><span>parallel lexicons</span></div>
         </div>
       </div>
@@ -133,28 +174,25 @@
           <p class="kicker">Theological accents · Notre Dame</p>
           <h2>Gustavo Gutiérrez and liberation theology</h2>
           <blockquote class="pull-quote">
-            The preferential option for the poor is not only a theme in theology —
-            it leaves a measurable footprint in public media.
+            The preferential option for the poor is not only a theme in theology.
+            It leaves a measurable footprint in public media.
           </blockquote>
           <p class="lead">
             <strong>Gustavo Gutiérrez</strong>, founder of liberation theology and a Notre Dame presence,
             centered that option. Early news results already show significantly higher
-            liberation-theology prevalence in Latin America than in U.S. coverage — evidence that
+            liberation-theology prevalence in Latin America than in U.S. coverage, a sign that
             theological accents circulate differently by country and language.
           </p>
           <p>
-            Measuring those lifts — while redacting personally identifiable information — turns
-            Notre Dame’s force-for-good mission into shareable evidence for educators and scholars.
+            That contrast supports a public-language reading of Gutiérrez: the option leaves a footprint in news by writing location. It does not show the theology is practiced more, or that one media voice covers the hemisphere.
+            <a class="chapter-link" href="methods.html#theories">Which claims the tests can touch</a>
           </p>
         </div>
         <div class="lift-card reveal">
           <h3>Regional signatures</h3>
-          <p class="lift-card__note">Theme concentration in geolocated news — writing location, not viewership.</p>
-          <div class="sig-list">
-            <div class="sig"><span class="sig__place">Brazil</span><span class="sig__theme">Aparecida · CELAM</span></div>
-            <div class="sig"><span class="sig__place">Central America</span><span class="sig__theme">Óscar Romero</span></div>
-            <div class="sig"><span class="sig__place">Mexico</span><span class="sig__theme">Guadalupe · migration</span></div>
-            <div class="sig"><span class="sig__place">Spanish media</span><span class="sig__theme">evangelio · misión</span></div>
+          <p class="lift-card__note">Theme concentration in geolocated news (writing location, not viewership).</p>
+          <div class="sig-list" id="story-signatures">
+            <div class="sig"><span class="sig__place">…</span><span class="sig__theme">loading lifts…</span></div>
           </div>
         </div>
       </div>
@@ -166,7 +204,7 @@
         <h2 class="phase-divider__title">From Gutiérrez’s legacy to Santiago’s lifts</h2>
         <p class="phase-divider__blurb">
           Place-level rates show how mission language, papal social teaching, and liberation
-          vocabulary travel differently — even when ActionGeo marks writing location, not audiences.
+          vocabulary travel differently, even when ActionGeo marks writing location, not audiences.
         </p>
       </div>
     </section>
@@ -176,10 +214,9 @@
         <div class="reveal">
           <p class="kicker">Place window · RISE host</p>
           <h2>Santiago, Chile</h2>
-          <p class="lead">
-            Selecting Santiago (<em>N</em> ≈ 1,000 paragraphs) elevates mission language,
-            <em>Fratelli Tutti</em>, and liberation theology versus U.S. news rates — country
-            shaping encounter, in one city panel educators can open in class.
+          <p class="lead" id="story-santiago-lead">
+            Chile’s Santiago metro panel shows how country rates lift (or sit near parity) versus
+            U.S. news: ActionGeo writing location, one city educators can open in class.
             Papal documents such as <em>Aparecida</em> can reach Chile days after U.S. desks.
           </p>
           <p>
@@ -190,22 +227,38 @@
             <a class="cta" id="cta-santiago" href="explore.html#/santiago">Open Santiago on the map</a>
           </div>
         </div>
-        <div class="lift-card reveal" id="santiago-meters">
+        <div class="lift-card reveal" id="story-santiago">
           <h3>Lifts vs. U.S. news</h3>
-          <div class="meter" style="--v:1">
-            <div class="meter__top"><span>misión</span><b>~5.4×</b></div>
-            <div class="meter__track"><i style="--w:100%"></i></div>
-          </div>
-          <div class="meter" style="--v:2">
-            <div class="meter__top"><span>Fratelli Tutti</span><b>~3.5×</b></div>
-            <div class="meter__track"><i style="--w:65%"></i></div>
-          </div>
-          <div class="meter" style="--v:3">
-            <div class="meter__top"><span>liberation theology</span><b>~1.7×</b></div>
-            <div class="meter__track"><i style="--w:32%"></i></div>
-          </div>
-          <p class="story-note">Prototype rates from geolocated news; social-media layer forthcoming.</p>
+          <p class="story-note">Loading Chile lifts from the live matrix…</p>
         </div>
+      </div>
+    </section>
+
+    <section class="chapter chapter--paper" id="story-education">
+      <div class="chapter__inner reveal">
+        <p class="kicker">Education · priors from media</p>
+        <h2>What learners may already “know”</h2>
+        <p class="lead" id="story-education-headline">Loading dual-taxonomy triage…</p>
+        <p class="f-note" id="story-education-note"></p>
+        <div class="triage-hooks" id="story-education-beats" aria-label="Educator story beats"></div>
+        <div class="hook__ctas" style="margin-top:1.25rem">
+          <a class="cta" href="#story-figures">Explore the figures</a>
+          <a class="cta cta--ghost" href="triage.html">Open Triage</a>
+          <a class="cta cta--ghost" href="findings.html#f-education">Findings · education</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter chapter--sky chapter--figures" id="story-figures">
+      <div class="chapter__inner reveal">
+        <p class="kicker">Figures · interactive</p>
+        <h2>Click a chart, then read an example</h2>
+        <p class="lead">
+          Slide-ready Education-track figures, wired to live lifts and dual-taxonomy
+          vignettes (EN/ES/PT). Gutiérrez → Santiago, Guadalupe, Romero, <em>Aparecida</em>,
+          and the gentle-correction queue.
+        </p>
+        <div data-figures id="story-figures-board" aria-label="Interactive paper figures"></div>
       </div>
     </section>
 
@@ -228,10 +281,22 @@
             <strong>Teaching network</strong>
             <span>Language · lift edges · EN/ES/PT</span>
           </a>
+          <a class="act" id="cta-misconceptions" href="misconceptions.html">
+            <span class="act__label">Misconceptions</span>
+            <strong>News higher than radio</strong>
+            <span>Doctrine flagged more often than institutional news</span>
+          </a>
+          <a class="act" id="cta-label" href="label.html">
+            <span class="act__label">Label</span>
+            <strong>Three passages</strong>
+            <span>Pick labels, then check the answer key</span>
+          </a>
         </div>
         <p class="story-note" style="margin-top:1.25rem">
-          Techniques and lexicon definition live on
-          <a class="nd-footer__link" id="story-to-methods" href="methods.html" style="color:var(--nd-dark-gold)">Methods</a>.
+          Techniques live on
+          <a class="chapter-link" id="story-to-methods" href="methods.html">Methods</a>.
+          What would change a claim is on
+          <a class="chapter-link" href="next.html">Next</a>.
         </p>
       </div>
     </section>
@@ -302,34 +367,7 @@
 
   </main>
 
-<footer class="nd-footer" id="site-footer">
-      <div class="nd-footer__inner">
-        <div class="nd-footer__brands">
-          <img
-            class="nd-footer__mark"
-            src="../branding/academic-mark.svg"
-            alt="University of Notre Dame"
-          />
-          <img
-            class="nd-footer__lucy"
-            src="../branding/partners/lucy-family-institute.svg"
-            alt="Lucy Family Institute for Data &amp; Society"
-          />
-        </div>
-        <p class="nd-footer__title">How the Americas Hear the Church</p>
-        <p class="nd-footer__meta">
-          Built for education and public impact: inspectable lexicon lifts, not black-box maps.
-          ActionGeo marks writing location in GDELT — not viewership.
-        </p>
-        <p class="nd-footer__meta">
-          <a href="https://lucyinstitute.nd.edu/" target="_blank" rel="noreferrer">Lucy Institute</a>
-          ·
-          <a href="https://www.nd.edu/" target="_blank" rel="noreferrer">Notre Dame</a>
-          ·
-          <a class="nd-footer__link" href="explore.html#/places">Explore the map</a>
-        </p>
-      </div>
-  </footer>
+<footer class="nd-footer" id="site-footer"></footer>
 
 <script>
     (function () {
@@ -350,6 +388,11 @@
       nodes.forEach((n) => io.observe(n));
     })();
   </script>
+  <script src="../data/findings-data.js" defer></script>
+  <script src="../data/triage-data.js" defer></script>
+  <script src="../data/figures-data.js" defer></script>
+  <script src="../js/story.js" defer></script>
+  <script src="../js/figures.js" defer></script>
   <script src="../js/site.js" defer></script>
 </body>
 </html>

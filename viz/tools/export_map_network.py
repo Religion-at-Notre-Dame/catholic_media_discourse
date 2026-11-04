@@ -416,7 +416,7 @@ NEWS_FILES = [
 
 
 def news_geo_paths() -> list[Path]:
-    """Minimal paragraph JSONL set — no stub/shard double-counts."""
+    """Minimal paragraph JSONL set: no stub/shard double-counts."""
     paths = paragraph_scan_paths(ROOT)
     if paths:
         return paths

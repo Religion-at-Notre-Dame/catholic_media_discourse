@@ -1,4 +1,5 @@
 .env
+viz/js/basemap-key.js
 venv/
 .venv/
 __pycache__/
@@ -11,7 +12,8 @@ __pycache__/
 *.blg
 .DS_Store
 
-# Paper / LaTeX (local only)
+# Paper / LaTeX artifacts (local only): .tex, .pdf, aux, large JSONL under analysis/
+# Tracked figure/table *generators* live in scripts/paper/ (not under papers/).
 papers/
 
 # Viz export cache (regenerate with viz/export_*.py)

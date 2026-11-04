@@ -1,0 +1,62 @@
+# Deploy viz/ as the public GitHub Pages site:
+#   https://religion-at-notre-dame.github.io/catholic_media_discourse/
+#
+# One-time: Settings → Pages → Source: GitHub Actions
+# Optional mirror: bash viz/tools/publish_personal_site.sh
+#   → https://jonathankarr.com/how_the_americas_hear_the_church/
+name: GitHub Pages (viz)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "viz/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stage Pages payload
+        env:
+          CARTO_BASEMAP_KEY: ${{ secrets.CARTO_BASEMAP_KEY }}
+        run: |
+          mkdir -p _site
+          rsync -a \
+            --exclude '.cache/' \
+            --exclude 'tools/' \
+            --exclude 'serve.py' \
+            --exclude 'README.md' \
+            viz/ _site/
+          touch _site/.nojekyll
+          # Friendly landing if someone opens the repo Pages root
+          test -f _site/index.html
+          # Key is public in the built site; lock it to these hosts in the CARTO dashboard.
+          python3 -c 'import os; k=os.environ.get("CARTO_BASEMAP_KEY",""); k=k.replace("\\","\\\\").replace("\"","\\\""); open("_site/js/basemap-key.js","w").write("window.CARTO_BASEMAP_KEY = \"%s\";\n" % k)'
+          if [ -z "${CARTO_BASEMAP_KEY}" ]; then
+            echo "::warning::CARTO_BASEMAP_KEY secret is empty; Explore basemap tiles will ask for a key."
+          fi
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
