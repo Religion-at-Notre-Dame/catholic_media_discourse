@@ -1,0 +1,56 @@
+# After a successful push to main, mirror viz/ to the personal Pages repo:
+#   https://jonathankarr.com/how_the_americas_hear_the_church/
+#
+# One-time: add a repository secret PERSONAL_PAGES_TOKEN that can push to
+# JonathanKarr33/JonathanKarr33.github.io (a fine-grained token with
+# Contents: Read and write on that repo is enough).
+# CARTO_BASEMAP_KEY is the same secret the Notre Dame Pages workflow uses.
+name: Personal site (jonathankarr.com)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "viz/**"
+      - ".github/workflows/personal-site.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: personal-site
+  cancel-in-progress: true
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require a token that can push the personal site
+        env:
+          TOKEN: ${{ secrets.PERSONAL_PAGES_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "::error::Add the repository secret PERSONAL_PAGES_TOKEN so this push can update JonathanKarr33/JonathanKarr33.github.io."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          repository: JonathanKarr33/JonathanKarr33.github.io
+          token: ${{ secrets.PERSONAL_PAGES_TOKEN }}
+          path: personal-pages
+
+      - name: Publish the classroom mirror
+        env:
+          DEST: ${{ github.workspace }}/personal-pages/how_the_americas_hear_the_church
+          SKIP_CHECK: "1"
+          CARTO_BASEMAP_KEY: ${{ secrets.CARTO_BASEMAP_KEY }}
+          PUBLISH_MSG: "Publish the classroom site from ${{ github.sha }}."
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: bash viz/tools/publish_personal_site.sh

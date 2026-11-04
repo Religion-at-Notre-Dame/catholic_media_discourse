@@ -4,7 +4,9 @@
 #
 # Canonical public deploy is GitHub Pages on this (now public) research repo:
 #   https://religion-at-notre-dame.github.io/catholic_media_discourse/
-# This script does not commit or push; review then commit in the personal repo.
+# After the copy, this script commits and pushes the personal Pages repo
+# so jonathankarr.com updates without a second manual commit.
+# Set PUBLISH_MSG to override the commit message. Set SKIP_PUSH=1 to commit only.
 set -euo pipefail
 
 TOOLS="$(cd "$(dirname "$0")" && pwd)"
@@ -54,22 +56,24 @@ PY
   )"
 fi
 CARTO_BASEMAP_KEY="${CARTO_BASEMAP_KEY:-}"
-KEY_FILE="$KEY_FILE" CARTO_BASEMAP_KEY="$CARTO_BASEMAP_KEY" python3 -c 'import os; k=os.environ.get("CARTO_BASEMAP_KEY",""); k=k.replace("\\","\\\\").replace("\"","\\\""); open(os.environ["KEY_FILE"],"w").write("window.CARTO_BASEMAP_KEY = \"%s\";\n" % k)'
-if [[ -z "$CARTO_BASEMAP_KEY" ]]; then
-  echo "CARTO_BASEMAP_KEY is empty in .env; the mirror map will not have a basemap key." >&2
-else
+RSYNC_EXCLUDES=(
+  --exclude '.cache/'
+  --exclude 'tools/'
+  --exclude 'serve.py'
+  --exclude 'README.md'
+  --exclude '.DS_Store'
+)
+if [[ -n "$CARTO_BASEMAP_KEY" ]]; then
+  KEY_FILE="$KEY_FILE" CARTO_BASEMAP_KEY="$CARTO_BASEMAP_KEY" python3 -c 'import os; k=os.environ.get("CARTO_BASEMAP_KEY",""); k=k.replace("\\","\\\\").replace("\"","\\\""); open(os.environ["KEY_FILE"],"w").write("window.CARTO_BASEMAP_KEY = \"%s\";\n" % k)'
   echo "CARTO basemap key written for the personal mirror (not committed here)."
+else
+  echo "CARTO_BASEMAP_KEY is empty; leaving the mirror's existing basemap key in place." >&2
+  RSYNC_EXCLUDES+=(--exclude 'js/basemap-key.js')
 fi
 
 mkdir -p "$DEST"
 # Replace published payload; keep any local .git if someone nested one (unusual).
-rsync -a --delete \
-  --exclude '.cache/' \
-  --exclude 'tools/' \
-  --exclude 'serve.py' \
-  --exclude 'README.md' \
-  --exclude '.DS_Store' \
-  "$VIZ/" "$DEST/"
+rsync -a --delete "${RSYNC_EXCLUDES[@]}" "$VIZ/" "$DEST/"
 rm -f "$KEY_FILE"
 
 # Ensure Pages does not run Jekyll on the mirror either.
@@ -88,6 +92,23 @@ Source of truth is the research repository; republish with the viz publish scrip
 EOF
 
 echo "Published static site → $DEST"
-echo "Public URL (after push to JonathanKarr33.github.io):"
+
+MIRROR_ROOT="$(cd "$(dirname "$DEST")" && pwd)"
+SITE_REL="$(basename "$DEST")"
+if ! git -C "$MIRROR_ROOT" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  echo "Mirror is not a git checkout. Nothing was committed." >&2
+  exit 1
+fi
+
+git -C "$MIRROR_ROOT" add -- "$SITE_REL"
+if git -C "$MIRROR_ROOT" diff --cached --quiet; then
+  echo "Personal site already matches. No commit."
+else
+  git -C "$MIRROR_ROOT" commit -m "${PUBLISH_MSG:-Publish the classroom site.}"
+  if [[ "${SKIP_PUSH:-0}" != "1" ]]; then
+    git -C "$MIRROR_ROOT" push origin HEAD
+  fi
+fi
+
+echo "Live (after GitHub Pages refreshes):"
 echo "  https://jonathankarr.com/how_the_americas_hear_the_church/"
-echo "Next: cd \"$(dirname "$DEST")\" && git status && commit/push when ready."
