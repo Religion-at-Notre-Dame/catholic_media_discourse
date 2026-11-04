@@ -1,0 +1,280 @@
+{
+  "limitation": "This is exploratory, AI-assisted coding developed inductively from the 100 sampled records. It has not been human-validated and should not be treated as a gold standard. Because the sample deliberately enriches Spanish and Portuguese records, its category percentages do not estimate prevalence among the 425 unmatched paragraphs or the broader corpus.",
+  "sample_design": {
+    "source_population": "425 paragraphs matching none of the existing regex modes in scripts/common/content_acts.py",
+    "sample_size": 100,
+    "selection": "language-enriched review sample",
+    "seed": 20261014,
+    "language_targets": {
+      "english": 70,
+      "spanish": 15,
+      "portuguese": 15
+    },
+    "unit": "paragraph"
+  },
+  "coding_rule": "Exactly one category was assigned by the paragraph's primary communicative function. When functions overlapped, metadata/noise took precedence for non-body artifacts; explicit appeals and substantive religious teaching took precedence over quotation form; otherwise a paragraph centered on another actor's position was attributed_statement, a discrete action was news_event_report, and durable context was background_exposition.",
+  "category_definitions": {
+    "news_event_report": "Straight narration of a discrete current, past, or planned event, institutional action, legal development, or measurable outcome.",
+    "background_exposition": "Descriptive, explanatory, biographical, historical, scientific, or contextual prose whose main function is to supply background rather than report a discrete event.",
+    "attributed_statement": "A paragraph whose primary function is to relay an actor's position, explanation, accusation, or commitment through direct quotation or attribution.",
+    "opinion_analysis": "Authorial evaluation, interpretation, prediction, polemic, irony, or argument not primarily framed as an attributed statement.",
+    "religious_teaching": "Substantive doctrinal, theological, moral, or sacramental assertion or explanation, including teaching presented in quotation.",
+    "advocacy_appeal": "A request, demand, exhortation, reform wish, prayer invitation, or other explicit attempt to move an audience or institution toward action.",
+    "personal_testimony": "First-person lived experience or reflective narrative whose main function is witness or self-account rather than general argument.",
+    "metadata_or_noise": "Headlines, captions, credits, citations, navigation, placeholders, list fragments, malformed extraction, or off-topic promotional contamination rather than a developed paragraph."
+  },
+  "overall_category_summary": {
+    "news_event_report": {
+      "count": 25,
+      "percentage": 25
+    },
+    "background_exposition": {
+      "count": 18,
+      "percentage": 18
+    },
+    "attributed_statement": {
+      "count": 7,
+      "percentage": 7
+    },
+    "opinion_analysis": {
+      "count": 12,
+      "percentage": 12
+    },
+    "religious_teaching": {
+      "count": 6,
+      "percentage": 6
+    },
+    "advocacy_appeal": {
+      "count": 6,
+      "percentage": 6
+    },
+    "personal_testimony": {
+      "count": 4,
+      "percentage": 4
+    },
+    "metadata_or_noise": {
+      "count": 22,
+      "percentage": 22
+    }
+  },
+  "counts_by_language": {
+    "english": {
+      "total": 70,
+      "category_counts": {
+        "news_event_report": 22,
+        "background_exposition": 16,
+        "attributed_statement": 5,
+        "opinion_analysis": 6,
+        "religious_teaching": 6,
+        "advocacy_appeal": 3,
+        "personal_testimony": 3,
+        "metadata_or_noise": 9
+      }
+    },
+    "spanish": {
+      "total": 15,
+      "category_counts": {
+        "news_event_report": 3,
+        "background_exposition": 1,
+        "attributed_statement": 0,
+        "opinion_analysis": 0,
+        "religious_teaching": 0,
+        "advocacy_appeal": 3,
+        "personal_testimony": 1,
+        "metadata_or_noise": 7
+      }
+    },
+    "portuguese": {
+      "total": 15,
+      "category_counts": {
+        "news_event_report": 0,
+        "background_exposition": 1,
+        "attributed_statement": 2,
+        "opinion_analysis": 6,
+        "religious_teaching": 0,
+        "advocacy_appeal": 0,
+        "personal_testimony": 0,
+        "metadata_or_noise": 6
+      }
+    }
+  },
+  "representative_review_ids": {
+    "news_event_report": [
+      "UM-004",
+      "UM-007",
+      "UM-008"
+    ],
+    "background_exposition": [
+      "UM-001",
+      "UM-002",
+      "UM-009"
+    ],
+    "attributed_statement": [
+      "UM-005",
+      "UM-030",
+      "UM-050"
+    ],
+    "opinion_analysis": [
+      "UM-003",
+      "UM-011",
+      "UM-015"
+    ],
+    "religious_teaching": [
+      "UM-021",
+      "UM-038",
+      "UM-053"
+    ],
+    "advocacy_appeal": [
+      "UM-013",
+      "UM-023",
+      "UM-057"
+    ],
+    "personal_testimony": [
+      "UM-026",
+      "UM-032",
+      "UM-037"
+    ],
+    "metadata_or_noise": [
+      "UM-006",
+      "UM-014",
+      "UM-017"
+    ]
+  },
+  "observed_rule_gaps": [
+    {
+      "gap": "Reporting lexicon is narrow",
+      "evidence": "Many ordinary news paragraphs use legal, event, and attribution verbs such as accused, filed, pleaded, released, explained, responded, tweeted, declared/declarou, escuchó, and explicó.",
+      "affected_categories": [
+        "news_event_report",
+        "attributed_statement"
+      ]
+    },
+    {
+      "gap": "Opinion detection relies on a few fixed phrases",
+      "evidence": "Adjective-led evaluation, sarcasm, prediction, modality, and idiomatic ES/PT commentary often contain none of 'I think,' 'should,' 'clearly,' or their small set of translations.",
+      "affected_categories": [
+        "opinion_analysis"
+      ]
+    },
+    {
+      "gap": "Religious mode is keyed mainly to devotional nouns",
+      "evidence": "Doctrinal exposition about Eucharist, incarnation, dignity, grace, and moral teaching can be religious without prayer, Mass, homily, liturgy, rosary, or Holy Spirit terms.",
+      "affected_categories": [
+        "religious_teaching"
+      ]
+    },
+    {
+      "gap": "Advocacy morphology and constructions are incomplete",
+      "evidence": "Must-statements, hopes for reform, reminders, bargaining requests, prayer invitations, and Spanish/Portuguese desiderative forms evade the listed call/urge/demand patterns.",
+      "affected_categories": [
+        "advocacy_appeal"
+      ]
+    },
+    {
+      "gap": "No artifact or extraction-quality mode",
+      "evidence": "Headlines, captions, image credits, citations, navigation, placeholder-only rows, and off-topic promotional text are forced into other_or_mixed.",
+      "affected_categories": [
+        "metadata_or_noise"
+      ]
+    },
+    {
+      "gap": "Ordinary exposition has no positive surface mode",
+      "evidence": "Profiles, history, descriptions, and scientific or institutional explanations can be coherent article prose while containing no question, speech, opinion, advocacy, devotional, or factish cue.",
+      "affected_categories": [
+        "background_exposition",
+        "personal_testimony"
+      ]
+    },
+    {
+      "gap": "Factish patterns cover few numeric forms",
+      "evidence": "Currency with large amounts, fractions such as two-thirds, spelled-out quantities, placeholder dates, and many legal or institutional facts do not match the current alternatives.",
+      "affected_categories": [
+        "news_event_report",
+        "background_exposition"
+      ]
+    }
+  ],
+  "candidate_improvements": [
+    {
+      "candidate": "Expand multilingual attribution and event-verb patterns, with inflections, for legal and institutional reporting.",
+      "examples": [
+        "accused",
+        "filed",
+        "allege",
+        "pleaded",
+        "released",
+        "responded",
+        "explained",
+        "tweeted",
+        "declarou",
+        "explicó"
+      ],
+      "false_positive_risk": "High-frequency verbs such as asked, wrote, explained, and released also occur in narrative, interview, and advocacy contexts; broad matching could over-label non-news prose."
+    },
+    {
+      "candidate": "Add conservative patterns for explicit modal demands and desiderative appeals in EN/ES/PT.",
+      "examples": [
+        "must resign",
+        "espero que",
+        "que ayude a",
+        "voltar à mesa",
+        "recuerda a"
+      ],
+      "false_positive_risk": "Must, hope, and reminder constructions can report private beliefs or describe obligations without trying to mobilize the reader."
+    },
+    {
+      "candidate": "Separate religious teaching from devotional practice using a small, tested doctrinal lexicon and multiword concepts.",
+      "examples": [
+        "Catholic social teaching",
+        "image of God",
+        "body of Christ",
+        "becomes the body and blood",
+        "moral teaching"
+      ],
+      "false_positive_risk": "News reports and criticism often quote or describe doctrine; keyword expansion may confuse topic with discourse function."
+    },
+    {
+      "candidate": "Detect likely non-body artifacts before discourse classification using structural signals.",
+      "examples": [
+        "image/license credits",
+        "gallery filename runs",
+        "bibliographic citations",
+        "placeholder-only text",
+        "headline-like short text"
+      ],
+      "false_positive_risk": "Short legitimate news leads, poetry, prayers, and compact social posts may resemble fragments or headlines."
+    },
+    {
+      "candidate": "Treat coherent uncued prose as an explicit descriptive/expository fallback rather than implying it is mixed.",
+      "examples": [
+        "historical background",
+        "biographical profile",
+        "institutional description",
+        "scientific explanation"
+      ],
+      "false_positive_risk": "A broad fallback cannot by itself distinguish exposition from subtle opinion, testimony, or reporting and may conceal multilingual recall failures."
+    },
+    {
+      "candidate": "Evaluate sentence-level combinations instead of paragraph-level keyword presence alone.",
+      "examples": [
+        "attribution verb plus quotation",
+        "modal plus action verb",
+        "doctrinal term plus copular assertion"
+      ],
+      "false_positive_risk": "More complex rules increase maintenance burden and can still fail when extraction removes attribution or sentence boundaries."
+    }
+  ],
+  "validation": {
+    "row_count": 100,
+    "unique_review_id_count": 100,
+    "all_rows_have_category": true,
+    "all_rows_have_notes": true,
+    "category_count_sum": 100,
+    "language_counts": {
+      "english": 70,
+      "spanish": 15,
+      "portuguese": 15
+    },
+    "passed": true
+  }
+}

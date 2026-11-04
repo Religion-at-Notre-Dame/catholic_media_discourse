@@ -1,0 +1,43 @@
+{
+  "experiment": "preliminary_regex_speech_act_classification",
+  "limitation": "Heuristic regex-based surface cues; labels overlap and have not been verified by human annotators.",
+  "sampling_note": "Language-enriched stratified sample; percentages are sample descriptives and are not corpus prevalence estimates.",
+  "seed": 20261014,
+  "sample_size": 1000,
+  "requested_language_quotas": {
+    "english": 700,
+    "spanish": 274,
+    "portuguese": 26
+  },
+  "available_news_records_by_sampled_language": {
+    "english": 573769,
+    "spanish": 396,
+    "portuguese": 26
+  },
+  "sample_language_counts": {
+    "english": 700,
+    "spanish": 274,
+    "portuguese": 26
+  },
+  "category_counts": {
+    "question": 230,
+    "reporting": 398,
+    "opinion": 66,
+    "advocacy": 130,
+    "devotional": 84,
+    "factish_markers": 248,
+    "unmatched": 425
+  },
+  "category_percentages": {
+    "question": 23.0,
+    "reporting": 39.8,
+    "opinion": 6.6,
+    "advocacy": 13.0,
+    "devotional": 8.4,
+    "factish_markers": 24.8,
+    "unmatched": 42.5
+  },
+  "multi_label_records": 274,
+  "csv": "research/classification/preliminary_news_classification.csv",
+  "chart": "research/classification/preliminary_category_frequencies.png"
+}

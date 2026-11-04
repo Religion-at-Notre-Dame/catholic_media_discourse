@@ -1,0 +1,9 @@
+category,count,percentage,definition
+news_event_report,34,34.0,"Narrates a discrete current, past, or planned event, institutional action, legal development, or measurable outcome."
+background_exposition,33,33.0,"Supplies descriptive, explanatory, biographical, historical, scientific, or other contextual information."
+attributed_statement,33,33.0,"Relays an actor's position, explanation, allegation, commitment, or quoted words."
+opinion_analysis,23,23.0,"Offers authorial or quoted evaluation, interpretation, prediction, polemic, irony, or argument."
+advocacy_appeal,14,14.0,"Requests, demands, exhorts, invites, or otherwise seeks action or change."
+personal_testimony,5,5.0,"Presents first-person lived experience, witness, or self-reflection."
+metadata_or_noise,22,22.0,"Consists substantially of a headline, caption, credit, citation, navigation, list fragment, malformed extraction, or off-topic contamination."
+other_unclear,5,5.0,Has insufficient recoverable evidence for a more specific communicative-function interpretation.

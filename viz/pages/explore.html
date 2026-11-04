@@ -39,15 +39,34 @@
         <button type="button" class="search-clear" id="search-clear" aria-label="Clear topic">×</button>
         <div class="search-menu" id="search-menu" role="listbox"></div>
       </div>
-      <div class="nav-langs"><b>EN</b> English · <b>ES</b> Spanish · <b>PT</b> Portuguese</div>
+      <div class="nav-langs" id="nav-langs" role="group" aria-label="Interface language">
+        <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true"><b>EN</b> English</button>
+        <span aria-hidden="true">·</span>
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="false"><b>ES</b> Spanish</button>
+        <span aria-hidden="true">·</span>
+        <button type="button" class="lang-btn" data-lang="pt" aria-pressed="false"><b>PT</b> Portuguese</button>
+      </div>
       <div class="nav-qap" id="qap"></div>
     </div>
   </header>
 
 <div id="explorer" aria-label="Interactive map and topics">
+    <section id="topic-intro" hidden>
+      <div class="topic-intro__inner">
+        <p class="kicker" id="topic-intro-kicker">Topics</p>
+        <h1 id="topic-intro-title">Which Catholic teachings travel together in the news?</h1>
+        <p class="lead" id="topic-intro-lead"></p>
+        <ul class="topic-intro__keys" id="topic-intro-keys" aria-label="How to read the ring"></ul>
+        <button type="button" class="cta" id="topic-scroll-ring">Scroll to the theme ring</button>
+      </div>
+    </section>
+
+    <div id="topic-stage">
     <div id="map"></div>
     <div id="map-vignette" aria-hidden="true"></div>
     <div id="graph"></div>
+    <div id="topic-tip" hidden></div>
+    <p class="graph-hint" id="graph-hint">Hover a teaching · click to see who it travels with</p>
     <div id="year-badge"></div>
     <div id="caption"></div>
 
@@ -75,12 +94,23 @@
         </div>
         <div id="topic-controls" hidden>
           <div class="chips" id="group-chips" aria-label="Theme groups"></div>
-          <div class="controls">
-            <label class="slide">min lift <input type="range" id="tlift" min="1" max="20" value="2" /> <span id="tlift-val">2×</span></label>
+          <div class="seg" id="topic-layout" aria-label="Topic visualization">
+            <button type="button" data-layout="constellation" class="active">Ring</button>
+            <button type="button" data-layout="matrix">Grid</button>
+            <button type="button" data-layout="network">Network</button>
+          </div>
+          <div class="seg" id="topic-density" aria-label="How many links to show">
+            <button type="button" data-density="story" class="active">The story</button>
+            <button type="button" data-density="more">More</button>
+            <button type="button" data-density="all">All links</button>
+          </div>
+          <div class="controls topic-toolbar">
+            <label class="slide" id="topic-slide">min lift <input type="range" id="tlift" min="2" max="12" value="3" step="1" /> <span id="tlift-val">3×</span></label>
             <button type="button" id="btn-papal">Papal only</button>
+            <button type="button" id="btn-tlabels">Key labels</button>
+            <button type="button" id="btn-treset">Reset view</button>
             <button type="button" id="btn-tclear">Clear</button>
           </div>
-          <div class="legend" id="group-legend"></div>
         </div>
       </div>
       <div class="card panel" id="side"></div>
@@ -108,6 +138,7 @@
         </div>
       </div>
     </div>
+    </div><!-- #topic-stage -->
   </div>
 
   <script>
@@ -146,11 +177,115 @@
         other: "#7a8794",
       };
       const GROUP_LABEL = {
-        theology: "theology",
-        core_mission: "mission",
-        cultural_context: "cultural",
-        formation: "formation",
+        theology: "Theology",
+        core_mission: "Mission",
+        cultural_context: "Culture",
+        formation: "Formation",
       };
+      let uiLang = "en";
+      const GROUP_I18N = {
+        en: { theology: "Theology", core_mission: "Mission", cultural_context: "Culture", formation: "Formation" },
+        es: { theology: "Teología", core_mission: "Misión", cultural_context: "Cultura", formation: "Formación" },
+        pt: { theology: "Teologia", core_mission: "Missão", cultural_context: "Cultura", formation: "Formação" },
+      };
+      const UI = {
+        en: {
+          introKicker: "Topics",
+          introTitle: "Which Catholic teachings travel together in the news?",
+          introLead: "This is <strong>not a map of the Earth</strong>. Below is a <strong>theme ring</strong>: each dot is a Catholic teaching found in Americas news media. Color groups four families — Theology, Mission, Formation, and Culture. On <b>The story</b>, every gold line is a pair we checked in the data and explain in the side chapters — no mystery links.",
+          keyDot: "<b>Dot</b> = one teaching (for example, <em>Laudato Si'</em> or <em>gospel</em>)",
+          keySlice: "<b>Color slice</b> = family of teaching",
+          keyGold: "<b>Gold line</b> = two teachings that often share the same news story",
+          scrollRing: "Scroll to the theme ring",
+          subRing: "Not a globe or a map — a ring of Catholic themes from Americas news media.",
+          subGrid: "A grid of the same teachings on both axes. Gold cells = themes that often share a news story.",
+          subNet: "A free-form network of teachings. A line means they appeared in the same news story.",
+          ring: "Ring", grid: "Grid", network: "Network",
+          story: "The story", more: "More", allLinks: "All links",
+          papal: "Papal only", keyLabels: "Key labels", allLabels: "All labels",
+          reset: "Reset view", clear: "Clear",
+          chaptersPill: "verified pairs", chaptersTitle: "Chapters to try",
+          chaptersHint: "On <b>The story</b>, only these chapter pairs stay gold. Most dots have no line until you hover — and some themes (like immigration) truly have no strong partners.",
+          strongestPair: "Its strongest co-occurrence (lift) is with",
+          storiesMention: "news stories mention this teaching.",
+          oftenWith: "strongest co-occurrence",
+          papalDoc: "papal document",
+          returnHint: "Click empty space to return to the four-family story.",
+          noPartners: "no strong teaching partners (this is expected for some themes)",
+          strongestPartner: "strongest partner",
+          hintStory: "The story shows only a few gold pairs · hover a teaching to see its partners",
+          hintReturn: "Click empty space to return",
+          centerTitle: "Theme ring",
+          centerDots: "Dots = teachings",
+          centerGold: "Gold = same news story",
+        },
+        es: {
+          introKicker: "Temas",
+          introTitle: "¿Qué enseñanzas católicas viajan juntas en las noticias?",
+          introLead: "Esto <strong>no es un mapa de la Tierra</strong>. Abajo hay un <strong>anillo de temas</strong>: cada punto es una enseñanza católica en medios de las Américas. El color agrupa cuatro familias — Teología, Misión, Formación y Cultura. En <b>La historia</b>, cada línea dorada es un par verificado en los datos y explicado en los capítulos — sin vínculos misteriosos.",
+          keyDot: "<b>Punto</b> = una enseñanza (por ejemplo, <em>Laudato Si'</em> o <em>evangelio</em>)",
+          keySlice: "<b>Sector de color</b> = familia de enseñanza",
+          keyGold: "<b>Línea dorada</b> = dos enseñanzas que suelen aparecer en la misma noticia",
+          scrollRing: "Ir al anillo de temas",
+          subRing: "No es un globo ni un mapa — un anillo de temas católicos en medios de las Américas.",
+          subGrid: "Una cuadrícula con las mismas enseñanzas en ambos ejes. Celdas doradas = temas que suelen compartir una noticia.",
+          subNet: "Una red libre de enseñanzas. Una línea significa que aparecieron en la misma noticia.",
+          ring: "Anillo", grid: "Cuadrícula", network: "Red",
+          story: "La historia", more: "Más", allLinks: "Todos los vínculos",
+          papal: "Solo papal", keyLabels: "Etiquetas clave", allLabels: "Todas las etiquetas",
+          reset: "Restablecer vista", clear: "Limpiar",
+          chaptersPill: "pares verificados", chaptersTitle: "Capítulos para probar",
+          chaptersHint: "En <b>La historia</b>, solo estos pares de capítulo quedan dorados. La mayoría de puntos no tienen línea hasta que pasas el cursor — y algunos temas (como inmigración) no tienen socios fuertes.",
+          strongestPair: "Su coocurrencia más fuerte (lift) es con",
+          storiesMention: "noticias mencionan esta enseñanza.",
+          oftenWith: "coocurrencia más fuerte",
+          papalDoc: "documento papal",
+          returnHint: "Haz clic en el espacio vacío para volver a la historia de las cuatro familias.",
+          noPartners: "sin socios de enseñanza fuertes (esperado en algunos temas)",
+          strongestPartner: "socio más fuerte",
+          hintStory: "La historia muestra solo unos pares dorados · pasa el cursor para ver socios",
+          hintReturn: "Haz clic en el espacio vacío para volver",
+          centerTitle: "Anillo de temas",
+          centerDots: "Puntos = enseñanzas",
+          centerGold: "Dorado = misma noticia",
+        },
+        pt: {
+          introKicker: "Temas",
+          introTitle: "Quais ensinamentos católicos viajam juntos nas notícias?",
+          introLead: "Isto <strong>não é um mapa da Terra</strong>. Abaixo há um <strong>anel de temas</strong>: cada ponto é um ensinamento católico na mídia das Américas. A cor agrupa quatro famílias — Teologia, Missão, Formação e Cultura. Em <b>A história</b>, cada linha dourada é um par verificado nos dados e explicado nos capítulos — sem vínculos misteriosos.",
+          keyDot: "<b>Ponto</b> = um ensinamento (por exemplo, <em>Laudato Si'</em> ou <em>evangelho</em>)",
+          keySlice: "<b>Fatia de cor</b> = família de ensinamento",
+          keyGold: "<b>Linha dourada</b> = dois ensinamentos que costumam aparecer na mesma notícia",
+          scrollRing: "Ir ao anel de temas",
+          subRing: "Não é um globo nem um mapa — um anel de temas católicos na mídia das Américas.",
+          subGrid: "Uma grade com os mesmos ensinamentos nos dois eixos. Células douradas = temas que costumam compartilhar uma notícia.",
+          subNet: "Uma rede livre de ensinamentos. Uma linha significa que apareceram na mesma notícia.",
+          ring: "Anel", grid: "Grade", network: "Rede",
+          story: "A história", more: "Mais", allLinks: "Todos os vínculos",
+          papal: "Só papal", keyLabels: "Rótulos-chave", allLabels: "Todos os rótulos",
+          reset: "Redefinir vista", clear: "Limpar",
+          chaptersPill: "pares verificados", chaptersTitle: "Capítulos para experimentar",
+          chaptersHint: "Em <b>A história</b>, só estes pares de capítulo ficam dourados. A maioria dos pontos não tem linha até você passar o cursor — e alguns temas (como imigração) não têm parceiros fortes.",
+          strongestPair: "Sua coocorrência mais forte (lift) é com",
+          storiesMention: "notícias mencionam este ensinamento.",
+          oftenWith: "coocorrência mais forte",
+          papalDoc: "documento papal",
+          returnHint: "Clique no espaço vazio para voltar à história das quatro famílias.",
+          noPartners: "sem parceiros de ensinamento fortes (esperado em alguns temas)",
+          strongestPartner: "parceiro mais forte",
+          hintStory: "A história mostra só alguns pares dourados · passe o cursor para ver parceiros",
+          hintReturn: "Clique no espaço vazio para voltar",
+          centerTitle: "Anel de temas",
+          centerDots: "Pontos = ensinamentos",
+          centerGold: "Dourado = mesma notícia",
+        },
+      };
+      function t(key) {
+        return (UI[uiLang] && UI[uiLang][key]) || UI.en[key] || key;
+      }
+      function groupLabel(id) {
+        return (GROUP_I18N[uiLang] && GROUP_I18N[uiLang][id]) || GROUP_LABEL[id] || id;
+      }
       const REGIONS = [
         { id: "all", label: "All Americas" },
         { id: "US", label: "United States" },
@@ -194,7 +329,61 @@
       const DAY_SPEED_MS = { "0.5": 48, "1": 24, "2": 10, "8": 4 };
 
       const tById = Object.fromEntries((G.nodes || []).map((d) => [d.id, d]));
-      const themeById = Object.fromEntries((T.nodes || []).map((d) => [d.id, d]));
+      const THEME_CANON = {
+        "theme:evangelio": "theme:gospel",
+        "theme:evangelho": "theme:gospel",
+        "theme:mision": "theme:mission",
+      };
+      function canonThemeId(id) {
+        return THEME_CANON[id] || id;
+      }
+      function buildTopicGraph(raw) {
+        const by = {};
+        const nodes = [];
+        (raw.nodes || []).forEach((n) => {
+          const id = canonThemeId(n.id);
+          if (!by[id]) {
+            by[id] = {
+              id,
+              label: n.label,
+              group: n.group || "other",
+              papal: !!n.papal,
+              n: 0,
+              degree: 0,
+            };
+            nodes.push(by[id]);
+          }
+          const t = by[id];
+          t.n += n.n || 0;
+          t.papal = t.papal || !!n.papal;
+          if (id === n.id) t.label = n.label;
+        });
+        const edgeMap = new Map();
+        (raw.edges || []).forEach((e) => {
+          let a = canonThemeId(e.source);
+          let b = canonThemeId(e.target);
+          if (!by[a] || !by[b] || a === b) return;
+          if (a > b) { const tmp = a; a = b; b = tmp; }
+          const k = a + "\t" + b;
+          const prev = edgeMap.get(k);
+          if (!prev) {
+            edgeMap.set(k, { source: a, target: b, n: e.n || 0, lift: e.lift || 0 });
+          } else {
+            prev.n += e.n || 0;
+            if ((e.lift || 0) > prev.lift) prev.lift = e.lift;
+          }
+        });
+        const edges = Array.from(edgeMap.values());
+        const deg = {};
+        edges.forEach((e) => {
+          deg[e.source] = (deg[e.source] || 0) + 1;
+          deg[e.target] = (deg[e.target] || 0) + 1;
+        });
+        nodes.forEach((n) => { n.degree = deg[n.id] || 0; });
+        return { nodes, edges, by };
+      }
+      const TG = buildTopicGraph(T);
+      const themeById = TG.by;
       const catalog = (S.catalog || []).slice();
       const catById = Object.fromEntries(catalog.map((t) => [t.id, t]));
       const countryByFips = Object.fromEntries((V.countries || []).map((c) => [c.fips, c]));
@@ -347,7 +536,19 @@
       let compareHighlight = new Set();
       let selectedTheme = null;
       let papalOnly = false;
-      let minTopicLift = 2;
+      let minTopicLift = 3;
+      let showAllLabels = false;
+      let hoveredTheme = null;
+      let topicLayout = "constellation";
+      let topicDensity = "story";
+      let hoveredStoryPair = null;
+      (function () {
+        const layoutParam = new URLSearchParams(location.search).get("layout");
+        if (layoutParam === "matrix" || layoutParam === "network" || layoutParam === "constellation") {
+          topicLayout = layoutParam;
+        }
+      })();
+      const GROUP_ORDER = ["theology", "core_mission", "formation", "cultural_context"];
       let touring = false;
       let captionTimer = null;
       let searchHi = -1;
@@ -383,23 +584,20 @@
 
       const gBox = document.getElementById("group-chips");
       const groupFilter = new Set(Object.keys(GROUP_LABEL));
-      const legend = document.getElementById("group-legend");
       Object.entries(GROUP_LABEL).forEach(([id, lab]) => {
         const b = document.createElement("button");
         b.type = "button";
         b.className = "chip on";
-        b.textContent = lab;
         b.dataset.id = id;
+        b.innerHTML = '<i class="sw" style="background:' + GROUPS[id] + '"></i>' + lab;
         b.onclick = () => {
           if (groupFilter.has(id) && groupFilter.size > 1) groupFilter.delete(id);
           else groupFilter.add(id);
           b.classList.toggle("on", groupFilter.has(id));
           drawTopics();
+          renderTopicPanel();
         };
         gBox.appendChild(b);
-        const sw = document.createElement("span");
-        sw.innerHTML = '<i class="sw" style="background:' + GROUPS[id] + '"></i>' + lab;
-        legend.appendChild(sw);
       });
 
       function setChip(box, id) {
@@ -419,10 +617,10 @@
             n: t.n || 0,
             hay: fold([t.id, t.label, t.also, names.en, names.es, names.pt].join(" ")),
             place: true,
-            graph: !!themeById["theme:" + t.id],
+            graph: !!themeById[canonThemeId("theme:" + t.id)],
           });
         });
-        (T.nodes || []).forEach((n) => {
+        (TG.nodes || []).forEach((n) => {
           const id = String(n.id || "").replace(/^theme:/, "");
           if (seen.has(id)) return;
           rows.push({
@@ -526,7 +724,7 @@
         const prevDay = isDayMode();
         topic = id || "all";
         selectedPlace = null;
-        const nodeId = "theme:" + topic;
+        const nodeId = canonThemeId("theme:" + topic);
         if (themeById[nodeId]) selectedTheme = topic === "all" ? null : nodeId;
         else if (topic === "all") selectedTheme = null;
         syncTopicChrome();
@@ -602,18 +800,50 @@
         if (tabTopics) tabTopics.classList.toggle("is-active", v === "topics");
         document.getElementById("place-controls").hidden = v !== "places";
         document.getElementById("topic-controls").hidden = v !== "topics";
+        const intro = document.getElementById("topic-intro");
+        if (intro) intro.hidden = v !== "topics";
         document.getElementById("subcopy").innerHTML = v === "places"
           ? "ActionGeo is where a story was <em>written</em> into GDELT — not viewership. English, Spanish, and Portuguese names count as one teaching."
-          : "Theme co-occurrence only. No map. An edge is two teachings that travel in the same story (lift, not raw count).";
+          : topicSubcopy();
         if (v === "places") {
+          hoveredTheme = null;
+          hideTopicTip();
+          const ex = document.getElementById("explorer");
+          if (ex) ex.scrollTop = 0;
           map.invalidateSize();
           drawPlaces();
           renderPlacePanel();
         } else {
           stopPlay(false);
+          const ex = document.getElementById("explorer");
+          if (ex) ex.scrollTop = 0;
+          updateTopicHint();
           renderTopicPanel();
           drawTopics();
+          requestAnimationFrame(() => {
+            drawTopics();
+          });
         }
+      }
+      const scrollRingBtn = document.getElementById("topic-scroll-ring");
+      if (scrollRingBtn) {
+        scrollRingBtn.onclick = () => {
+          const ex = document.getElementById("explorer");
+          const stage = document.getElementById("topic-stage");
+          if (ex && stage) {
+            // Align the ring stage to the top of the explorer viewport.
+            const top = Math.max(
+              0,
+              stage.getBoundingClientRect().top - ex.getBoundingClientRect().top + ex.scrollTop
+            );
+            ex.scrollTo({ top, behavior: "smooth" });
+          }
+          setTimeout(() => {
+            topicLayoutKey = "";
+            topicUserZoomed = false;
+            drawTopics();
+          }, 520);
+        };
       }
 
       const map = L.map("map", {
@@ -1626,159 +1856,945 @@
         touring = false;
       };
 
+      const GROUP_SLOT = {
+        theology: { x: 0.30, y: 0.36, label: "Theology" },
+        core_mission: { x: 0.80, y: 0.26, label: "Mission" },
+        formation: { x: 0.74, y: 0.80, label: "Formation" },
+        cultural_context: { x: 0.16, y: 0.82, label: "Culture" },
+      };
       const svg = d3.select("#graph").append("svg");
       const gRoot = svg.append("g");
+      const groupLabelG = gRoot.append("g").attr("class", "g-group-labels");
       const linkG = gRoot.append("g").attr("class", "links");
       const nodeG = gRoot.append("g").attr("class", "nodes");
-      const zoom = d3.zoom().scaleExtent([0.35, 3.5]).on("zoom", (ev) => gRoot.attr("transform", ev.transform));
+      const constLayer = gRoot.append("g").attr("class", "layer-const");
+      const constWedgeG = constLayer.append("g").attr("class", "c-wedges");
+      const constArcG = constLayer.append("g").attr("class", "c-arcs");
+      const constLinkG = constLayer.append("g").attr("class", "c-links");
+      const constCaptionG = constLayer.append("g").attr("class", "c-caption");
+      const constNodeG = constLayer.append("g").attr("class", "c-nodes");
+      const constLabelG = constLayer.append("g").attr("class", "c-labels");
+      const constGroupG = constLayer.append("g").attr("class", "c-group-names");
+      const matrixLayer = gRoot.append("g").attr("class", "layer-matrix");
+      let topicUserZoomed = false;
+      let topicLayoutKey = "";
+      let lastTopicFrame = null;
+      const zoom = d3.zoom().scaleExtent([0.4, 3.8]).on("zoom", (ev) => {
+        gRoot.attr("transform", ev.transform);
+        if (ev.sourceEvent) topicUserZoomed = true;
+      });
       svg.call(zoom);
+      svg.on("dblclick.zoom", null);
       const sim = d3.forceSimulation()
-        .force("charge", d3.forceManyBody().strength((d) => (d.papal ? -200 : -130)))
-        .force("center", d3.forceCenter())
-        .force("collide", d3.forceCollide().radius((d) => 14 + Math.sqrt(d.n) * 0.14))
-        .force("x", d3.forceX().strength(0.045))
-        .force("y", d3.forceY().strength(0.045))
-        .alphaDecay(0.05);
+        .force("charge", d3.forceManyBody())
+        .force("collide", d3.forceCollide().iterations(3))
+        .force("link", d3.forceLink())
+        .force("x", d3.forceX())
+        .force("y", d3.forceY())
+        .alphaDecay(0.045)
+        .on("tick", tickTopics)
+        .on("end", fitTopics)
+        .stop();
 
-      function visibleTopicEdges() {
-        return (T.edges || []).filter((e) => {
+      function topicFrame() {
+        const host = document.getElementById("graph");
+        const w = host.clientWidth || window.innerWidth;
+        const h = host.clientHeight || window.innerHeight;
+        const padX = Math.min(300, Math.max(88, w * 0.18));
+        const padY = Math.min(90, Math.max(48, h * 0.1));
+        return { w, h, x0: padX, y0: padY, innerW: Math.max(240, w - padX * 2), innerH: Math.max(220, h - padY * 2) };
+      }
+      function groupXY(group, frame) {
+        const slot = GROUP_SLOT[group] || { x: 0.5, y: 0.5 };
+        return [frame.x0 + slot.x * frame.innerW, frame.y0 + slot.y * frame.innerH];
+      }
+      function nodeRadius(d) {
+        return 5.5 + Math.sqrt(d.n || 0) * 0.155;
+      }
+      function shortLabel(d, max) {
+        const tid = String((d && d.id) || "").replace(/^theme:/, "");
+        const cat = catById[tid];
+        const names = (cat && cat.names) || {};
+        let raw = d.label || tid;
+        if (uiLang === "es" && names.es) raw = names.es;
+        else if (uiLang === "pt" && names.pt) raw = names.pt;
+        else if (uiLang === "en" && names.en) raw = names.en;
+        const cut = String(raw || "").split(" / ")[0].trim();
+        const m = max || 22;
+        return cut.length > m ? cut.slice(0, m - 1) + "…" : cut;
+      }
+      function topicSubcopy() {
+        if (topicLayout === "matrix") return t("subGrid");
+        if (topicLayout === "network") return t("subNet");
+        return t("subRing");
+      }
+      function visibleTopicEdges(ego) {
+        return (TG.edges || []).filter((e) => {
           if (e.lift < minTopicLift) return false;
           const a = themeById[e.source], b = themeById[e.target];
           if (!a || !b) return false;
           if (!groupFilter.has(a.group) || !groupFilter.has(b.group)) return false;
           if (papalOnly && !(a.papal && b.papal)) return false;
-          if (selectedTheme && e.source !== selectedTheme && e.target !== selectedTheme) return false;
+          if (ego && selectedTheme && e.source !== selectedTheme && e.target !== selectedTheme) return false;
           return true;
         });
       }
-      function neighborIds(id) {
+      function neighborIds(id, minLift) {
+        const floor = minLift == null ? 0 : minLift;
         const out = new Set();
-        (T.edges || []).forEach((e) => {
+        (TG.edges || []).forEach((e) => {
+          if ((e.lift || 0) < floor) return;
           if (e.source === id) out.add(e.target);
           if (e.target === id) out.add(e.source);
         });
         return out;
       }
+      function edgesForTheme(id) {
+        return (TG.edges || [])
+          .filter((e) => e.source === id || e.target === id)
+          .sort((a, b) => b.lift - a.lift);
+      }
+      function storyThemeIds() {
+        const ids = new Set();
+        topicStoryBeats().forEach((s) => {
+          if (s.a) ids.add(s.a);
+          if (s.b) ids.add(s.b);
+        });
+        return ids;
+      }
       function labelFor(d, neighbors) {
-        if (selectedTheme === d.id) return d.label;
-        if (selectedTheme && neighbors.has(d.id)) return d.label;
-        if (!selectedTheme && (d.papal || d.n >= 800 || d.degree >= 12)) return d.label;
+        if (selectedTheme === d.id || hoveredTheme === d.id) return shortLabel(d, 20);
+        if ((selectedTheme || hoveredTheme) && neighbors.has(d.id)) return shortLabel(d, 18);
+        if (showAllLabels) return shortLabel(d, 16);
+        const storyIds = storyThemeIds();
+        if (storyIds.has(d.id)) return shortLabel(d, 18);
+        if (d.n >= 1500 || (d.papal && d.n >= 400) || d.degree >= 14) return shortLabel(d, 16);
         return "";
       }
-
-      function drawTopics() {
-        const w = document.getElementById("graph").clientWidth || window.innerWidth;
-        const h = document.getElementById("graph").clientHeight || window.innerHeight;
-        svg.attr("viewBox", [0, 0, w, h]);
-        sim.force("center").x(w / 2).y(h / 2);
-        sim.force("x").x(w / 2);
-        sim.force("y").y(h / 2);
-
-        const vedges = visibleTopicEdges();
+      function focusId() {
+        return hoveredTheme || selectedTheme;
+      }
+      function seedNode(d, frame) {
+        if (d.x == null || d.y == null) {
+          const xy = groupXY(d.group, frame);
+          d.x = xy[0] + (Math.random() - 0.5) * 36;
+          d.y = xy[1] + (Math.random() - 0.5) * 36;
+        }
+      }
+      function hideTopicTip() {
+        const tip = document.getElementById("topic-tip");
+        if (tip) tip.hidden = true;
+      }
+      function showTopicTip(ev, d) {
+        const tip = document.getElementById("topic-tip");
+        if (!tip) return;
+        const group = groupLabel(d.group) || d.group;
+        const strong = edgesForTheme(d.id).filter((e) => e.lift >= 3);
+        let note = esc(group) + (d.papal ? " · " + t("papalDoc") : "") + " · " + fmt(d.n) + " stories";
+        if (!strong.length) {
+          note += " · " + t("noPartners");
+        } else {
+          const top = strong[0];
+          const oid = top.source === d.id ? top.target : top.source;
+          const other = themeById[oid];
+          note += " · " + t("strongestPartner") + ": " + esc(other ? shortLabel(other, 28) : oid) + " (" + top.lift + "×)";
+        }
+        tip.hidden = false;
+        tip.innerHTML = "<b>" + esc(shortLabel(d, 40)) + "</b><span>" + note + "</span>";
+        moveTopicTip(ev);
+      }
+      function moveTopicTip(ev) {
+        const tip = document.getElementById("topic-tip");
+        if (!tip || tip.hidden) return;
+        const src = ev.sourceEvent || ev;
+        const x = src.clientX || 0;
+        const y = src.clientY || 0;
+        tip.style.left = Math.min(window.innerWidth - 16, x + 14) + "px";
+        tip.style.top = Math.min(window.innerHeight - 16, y + 16) + "px";
+      }
+      function topicNodesAndLinks(opts) {
+        const ego = !!(opts && opts.ego);
+        const vedges = visibleTopicEdges(ego);
         const used = new Set();
         vedges.forEach((e) => { used.add(e.source); used.add(e.target); });
         if (selectedTheme) used.add(selectedTheme);
-        const nodes = (T.nodes || []).filter((d) => used.has(d.id) || (!selectedTheme && groupFilter.has(d.group) && (!papalOnly || d.papal)));
+        const nodes = (TG.nodes || []).filter((d) => {
+          if (used.has(d.id)) return true;
+          if (ego && selectedTheme) return false;
+          if (papalOnly) return false;
+          return groupFilter.has(d.group) && (d.n || 0) >= 1500;
+        });
         const by = Object.fromEntries(nodes.map((d) => [d.id, d]));
-        const links = vedges.map((e) => ({ ...e, source: by[e.source], target: by[e.target] })).filter((e) => e.source && e.target);
+        const links = vedges.map((e) => ({
+          source: by[e.source],
+          target: by[e.target],
+          lift: e.lift,
+          n: e.n,
+        })).filter((e) => e.source && e.target);
+        return { nodes, links, vedges };
+      }
+      function applyTopicStyles() {
+        const hot = focusId();
+        const neighbors = hot ? neighborIds(hot) : new Set();
+        nodeG.selectAll("g.node")
+          .classed("is-focus", (d) => d.id === hot)
+          .classed("is-neighbor", (d) => !!hot && neighbors.has(d.id))
+          .classed("is-dim", (d) => !!hot && d.id !== hot && !neighbors.has(d.id));
+        nodeG.selectAll("g.node").select("circle.g-dot")
+          .attr("r", (d) => nodeRadius(d) * (d.id === hot ? 1.12 : 1))
+          .attr("stroke", (d) => (d.id === hot ? "#fff6d6" : (d.papal ? "#c99700" : "rgba(255,255,255,.85)")))
+          .attr("stroke-width", (d) => (d.id === hot ? 3 : (d.papal ? 2 : 1.25)));
+        nodeG.selectAll("g.node").select("circle.g-halo")
+          .attr("r", (d) => nodeRadius(d) + 8)
+          .attr("stroke-opacity", (d) => (d.id === hot ? 0.95 : 0));
+        nodeG.selectAll("text.g-label")
+          .attr("dy", (d) => nodeRadius(d) + 13)
+          .text((d) => labelFor(d, neighbors));
+        linkG.selectAll("line")
+          .classed("is-gold", (d) => d.lift >= 8)
+          .classed("is-dim", (d) => {
+            if (!hot) return false;
+            return d.source.id !== hot && d.target.id !== hot;
+          })
+          .classed("is-focus", (d) => !!hot && (d.source.id === hot || d.target.id === hot));
+      }
+      function tickTopics() {
+        linkG.selectAll("line")
+          .attr("x1", (d) => d.source.x).attr("y1", (d) => d.source.y)
+          .attr("x2", (d) => d.target.x).attr("y2", (d) => d.target.y);
+        nodeG.selectAll("g.node").attr("transform", (d) => "translate(" + d.x + "," + d.y + ")");
+        const groupsOnScreen = Array.from(new Set(sim.nodes().map((d) => d.group)));
+        const gl = groupLabelG.selectAll("text").data(groupsOnScreen, (d) => d);
+        gl.exit().remove();
+        gl.enter().append("text")
+          .attr("class", "g-group-label")
+          .attr("text-anchor", "middle")
+          .merge(gl)
+          .text((id) => GROUP_SLOT[id] ? GROUP_SLOT[id].label : "")
+          .attr("x", (id) => {
+            const frame = lastTopicFrame || topicFrame();
+            return groupXY(id, frame)[0];
+          })
+          .attr("y", (id) => {
+            const frame = lastTopicFrame || topicFrame();
+            return groupXY(id, frame)[1] - 78;
+          });
+      }
+      function fitTopics() {
+        if (topicLayout !== "network" || topicUserZoomed || view !== "topics") return;
+        const nodes = sim.nodes();
+        if (!nodes.length) return;
+        const host = document.getElementById("graph");
+        const w = host.clientWidth || 1;
+        const h = host.clientHeight || 1;
+        let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+        nodes.forEach((d) => {
+          const r = nodeRadius(d) + 40;
+          minX = Math.min(minX, d.x - r);
+          maxX = Math.max(maxX, d.x + r);
+          minY = Math.min(minY, d.y - r);
+          maxY = Math.max(maxY, d.y + r);
+        });
+        const bw = Math.max(maxX - minX, 1);
+        const bh = Math.max(maxY - minY, 1);
+        const leftHud = Math.min(310, w * 0.24);
+        const rightHud = Math.min(380, w * 0.28);
+        const topHud = 18;
+        const botHud = 48;
+        const uw = Math.max(260, w - leftHud - rightHud);
+        const uh = Math.max(220, h - topHud - botHud);
+        const scale = Math.min(0.9, Math.max(0.5, 0.8 * Math.min(uw / bw, uh / bh)));
+        const tx = leftHud + uw / 2 - scale * (minX + maxX) / 2;
+        const ty = topHud + uh / 2 - scale * (minY + maxY) / 2;
+        svg.transition().duration(560).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
+      }
+
+      function showTopicLayer(mode) {
+        const net = mode === "network";
+        groupLabelG.style("display", net ? null : "none");
+        linkG.style("display", net ? null : "none");
+        nodeG.style("display", net ? null : "none");
+        constLayer.style("display", mode === "constellation" ? null : "none");
+        matrixLayer.style("display", mode === "matrix" ? null : "none");
+        document.getElementById("btn-tlabels").hidden = mode === "matrix";
+        document.getElementById("btn-treset").hidden = mode === "matrix";
+        const density = document.getElementById("topic-density");
+        const slide = document.getElementById("topic-slide");
+        if (density) density.hidden = mode !== "constellation";
+        if (slide) slide.hidden = mode === "constellation";
+        document.body.classList.toggle("topic-constellation", mode === "constellation");
+        document.body.classList.toggle("topic-density-story", topicDensity === "story");
+        document.body.classList.toggle("topic-density-more", topicDensity === "more");
+        document.body.classList.toggle("topic-density-all", topicDensity === "all");
+      }
+      function updateTopicHint() {
+        const hint = document.getElementById("graph-hint");
+        if (!hint) return;
+        if (topicLayout === "matrix") {
+          hint.textContent = selectedTheme ? t("hintReturn") : "Hover a cell · click a teaching";
+        } else if (topicLayout === "constellation") {
+          hint.textContent = selectedTheme ? t("hintReturn") : t("hintStory");
+        } else {
+          hint.textContent = selectedTheme ? t("hintReturn") : "Scroll to zoom · drag to pan · click a teaching";
+        }
+      }
+      function syncTopicControlLabels() {
+        const layout = document.getElementById("topic-layout");
+        if (layout) {
+          const ring = layout.querySelector('[data-layout="constellation"]');
+          const grid = layout.querySelector('[data-layout="matrix"]');
+          const net = layout.querySelector('[data-layout="network"]');
+          if (ring) ring.textContent = t("ring");
+          if (grid) grid.textContent = t("grid");
+          if (net) net.textContent = t("network");
+        }
+        const dens = document.getElementById("topic-density");
+        if (dens) {
+          const story = dens.querySelector('[data-density="story"]');
+          const more = dens.querySelector('[data-density="more"]');
+          const all = dens.querySelector('[data-density="all"]');
+          if (story) story.textContent = t("story");
+          if (more) more.textContent = t("more");
+          if (all) all.textContent = t("allLinks");
+        }
+        const papal = document.getElementById("btn-papal");
+        if (papal) papal.textContent = t("papal");
+        const labels = document.getElementById("btn-tlabels");
+        if (labels) labels.textContent = showAllLabels ? t("allLabels") : t("keyLabels");
+        const reset = document.getElementById("btn-treset");
+        if (reset) reset.textContent = t("reset");
+        const clear = document.getElementById("btn-tclear");
+        if (clear) clear.textContent = t("clear");
+        [...gBox.children].forEach((c) => {
+          const id = c.dataset.id;
+          c.innerHTML = '<i class="sw" style="background:' + GROUPS[id] + '"></i>' + esc(groupLabel(id));
+        });
+      }
+      function applyTopicsLocale() {
+        const kicker = document.getElementById("topic-intro-kicker");
+        const title = document.getElementById("topic-intro-title");
+        const lead = document.getElementById("topic-intro-lead");
+        const keys = document.getElementById("topic-intro-keys");
+        const scrollBtn = document.getElementById("topic-scroll-ring");
+        if (kicker) kicker.textContent = t("introKicker");
+        if (title) title.textContent = t("introTitle");
+        if (lead) lead.innerHTML = t("introLead");
+        if (keys) {
+          keys.innerHTML =
+            "<li>" + t("keyDot") + "</li>" +
+            "<li>" + t("keySlice") + "</li>" +
+            "<li>" + t("keyGold") + "</li>";
+        }
+        if (scrollBtn) scrollBtn.textContent = t("scrollRing");
+        document.querySelectorAll("#nav-langs .lang-btn").forEach((btn) => {
+          const on = btn.dataset.lang === uiLang;
+          btn.classList.toggle("is-active", on);
+          btn.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+        syncTopicControlLabels();
+        if (view === "topics") {
+          document.getElementById("subcopy").innerHTML = topicSubcopy();
+          updateTopicHint();
+          topicLayoutKey = "";
+          renderTopicPanel();
+          drawTopics();
+        }
+      }
+      function resetTopicFilters() {
+        hoveredTheme = null;
+        hoveredStoryPair = null;
+        hideTopicTip();
+        papalOnly = false;
+        showAllLabels = false;
+        topicDensity = "story";
+        topicLayout = "constellation";
+        minTopicLift = 3;
+        Object.keys(GROUP_LABEL).forEach((id) => groupFilter.add(id));
+        const papal = document.getElementById("btn-papal");
+        if (papal) papal.classList.remove("active");
+        const labels = document.getElementById("btn-tlabels");
+        if (labels) {
+          labels.classList.remove("active");
+          labels.textContent = t("keyLabels");
+        }
+        const lift = document.getElementById("tlift");
+        const liftVal = document.getElementById("tlift-val");
+        if (lift) lift.value = "3";
+        if (liftVal) liftVal.textContent = "3×";
+        [...document.getElementById("topic-layout").querySelectorAll("button")].forEach((b) => {
+          b.classList.toggle("active", b.dataset.layout === topicLayout);
+        });
+        [...document.getElementById("topic-density").querySelectorAll("button")].forEach((b) => {
+          b.classList.toggle("active", b.dataset.density === topicDensity);
+        });
+        [...gBox.children].forEach((c) => c.classList.add("on"));
+        topicUserZoomed = false;
+        topicLayoutKey = "";
+        TG.nodes.forEach((d) => { d.x = d.y = d.vx = d.vy = null; });
+        document.getElementById("subcopy").innerHTML = topicSubcopy();
+        showTopicLayer(topicLayout);
+        setTopic("all");
+      }
+      function pickTheme(id) {
+        selectedTheme = id;
+        topic = String(id).replace(/^theme:/, "");
+        hoveredTheme = null;
+        hideTopicTip();
+        syncTopicChrome();
+        renderTopicPanel();
+        drawTopics();
+      }
+      function showPairTip(ev, a, b, lift, n) {
+        const tip = document.getElementById("topic-tip");
+        if (!tip || !a || !b) return;
+        tip.hidden = false;
+        tip.innerHTML = "<b>" + esc(a.label) + " · " + esc(b.label) + "</b><span>Often named in the same news story" + (n ? " · " + fmt(n) + " times" : "") + "</span>";
+        moveTopicTip(ev);
+      }
+      function linkKey(d) {
+        const a = (d.source && d.source.id) || d.source;
+        const b = (d.target && d.target.id) || d.target;
+        return a < b ? a + "\t" + b : b + "\t" + a;
+      }
+      function storyLinkKeys() {
+        // Only chapter pairs — never invent gold lines the sidebar does not explain.
+        const keys = new Set();
+        topicStoryBeats().forEach((s) => {
+          if (!s.a || !s.b) return;
+          keys.add(linkKey({ source: s.a, target: s.b }));
+        });
+        return keys;
+      }
+      function applyConstellationStyles() {
+        const hot = focusId();
+        const pair = hoveredStoryPair;
+        const neighbors = hot ? neighborIds(hot, 1.25) : new Set();
+        const spotlight = !!(hot || (pair && pair.a));
+        const isHot = (id) => {
+          if (pair && pair.a) return id === pair.a || (!!pair.b && id === pair.b);
+          if (hot) return id === hot || neighbors.has(id);
+          return true;
+        };
+        constLayer.selectAll(".c-node")
+          .classed("is-focus", (d) => spotlight && isHot(d.id) && (!pair || d.id === pair.a || d.id === pair.b) && (!hot || d.id === hot || neighbors.has(d.id)))
+          .classed("is-dim", (d) => spotlight && !isHot(d.id));
+        constNodeG.selectAll("circle.g-halo")
+          .attr("stroke-opacity", (d) => (spotlight && isHot(d.id) ? 0.95 : 0));
+        constLayer.selectAll(".c-label")
+          .classed("is-dim", (d) => spotlight && !isHot(d.id))
+          .classed("is-focus", (d) => spotlight && isHot(d.id))
+          .attr("opacity", (d) => {
+            if (!spotlight) return labelFor(d, neighbors) ? 1 : 0;
+            return isHot(d.id) ? 1 : 0.12;
+          });
+        const keys = storyLinkKeys();
+        constLinkG.selectAll("path")
+          .classed("is-story", (d) => keys.has(linkKey(d)))
+          .classed("is-more", (d) => d.lift >= 8)
+          .classed("is-gold", (d) => keys.has(linkKey(d)) || (topicDensity !== "story" && d.lift >= 8))
+          .classed("is-focus", (d) => {
+            if (pair && pair.a) {
+              if (!pair.b) return false;
+              const ids = [d.source.id, d.target.id];
+              return ids.includes(pair.a) && ids.includes(pair.b);
+            }
+            return !!hot && (d.source.id === hot || d.target.id === hot);
+          })
+          .classed("is-muted", (d) => {
+            if (!spotlight) return false;
+            if (pair && pair.a) {
+              if (!pair.b) return true;
+              const ids = [d.source.id, d.target.id];
+              return !(ids.includes(pair.a) && ids.includes(pair.b));
+            }
+            return d.source.id !== hot && d.target.id !== hot;
+          });
+        constCaptionG.style("display", spotlight ? "none" : null);
+      }
+      function constellationLayout(nodes, frame) {
+        const leftHud = Math.min(300, frame.w * 0.22);
+        const rightHud = Math.min(370, frame.w * 0.26);
+        const cx = leftHud + (frame.w - leftHud - rightHud) / 2;
+        const cy = frame.h * 0.5;
+        const maxR = Math.min(frame.w - leftHud - rightHud, frame.h - 100) / 2;
+        const R = Math.max(100, maxR * 0.64);
+        const groups = GROUP_ORDER.filter((g) => groupFilter.has(g)).map((g) => ({
+          id: g,
+          nodes: nodes.filter((d) => d.group === g).sort((a, b) => (b.n || 0) - (a.n || 0)),
+        })).filter((g) => g.nodes.length);
+        // Equal family slices so Theology does not swallow the ring.
+        const gap = 0.14;
+        const usable = Math.PI * 2 - gap * Math.max(groups.length, 1);
+        const slice = usable / Math.max(groups.length, 1);
+        let theta = -Math.PI / 2;
+        groups.forEach((g) => {
+          g.start = theta + gap / 2;
+          g.end = g.start + slice;
+          g.nodes.forEach((d, i) => {
+            const t = g.nodes.length === 1
+              ? (g.start + g.end) / 2
+              : g.start + ((i + 0.5) / g.nodes.length) * (g.end - g.start);
+            d._t = t;
+            d._i = i;
+            d._x = cx + Math.cos(t) * R;
+            d._y = cy + Math.sin(t) * R;
+          });
+          theta = g.end + gap / 2;
+        });
+        return { cx, cy, R, groups };
+      }
+      function bundlePath(link, cx, cy) {
+        const x1 = link.source._x, y1 = link.source._y;
+        const x2 = link.target._x, y2 = link.target._y;
+        const same = link.source.group === link.target.group;
+        const pull = same ? 0.3 : 0.74;
+        const qx = ((x1 + x2) / 2) * (1 - pull) + cx * pull;
+        const qy = ((y1 + y2) / 2) * (1 - pull) + cy * pull;
+        return "M" + x1 + "," + y1 + "Q" + qx + "," + qy + " " + x2 + "," + y2;
+      }
+      function constellationDisplayLinks(nodes) {
+        const by = Object.fromEntries(nodes.map((d) => [d.id, d]));
+        const storyKeys = storyLinkKeys();
+        const out = [];
+        const seen = new Set();
+        (TG.edges || []).forEach((e) => {
+          if (!by[e.source] || !by[e.target]) return;
+          const k = linkKey(e);
+          if (seen.has(k)) return;
+          const isStory = storyKeys.has(k);
+          // Chapter pairs always kept. Other edges stay in the DOM so hover can reveal partners,
+          // but stay invisible on The story until you hover.
+          if (!isStory && topicDensity === "story" && e.lift < 3) return;
+          if (!isStory && topicDensity === "more" && e.lift < 8) return;
+          if (!isStory && topicDensity === "all" && e.lift < minTopicLift) return;
+          seen.add(k);
+          out.push({ source: by[e.source], target: by[e.target], lift: e.lift, n: e.n });
+        });
+        return out;
+      }
+      function drawTopicConstellation() {
+        const frame = lastTopicFrame || topicFrame();
+        const { nodes } = topicNodesAndLinks({ ego: false });
+        const links = constellationDisplayLinks(nodes);
+        const layout = constellationLayout(nodes, frame);
+        const { cx, cy, R, groups } = layout;
+        const wedge = d3.arc().innerRadius(24).outerRadius(R - 10)
+          .startAngle((g) => g.start + Math.PI / 2)
+          .endAngle((g) => g.end + Math.PI / 2);
+        const arc = d3.arc().innerRadius(R - 13).outerRadius(R + 8)
+          .startAngle((g) => g.start + Math.PI / 2)
+          .endAngle((g) => g.end + Math.PI / 2);
+
+        const gw = constWedgeG.selectAll("path").data(groups, (d) => d.id);
+        gw.exit().remove();
+        gw.enter().append("path").attr("class", "c-wedge").merge(gw)
+          .attr("d", wedge)
+          .attr("transform", "translate(" + cx + "," + cy + ")")
+          .attr("fill", (d) => GROUPS[d.id] || GROUPS.other);
+
+        const ga = constArcG.selectAll("path").data(groups, (d) => d.id);
+        ga.exit().remove();
+        ga.enter().append("path").attr("class", "c-arc").merge(ga)
+          .attr("d", arc)
+          .attr("transform", "translate(" + cx + "," + cy + ")")
+          .attr("fill", (d) => GROUPS[d.id] || GROUPS.other);
+
+        const gn = constGroupG.selectAll("text").data(groups, (d) => d.id);
+        gn.exit().remove();
+        gn.enter().append("text").attr("class", "c-group-name").attr("text-anchor", "middle").attr("dominant-baseline", "middle").merge(gn)
+          .text((d) => groupLabel(d.id) || d.id)
+          .attr("fill", (d) => GROUPS[d.id] || "#f0e6c8")
+          .attr("x", (d) => cx + Math.cos((d.start + d.end) / 2) * (R * 0.58))
+          .attr("y", (d) => cy + Math.sin((d.start + d.end) / 2) * (R * 0.58));
+
+        const bgR = Math.max(72, R * 0.34);
+        const bg = constCaptionG.selectAll("circle.c-lede-bg").data(selectedTheme ? [] : [1]);
+        bg.exit().remove();
+        bg.enter().append("circle").attr("class", "c-lede-bg").merge(bg)
+          .attr("cx", cx).attr("cy", cy).attr("r", bgR);
+
+        const cap = constCaptionG.selectAll("text").data(selectedTheme ? [] : [1]);
+        cap.exit().remove();
+        const capEnter = cap.enter().append("text").attr("class", "c-lede").attr("text-anchor", "middle");
+        capEnter.append("tspan").attr("class", "c-lede-kicker").attr("x", 0).attr("dy", "-1.1em");
+        capEnter.append("tspan").attr("class", "c-lede-sub").attr("x", 0).attr("dy", "1.25em");
+        capEnter.append("tspan").attr("class", "c-lede-sub").attr("x", 0).attr("dy", "1.2em");
+        const capMerged = capEnter.merge(cap).attr("transform", "translate(" + cx + "," + cy + ")");
+        capMerged.select("tspan.c-lede-kicker").text(t("centerTitle"));
+        capMerged.selectAll("tspan.c-lede-sub").text(function (_, i) {
+          return i === 0 ? t("centerDots") : t("centerGold");
+        });
+
+        const sortedLinks = links.slice().sort((a, b) => a.lift - b.lift);
+        const lp = constLinkG.selectAll("path").data(sortedLinks, (d) => d.source.id + "→" + d.target.id);
+        lp.exit().remove();
+        lp.enter().append("path").merge(lp)
+          .attr("d", (d) => bundlePath(d, cx, cy))
+          .attr("stroke-width", (d) => (d.lift >= 8 ? 2.2 : 1) + Math.min(Math.log1p(d.lift), 2.2));
+
+        const np = constNodeG.selectAll("g.c-node").data(nodes, (d) => d.id);
+        np.exit().remove();
+        const enter = np.enter().append("g").attr("class", "c-node");
+        enter.append("circle").attr("class", "g-halo").attr("fill", "none").attr("stroke", "#c99700").attr("stroke-opacity", 0);
+        enter.append("circle").attr("class", "g-dot");
+        enter.on("click", (event, d) => { event.stopPropagation(); pickTheme(d.id); });
+        enter.on("mouseenter", (event, d) => {
+          hoveredTheme = d.id;
+          showTopicTip(event, d);
+          applyConstellationStyles();
+        });
+        enter.on("mousemove", (event) => moveTopicTip(event));
+        enter.on("mouseleave", () => {
+          hoveredTheme = null;
+          hideTopicTip();
+          applyConstellationStyles();
+        });
+        const merged = enter.merge(np);
+        merged.attr("transform", (d) => "translate(" + d._x + "," + d._y + ")");
+        merged.select("circle.g-dot")
+          .attr("r", (d) => 4.2 + Math.sqrt(d.n || 0) * 0.12)
+          .attr("fill", (d) => GROUPS[d.group] || GROUPS.other)
+          .attr("stroke", (d) => (d.papal ? "#c99700" : "rgba(255,255,255,.85)"))
+          .attr("stroke-width", (d) => (d.papal ? 2 : 1.2));
+        merged.select("circle.g-halo")
+          .attr("r", (d) => 4.2 + Math.sqrt(d.n || 0) * 0.12 + 7);
+
         const neighbors = selectedTheme ? neighborIds(selectedTheme) : new Set();
+        const lpLab = constLabelG.selectAll("text").data(nodes, (d) => d.id);
+        lpLab.exit().remove();
+        lpLab.enter().append("text").attr("class", "c-label").merge(lpLab)
+          .text((d) => labelFor(d, neighbors))
+          .attr("opacity", (d) => (labelFor(d, neighbors) ? 1 : 0))
+          .attr("text-anchor", (d) => (Math.cos(d._t) >= 0 ? "start" : "end"))
+          .attr("dominant-baseline", "middle")
+          .attr("transform", (d) => {
+            const deg = d._t * 180 / Math.PI;
+            const flip = Math.cos(d._t) < 0;
+            // Stagger dense sectors so labels do not stack on top of each other.
+            const radial = R + 14 + ((d._i || 0) % 2) * 13;
+            return "translate(" + cx + "," + cy + ") rotate(" + deg + ") translate(" + radial + ",0) rotate(" + (flip ? 180 : 0) + ")";
+          });
+
+        applyConstellationStyles();
+      }
+      function drawTopicMatrix() {
+        const frame = lastTopicFrame || topicFrame();
+        const { nodes, vedges } = topicNodesAndLinks({ ego: false });
+        const ordered = [];
+        GROUP_ORDER.forEach((g) => {
+          nodes.filter((d) => d.group === g).sort((a, b) => (b.n || 0) - (a.n || 0)).forEach((d) => ordered.push(d));
+        });
+        const n = ordered.length;
+        matrixLayer.selectAll("*").remove();
+        if (!n) return;
+        const leftHud = Math.min(300, frame.w * 0.22);
+        const rightHud = Math.min(370, frame.w * 0.26);
+        const labelW = 92;
+        const labelH = 102;
+        const W = Math.max(220, frame.w - leftHud - rightHud - 12);
+        const H = Math.max(220, frame.h - 64);
+        const cell = Math.max(7, Math.min(20, Math.floor(Math.min((W - labelW) / n, (H - labelH) / n))));
+        const grid = cell * n;
+        const ox = leftHud + Math.max(0, (W - labelW - grid) / 2) + labelW;
+        const oy = 22 + labelH;
+        const idx = Object.fromEntries(ordered.map((d, i) => [d.id, i]));
+        const pair = {};
+        vedges.forEach((e) => {
+          pair[e.source + "\t" + e.target] = e;
+          pair[e.target + "\t" + e.source] = e;
+        });
+        const fillLift = (lift) => {
+          const t = Math.min(1, Math.log(Math.max(lift, 1.01)) / Math.log(40));
+          return d3.interpolateRgb("#1c4f8f", "#c99700")(t);
+        };
+        const g = matrixLayer.append("g");
+        const cells = [];
+        for (let r = 0; r < n; r++) {
+          for (let c = 0; c < n; c++) {
+            const a = ordered[r], b = ordered[c];
+            const e = r === c ? null : pair[a.id + "\t" + b.id];
+            cells.push({ r, c, a, b, e });
+          }
+        }
+        g.selectAll("rect.mx-cell").data(cells).enter().append("rect")
+          .attr("class", "mx-cell")
+          .attr("x", (d) => ox + d.c * cell)
+          .attr("y", (d) => oy + d.r * cell)
+          .attr("width", cell - 0.6)
+          .attr("height", cell - 0.6)
+          .attr("fill", (d) => {
+            if (d.r === d.c) return "rgba(255,255,255,0.07)";
+            return d.e ? fillLift(d.e.lift) : "rgba(255,255,255,0.03)";
+          })
+          .attr("opacity", (d) => {
+            if (!selectedTheme) return 1;
+            if (d.a.id === selectedTheme || d.b.id === selectedTheme) return 1;
+            return 0.18;
+          })
+          .on("mouseenter", (event, d) => {
+            if (d.e) showPairTip(event, d.a, d.b, d.e.lift, d.e.n);
+            else showTopicTip(event, d.a);
+          })
+          .on("mousemove", (event) => moveTopicTip(event))
+          .on("mouseleave", hideTopicTip)
+          .on("click", (event, d) => { event.stopPropagation(); pickTheme(d.a.id); });
+
+        g.selectAll("text.mx-row").data(ordered).enter().append("text")
+          .attr("class", "mx-lab mx-row")
+          .attr("x", ox - 6)
+          .attr("y", (d, i) => oy + i * cell + cell * 0.72)
+          .attr("text-anchor", "end")
+          .attr("fill", (d) => GROUPS[d.group] || "#f0e6c8")
+          .text((d) => shortLabel(d, 18))
+          .style("cursor", "pointer")
+          .on("click", (event, d) => { event.stopPropagation(); pickTheme(d.id); });
+        g.selectAll("text.mx-col").data(ordered).enter().append("text")
+          .attr("class", "mx-lab mx-col")
+          .attr("transform", (d, i) => "translate(" + (ox + i * cell + cell * 0.55) + "," + (oy - 8) + ") rotate(-60)")
+          .attr("fill", (d) => GROUPS[d.group] || "#f0e6c8")
+          .text((d) => shortLabel(d, 16))
+          .style("cursor", "pointer")
+          .on("click", (event, d) => { event.stopPropagation(); pickTheme(d.id); });
+
+        let runStart = 0;
+        GROUP_ORDER.forEach((gid) => {
+          const count = ordered.filter((d) => d.group === gid).length;
+          if (!count) return;
+          const x = ox + runStart * cell;
+          const y = oy + runStart * cell;
+          const s = count * cell;
+          g.append("rect").attr("class", "mx-band")
+            .attr("x", x).attr("y", oy - 2).attr("width", s).attr("height", 2)
+            .attr("fill", GROUPS[gid]);
+          g.append("rect").attr("class", "mx-band")
+            .attr("x", ox - 2).attr("y", y).attr("width", 2).attr("height", s)
+            .attr("fill", GROUPS[gid]);
+          runStart += count;
+        });
+      }
+      function drawTopicNetwork() {
+        const frame = lastTopicFrame || topicFrame();
+        const { nodes, links } = topicNodesAndLinks({ ego: true });
+        nodes.forEach((d) => seedNode(d, frame));
+        const key = nodes.map((d) => d.id).sort().join("|") + "#" + minTopicLift + (papalOnly ? "P" : "") + (selectedTheme || "");
+        const membershipChanged = key !== topicLayoutKey;
+        topicLayoutKey = key;
 
         sim.nodes(nodes);
-        sim.force("link", d3.forceLink(links).id((d) => d.id).distance((d) => 56 + 90 / Math.max(d.lift, 1)).strength(0.25));
-        sim.alpha(0.55).restart();
+        sim.force("link")
+          .links(links)
+          .distance((d) => 96 + 170 / Math.max(d.lift, 1))
+          .strength(0.28);
+        sim.force("charge").strength((d) => (d.papal ? -340 : -260));
+        sim.force("collide").radius((d) => nodeRadius(d) + (showAllLabels ? 34 : 16));
+        sim.force("x").x((d) => groupXY(d.group, frame)[0]).strength(selectedTheme ? 0.05 : 0.22);
+        sim.force("y").y((d) => groupXY(d.group, frame)[1]).strength(selectedTheme ? 0.05 : 0.22);
 
         const lp = linkG.selectAll("line").data(links, (d) => d.source.id + "→" + d.target.id);
         lp.exit().remove();
-        const lenter = lp.enter().append("line").attr("stroke-linecap", "round");
-        const lmerge = lenter.merge(lp)
-          .attr("stroke", (d) => (d.lift >= 8 ? "#c99700" : "rgba(12,35,64,.18)"))
-          .attr("stroke-width", (d) => 0.6 + Math.min(Math.log1p(d.lift), 4))
-          .attr("stroke-opacity", selectedTheme ? 0.9 : 0.45);
+        lp.enter().append("line").attr("stroke-linecap", "round");
+        linkG.selectAll("line")
+          .attr("stroke-width", (d) => 1 + Math.min(Math.log1p(d.lift), 3.2));
 
         const np = nodeG.selectAll("g.node").data(nodes, (d) => d.id);
         np.exit().remove();
-        const enter = np.enter().append("g").attr("class", "node").style("cursor", "pointer");
-        enter.append("circle");
-        enter.append("text").attr("class", "g-label").attr("dy", -16).attr("text-anchor", "middle");
-        enter.on("click", (event, d) => {
-          event.stopPropagation();
-          selectedTheme = d.id;
-          topic = String(d.id).replace(/^theme:/, "");
-          syncTopicChrome();
-          renderTopicPanel();
-          drawTopics();
+        const enter = np.enter().append("g").attr("class", "node");
+        enter.append("circle").attr("class", "g-halo").attr("fill", "none").attr("stroke", "#c99700");
+        enter.append("circle").attr("class", "g-dot");
+        enter.append("text").attr("class", "g-label").attr("text-anchor", "middle");
+        enter.on("click", (event, d) => { event.stopPropagation(); pickTheme(d.id); });
+        enter.on("mouseenter", (event, d) => {
+          hoveredTheme = d.id;
+          showTopicTip(event, d);
+          applyTopicStyles();
         });
-        const merged = enter.merge(np);
-        merged.select("circle")
-          .attr("r", (d) => 6 + Math.sqrt(d.n) * 0.12)
-          .attr("fill", (d) => GROUPS[d.group] || GROUPS.other)
-          .attr("stroke", (d) => (selectedTheme === d.id ? "#0c2340" : (d.papal ? "#c99700" : "#ffffff")))
-          .attr("stroke-width", (d) => (selectedTheme === d.id ? 3.5 : (d.papal ? 2 : 1.5)));
-        merged.select("text")
-          .attr("class", (d) => "g-label" + (selectedTheme && selectedTheme !== d.id ? " dim" : ""))
-          .text((d) => labelFor(d, neighbors));
+        enter.on("mousemove", (event) => moveTopicTip(event));
+        enter.on("mouseleave", () => {
+          hoveredTheme = null;
+          hideTopicTip();
+          applyTopicStyles();
+        });
+        enter.merge(np).select("circle.g-dot")
+          .attr("fill", (d) => GROUPS[d.group] || GROUPS.other);
 
-        sim.on("tick", () => {
-          lmerge.attr("x1", (d) => d.source.x).attr("y1", (d) => d.source.y)
-            .attr("x2", (d) => d.target.x).attr("y2", (d) => d.target.y);
-          merged.attr("transform", (d) => "translate(" + d.x + "," + d.y + ")");
+        applyTopicStyles();
+        if (membershipChanged) {
+          topicUserZoomed = false;
+          sim.alpha(0.78).restart();
+        } else {
+          sim.alpha(0.06).restart();
+        }
+      }
+      function drawTopics() {
+        if (view !== "topics") return;
+        const frame = topicFrame();
+        lastTopicFrame = frame;
+        svg.attr("viewBox", [0, 0, frame.w, frame.h]);
+        showTopicLayer(topicLayout);
+        if (topicLayout === "network") {
+          svg.call(zoom);
+          drawTopicNetwork();
+        } else {
+          sim.stop();
+          if (topicLayout === "matrix") {
+            svg.on(".zoom", null);
+            gRoot.attr("transform", null);
+            drawTopicMatrix();
+          } else {
+            svg.call(zoom);
+            if (!topicUserZoomed) svg.call(zoom.transform, d3.zoomIdentity);
+            drawTopicConstellation();
+          }
+        }
+        updateTopicHint();
+      }
+
+      svg.on("click", (ev) => {
+        if (ev.defaultPrevented) return;
+        hoveredTheme = null;
+        hideTopicTip();
+        if (selectedTheme || topic !== "all") setTopic("all");
+      });
+
+      function bindTopicRows(el) {
+        el.querySelectorAll("[data-theme]").forEach((row) => {
+          row.onclick = () => {
+            const id = row.dataset.theme;
+            if (!themeById[id]) return;
+            selectedTheme = id;
+            topic = String(id).replace(/^theme:/, "");
+            syncTopicChrome();
+            renderTopicPanel();
+            drawTopics();
+          };
         });
       }
 
-      svg.on("click", () => {
-        selectedTheme = null;
-        renderTopicPanel();
-        drawTopics();
-      });
-
+      function topicStoryBeats() {
+        // Every a/b pair must exist in TG.edges and match the gold line on the ring.
+        const beats = {
+          en: [
+            { kicker: "Papal memory", title: "Social encyclicals travel as a set", text: "When news names Rerum Novarum, it often names Quadragesimo Anno too (lift 179×, 11 co-stories). Leo XIII and Pius XI still move together.", a: "theme:rerum_novarum", b: "theme:quadragesimo_anno" },
+            { kicker: "Family documents", title: "Amoris Laetitia walks with Familiaris Consortio", text: "Francis’s family exhortation is read with John Paul II’s (lift 81×, 28 co-stories). Later papal texts inherit earlier ones.", a: "theme:amoris_laetitia", b: "theme:familiaris_consortio" },
+            { kicker: "Latin America", title: "Romero and liberation theology", text: "Óscar Romero and liberation theology share 49 stories (lift 15×). The opción preferencial joins the same cluster — a Latin American teaching pattern, not a U.S. one.", a: "theme:oscar_romero", b: "theme:liberation_theology" },
+            { kicker: "Mission", title: "Evangelization travels with its ‘new’ form", text: "Evangelization and new evangelization co-appear 123 times (lift 28×) — one mission vocabulary, not separate debates.", a: "theme:evangelization", b: "theme:new_evangelization" },
+            { kicker: "Culture", title: "Immigration is loud — and mostly alone", text: "Immigration appears in 5,571 stories, one of the largest themes, but it has almost no strong co-occurrence with theology or mission. Presence without a tight teaching cluster.", a: "theme:immigration", b: "" },
+          ],
+          es: [
+            { kicker: "Memoria papal", title: "Las encíclicas sociales viajan juntas", text: "Cuando una noticia nombra Rerum Novarum, suele nombrar también Quadragesimo Anno (lift 179×, 11 co-historias). León XIII y Pío XI siguen moviéndose juntos.", a: "theme:rerum_novarum", b: "theme:quadragesimo_anno" },
+            { kicker: "Documentos sobre la familia", title: "Amoris Laetitia camina con Familiaris Consortio", text: "La exhortación familiar de Francisco se lee junto a la de Juan Pablo II (lift 81×, 28 co-historias). Los textos papales posteriores heredan a los anteriores.", a: "theme:amoris_laetitia", b: "theme:familiaris_consortio" },
+            { kicker: "América Latina", title: "Romero y la teología de la liberación", text: "Óscar Romero y la teología de la liberación comparten 49 historias (lift 15×). La opción preferencial entra en el mismo clúster — un patrón latinoamericano, no estadounidense.", a: "theme:oscar_romero", b: "theme:liberation_theology" },
+            { kicker: "Misión", title: "La evangelización viaja con su forma ‘nueva’", text: "Evangelización y nueva evangelización coaparecen 123 veces (lift 28×) — un solo vocabulario misionero, no debates separados.", a: "theme:evangelization", b: "theme:new_evangelization" },
+            { kicker: "Cultura", title: "La inmigración es fuerte — y casi sola", text: "La inmigración aparece en 5.571 historias, uno de los temas más grandes, pero casi no coocurre con teología o misión. Presencia sin un clúster de enseñanza cerrado.", a: "theme:immigration", b: "" },
+          ],
+          pt: [
+            { kicker: "Memória papal", title: "As encíclicas sociais viajam juntas", text: "Quando uma notícia nomeia Rerum Novarum, costuma nomear também Quadragesimo Anno (lift 179×, 11 co-histórias). Leão XIII e Pio XI ainda se movem juntos.", a: "theme:rerum_novarum", b: "theme:quadragesimo_anno" },
+            { kicker: "Documentos sobre a família", title: "Amoris Laetitia caminha com Familiaris Consortio", text: "A exortação familiar de Francisco é lida junto com a de João Paulo II (lift 81×, 28 co-histórias). Textos papais posteriores herdam os anteriores.", a: "theme:amoris_laetitia", b: "theme:familiaris_consortio" },
+            { kicker: "América Latina", title: "Romero e a teologia da libertação", text: "Óscar Romero e a teologia da libertação compartilham 49 histórias (lift 15×). A opção preferencial entra no mesmo agrupamento — um padrão latino-americano, não estadunidense.", a: "theme:oscar_romero", b: "theme:liberation_theology" },
+            { kicker: "Missão", title: "A evangelização viaja com sua forma ‘nova’", text: "Evangelização e nova evangelização coaparecem 123 vezes (lift 28×) — um só vocabulário missionário, não debates separados.", a: "theme:evangelization", b: "theme:new_evangelization" },
+            { kicker: "Cultura", title: "A imigração é forte — e quase sozinha", text: "A imigração aparece em 5.571 histórias, um dos maiores temas, mas quase não coocorre com teologia ou missão. Presença sem um agrupamento fechado de ensinamentos.", a: "theme:immigration", b: "" },
+          ],
+        };
+        return (beats[uiLang] || beats.en).filter((s) => {
+          if (!themeById[s.a] || (s.b && !themeById[s.b])) return false;
+          if (!s.b) return true;
+          return (TG.edges || []).some((e) =>
+            (e.source === s.a && e.target === s.b) || (e.source === s.b && e.target === s.a)
+          );
+        });
+      }
+      function bindStoryBeats(el) {
+        el.querySelectorAll(".story-beat").forEach((row) => {
+          const a = row.dataset.a;
+          const b = row.dataset.b || "";
+          row.onmouseenter = () => {
+            hoveredStoryPair = { a, b };
+            if (topicLayout === "constellation") applyConstellationStyles();
+          };
+          row.onmouseleave = () => {
+            hoveredStoryPair = null;
+            if (topicLayout === "constellation") applyConstellationStyles();
+          };
+          row.onclick = () => pickTheme(a);
+        });
+      }
       function renderTopicPanel() {
         const el = document.getElementById("side");
         if (view !== "topics") return;
+        const { vedges } = topicNodesAndLinks();
         if (!selectedTheme) {
-          const top = (T.edges || []).slice().sort((a, b) => b.lift - a.lift).slice(0, 12);
+          if (topicLayout === "constellation") {
+            el.innerHTML =
+              '<p class="pill">' + esc(t("chaptersPill")) + "</p>" +
+              "<h2>" + esc(t("chaptersTitle")) + "</h2>" +
+              '<p class="hint">' + t("chaptersHint") + "</p>" +
+              topicStoryBeats().map((s) => (
+                '<button type="button" class="story-beat" data-a="' + esc(s.a) + '" data-b="' + esc(s.b || "") + '">' +
+                '<span class="kicker">' + esc(s.kicker) + "</span>" +
+                "<h3>" + esc(s.title) + "</h3>" +
+                "<p>" + esc(s.text) + "</p>" +
+                "</button>"
+              )).join("");
+            bindStoryBeats(el);
+            return;
+          }
+          const used = new Set();
+          vedges.forEach((e) => { used.add(e.source); used.add(e.target); });
+          const top = vedges.slice().sort((a, b) => b.lift - a.lift).slice(0, 6);
           el.innerHTML =
-            '<p class="pill">theme co-occurrence · no map</p>' +
+            '<p class="pill">theme co-occurrence</p>' +
             "<h2>Topics that travel together</h2>" +
             '<div class="statrow">' +
-            '<div class="stat"><b>' + (T.nodes || []).length + "</b><span>themes</span></div>" +
-            '<div class="stat"><b>' + (T.edges || []).length + "</b><span>lift ≥ 1.25 pairs</span></div>" +
+            '<div class="stat"><b>' + used.size + "</b><span>themes on screen</span></div>" +
+            '<div class="stat"><b>' + vedges.length + "</b><span>pairs on screen</span></div>" +
             "</div>" +
-            '<p class="hint">Gold edges are high-lift. Click a node to see its neighbors. This graph has no countries on purpose — teaching geography lives in Places.</p>' +
+            '<p class="hint">' + (topicLayout === "matrix"
+              ? "Rows and columns are the same teachings, grouped by color. Gold cells are the pairs that share stories. Click a name to inspect it."
+              : "Clusters are theology, mission, formation, and culture. Gold edges are the strongest pairs. Hover a node; click it to isolate neighbors.") + "</p>" +
+            '<p class="pill" style="margin-top:10px">strongest pairs</p>' +
             top.map((e) => {
               const a = themeById[e.source], b = themeById[e.target];
-              return '<div class="edge"><span><b>' + esc(a ? a.label : e.source) + "</b> · " + esc((b && b.label) || "") + "</span><span>" + e.lift + "×</span></div>";
+              return '<div class="edge rank" data-theme="' + esc(e.source) + '"><span><b>' + esc(a ? a.label : "") + "</b> · " + esc((b && b.label) || "") + "</span><span>" + e.lift + "×</span></div>";
             }).join("");
+          bindTopicRows(el);
           return;
         }
         const n = themeById[selectedTheme];
         if (!n) return;
         const tid = String(n.id).replace(/^theme:/, "");
         const cat = catById[tid];
-        const rows = (T.edges || [])
+        const rows = (TG.edges || [])
           .filter((e) => e.source === n.id || e.target === n.id)
           .sort((a, b) => b.lift - a.lift)
-          .slice(0, 14);
+          .slice(0, 8);
         const hyps = hypothesizedCountries(tid);
+        const topOther = rows[0] ? themeById[rows[0].source === n.id ? rows[0].target : rows[0].source] : null;
+        const topLift = rows[0] ? rows[0].lift : null;
         el.innerHTML =
-          '<p class="pill">' + esc(GROUP_LABEL[n.group] || n.group) + (n.papal ? " · papal" : "") + " · n=" + fmt(n.n) + "</p>" +
-          "<h2>" + esc(n.label) + "</h2>" +
+          '<p class="pill">' + esc(groupLabel(n.group) || n.group) + (n.papal ? " · " + t("papalDoc") : "") + "</p>" +
+          "<h2>" + esc(shortLabel(n, 48)) + "</h2>" +
+          '<p class="hint">' + fmt(n.n) + " " + t("storiesMention") +
+          (topOther ? " " + t("strongestPair") + " <b>" + esc(shortLabel(topOther, 40)) + "</b>" + (topLift != null ? " (" + topLift + "×)" : "") + "." : "") + "</p>" +
           (cat ? triHtml(cat) : "") +
           (hyps.length
-            ? '<p class="pill">hypothesized teaching</p>' +
-              hyps.map((f) => '<div class="edge"><span><b>' + esc(countryName(f)) + "</b>" + (f === "CI" ? ' <span class="host">· RISE host</span>' : "") + "</span><span>vs U.S.</span></div>").join("")
+            ? '<p class="pill">especially distinctive in</p>' +
+              hyps.map((f) => '<div class="edge"><span><b>' + esc(countryName(f)) + "</b>" + (f === "CI" ? ' <span class="host">· RISE host</span>' : "") + "</span><span>vs U.S. news</span></div>").join("")
             : "") +
-          '<p class="pill" style="margin-top:10px">neighbors</p>' +
+          '<p class="pill" style="margin-top:10px">' + esc(t("oftenWith")) + "</p>" +
           rows.map((e) => {
-            const other = themeById[e.source === n.id ? e.target : e.source];
-            return '<div class="edge"><span><b>' + esc(other ? other.label : "") + "</b></span><span>" + e.lift + "× · " + fmt(e.n) + "</span></div>";
+            const oid = e.source === n.id ? e.target : e.source;
+            const other = themeById[oid];
+            return '<div class="edge rank" data-theme="' + esc(oid) + '"><span><b>' + esc(other ? shortLabel(other, 36) : "") + "</b></span><span>" + e.lift + "× · " + fmt(e.n) + "</span></div>";
           }).join("") +
-          '<p class="hint">' + fmt(n.n) + " stories mention this theme. Lift is P(a,b)/(P(a)P(b)). Click the canvas to clear.</p>";
+          '<p class="hint">' + esc(t("returnHint")) + "</p>";
+        bindTopicRows(el);
       }
 
       document.getElementById("tlift").oninput = (e) => {
         minTopicLift = +e.target.value;
         document.getElementById("tlift-val").textContent = minTopicLift + "×";
         drawTopics();
+        renderTopicPanel();
       };
       document.getElementById("btn-papal").onclick = function () {
         papalOnly = !papalOnly;
@@ -1786,17 +2802,67 @@
         drawTopics();
         renderTopicPanel();
       };
-      document.getElementById("btn-tclear").onclick = () => {
-        selectedTheme = null;
-        setTopic("all");
-        renderTopicPanel();
+      document.getElementById("btn-tlabels").onclick = function () {
+        showAllLabels = !showAllLabels;
+        this.classList.toggle("active", showAllLabels);
+        this.textContent = showAllLabels ? t("allLabels") : t("keyLabels");
+        topicLayoutKey = "";
         drawTopics();
       };
+      document.getElementById("btn-treset").onclick = () => {
+        topicUserZoomed = false;
+        topicLayoutKey = "";
+        TG.nodes.forEach((d) => { d.x = d.y = d.vx = d.vy = null; });
+        drawTopics();
+      };
+      document.getElementById("btn-tclear").onclick = () => {
+        resetTopicFilters();
+      };
+      const navLangs = document.getElementById("nav-langs");
+      if (navLangs) {
+        navLangs.addEventListener("click", (ev) => {
+          const btn = ev.target.closest("button[data-lang]");
+          if (!btn || btn.dataset.lang === uiLang) return;
+          uiLang = btn.dataset.lang;
+          applyTopicsLocale();
+        });
+      }
+      applyTopicsLocale();
+      [...document.getElementById("topic-layout").querySelectorAll("button")].forEach((b) => {
+        b.classList.toggle("active", b.dataset.layout === topicLayout);
+      });
+      document.getElementById("topic-layout").addEventListener("click", (ev) => {
+        const btn = ev.target.closest("button[data-layout]");
+        if (!btn) return;
+        topicLayout = btn.dataset.layout;
+        [...document.getElementById("topic-layout").querySelectorAll("button")].forEach((b) => {
+          b.classList.toggle("active", b.dataset.layout === topicLayout);
+        });
+        topicUserZoomed = false;
+        topicLayoutKey = "";
+        TG.nodes.forEach((d) => { d.x = d.y = d.vx = d.vy = null; });
+        document.getElementById("subcopy").innerHTML = topicSubcopy();
+        drawTopics();
+        renderTopicPanel();
+      });
+      document.getElementById("topic-density").addEventListener("click", (ev) => {
+        const btn = ev.target.closest("button[data-density]");
+        if (!btn) return;
+        topicDensity = btn.dataset.density;
+        [...document.getElementById("topic-density").querySelectorAll("button")].forEach((b) => {
+          b.classList.toggle("active", b.dataset.density === topicDensity);
+        });
+        showTopicLayer(topicLayout);
+        applyConstellationStyles();
+      });
 
       window.addEventListener("resize", () => {
         if (!document.body.classList.contains("mode-explore")) return;
-        if (view === "topics") drawTopics();
-        else {
+        if (view === "topics") {
+          topicLayoutKey = "";
+          topicUserZoomed = false;
+          drawTopics();
+        } else {
           map.invalidateSize();
           drawEncycChart();
         }
